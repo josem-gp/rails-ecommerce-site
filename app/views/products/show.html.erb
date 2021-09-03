@@ -33,9 +33,9 @@
     <% end %>
     <% @reviews.each do |review| %>
       <ul>
+        <li><%= review.user.username %></li>
         <li><%= review.title %></li>
         <li><%= review.content %></li>
-        <li><%= review.user.username %></li>
         <li><%= review.rating %></li>
       </ul>
     <% end %>
