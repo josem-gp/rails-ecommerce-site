@@ -1,1 +1,21 @@
-<h1>This is the home page!</h1>
+<main>
+  <!-- Beautiful Image Slider -->
+  <section>
+    <h1>This is the homepage!</h1>
+  </section>
+  <!-- Products wrapper -->
+  <section>
+    <div class="container">
+      <% @products.each do |product| %>
+        <ul>
+          <li><%= product.name %></li>
+          <li>¥<%= product.price %></li>
+          <li><%= product.rating %></li>
+        </ul>
+      <% end %>
+    </div>
+  </section>
+</main>
+<!-- Homepage footer -->
+<footer>
+</footer>
