@@ -14,6 +14,15 @@
   </section>
   <!-- Review wrapper -->
   <section>
+    <h1><%= "Reviews for #{@product.name}" %></h1>
+    <% @reviews.each do |review| %>
+      <ul>
+        <li><%= review.title %></li>
+        <li><%= review.content %></li>
+        <li><%= review.user.username %></li>
+        <li><%= review.rating %></li>
+      </ul>
+    <% end %>
   </section>
 </main>
 <!-- footer -->
