@@ -31,6 +31,7 @@
         <button>Write a review</button>
       <% end %>
     <% end %>
+    <!-- Rendering of each review -->
     <% @reviews.each do |review| %>
       <ul>
         <li><%= review.user.username %></li>
@@ -38,6 +39,18 @@
         <li><%= review.content %></li>
         <li><%= review.rating %></li>
       </ul>
+      <!-- Toggleable Edit Form for reviews if current user is owner -->
+      <% if review.user === @user %>
+        <button>Edit the review</button>
+        <div>
+          <%= simple_form_for [@product, @review] do |f| %>
+            <%= f.input :rating %>
+            <%= f.input :title %>
+            <%= f.input :content, as: :text %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </section>
 </main>
