@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
+  acts_as_favoritor
+
   validates :username, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
   validates :email, presence: true, uniqueness: true
 

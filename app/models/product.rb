@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
+  
+  acts_as_favoritable
 
   validates :name, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
