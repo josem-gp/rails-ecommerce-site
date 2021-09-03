@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   get 'cart', to: 'pages#cart'
-  resources :products, only: [:index, :show]
-
-  resources :users, only: [:show, :edit, :update] do
+  resources :products, only: [:index, :show] do
     resources :reviews, only: [ :new, :create, :edit, :update, :destroy ]
   end
+
+  resources :users, only: [:show, :edit, :update] 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
