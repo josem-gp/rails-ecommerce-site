@@ -6,8 +6,8 @@
   <!-- Products wrapper -->
   <section>
     <div class="container">
-      <%= link_to product_path(product) do %>
-        <% @products.each do |product| %>
+      <% @products.each do |product| %>
+        <%= link_to product_path(product) do %>
           <ul>
             <li><%= product.name %></li>
             <li>¥<%= product.price %></li>
