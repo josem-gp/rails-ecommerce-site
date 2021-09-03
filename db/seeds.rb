@@ -8,6 +8,10 @@
 
 require "faker"
 
+puts "Deleting all Fake products"
+
+Product.destroy_all
+
 puts "Deleting Admin user"
 
 User.find_by(username: "josegp_admin").delete
@@ -21,13 +25,15 @@ puts "Admin user created!"
 puts "Creating database of Fake products"
 
 30.times do
-    product = Product.create!(
+    product = Product.new(
         name: Faker::Tea.variety, 
         description: Faker::Lorem.sentence(word_count: 20), 
         price: rand(2000...10000), 
         rating: rand(1..5), 
-        user: admin
     )
+    product.user = admin
+
+    product.save!
 end
 
 
