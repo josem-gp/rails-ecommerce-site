@@ -15,11 +15,11 @@
   <!-- Review wrapper -->
   <section>
     <h1><%= "Reviews for #{@product.name}" %></h1>
-    <!-- Toggleable Form for reviews only if you are logged in. If not redirect to sign in page -->
+    <!-- Toggleable Create form  -->
     <% if @user %>
       <button>Write a review</button>
       <div>
-        <%= simple_form_for [@product, @review] do |f| %>
+        <%= simple_form_for([@product, @review], remote: true) do |f| %>
           <%= f.input :rating %>
           <%= f.input :title %>
           <%= f.input :content, as: :text %>
@@ -39,11 +39,11 @@
         <li><%= review.content %></li>
         <li><%= review.rating %></li>
       </ul>
-      <!-- Toggleable Edit Form for reviews if current user is owner -->
+      <!-- Toggleable Edit Form -->
       <% if review.user === @user %>
         <button>Edit the review</button>
         <div>
-          <%= simple_form_for [@product, @review] do |f| %>
+          <%= simple_form_for([@product, review], remote: true) do |f| %>
             <%= f.input :rating %>
             <%= f.input :title %>
             <%= f.input :content, as: :text %>

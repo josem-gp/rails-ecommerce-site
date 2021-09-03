@@ -11,9 +11,12 @@ class ReviewsController < ApplicationController
             redirect_to root_path
         end
     end
-    def edit
-    end
-    def update  
+
+    def update 
+        @product = Product.find(params[:product_id])
+        @review = Review.find(params[:id])
+        @review.update(review_params)
+        redirect_to product_path(@product)
     end
     def destroy
     end
