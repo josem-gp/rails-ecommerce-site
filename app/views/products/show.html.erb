@@ -40,7 +40,7 @@
         <li><%= review.rating %></li>
       </ul>
       <!-- Toggleable Edit Form -->
-      <% if review.user === @user %>
+      <% if review.user == @user || current_user == @admin %>
         <button>Edit the review</button>
         <div>
           <%= simple_form_for([@product, review], remote: true) do |f| %>

@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
         @reviews = @product.reviews
         @review = Review.new
+        @admin = User.find_by(username: "josegp_admin")
         if params[:user_id]
             @user = User.find(params[:user_id])
         else
