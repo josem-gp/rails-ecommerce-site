@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "faker"
+
+puts "Creating Admin user"
+
+admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
+
+puts "Admin user created!"
+
+puts "Creae database of Fake products"
+
+30.times do
+    product = Product.create!(
+        name: Faker::Tea.variety, 
+        description: Faker::Lorem.sentence(word_count: 20), 
+        price: rand(2000...10000), 
+        rating: rand(1..5), 
+        user_id: admin
+    )
+end
+
+
+puts "Fake products created!"
+puts "Seeding done!"
