@@ -8,13 +8,17 @@
 
 require "faker"
 
+puts "Deleting Admin user"
+
+User.find_by(username: "josegp_admin").delete
+
 puts "Creating Admin user"
 
 admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
 
 puts "Admin user created!"
 
-puts "Creae database of Fake products"
+puts "Creating database of Fake products"
 
 30.times do
     product = Product.create!(
@@ -22,7 +26,7 @@ puts "Creae database of Fake products"
         description: Faker::Lorem.sentence(word_count: 20), 
         price: rand(2000...10000), 
         rating: rand(1..5), 
-        user_id: admin
+        user: admin
     )
 end
 
