@@ -7,11 +7,13 @@
   <section>
     <div class="container">
       <% @products.each do |product| %>
-        <ul>
-          <li><%= product.name %></li>
-          <li>¥<%= product.price %></li>
-          <li><%= product.rating %></li>
-        </ul>
+        <%= link_to product_path(product) do %>
+          <ul>
+            <li><%= product.name %></li>
+            <li>¥<%= product.price %></li>
+            <li><%= product.rating %></li>
+          </ul>
+        <% end %>
       <% end %>
     </div>
   </section>
