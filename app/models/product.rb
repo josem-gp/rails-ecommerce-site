@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
+
+  has_many_attached :photos
   
   acts_as_favoritable
 
