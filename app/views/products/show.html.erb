@@ -15,6 +15,22 @@
   <!-- Review wrapper -->
   <section>
     <h1><%= "Reviews for #{@product.name}" %></h1>
+    <!-- Toggleable Form for reviews -->
+    <% if @user %>
+      <button>Write a review</button>
+      <div>
+        <%= simple_form_for(@review) do |f| %>
+          <%= f.input :rating %>
+          <%= f.input :title %>
+          <%= f.input :content, as: :text %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <button>Write a review</button>
+      <% end %>
+    <% end %>
     <% @reviews.each do |review| %>
       <ul>
         <li><%= review.title %></li>
