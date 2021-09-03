@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :products, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  validates :username, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: true
+
 end
