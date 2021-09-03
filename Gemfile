@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+#Host images online
+gem 'cloudinary', '~> 1.16.0'
 # Faker gem to seed database for tests
 gem 'faker'
 # Favoritor gem to simplify the favourite logic
