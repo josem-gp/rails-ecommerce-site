@@ -9,6 +9,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 # Favoritor gem to simplify the favourite logic
 gem 'acts_as_favoritor'
+# To be able to use remote: true
+gem 'turbolinks_render'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # Use postgresql as the database for Active Record
