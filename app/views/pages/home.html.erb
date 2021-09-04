@@ -7,11 +7,13 @@
   <section>
     <div class="container">
       <% @products.each do |product| %>
+        <!-- Logic for favoritor -->
         <% if current_user %>
           <%= link_to toggle_favorite_product_path(product), method: :post do %>
             <%= render 'pages/like_button', product: product %>
           <% end %>
         <% end %>
+        <!-- Product info -->
         <%= link_to product_path(product) do %>
           <ul>
             <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill %>

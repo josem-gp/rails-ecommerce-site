@@ -5,12 +5,23 @@
   </section>
   <!-- Detailed product info wrapper -->
   <section>
+    <% @product.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <ul>
       <li><%= @product.name %></li>
       <li><%= @product.description %></li>
       <li>¥<%= @product.price %></li>
       <li><%= @product.rating %></li>
     </ul>
+    <!-- Favoritor -->
+    <div>
+      <% if current_user %>
+        <%= link_to toggle_favorite_product_path(@product), method: :post do %>
+          <%= render 'pages/like_button', product: @product %>
+        <% end %>
+      <% end %>
+    </div>
   </section>
   <!-- Review wrapper -->
   <section>

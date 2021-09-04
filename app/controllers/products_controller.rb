@@ -20,6 +20,6 @@ class ProductsController < ApplicationController
     def toggle_favorite
         @product = Product.find_by(id: params[:id])
         current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
-        redirect_to request.referrer
+        redirect_to request.referrer #this will take the path we were at before the current path (products#toggle_favorite)
     end
 end
