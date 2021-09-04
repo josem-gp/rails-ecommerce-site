@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'cart', to: 'pages#cart'
   resources :products, only: [:index, :show] do
     resources :reviews, only: [ :new, :create, :edit, :update, :destroy ]
+    member do
+      post 'toggle_favorite', to: "products#toggle_favorite"
+    end
   end
 
   resources :users, only: [:show, :edit, :update] 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

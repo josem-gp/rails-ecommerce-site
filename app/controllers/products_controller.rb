@@ -16,4 +16,10 @@ class ProductsController < ApplicationController
             @user = current_user
         end
     end
+
+    def toggle_favorite
+        @product = Product.find_by(id: params[:id])
+        current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
+        redirect_to request.referrer
+    end
 end
