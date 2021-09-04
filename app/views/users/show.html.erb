@@ -1,0 +1,12 @@
+<h1>User's show page!!</h1>
+<!-- Liked products -->
+<section>
+  <h1><%= @user.username %> has liked:</h1>
+  <% @favorites.each do |favorite| %>
+    <ul>
+      <li><%= favorite.name %></li>
+      <li><%= favorite.price %></li>
+      <li><%= favorite.rating %></li>
+    </ul>
+  <% end %>
+</section>
