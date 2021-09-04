@@ -9,7 +9,7 @@
       <% @products.each do |product| %>
         <!-- Logic for favoritor -->
         <% if current_user %>
-          <%= link_to toggle_favorite_product_path(product), method: :post do %>
+          <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
             <%= render 'pages/like_button', product: product %>
           <% end %>
         <% end %>

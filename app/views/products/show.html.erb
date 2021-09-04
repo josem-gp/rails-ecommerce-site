@@ -17,7 +17,7 @@
     <!-- Favoritor -->
     <div>
       <% if current_user %>
-        <%= link_to toggle_favorite_product_path(@product), method: :post, remote: true do %>
+        <%= link_to toggle_favorite_product_path(@product), remote: true, method: :post do %>
           <%= render 'pages/like_button', product: @product %>
         <% end %>
       <% end %>
