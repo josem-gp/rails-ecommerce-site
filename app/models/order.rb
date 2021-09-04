@@ -7,6 +7,13 @@ class Order < ApplicationRecord
   validates :date, presence: true
   #the date at first will be the creation date but it has to change to the date-time where we did the CHECKOUT
   validates :subtotal, presence: true, numericality: { only_integer: true }
+  #maybe i dont need subtotal...
   validates :total, presence: true, numericality: { only_integer: true }
-  #this we will go with callbacks --> before creating we check 
+
+
+  private
+
+  def generate_total
+
+  end
 end

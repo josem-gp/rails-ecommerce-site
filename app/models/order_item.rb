@@ -8,11 +8,13 @@ class OrderItem < ApplicationRecord
 
   def generate_order
     if Order.find_by(status: 1)
-      
+      order = Order.find_by(status: 1)
+      self.order = order
     else
-      order = Order.new(status: 1)
+      order = Order.new(status: 1, total: 0, subtotal: 0, date: Date.today())
       order.user = current_user
       order.save!
+      self.order = order 
     end
   end
 end
