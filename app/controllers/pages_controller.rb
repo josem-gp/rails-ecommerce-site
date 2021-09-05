@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   end
 
   def cart
+    @cart_items = Order.find_by(status: 1).order_items
   end
 end

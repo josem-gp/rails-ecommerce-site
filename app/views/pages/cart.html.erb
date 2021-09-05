@@ -1,1 +1,12 @@
 <h1>This is the cart page</h1>
+<main>
+  <!-- Breakdown of cart items -->
+  <section>
+    <% @cart_items.each do |item| %>
+      <ul>
+        <li><%= item.product.name %></li>
+        <li>¥<%= item.product.price %></li>
+      </ul>
+    <% end %>
+  </section>
+</main>
