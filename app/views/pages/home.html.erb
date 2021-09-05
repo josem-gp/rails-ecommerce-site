@@ -7,22 +7,32 @@
   <section>
     <div class="container">
       <% @products.each do |product| %>
-        <!-- Logic for favoritor -->
-        <% if current_user %>
-          <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
-            <%= render 'pages/like_button', product: product %>
+        <!-- Favoritor -->
+        <div>
+          <% if current_user %>
+            <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
+              <%= render 'pages/like_button', product: product %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+        <!-- Cart icon -->
+        <div>
+          <%= link_to order_items_path(product_id: product), remote: true, method: :post do %>
+            <i class="fas fa-shopping-cart"></i>
+          <% end %>
+        </div>
         <!-- Product info -->
-        <%= link_to product_path(product) do %>
-          <ul>
-            <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill %>
-            <%= cl_image_tag product.photos[1].key, height: 300, width: 400, crop: :fill %>
-            <li><%= product.name %></li>
-            <li>¥<%= product.price %></li>
-            <li><%= product.rating %></li>
-          </ul>
-        <% end %>
+        <div>
+          <%= link_to product_path(product) do %>
+            <ul>
+              <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag product.photos[1].key, height: 300, width: 400, crop: :fill %>
+              <li><%= product.name %></li>
+              <li>¥<%= product.price %></li>
+              <li><%= product.rating %></li>
+            </ul>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </section>
