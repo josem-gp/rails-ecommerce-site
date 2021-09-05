@@ -6,9 +6,9 @@ class OrderItemsController < ApplicationController
         @order_item.product = @product
         @order_item.order = @order
         if @order_item.save
-            redirect_to cart_path
+            redirect_to request.referrer, notice: "Product ordered succesfully"
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Product not ordered, please try again"
         end
     end
 
