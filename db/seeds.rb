@@ -9,6 +9,13 @@
 require "faker"
 require "open-uri"
 
+puts "Deleting all Fake OrderItems"
+
+OrderItem.delete_all
+
+puts "Deleting all Fake Orders"
+
+Order.delete_all
 
 puts "Deleting all Test reviews"
 
@@ -33,10 +40,16 @@ puts "Creating database of Fake products"
 file = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
 file1 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
 file2 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file3 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file4 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file5 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file6= URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file7 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file8 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
 
-files = [file, file1, file2]
+files = [file, file1, file2, file3, file4, file5, file6, file7, file8]
 
-1.times do
+3.times do
     product = Product.new(
         name: Faker::Tea.variety, 
         description: Faker::Lorem.sentence(word_count: 20), 
@@ -46,10 +59,12 @@ files = [file, file1, file2]
     )
     product.user = admin
 
-    files.each do |file|
+    files.sample(3).each do |file|
         product.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+        files.delete(file)
     end
     product.save!
+    puts "Product done!"
 end
 
 
