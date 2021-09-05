@@ -12,7 +12,7 @@ class Order < ApplicationRecord
   private
 
   def self.update_total(order)
-    total = order.total
+    total = 0
     order.order_items.each do |order_item|
       total += order_item.product.price
     end
