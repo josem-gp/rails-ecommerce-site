@@ -7,6 +7,11 @@
         <li><%= item.product.name %></li>
         <li>¥<%= item.product.price %></li>
       </ul>
+      <!-- Delete item -->
+      <%= link_to "Delete from cart",
+            order_item_path(item, order: @order),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
     <% end %>
   </section>
   <!-- Total pricing -->
