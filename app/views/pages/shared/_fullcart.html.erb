@@ -1,0 +1,21 @@
+<h1>This is the cart page</h1>
+<main>
+  <!-- Breakdown of cart items -->
+  <section>
+    <% @cart_items.each do |item| %>
+      <ul>
+        <li><%= item.product.name %></li>
+        <li>¥<%= item.product.price %></li>
+      </ul>
+      <!-- Delete item -->
+      <%= link_to "Delete from cart",
+            order_item_path(item, order: @order),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </section>
+  <!-- Total pricing -->
+  <section>
+    <h3>TOTAL: ¥<%= @order.total %></h3>
+  </section>
+</main>
