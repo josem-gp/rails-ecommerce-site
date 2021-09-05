@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def cart
-    @cart_items = Order.find_by(status: 1).order_items
+    @order = Order.where(user: current_user, status: 1)[0]
+    @cart_items = @order.order_items
   end
 end
