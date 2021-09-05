@@ -19,7 +19,7 @@
       <h1> Orders made: </h1>
       <% @orders.each do |order| %>
         <ul>
-          <li><%= order.total %><%= order.date %></li>
+          <li>Total: ¥<%= order.total %>    Date:<%= order.date.strftime('%a, %d %b %Y %H:%M:%S') %></li>
         </ul>
       <% end %>
     <% end %>

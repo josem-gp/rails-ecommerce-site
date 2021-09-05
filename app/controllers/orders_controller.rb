@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
 
     def update
         @order = Order.find(params[:id])
-        @order.update(status: 2)
+        t = Time.now()
+        time = t.strftime("%Y-%m-%d %H:%M:%S")
+        @order.update(status: 2, date: time)
         redirect_to root_path, notice: "Thank you for your order!"
     end
 end
