@@ -1,12 +1,25 @@
-<h1>User's show page!!</h1>
-<!-- Liked products -->
-<section>
-  <h1><%= @user.username %> has liked:</h1>
-  <% @favorites.each do |favorite| %>
-    <ul>
-      <li><%= favorite.name %></li>
-      <li><%= favorite.price %></li>
-      <li><%= favorite.rating %></li>
-    </ul>
-  <% end %>
-</section>
+<h1><%= @user.username %>show page!!</h1>
+<main>
+  <!-- Liked products -->
+  <section>
+    <% unless !@favorites || @favorites == [] %>
+      <h1> Liked products:</h1>
+      <% @favorites.each do |favorite| %>
+        <ul>
+          <li><%= favorite.name %></li>
+          <li><%= favorite.price %></li>
+          <li><%= favorite.rating %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </section>
+  <!-- Orders made -->
+  <section>
+    <h1> Orders made: </h1>
+    <% @orders.each do |order| %>
+      <ul>
+        <li><%= order.total %><%= order.date %></li>
+      </ul>
+    <% end %>
+  </section>
+</main>
