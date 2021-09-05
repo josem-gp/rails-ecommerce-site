@@ -17,6 +17,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../cart"><i class="fas fa-shopping-cart"></i></a>
+          <% if user.orders.where(status: 1)[0] && user.orders.where(status: 1)[0].order_items.count > 0 %>
+            <%= current_user.orders.where(status: 1)[0].order_items.count %>
+          <% end %>
         </li>
       </ul>
     </div>
