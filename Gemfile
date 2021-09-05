@@ -3,12 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+
+# Favoritor gem to simplify the favourite logic
+gem 'acts_as_favoritor'
 #Host images online
 gem 'cloudinary', '~> 1.16.0'
 # Faker gem to seed database for tests
 gem 'faker'
-# Favoritor gem to simplify the favourite logic
-gem 'acts_as_favoritor'
+# Add online payments with Stripe
+gem 'stripe'
 # To be able to use remote: true
 gem 'turbolinks_render'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
