@@ -5,6 +5,7 @@ class OrderItemsController < ApplicationController
         @order_item = OrderItem.new
         @order_item.product = @product
         @order_item.order = @order
+        raise
         if @order_item.save!
             redirect_to cart_path
         else
