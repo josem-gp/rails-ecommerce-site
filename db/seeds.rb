@@ -27,11 +27,13 @@ Product.delete_all
 
 puts "Deleting Admin user"
 
-User.find_by(username: "josegp_admin").delete
+User.delete_all
 
 puts "Creating Admin user"
 
 admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
+user1 = User.create!(username: "saki_test", email: "saki@hotmail.com", password: "1234567")
+user2 = User.create!(username: "allan_test", email: "allan@hotmail.com", password: "1234567")
 
 puts "Admin user created!"
 
