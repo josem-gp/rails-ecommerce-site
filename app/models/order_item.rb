@@ -5,8 +5,8 @@ class OrderItem < ApplicationRecord
   private
 
   def self.generate_order(user)
-    if Order.where({ user: user, status: 1 })
-      order = Order.where({ user: user, status: 1 })
+    if Order.where(user: user, status: 1).exists? 
+      order = Order.where(user: user, status: 1)[0]
     else
       order = Order.new(status: 1, total: 0, subtotal: 0, date: Date.today())
       order.user = user 
