@@ -25,11 +25,15 @@ puts "Deleting all Fake products"
 
 Product.delete_all
 
-puts "Deleting Admin user"
+puts "Deleting users"
 
 User.delete_all
 
-puts "Creating Admin user"
+puts "Deleting favorites"
+
+Favorite.delete_all
+
+puts "Creating users"
 
 admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
 user1 = User.create!(username: "saki_test", email: "saki@hotmail.com", password: "1234567")
