@@ -15,11 +15,13 @@
   </section>
   <!-- Orders made -->
   <section>
-    <h1> Orders made: </h1>
-    <% @orders.each do |order| %>
-      <ul>
-        <li><%= order.total %><%= order.date %></li>
-      </ul>
+    <% unless !@orders || @orders == [] %>
+      <h1> Orders made: </h1>
+      <% @orders.each do |order| %>
+        <ul>
+          <li><%= order.total %><%= order.date %></li>
+        </ul>
+      <% end %>
     <% end %>
   </section>
 </main>
