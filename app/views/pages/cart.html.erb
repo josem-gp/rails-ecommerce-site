@@ -1,21 +1,27 @@
 <h1>This is the cart page</h1>
 <main>
-  <!-- Breakdown of cart items -->
-  <section>
-    <% @cart_items.each do |item| %>
-      <ul>
-        <li><%= item.product.name %></li>
-        <li>¥<%= item.product.price %></li>
-      </ul>
-      <!-- Delete item -->
-      <%= link_to "Delete from cart",
+  <!-- Logic if there is an order -->
+  <% if @order %>
+    <!-- Breakdown of cart items -->
+    <section>
+      <% @cart_items.each do |item| %>
+        <ul>
+          <li><%= item.product.name %></li>
+          <li>¥<%= item.product.price %></li>
+        </ul>
+        <!-- Delete item -->
+        <%= link_to "Delete from cart",
             order_item_path(item, order: @order),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-    <% end %>
-  </section>
-  <!-- Total pricing -->
-  <section>
-    <h3>TOTAL: ¥<%= @order.total %></h3>
-  </section>
+      <% end %>
+    </section>
+    <!-- Total pricing -->
+    <section>
+      <h3>TOTAL: ¥<%= @order.total %></h3>
+    </section>
+    <!-- Logic if there is no order -->
+  <% else %>
+    <h3>Your cart is empty</h3>
+  <% end %>
 </main>
