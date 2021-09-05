@@ -10,10 +10,4 @@ class Order < ApplicationRecord
   #maybe i dont need subtotal...
   validates :total, presence: true, numericality: { only_integer: true }
 
-
-  private
-
-  def generate_total
-
-  end
 end
