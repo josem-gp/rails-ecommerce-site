@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   before_action :amount_to_be_charged
+  before_action :set_description
 
   def new
   end
@@ -10,7 +11,7 @@ class ChargesController < ApplicationController
 
     charge = StripeTool.create_charge(customer_id: customer.id, 
                                       amount: @amount,
-                                      description: 'Rails Stripe customer')
+                                      description: @description)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -20,6 +21,10 @@ class ChargesController < ApplicationController
   private
 
     def amount_to_be_charged
-      @amount = 500
+      @amount = 1000
+    end
+
+    def description
+      @description = "Some amazing product"
     end
 end
