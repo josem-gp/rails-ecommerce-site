@@ -30,7 +30,7 @@ class ChargesController < ApplicationController
       @amount = 1000
     end
 
-    def description
+    def set_description
       @description = "Some amazing product"
     end
 end
