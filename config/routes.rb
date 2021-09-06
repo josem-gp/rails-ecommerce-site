@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :order_items, only: [:new, :create, :destroy]
   resources :charges, only: [:new, :create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
 end

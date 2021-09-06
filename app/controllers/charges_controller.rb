@@ -1,6 +1,8 @@
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
   before_action :amount_to_be_charged
   before_action :set_description
+  
 
   def new
   end
@@ -13,9 +15,13 @@ class ChargesController < ApplicationController
                                       amount: @amount,
                                       description: @description)
 
+    redirect_to thanks_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  def thanks
   end
 
   private
