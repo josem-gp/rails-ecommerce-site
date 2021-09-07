@@ -42,7 +42,7 @@
         <button>Write a review</button>
         <div>
           <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <%= f.input :rating %>
+            <%= f.input :rating, required: true %>
             <%= f.input :title %>
             <%= f.input :content, as: :text %>
             <%= f.submit %>
