@@ -10,7 +10,9 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to product_path(@product)
         else
-            redirect_to product_path(@product), notice: "There was an error in your form"
+            # raise
+            # redirect_to product_path(@product), notice: "There was an error in your form"
+            render :new
         end
     end
 
