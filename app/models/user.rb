@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   acts_as_favoritor
 
-  validates :username, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }, length: { minimum: 3 }
   validates :email, presence: true, uniqueness: true
 
 end
