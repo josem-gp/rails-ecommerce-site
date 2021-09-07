@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    def new
+    end
     def create
         @user = current_user
         @product = Product.find(params[:product_id])
@@ -8,7 +10,7 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to product_path(@product)
         else
-            redirect_to product_path(@product)
+            redirect_to product_path(@product), notice: "There was an error in your form"
         end
     end
 
