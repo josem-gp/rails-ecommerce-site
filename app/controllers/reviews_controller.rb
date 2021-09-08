@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
         else
             # raise
             # redirect_to product_path(@product), notice: "There was an error in your form"
-            render :new
+            render 'products/show'
         end
     end
 
