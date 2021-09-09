@@ -36,8 +36,8 @@ Favorite.delete_all
 puts "Creating users"
 
 admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
-user1 = User.create!(username: "saki_test", email: "saki@hotmail.com", password: "1234567")
-user2 = User.create!(username: "allan_test", email: "allan@hotmail.com", password: "1234567")
+# user1 = User.create!(username: "saki_test", email: "saki@hotmail.com", password: "1234567")
+# user2 = User.create!(username: "allan_test", email: "allan@hotmail.com", password: "1234567")
 
 puts "Admin user created!"
 
