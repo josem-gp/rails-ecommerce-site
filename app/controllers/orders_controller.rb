@@ -14,6 +14,11 @@ class OrdersController < ApplicationController
         t = Time.now()
         time = t.strftime("%Y-%m-%d %H:%M:%S")
         @order.update(status: 2, date: time)
-        redirect_to root_path, notice: "Thank you for your order!"
+        if @order.update
+            ShippingConfirmationMailer.with(user: current_user, order: @order)
+            redirect_to root_path, notice: "Thank you for your order!"
+        else
+            redirect_to root_path, notice: "Product not ordered, please try again"
+        end
     end
 end
