@@ -1,0 +1,2 @@
+class ShippingConfirmationMailer < ApplicationMailer
+end
