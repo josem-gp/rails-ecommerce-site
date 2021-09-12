@@ -1,4 +1,5 @@
 class UserConfirmationMailer < ApplicationMailer
+
     def user_registration_email
         @user = params[:user]
 
