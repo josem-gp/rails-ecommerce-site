@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'about', to: 'pages#about'
-  get 'cart', to: 'pages#cart'
   resources :products, only: [:index, :show] do
     resources :reviews, only: [ :new, :create, :edit, :update, :destroy ]
     member do

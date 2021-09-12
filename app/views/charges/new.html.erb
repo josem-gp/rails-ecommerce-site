@@ -5,6 +5,15 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
+    <main>
+      <!-- Logic if there is no order -->
+      <% if !@order || @order.order_items == [] %>
+        <%= render :partial => "pages/shared/emptycart" %>
+        <!-- Logic if there is an order -->
+      <% else %>
+        <%= render :partial => "pages/shared/fullcart" %>
+      <% end %>
+    </main>
     <label class="amount">
       <span>Amount: <%= pretty_amount(@amount) %></span>
     </label>
