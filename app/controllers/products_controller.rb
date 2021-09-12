@@ -2,10 +2,12 @@ class ProductsController < ApplicationController
     skip_before_action :authenticate_user!, only: [ :index, :show ]
 
     def index
+        @user = current_user
         @products = Product.all
     end
 
     def show
+        @user = current_user
         @product = Product.find(params[:id])
         @reviews = @product.reviews
         @review = Review.new

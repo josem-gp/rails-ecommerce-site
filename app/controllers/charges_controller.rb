@@ -4,11 +4,12 @@ class ChargesController < ApplicationController
   
 
   def new
-    if current_user
-      @order = Order.where(user: current_user, status: 1)[0]
+    @user = current_user
+    if @user
+      @order = Order.where(user: @user, status: 1)[0]
       @cart_items = @order.order_items if @order
       if @order 
-        @amount = Order.where(user: current_user, status: 1)[0].total
+        @amount = Order.where(user: @user, status: 1)[0].total
         return @amount
       end
     else
