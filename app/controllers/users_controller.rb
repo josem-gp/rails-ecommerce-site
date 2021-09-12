@@ -6,8 +6,14 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @user = User.find(params[:id])
     end
 
     def update
+        @user = current_user
+        @icon = Icon.find(params[:icon_id])
+        @user.icon = @icon
+        @user.save
+        redirect_to user_path(@user)
     end
 end
