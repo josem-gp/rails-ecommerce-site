@@ -4,15 +4,14 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   resources :products, only: [:index, :show] do
-    resources :reviews, only: [ :new, :create, :edit, :update, :destroy ]
+    resources :reviews, only: [:create, :update, :destroy ]
     member do
       post 'toggle_favorite', to: "products#toggle_favorite"
     end
   end
 
   resources :users, only: [:show, :edit, :update]
-  resources :orders
-  resources :order_items, only: [:new, :create, :destroy]
+  resources :orders, only: [:edit, :update]
+  resources :order_items, only: [:create, :destroy]
   resources :charges, only: [:new, :create]
-  get 'thanks', to: 'charges#thanks', as: 'thanks'
 end
