@@ -33,6 +33,18 @@ puts "Deleting favorites"
 
 Favorite.delete_all
 
+puts "Creating Icons"
+
+default_icon = Icon::IMAGES[0]
+icons = Icon::IMAGES[1..-1]
+
+Icon.create!(name: "default_icon", url: default_icon)
+
+icons.each_with_index do |icon, idx|
+  Icon.create!(name: "icon#{idx}", url: icon)
+end
+
+
 puts "Creating users"
 
 admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%")
