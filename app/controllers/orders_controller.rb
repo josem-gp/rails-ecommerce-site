@@ -16,9 +16,6 @@ class OrdersController < ApplicationController
         time = t.strftime("%Y-%m-%d %H:%M:%S")
         if @order.update(status: 2, date: time)
             ShippingConfirmationMailer.with(user: @user, order: @order).shipping_confirmation_email.deliver_later
-            render "charges/thanks"
-        else
-           
         end
     end
 end

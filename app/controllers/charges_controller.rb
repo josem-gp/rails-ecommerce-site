@@ -27,13 +27,11 @@ class ChargesController < ApplicationController
 
     orders_controller = OrdersController.new
     orders_controller.update(current_user, Order.where(user: current_user, status: 1)[0])
+    redirect_to root_path, notice: "Your order has been made!"
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
-  end
-
-  def thanks
   end
 
   private
