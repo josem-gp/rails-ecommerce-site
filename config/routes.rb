@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :update]
   resources :orders, only: [:edit, :update]
   resources :order_items, only: [:create, :destroy]
   resources :charges, only: [:new, :create], path: 'cart'
