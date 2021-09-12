@@ -7,11 +7,6 @@ class UsersController < ApplicationController
         @orders = @user.orders.where(status: 2)
     end
 
-    def edit
-        raise
-        @user = User.find(params[:id])
-    end
-
     def update
         @user = current_user
         @icon = Icon.find(params[:icon_id])
