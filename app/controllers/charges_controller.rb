@@ -37,6 +37,6 @@ class ChargesController < ApplicationController
   private
 
     def set_description
-      @description = "Purchase in JapanTea"
+      @description = "Purchase in #{ENV['SHOP_NAME']}"
     end
 end
