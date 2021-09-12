@@ -13,9 +13,8 @@ class OrdersController < ApplicationController
         @user = current_user
         @order = Order.find(params[:id])
         t = Time.now()
-        time = t.strftime("%Y-%m-%d %H:%M:%S")
-        @order.update(status: 2, date: time)
-        if @order.update
+        time = t.strftime("%Y-%m-%d %H:%M:%S")       
+        if @order.update(status: 2, date: time)
             ShippingConfirmationMailer.with(user: @user, order: @order).shipping_confirmation_email.deliver_later
             redirect_to root_path, notice: "Thank you for your order!"
         else
