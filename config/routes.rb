@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :orders, only: [:edit, :update]
   resources :order_items, only: [:create, :destroy]
-  resources :charges, only: [:new, :create]
+  resources :charges, only: [:new, :create], path: 'cart'
 end

@@ -16,7 +16,7 @@
           <a class="nav-link" href="../about">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../charges/new"><i class="fas fa-shopping-cart"></i></a>
+          <a class="nav-link" href="../cart/new"><i class="fas fa-shopping-cart"></i></a>
           <% if current_user && current_user.orders.where(status: 1)[0] && current_user.orders.where(status: 1)[0].order_items.count > 0 %>
             <%= current_user.orders.where(status: 1)[0].order_items.count %>
           <% end %>
