@@ -28,6 +28,8 @@ class ChargesController < ApplicationController
   end
 
   def thanks
+    @order = Order.where(user: current_user, status: 1)[0]
+    redirect_to order_path(@order), remote: true, method: :patch
   end
 
   private
