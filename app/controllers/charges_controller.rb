@@ -21,21 +21,24 @@ class ChargesController < ApplicationController
                                       amount: @amount,
                                       description: @description)
 
-    redirect_to thanks_path
+    orders_controller = OrdersController.new
+    orders_controller.update(current_user, Order.where(user: current_user, status: 1)[0])
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
   end
 
   def thanks
-    @order = Order.where(user: current_user, status: 1)[0]
-    redirect_to order_path(@order), remote: true, method: :patch
   end
 
   private
 
     def amount_to_be_charged
+      if @order
       @amount = Order.where(user: current_user, status: 1)[0].total
+      return @amount
+      end
     end
 
     def set_description
