@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+        raise
         @user = User.find(params[:id])
     end
 
