@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
 
     def index
         @user = current_user
-        @products = Product.all
+        if params[:query].present?
+            @products = Product.search_by_name_and_description(params[:query])
+        else
+            @products = Product.all
+        end
     end
 
     def show
