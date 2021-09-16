@@ -44,7 +44,7 @@
           <%= simple_form_for([@product, @review], remote: true) do |f| %>
             <%= f.input :rating, required: true %>
             <%= f.input :title %>
-            <%= f.input :content, as: :text %>
+            <%= f.input :content, as: :text, input_html: { maxlength: 250 } %>
             <%= f.submit %>
           <% end %>
         </div>
