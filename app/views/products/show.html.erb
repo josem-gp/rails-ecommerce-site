@@ -42,7 +42,7 @@
         <button>Write a review</button>
         <div>
           <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <%= f.input :rating, required: true, error: 'Rating is mandatory, please specify one' %>
+            <%= f.input :rating, required: true, placeholder: 'Rating from 0 to 5', error: 'Rating is mandatory, please specify one' %>
             <%= f.input :title, error: 'Title is mandatory, please specify one' %>
             <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
             <%= f.submit %>
