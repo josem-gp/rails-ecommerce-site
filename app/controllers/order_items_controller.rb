@@ -1,11 +1,9 @@
 class OrderItemsController < ApplicationController
     def create
-        raise
-        @product = Product.find(params[:product_id])
         @order = OrderItem.generate_order(current_user)
         @order_item = OrderItem.new(order_items_params)
-        @order_item.product = @product
         @order_item.order = @order
+        raise
         if @order_item.save
             redirect_to edit_order_path(@order)
         else
@@ -23,6 +21,7 @@ class OrderItemsController < ApplicationController
     private
 
     def order_items_params
-        params.require(:order_item).permit(:quantity)
+        #for product_id to work, we passed @product.id
+        params.require(:order_item).permit(:quantity, :product_id)
     end
 end
