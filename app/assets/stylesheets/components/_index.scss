@@ -4,7 +4,8 @@
 @import "navbar";
 
 .radio_button input {
-  display: none;
+  opacity: 0;
+  transform: translateX(-16px);
 }
 
 .fa-star {
@@ -13,8 +14,12 @@
   -webkit-text-stroke-color: black;
 }
 
-.fa-star:hover ~ .fa-start,
-.fa-star:hover {
+.full-star {
+  color: #fbdf00;
+  -webkit-text-stroke-color: #fbdf00;
+}
+
+.active {
   color: #fbdf00;
   -webkit-text-stroke-color: #fbdf00;
 }
