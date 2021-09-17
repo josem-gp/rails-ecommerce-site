@@ -40,4 +40,4 @@ const ratings = () => {
   });
 };
 
-export default ratings();
+export { ratings };
