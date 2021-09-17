@@ -24,7 +24,7 @@
     </div>
     <!-- Cart button -->
     <% if current_user %>
-      <%= simple_form_for([@order_item], remote: true, method: :post) do |f| %>
+      <%= simple_form_for([@order_item], method: :post) do |f| %>
         <%= f.input :quantity, collection: 1..10, prompt: "Select a quantity" %>
         <%= f.submit%>
       <% end %>
