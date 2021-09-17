@@ -7,5 +7,14 @@
   display: none;
 }
 
+.fa-star {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.fa-star:hover ~ .fa-start,
 .fa-star:hover {
+  color: #fbdf00;
+  -webkit-text-stroke-color: #fbdf00;
 }
