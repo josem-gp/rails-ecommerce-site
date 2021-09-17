@@ -42,8 +42,13 @@
         <button>Write a review</button>
         <div>
           <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline, error: 'Rating is mandatory, please specify one' do |b| %>
-              <i class="fas fa-star radio_button"><%= b.radio_button %></i>
+            <%= f.collection_radio_buttons :rating, [[1]], :first, :last, item_wrapper_tag: false, boolean_style: :inline, error: 'Rating is mandatory, please specify one' do |b| %>
+              <!-- <i class="fas fa-star" id="#{b.radio_button}"><%#= b.radio_button %></i> -->
+              <i class="fas fa-star" ><a class="radio_button" value="1" name="review[rating]" id="review_rating_1"></a></i>
+              <i class="fas fa-star" ><a class="radio_button" value="2" name="review[rating]" id="review_rating_2"></a></i>
+              <i class="fas fa-star" ><a class="radio_button" value="3" name="review[rating]" id="review_rating_3"></a></i>
+              <i class="fas fa-star" ><a class="radio_button" value="4" name="review[rating]" id="review_rating_4"></a></i>
+              <i class="fas fa-star" ><a class="radio_button" value="5" name="review[rating]" id="review_rating_5"></a></i>
             <% end %>
             <%= f.input :title, error: 'Title is mandatory, please specify one' %>
             <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
