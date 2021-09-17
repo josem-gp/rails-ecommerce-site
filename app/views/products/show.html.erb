@@ -24,7 +24,7 @@
     </div>
     <!-- Cart button -->
     <% if current_user %>
-      <%= form_with action: order_items_path, method: :post do |form| %>
+      <%= form_for(@order_item) do |form| %>
         <%= form.number_field :quantity, in: 1.0..20.0, step: 1 %>
         <%= form.submit "ADD TO CART" %>
       <% end %>
