@@ -24,70 +24,74 @@
     </div>
     <!-- Cart button -->
     <% if current_user %>
-      <%= link_to order_items_path(product_id: @product), remote: true, method: :post do %>
-        <button>ADD TO CART</button>
+      <%= simple_form_for([@order_item], remote: true, method: :post) do |f| %>
+        <%= f.input :quantity, collection: 1..10, prompt: "Select a quantity" %>
+        <%= f.submit%>
       <% end %>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-        <button>ADD TO CART</button>
-      <% end %>
-    <% end %>
-  </section>
-  <!-- Review wrapper -->
-  <section>
-    <h1><%= "Reviews for #{@product.name}" %></h1>
-    <!-- Toggleable Create form  -->
-    <div>
-      <% if @user %>
-        <button>Write a review</button>
-        <div>
-          <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <%= f.collection_radio_buttons :rating, [[1],[2],[3],[4],[5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline, error: 'Rating is mandatory, please specify one' do |b| %>
-              <i class="fas fa-star radio_button"><%= b.radio_button %></i>
-            <% end %>
-            <%= f.input :title, error: 'Title is mandatory, please specify one' %>
-            <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
-            <%= f.submit %>
-          <% end %>
-        </div>
+      <%#= link_to order_items_path(product_id: @product), remote: true, method: :post do %>
+        <%# <button>ADD TO CART</button> %>
+        <%# end %>
       <% else %>
         <%= link_to new_user_session_path do %>
-          <button>Write a review</button>
+          <button>ADD TO CART</button>
         <% end %>
       <% end %>
-    </div>
-    <!-- Rendering of each review -->
-    <div>
-      <% if @reviews %>
-        <% @reviews.each do |review| %>
-          <ul>
-            <li><%= review.user.username %></li>
-            <li><%= review.title %></li>
-            <li><%= review.content %></li>
-            <li><%= review.rating %></li>
-          </ul>
-          <!-- Toggleable Edit Form -->
-          <% if review.user == @user || current_user == @admin %>
-            <%# <button>Edit the review</button> %>
-            <%# <div> %>
-            <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
-              <%# f.input :rating %>
-              <%# f.input :title %>
-              <%# f.input :content, as: :text %>
-              <%# f.submit %>
-              <%# end %>
-              <%# </div> %>
-              <!-- Delete button -->
-              <%= link_to "Delete review",
+    </section>
+    <!-- Review wrapper -->
+    <section>
+      <h1><%= "Reviews for #{@product.name}" %></h1>
+      <!-- Toggleable Create form  -->
+      <div>
+        <% if @user %>
+          <button>Write a review</button>
+          <div>
+            <%= simple_form_for([@product, @review], remote: true) do |f| %>
+              <%= f.collection_radio_buttons :rating, [[1],[2],[3],[4],[5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline, error: 'Rating is mandatory, please specify one' do |b| %>
+                <i class="fas fa-star radio_button"><%= b.radio_button %></i>
+              <% end %>
+              <%= f.input :title, error: 'Title is mandatory, please specify one' %>
+              <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
+              <%= f.submit %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <button>Write a review</button>
+          <% end %>
+        <% end %>
+      </div>
+      <!-- Rendering of each review -->
+      <div>
+        <% if @reviews %>
+          <% @reviews.each do |review| %>
+            <ul>
+              <li><%= review.user.username %></li>
+              <li><%= review.title %></li>
+              <li><%= review.content %></li>
+              <li><%= review.rating %></li>
+            </ul>
+            <!-- Toggleable Edit Form -->
+            <% if review.user == @user || current_user == @admin %>
+              <%# <button>Edit the review</button> %>
+              <%# <div> %>
+              <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
+                <%# f.input :rating %>
+                <%# f.input :title %>
+                <%# f.input :content, as: :text %>
+                <%# f.submit %>
+                <%# end %>
+                <%# </div> %>
+                <!-- Delete button -->
+                <%= link_to "Delete review",
             product_review_path(@product, review),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+              <% end %>
             <% end %>
-          <% end %>
-        <%end %>
-      </div>
-    </section>
-  </main>
-  <!-- footer -->
-  <footer>
-  </footer>
+          <%end %>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer>
+    </footer>

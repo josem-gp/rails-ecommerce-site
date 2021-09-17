@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
         @user = current_user
         @product = Product.find(params[:id])
         @reviews = @product.reviews
+        @order_item = OrderItem.new
         @review = Review.new
         @admin = User.find_by(username: "josegp_admin")
         if params[:user_id]
