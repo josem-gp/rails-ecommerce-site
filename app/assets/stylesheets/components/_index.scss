@@ -2,24 +2,4 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-
-.radio_button input {
-  opacity: 0;
-  transform: translateX(-16px);
-}
-
-.fa-star {
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
-.full-star {
-  color: #fbdf00;
-  -webkit-text-stroke-color: #fbdf00;
-}
-
-.active {
-  color: #fbdf00;
-  -webkit-text-stroke-color: #fbdf00;
-}
+@import "ratings";
