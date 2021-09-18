@@ -10,6 +10,7 @@ class Order < ApplicationRecord
   
   validates :total, presence: true, numericality: { only_integer: true }
 
+  after_save :merge_order_items
 
   private
 
@@ -20,4 +21,20 @@ class Order < ApplicationRecord
     end
     return total
   end
+
+  def merge_order_items
+    total = 0
+    order_items = self.order_items
+    # first find which product_id is repeated in the order
+    if order_items.group_by{ |e| e.product_id }.select { |k, v| v.size > 1 }.map(&:first)
+      # then find the order_items in that order whose product_id is the one we found before
+      duplicate_id = order_items.group_by{ |e| e.product_id }.select { |k, v| v.size > 1 }.map(&:first)[0]
+      order_items.where(product_id: duplicate_id).each do |item|
+        total += item.quantity
+        order_items.where(product_id: duplicate_id).first.update({quantity: total})
+        order_items.where(product_id: duplicate_id)[1..-1].each { |el| el.delete }
+      end
+    end
+  end
+
 end
