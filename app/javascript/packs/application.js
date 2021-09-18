@@ -29,12 +29,13 @@ import { start } from "turbolinks";
 
 import { ratings } from "../components/init_ratings";
 import { closeTag } from "../components/init_closeTag";
+import { fiveStars } from "../components/init_fiveStars";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
 
   ratings();
-
+  fiveStars();
   closeTag();
 });
