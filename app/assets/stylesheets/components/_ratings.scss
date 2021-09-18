@@ -40,7 +40,6 @@
 .invalid-title,
 .invalid-content {
   position: relative !important;
-  margin-bottom: 40px;
   display: block !important;
   width: 100% !important;
   background-image: url("error.svg");
@@ -58,33 +57,9 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
 }
 
-.invalid-stars::after {
-  content: "Rating is mandatory, please specify one";
-  color: #dc3545;
-  font-size: 12px;
-  position: absolute;
-  bottom: -24px;
-  left: 0;
-}
-
-.invalid-title-div::after {
-  content: "Title is mandatory, please specify one";
-  color: #dc3545;
-  font-size: 12px;
-  position: absolute;
-  bottom: 103px;
-}
-
-.invalid-content-div::after {
-  content: "Content is mandatory, please specify one";
-  color: #dc3545;
-  font-size: 12px;
-  position: absolute;
-  bottom: -28px;
-}
-
 .valid-title,
-.valid-content {
+.valid-content,
+.valid-stars {
   position: relative !important;
   margin-bottom: 40px;
   display: block !important;
