@@ -3,7 +3,6 @@ class OrderItemsController < ApplicationController
         @order = OrderItem.generate_order(current_user)
         @order_item = OrderItem.new(order_items_params)
         @order_item.order = @order
-        raise
         if @order_item.save
             redirect_to edit_order_path(@order)
         else
