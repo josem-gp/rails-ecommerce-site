@@ -14,6 +14,11 @@ const ratingsError = () => {
 
     if (ratings[0].classList.contains("active")) {
       console.log("free!");
+      ratingsDiv.classList.remove("invalid-stars");
+      titleDiv.classList.remove("invalid-title");
+      contenDiv.classList.remove("invalid-content");
+      titleWrapper.classList.remove("invalid-title-div");
+      contentWrapper.classList.remove("invalid-content-div");
     } else {
       event.preventDefault();
       console.log("doomed!");
