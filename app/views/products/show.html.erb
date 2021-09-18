@@ -44,7 +44,7 @@
         <button>Write a review</button>
         <div>
           <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <div class="review_rating invalid-stars">
+            <div class="review_rating invalid-stars error">
               <label class="is-required" for="review_rating">Rating</label>
               <%= f.collection_radio_buttons :rating, [[1],[2],[3],[4],[5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
                 <i class="fas fa-star radio_button"><%= b.radio_button %></i>
