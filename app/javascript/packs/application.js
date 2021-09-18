@@ -37,5 +37,5 @@ document.addEventListener("turbolinks:load", () => {
 
   ratings();
   ratingsError();
-  closeTag();
+  // closeTag();
 });

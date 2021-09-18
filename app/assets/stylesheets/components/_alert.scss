@@ -1,6 +1,8 @@
-.alert {
+.alert-lw {
   position: fixed;
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  padding: 8px;
+  border-radius: 4px;
 }
