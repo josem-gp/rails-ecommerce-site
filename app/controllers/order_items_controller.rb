@@ -13,16 +13,21 @@ class OrderItemsController < ApplicationController
     def update
         @order_item = OrderItem.find(params[:id])
         @item_quantity = OrderItem.find(params[:id]).quantity
+        @order = OrderItem.generate_order(current_user)
         if params[:format] == 'plus'
             @new_quantity = @item_quantity + 1
             @order_item.update({quantity: @new_quantity})
+            orders_controller = OrdersController.new
+            orders_controller.edit(@order)
         else
             if @item_quantity > 0
                 @new_quantity = @item_quantity - 1
                 @order_item.update({quantity: @new_quantity})
+                orders_controller = OrdersController.new
+                orders_controller.edit(@order)
             end
         end
-        redirect_to new_charge_path
+        # redirect_to new_charge_path
     end
 
     def destroy
