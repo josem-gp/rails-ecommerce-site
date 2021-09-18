@@ -15,9 +15,13 @@
             <li><%= item.product.name %></li>
             <li>¥<%= item.product.price %></li>
             <!-- Change quantity -->
-            <button>+</button>
+            <%= link_to order_item_path(item), method: :patch do %>
+              <button>+</button>
+            <%end %>
             <li><%= item.quantity %></li>
-            <button>-</button>
+            <%= link_to order_item_path(item), method: :patch do %>
+              <button>-</button>
+            <%end %>
           </ul>
           <!-- Delete item -->
           <%= link_to "Delete from cart",
