@@ -27,7 +27,7 @@ class OrderItemsController < ApplicationController
                 orders_controller.edit(@order)
             end
         end
-        # redirect_to new_charge_path
+        redirect_to new_charge_path
     end
 
     def destroy
