@@ -1,8 +1,17 @@
 .alert-lw {
-  position: fixed;
+  position: fixed !important;
   bottom: 16px;
   right: 16px;
   z-index: 1000;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px 8px !important;
+  border-radius: 4px !important;
+  padding-right: 50px !important;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 1px !important;
+  right: 8px !important;
+  padding: 0 !important;
+  color: inherit;
 }
