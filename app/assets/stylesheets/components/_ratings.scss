@@ -1,3 +1,5 @@
+// Style for stars in rating
+
 .radio_button input {
   opacity: 0;
   transform: translateX(-16px);
@@ -17,6 +19,19 @@
 .active {
   color: #fbdf00;
   -webkit-text-stroke-color: #fbdf00;
+}
+
+// Label Rating
+
+.is-required {
+  position: relative;
+  color: #212529;
+}
+
+.is-required::after {
+  content: "*";
+  position: absolute;
+  right: -9px;
 }
 
 // Valid / invalid styling in form
@@ -66,15 +81,4 @@
   font-size: 12px;
   position: absolute;
   bottom: -28px;
-}
-
-.is-required {
-  position: relative;
-  color: #212529;
-}
-
-.is-required::after {
-  content: "*";
-  position: absolute;
-  right: -9px;
 }
