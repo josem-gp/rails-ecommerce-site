@@ -50,22 +50,20 @@
   left: 0;
 }
 
-.invalid-title::after {
+.invalid-title-div::after {
   content: "Title is mandatory, please specify one";
   color: #dc3545;
   font-size: 12px;
   position: absolute;
-  bottom: -24px;
-  left: 0;
+  bottom: -80%;
 }
 
-.invalid-content::after {
+.invalid-content-div::after {
   content: "Content is mandatory, please specify one";
   color: #dc3545;
   font-size: 12px;
   position: absolute;
-  bottom: -24px;
-  left: 0;
+  bottom: -109%;
 }
 
 .is-required {
