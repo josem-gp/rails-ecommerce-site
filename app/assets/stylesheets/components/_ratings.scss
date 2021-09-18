@@ -20,6 +20,8 @@
 }
 
 .invalid-stars {
+  position: relative;
+  margin-bottom: 40px;
   padding-right: calc(1.5em + 0.75rem);
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
@@ -40,10 +42,19 @@
 .invalid-stars::after {
   content: "Rating is mandatory, please specify one";
   color: #dc3545;
-  box-sizing: border-box;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 12px;
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+}
+
+.is-required {
+  position: relative;
+  color: #212529;
+}
+
+.is-required::after {
+  content: "*";
+  position: absolute;
+  right: -9px;
 }
