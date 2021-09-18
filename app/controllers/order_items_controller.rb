@@ -10,6 +10,21 @@ class OrderItemsController < ApplicationController
         end
     end
 
+    def update
+        @order_item = OrderItem.find(params[:id])
+        @item_quantity = OrderItem.find(params[:id]).quantity
+        if params[:format] == 'plus'
+            @new_quantity = @item_quantity + 1
+            @order_item.update({quantity: @new_quantity})
+        else
+            if @item_quantity > 0
+                @new_quantity = @item_quantity - 1
+                @order_item.update({quantity: @new_quantity})
+            end
+        end
+        redirect_to new_charge_path
+    end
+
     def destroy
         @order = Order.find(params[:order])
         @order_item = OrderItem.find(params[:id])

@@ -15,11 +15,11 @@
             <li><%= item.product.name %></li>
             <li>¥<%= item.product.price %></li>
             <!-- Change quantity -->
-            <%= link_to order_item_path(item), method: :patch do %>
+            <%= link_to order_item_path(item, 'plus'), remote: true, method: :patch do %>
               <button>+</button>
             <%end %>
             <li><%= item.quantity %></li>
-            <%= link_to order_item_path(item), method: :patch do %>
+            <%= link_to order_item_path(item, 'minus'), remote: true, method: :patch do %>
               <button>-</button>
             <%end %>
           </ul>
