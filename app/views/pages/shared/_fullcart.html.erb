@@ -14,6 +14,10 @@
           <ul>
             <li><%= item.product.name %></li>
             <li>¥<%= item.product.price %></li>
+            <!-- Change quantity -->
+            <button>+</button>
+            <li><%= item.quantity %></li>
+            <button>-</button>
           </ul>
           <!-- Delete item -->
           <%= link_to "Delete from cart",
