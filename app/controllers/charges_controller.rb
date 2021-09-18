@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
     @user = current_user
     if @user
       @order = Order.where(user: @user, status: 1)[0]
-      @cart_items = @order.order_items if @order
+      @cart_items = @order.order_items.order(:id) if @order
       if @order 
         @amount = Order.where(user: @user, status: 1)[0].total
         return @amount
