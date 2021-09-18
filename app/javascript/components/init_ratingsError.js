@@ -10,7 +10,7 @@ const ratingsError = () => {
   const contentWrapper = document.querySelector("#content");
 
   submitRating.addEventListener("click", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     ratings.forEach((rating) => {
       if (rating.classList.contains("active")) {
         ratingsDiv.classList.remove("invalid-stars");
@@ -19,11 +19,19 @@ const ratingsError = () => {
         titleWrapper.classList.remove("invalid-title-div");
         contentWrapper.classList.remove("invalid-content-div");
       } else {
+        if (titleDiv.value && contenDiv.value) {
+          titleDiv.classList.add("valid-title");
+          contenDiv.classList.add("valid-content");
+        } else if (titleDiv.value && !contenDiv.value) {
+          titleDiv.classList.add("valid-title");
+          contenDiv.classList.add("invalid-content");
+          contentWrapper.classList.add("invalid-content-div");
+        } else if (!titleDiv.value && contenDiv.value) {
+          titleDiv.classList.add("invalid-title");
+          titleWrapper.classList.add("invalid-title-div");
+          contenDiv.classList.add("valid-content");
+        }
         ratingsDiv.classList.add("invalid-stars");
-        titleDiv.classList.add("invalid-title");
-        contenDiv.classList.add("invalid-content");
-        titleWrapper.classList.add("invalid-title-div");
-        contentWrapper.classList.add("invalid-content-div");
       }
     });
   });
