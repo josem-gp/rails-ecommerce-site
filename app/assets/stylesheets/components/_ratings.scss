@@ -19,6 +19,8 @@
   -webkit-text-stroke-color: #fbdf00;
 }
 
+// Valid / invalid styling in form
+
 .invalid-stars,
 .invalid-title,
 .invalid-content {
@@ -55,7 +57,7 @@
   color: #dc3545;
   font-size: 12px;
   position: absolute;
-  bottom: -80%;
+  bottom: 103px;
 }
 
 .invalid-content-div::after {
@@ -63,7 +65,7 @@
   color: #dc3545;
   font-size: 12px;
   position: absolute;
-  bottom: -109%;
+  bottom: -28px;
 }
 
 .is-required {
