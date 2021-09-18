@@ -1,7 +1,6 @@
-const stars = document.querySelectorAll("input[type='radio']");
-
 const ratings = () => {
-  console.log("hi from inside!");
+  const stars = document.querySelectorAll("input[type='radio']");
+
   stars.forEach((star) => {
     star.addEventListener("mouseover", (event) => {
       const filteredStars = Array.from(stars).filter(
