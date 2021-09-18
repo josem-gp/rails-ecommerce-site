@@ -17,7 +17,13 @@ class Order < ApplicationRecord
   def self.update_total(order)
     total = 0
     order.order_items.each do |order_item|
-      total += (order_item.product.price * order_item.quantity)
+      order_quantity = 
+        if order_item.quantity.nil? 
+          1
+        else
+          order_item.quantity
+        end
+      total += (order_item.product.price * order_quantity)
     end
     return total
   end
@@ -30,7 +36,14 @@ class Order < ApplicationRecord
       # then find the order_items in that order whose product_id is the one we found before
       duplicate_id = order_items.group_by{ |e| e.product_id }.select { |k, v| v.size > 1 }.map(&:first)[0]
       order_items.where(product_id: duplicate_id).each do |item|
-        total += item.quantity
+        item_quantity = 
+        if item.quantity.nil? 
+          1
+        else
+          item.quantity
+        end
+
+        total += item_quantity
         order_items.where(product_id: duplicate_id).first.update({quantity: total})
         order_items.where(product_id: duplicate_id)[1..-1].each { |el| el.delete }
       end
