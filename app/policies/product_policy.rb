@@ -14,6 +14,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin == user.admin
+    user.admin?
+  end
+
+  def toggle_favorite?
+    true
   end
 end

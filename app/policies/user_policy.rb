@@ -6,10 +6,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    user == user
+    true
   end
 
   def update?
-    user == user
+    true
   end
 end
