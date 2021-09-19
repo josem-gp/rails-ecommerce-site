@@ -10,6 +10,6 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    user == user.admin
+    user.admin == user.admin
   end
 end

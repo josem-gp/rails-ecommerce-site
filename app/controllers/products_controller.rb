@@ -4,11 +4,10 @@ class ProductsController < ApplicationController
     def index
         @user = current_user
         if params[:query].present?
-            @products = Product.search_by_name_and_description(params[:query])
+            @products = policy_scope(Product).search_by_name_and_description(params[:query])
         else
-            @products = Product.all
+            @products = policy_scope(Product)
         end
-        authorize @products
     end
 
     def create
@@ -21,6 +20,7 @@ class ProductsController < ApplicationController
         else 
             redirect_to root_path
         end 
+        redirect_to products_path
     end
 
     def show
@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-        params.require(:product).permit(:name, :description, :price, :availability, :photos)
+        params.require(:product).permit(:name, :description, :price, :availability, photos: [])
     end
 end
