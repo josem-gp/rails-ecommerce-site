@@ -30,6 +30,7 @@ import { start } from "turbolinks";
 import { ratings } from "../components/init_ratings";
 import { closeTag } from "../components/init_closeTag";
 import { ratingsError } from "../components/init_ratingsError";
+import { loginError } from "../components/init_loginError";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -37,5 +38,6 @@ document.addEventListener("turbolinks:load", () => {
 
   ratings();
   ratingsError();
+  loginError();
   closeTag();
 });
