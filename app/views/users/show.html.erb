@@ -28,7 +28,7 @@
   </section>
   <!-- Add new products -->
   <section>
-    <% if current_user == @admin %>
+    <% if @user.admin %>
       <%= simple_form_for @new_product do |f| %>
         <%= f.input :name %>
         <%= f.text :description %>
