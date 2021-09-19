@@ -1,7 +1,11 @@
 class OrderItemsController < ApplicationController
     def create
         @order = OrderItem.generate_order(current_user)
-        @order_item = OrderItem.new(order_items_params)
+        if order_items_params
+            @order_item = OrderItem.new(order_items_params)
+        else
+            @order_item = OrderItem.new(quantity: 1, product_id: params[:product_id])
+        end
         @order_item.order = @order
         authorize @order_item
         if @order_item.save
@@ -44,6 +48,6 @@ class OrderItemsController < ApplicationController
 
     def order_items_params
         #for product_id to work, we passed @product.id
-        params.require(:order_item).permit(:quantity, :product_id)
+        params[:order_item] ? params.require(:order_item).permit(:quantity, :product_id) : nil
     end
 end
