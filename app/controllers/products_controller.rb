@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
         else
             @user = current_user
         end
+        authorize @product
     end
 
     def toggle_favorite
