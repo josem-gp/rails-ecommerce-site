@@ -29,7 +29,10 @@ class ChargesController < ApplicationController
                                       description: @description)
 
     orders_controller = OrdersController.new
-    orders_controller.update(current_user, Order.where(user: current_user, status: 1)[0])
+    @user = current_user
+    @order = Order.where(user: current_user, status: 1)[0]
+    authorize @order
+    orders_controller.update(@user, @order)
     redirect_to root_path, notice: "Your order has been made!"
 
   rescue Stripe::CardError => e
