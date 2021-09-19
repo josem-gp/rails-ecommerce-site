@@ -9,10 +9,12 @@ const ratingsError = () => {
 
   if (submitRating) {
     submitRating.addEventListener("click", (event) => {
-      console.log("clicked!");
       ratingsDiv.classList.remove("invalid-stars");
+      contentDiv.classList.remove("valid-stars");
       titleDiv.classList.remove("invalid-title");
+      titleDiv.classList.remove("valid-title");
       contentDiv.classList.remove("invalid-content");
+      contentDiv.classList.remove("valid-content");
       titleWrapper.classList.remove("invalid-title-div");
       contentWrapper.classList.remove("invalid-content-div");
 
