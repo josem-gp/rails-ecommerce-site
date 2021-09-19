@@ -29,10 +29,10 @@
   <!-- Add new products -->
   <section>
     <% if @user.admin %>
-      <%= simple_form_for @new_product do |f| %>
+      <%= simple_form_for @product do |f| %>
         <%= f.input :name %>
-        <%= f.text :description %>
-        <%= f.integer :price %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :price, as: :integer %>
         <%= f.input :availability, collection: 1..2 %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.button :submit %>

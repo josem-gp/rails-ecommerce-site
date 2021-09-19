@@ -18,11 +18,10 @@ class ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
-        @new_product = Product.new()
         @reviews = @product.reviews
         @order_item = OrderItem.new
         @review = Review.new
-        @admin = User.find_by(username: "josegp_admin")
+        @admin = User.find_by(admin: true)
         if params[:user_id]
             @user = User.find(params[:user_id])
         else
