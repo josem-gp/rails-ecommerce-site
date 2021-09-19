@@ -5,6 +5,7 @@ class ChargesController < ApplicationController
 
   def new
     @user = current_user
+    authorize @user
     if @user
       @order = Order.where(user: @user, status: 1)[0]
       @cart_items = @order.order_items.order(:id) if @order

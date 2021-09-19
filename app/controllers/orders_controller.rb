@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
         if order.nil?
             @order = Order.find(params[:id])
             @total = Order.update_total(@order)
+            authorize @order
             if @order.update(total: @total)
                 redirect_to request.referrer
             else 

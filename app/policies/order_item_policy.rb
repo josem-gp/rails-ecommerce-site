@@ -1,15 +1,16 @@
-class UserPolicy < ApplicationPolicy
+class OrderItemPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def show?
+  def create?
     !user.nil?
   end
 
   def update?
-    !user.nil?
+    record.order.user == user
   end
+
 end

@@ -18,6 +18,6 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def toggle_favorite?
-    true
+    !user.nil?
   end
 end
