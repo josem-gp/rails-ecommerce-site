@@ -4,7 +4,7 @@ const loginError = () => {
   const checkboxDiv = document.querySelector("#user_remember_me");
   const errorTag = document.querySelector(".alert-warning");
 
-  if (errorTag) {
+  if (window.location.href.includes("/users/sign_in") && errorTag) {
     console.log("yes!");
     if (emailDiv && passwordDiv && checkboxDiv) {
       console.log("we here!");
