@@ -9,6 +9,7 @@
 require "faker"
 require "open-uri"
 
+
 puts "Deleting all Fake OrderItems"
 
 OrderItem.delete_all
@@ -28,6 +29,10 @@ Product.delete_all
 puts "Deleting users"
 
 User.delete_all
+
+puts "Deleting all Icons"
+
+Icon.delete_all
 
 puts "Deleting favorites"
 
