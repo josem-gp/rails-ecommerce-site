@@ -12,6 +12,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 # Add search functionality
 gem 'pg_search', '~> 2.3.0'
+# Add pundit for authorization
+gem 'pundit'
 # Add online payments with Stripe
 gem 'stripe'
 # To be able to use remote: true
