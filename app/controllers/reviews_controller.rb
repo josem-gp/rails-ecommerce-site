@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.user = @user
         @review.product = @product
+        authorize @review
         if @review.save
             redirect_to product_path(@product)
         else
@@ -18,12 +19,15 @@ class ReviewsController < ApplicationController
     def update 
         @product = Product.find(params[:product_id])
         @review = Review.find(params[:id])
+        authorize @review
         @review.update(review_params)
         redirect_to product_path(@product)
+        
     end
     def destroy
         @product = Product.find(params[:product_id])
         @review = Review.find(params[:id])
+        authorize @review
         @review.destroy
         redirect_to product_path(@product)
     end
