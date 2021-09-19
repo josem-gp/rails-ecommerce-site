@@ -10,9 +10,15 @@ class ProductsController < ApplicationController
         end
     end
 
+    def new
+    end
+
+    def create
+    end
+
     def show
-        @user = current_user
         @product = Product.find(params[:id])
+        @new_product = Product.new()
         @reviews = @product.reviews
         @order_item = OrderItem.new
         @review = Review.new

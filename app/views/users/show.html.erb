@@ -26,4 +26,17 @@
       <% end %>
     <% end %>
   </section>
+  <!-- Add new products -->
+  <section>
+    <% if current_user == @admin %>
+      <%= simple_form_for @new_product do |f| %>
+        <%= f.input :name %>
+        <%= f.text :description %>
+        <%= f.integer :price %>
+        <%= f.input :availability, collection: 1..2 %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit %>
+      <% end %>
+    <% end %>
+  </section>
 </main>

@@ -5,9 +5,7 @@ const loginError = () => {
   const errorTag = document.querySelector(".alert-warning");
 
   if (window.location.href.includes("/users/sign_in") && errorTag) {
-    console.log("yes!");
     if (emailDiv && passwordDiv && checkboxDiv) {
-      console.log("we here!");
       emailDiv.classList.remove("is-valid");
       emailDiv.classList.add("invalid-neutral");
       passwordDiv.classList.add("invalid-neutral");
