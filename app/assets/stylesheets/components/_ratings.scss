@@ -38,8 +38,10 @@
 
 .invalid-stars,
 .invalid-title,
-.invalid-content {
+.invalid-content,
+.invalid-neutral {
   position: relative !important;
+  margin-bottom: 40px;
   display: block !important;
   width: 100% !important;
   background-image: url("error.svg") !important;
@@ -77,4 +79,36 @@
   border: 1px solid #28a745 !important;
   border-radius: 0.25rem !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.invalid-title-div,
+.invalid-content-div {
+  position: relative;
+}
+
+.invalid-stars::after {
+  content: "Rating is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
+.invalid-title-div::after {
+  content: "Title is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
+.invalid-content-div::after {
+  content: "Content is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: 38px;
 }
