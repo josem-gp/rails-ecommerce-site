@@ -13,4 +13,7 @@ class OrderItemPolicy < ApplicationPolicy
     record.order.user == user
   end
 
+  def destroy?
+    record.order.user == user
+  end
 end

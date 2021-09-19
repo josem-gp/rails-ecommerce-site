@@ -5,7 +5,8 @@ class ChargePolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    true
-  end
+  # def new?
+  #   record.user == user
+  # end
+
 end

@@ -1,14 +1,15 @@
 class ChargesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_description
   
 
   def new
     @user = current_user
-    authorize @user
+    
     if @user
       @order = Order.where(user: @user, status: 1)[0]
       @cart_items = @order.order_items.order(:id) if @order
+      authorize @order
       if @order 
         @amount = Order.where(user: @user, status: 1)[0].total
         return @amount
