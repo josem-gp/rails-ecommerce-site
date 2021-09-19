@@ -50,11 +50,11 @@
                 <i class="fas fa-star radio_button"><%= b.radio_button %></i>
               <% end %>
             </div>
-            <div id="title" class="invalid-title-div">
-              <%= f.input :title, input_html: { class: 'invalid-title'}, error: 'Title is mandatory, please specify one' %>
+            <div id="title">
+              <%= f.input :title, error: 'Title is mandatory, please specify one' %>
             </div>
-            <div id="content" class="invalid-content-div">
-              <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { class: 'invalid-content' , maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
+            <div id="content">
+              <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
             </div>
             <%= f.submit %>
           <% end %>
