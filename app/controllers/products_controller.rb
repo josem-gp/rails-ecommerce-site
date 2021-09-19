@@ -8,12 +8,19 @@ class ProductsController < ApplicationController
         else
             @products = Product.all
         end
-    end
-
-    def new
+        authorize @products
     end
 
     def create
+        @product = Product.new(product_params)
+        if current_user.admin
+            @user = current_user
+            @product.user = @user
+            authorize @product
+            @product.save!
+        else 
+            redirect_to root_path
+        end 
     end
 
     def show
@@ -33,5 +40,11 @@ class ProductsController < ApplicationController
         @product = Product.find_by(id: params[:id])
         current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
         redirect_to request.referrer #this will take the path we were at before the current path (products#toggle_favorite)
+    end
+
+    private
+
+    def product_params
+        params.require(:product).permit(:name, :description, :price, :availability, :photos)
     end
 end

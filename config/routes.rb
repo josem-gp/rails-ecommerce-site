@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'about', to: 'pages#about'
-  resources :products, only: [:index, :show, :new, :create] do
+  resources :products, only: [:index, :show, :create] do
     resources :reviews, only: [:create, :update, :destroy ]
     member do
       post 'toggle_favorite', to: "products#toggle_favorite"
