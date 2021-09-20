@@ -21,7 +21,7 @@ class Review < ApplicationRecord
       total += review.rating
     end
 
-    review_average = (total/product.reviews.count).round()
+    review_average = (total/product.reviews.count).round(1)
 
     product.update({rating: review_average})
 
