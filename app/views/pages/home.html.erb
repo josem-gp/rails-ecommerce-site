@@ -35,7 +35,23 @@
               <%= cl_image_tag product.photos[1].key, height: 300, width: 400, crop: :fill %>
               <li><%= product.name %></li>
               <li>¥<%= product.price %></li>
-              <li><%= product.rating %></li>
+              <div>
+                <% if product.rating %>
+                  <% product.rating.floor.times do %>
+                    <i class="fas fa-star active"></i>
+                  <%end %>
+                  <% if product.rating.to_s.include?('.5') %>
+                    <i class="fas fa-star-half-alt active"></i>
+                  <% end %>
+                  <% (5 - product.rating.ceil).times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% else %>
+                  <% 5.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <%end %>
+              </div>
             </ul>
           <% end %>
         </div>
