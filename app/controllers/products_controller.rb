@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     def index
         @user = current_user
         if params[:query].present?
-            @products = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
+            @products_highlight = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
         else
             @products = policy_scope(Product)
         end
