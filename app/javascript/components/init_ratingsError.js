@@ -1,5 +1,5 @@
 const ratingsError = () => {
-  const ratings = document.querySelectorAll(".fa-star");
+  const ratings = document.querySelectorAll(".radio_button.fa-star");
   const submitRating = document.querySelector('input[value="Create Review"]');
   const ratingsDiv = document.querySelector(".review_rating");
   const titleDiv = document.querySelector('input[name="review[title]"');
