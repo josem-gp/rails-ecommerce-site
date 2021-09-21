@@ -4,7 +4,7 @@ class Review < ApplicationRecord
 
   validates :title, presence: true
   validates :rating, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
-  validates :content, presence: true, length: { in: 5..250 }
+  validates :content, presence: true, length: { in: 3..250 }
 
   after_save :add_rating_to_product 
 

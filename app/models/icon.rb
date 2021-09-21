@@ -8,4 +8,5 @@ class Icon < ApplicationRecord
 
   has_many :users
   validates :url, presence: true, inclusion: { in: IMAGES }
+  validates :name, presence: true
 end
