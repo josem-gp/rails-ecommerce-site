@@ -1,9 +1,9 @@
 <main>
   <!-- Logic if there is no order -->
   <% if !@order || @order.order_items == [] %>
-    <%= render :partial => "pages/shared/emptycart" %>
+    <%= render "charges/shared/emptycart" %>
     <!-- Logic if there is an order -->
   <% else %>
-    <%= render :partial => "pages/shared/fullcart" %>
+    <%= render "charges/shared/fullcart" %>
   <% end %>
 </main>
