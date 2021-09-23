@@ -16,64 +16,11 @@
   <section>
     <h1><%= "Reviews for #{@product.name}" %></h1>
     <!-- Toggleable Create form  -->
-    <div>
-      <% if @user %>
-        <button>Write a review</button>
-        <div>
-          <%= simple_form_for([@product, @review], remote: true) do |f| %>
-            <div class="review_rating">
-              <label class="is_required" for="review_rating">Rating</label>
-              <%= f.collection_radio_buttons :rating, [[1],[2],[3],[4],[5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
-                <i class="fas fa-star radio_button"><%= b.radio_button %></i>
-              <% end %>
-            </div>
-            <div id="title">
-              <%= f.input :title, error: 'Title is mandatory, please specify one' %>
-            </div>
-            <div id="content">
-              <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
-            </div>
-            <%= f.submit %>
-          <% end %>
-        </div>
-      <% else %>
-        <%= link_to new_user_session_path do %>
-          <button>Write a review</button>
-        <% end %>
-      <% end %>
-    </div>
-    <!-- Rendering of each review -->
-    <div>
-      <% if @reviews %>
-        <% @reviews.each do |review| %>
-          <ul>
-            <li><%= review.user.username %></li>
-            <li><%= review.title %></li>
-            <li><%= review.content %></li>
-            <li><%= review.rating %></li>
-          </ul>
-          <!-- Toggleable Edit Form -->
-          <% if review.user == @user || current_user == @admin %>
-            <%# <button>Edit the review</button> %>
-            <%# <div> %>
-            <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
-              <%# f.input :rating %>
-              <%# f.input :title %>
-              <%# f.input :content, as: :text %>
-              <%# f.submit %>
-              <%# end %>
-              <%# </div> %>
-              <!-- Delete button -->
-              <%= link_to "Delete review",
-            product_review_path(@product, review),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-            <% end %>
-          <% end %>
-        <%end %>
-      </div>
-    </section>
-  </main>
-  <!-- footer -->
-  <footer>
-  </footer>
+    <%= render "products/shared/create_review",  product: @product, review: @review, user: @user %>
+    <!-- Rendering of each review & update/delete -->
+    <%= render "products/shared/render_review", reviews: @reviews, product: @product, user: @user, admin: @admin %>
+  </section>
+</main>
+<!-- footer -->
+<footer>
+</footer>

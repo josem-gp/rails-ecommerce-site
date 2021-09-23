@@ -1,0 +1,26 @@
+<div>
+  <% if reviews %>
+    <% reviews.each do |review| %>
+      <ul>
+        <li><%= review.user.username %></li>
+        <li><%= review.title %></li>
+        <li><%= review.content %></li>
+        <li><%= review.rating %></li>
+      </ul>
+      <!-- Toggleable Edit Form -->
+      <% if review.user == user || current_user == admin %>
+        <%# <button>Edit the review</button> %>
+        <%# <div> %>
+        <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
+          <%# f.input :rating %>
+          <%# f.input :title %>
+          <%# f.input :content, as: :text %>
+          <%# f.submit %>
+          <%# end %>
+          <%# </div> %>
+          <!-- Delete button -->
+          <%= link_to "Delete review", product_review_path(product, review), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+      <% end %>
+    <%end %>
+  </div>
