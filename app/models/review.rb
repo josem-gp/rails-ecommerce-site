@@ -6,7 +6,9 @@ class Review < ApplicationRecord
   validates :rating, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
   validates :content, presence: true, length: { in: 3..250 }
 
-  after_save :add_rating_to_product 
+  after_save :add_rating_to_product
+  after_destroy :add_rating_to_product
+
 
   private
 
@@ -16,14 +18,17 @@ class Review < ApplicationRecord
     product = self.product
 
     total = 0
+    if product.reviews.count > 0
+      product.reviews.each do |review| 
+        total += review.rating
+      end
 
-    product.reviews.each do |review| 
-      total += review.rating
+      review_average = ((total.to_f/product.reviews.count) * 2.0).round / 2.0
+
+      product.update({rating: review_average})
+    else
+      product.update({rating: 0})
     end
-
-    review_average = ((total.to_f/product.reviews.count) * 2.0).round / 2.0
-
-    product.update({rating: review_average})
 
   end
 

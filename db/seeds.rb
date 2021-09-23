@@ -52,7 +52,7 @@ end
 
 puts "Creating users"
 
-admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "!Admin241%", admin: true)
+admin = User.create!(username: "josegp_admin", email: "jose-sevilla91@hotmail.es", password: "1234567", admin: true)
 # user1 = User.create!(username: "saki_test", email: "saki@hotmail.com", password: "1234567")
 # user2 = User.create!(username: "allan_test", email: "allan@hotmail.com", password: "1234567")
 
@@ -77,7 +77,6 @@ files = [file, file1, file2, file3, file4, file5, file6, file7, file8]
         name: Faker::Tea.variety, 
         description: Faker::Lorem.sentence(word_count: 20), 
         price: rand(2000...10000), 
-        rating: rand(1..5), 
         availability: rand(1..2)
     )
     product.user = admin
