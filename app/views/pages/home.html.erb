@@ -8,13 +8,7 @@
     <div class="container">
       <% @products.each do |product| %>
         <!-- Favoritor -->
-        <div>
-          <% if current_user %>
-            <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
-              <%= render 'pages/like_button', product: product %>
-            <% end %>
-          <% end %>
-        </div>
+        <%= render "pages/shared/favoritor", product: product  %>
         <!-- Cart icon -->
         <%= render "pages/shared/cart_display", product: product %>
         <!-- Product info -->
