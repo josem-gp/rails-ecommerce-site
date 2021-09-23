@@ -8,13 +8,7 @@
     <!-- Images & Info -->
     <%= render "products/shared/display_product", product: @product %>
     <!-- Favoritor -->
-    <div>
-      <% if current_user %>
-        <%= link_to toggle_favorite_product_path(@product), remote: true, method: :post do %>
-          <%= render 'pages/like_button', product: @product %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render "products/shared/favorite_product", product: @product %>
     <!-- Cart button -->
     <% if current_user && @order_item %>
       <%= form_for(@order_item) do |form| %>
