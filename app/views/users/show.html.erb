@@ -8,19 +8,10 @@
   </section>
   <!-- Orders made -->
   <section>
-    <%= render 'users/shared/liked_list', orders: @orders %>
+    <%= render 'users/shared/orders_list', orders: @orders %>
   </section>
   <!-- Add new products -->
   <section>
-    <% if @user.admin %>
-      <%= simple_form_for @product do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description, as: :text %>
-        <%= f.input :price, as: :integer %>
-        <%= f.input :availability, collection: 1..2 %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.button :submit %>
-      <% end %>
-    <% end %>
+    <%= render 'users/shared/create_product', user: @user, product: @product %>
   </section>
 </main>
