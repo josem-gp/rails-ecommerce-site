@@ -1,0 +1,10 @@
+<% unless !favorites || favorites == [] %>
+  <h1> Liked products:</h1>
+  <% favorites.each do |favorite| %>
+    <ul>
+      <li><%= favorite.name %></li>
+      <li><%= favorite.price %></li>
+      <li><%= favorite.rating %></li>
+    </ul>
+  <% end %>
+<% end %>

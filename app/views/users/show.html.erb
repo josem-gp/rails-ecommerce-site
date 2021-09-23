@@ -4,27 +4,11 @@
 <main>
   <!-- Liked products -->
   <section>
-    <% unless !@favorites || @favorites == [] %>
-      <h1> Liked products:</h1>
-      <% @favorites.each do |favorite| %>
-        <ul>
-          <li><%= favorite.name %></li>
-          <li><%= favorite.price %></li>
-          <li><%= favorite.rating %></li>
-        </ul>
-      <% end %>
-    <% end %>
+    <%= render 'users/shared/liked_list', favorites: @favorites %>
   </section>
   <!-- Orders made -->
   <section>
-    <% unless !@orders || @orders == [] %>
-      <h1> Orders made: </h1>
-      <% @orders.each do |order| %>
-        <ul>
-          <li>Total: ¥<%= order.total %>    Date:<%= order.date.strftime('%a, %d %b %Y %H:%M:%S') %></li>
-        </ul>
-      <% end %>
-    <% end %>
+    <%= render 'users/shared/liked_list', orders: @orders %>
   </section>
   <!-- Add new products -->
   <section>
