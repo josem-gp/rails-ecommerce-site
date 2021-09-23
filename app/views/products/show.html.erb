@@ -10,17 +10,7 @@
     <!-- Favoritor -->
     <%= render "products/shared/favorite_product", product: @product %>
     <!-- Cart button -->
-    <% if current_user && @order_item %>
-      <%= form_for(@order_item) do |form| %>
-        <%= form.hidden_field :product_id, value: @product.id %>
-        <%= form.number_field :quantity, in: 1.0..20.0, step: 1, value: 1 %>
-        <%= form.submit "ADD TO CART" %>
-      <% end %>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-        <button>ADD TO CART</button>
-      <% end %>
-    <% end %>
+    <%= render "products/shared/cart_product", product: @product, order_item: @order_item %>
   </section>
   <!-- Review wrapper -->
   <section>
