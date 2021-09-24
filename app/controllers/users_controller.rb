@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     end
 
     def update
+        raise
         @user = current_user
         @icon = Icon.find(params[:icon_id])
         @user.icon = @icon

@@ -1,6 +1,18 @@
 <h1>This is the cart page</h1>
 <!-- Info needed for the shipping -->
 <section>
+  <h3>Shipping Address</h3>
+  <% if @user.name %>
+    <p><%= @user.name %></p>
+    <p><%= @user.shipping_address %></p>
+  <% else %>
+    <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :shipping_address %>
+      <%= f.input :phone_number %>
+      <%= f.button :submit, label: 'Add shipping information' %>
+    <% end %>
+  <% end %>
 </section>
 <!-- Payment logic -->
 <%= render "charges/shared/payment_stripe", cart_items: @cart_items, order: @order, amount: @amount, description: @description %>
