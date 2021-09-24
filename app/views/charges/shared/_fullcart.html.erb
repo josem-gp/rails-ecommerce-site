@@ -1,3 +1,6 @@
 <h1>This is the cart page</h1>
+<!-- Info needed for the shipping -->
+<section>
+</section>
 <!-- Payment logic -->
 <%= render "charges/shared/payment_stripe", cart_items: @cart_items, order: @order, amount: @amount, description: @description %>
