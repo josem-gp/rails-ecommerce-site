@@ -5,6 +5,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    !user.nil?
+  end
+
   def show?
     !user.nil?
   end

@@ -8,14 +8,13 @@ class ChargesController < ApplicationController
     
     if @user
       @order = Order.where(user: @user, status: 1)[0]
-      @cart_items = @order.order_items.order(:id) if @order
-      @amount = Order.where(user: @user, status: 1)[0].total
-      authorize @order
-      return @amount
-      # if @order 
-      #   @amount = Order.where(user: @user, status: 1)[0].total
-      #   return @amount
-      # end
+      authorize @user     
+      if @order 
+        @cart_items = @order.order_items.order(:id) 
+        @amount = Order.where(user: @user, status: 1)[0].total
+        authorize @order
+        return @amount
+      end
     else
       redirect_to new_user_session_path
     end
