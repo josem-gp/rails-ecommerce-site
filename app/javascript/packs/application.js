@@ -33,6 +33,7 @@ import { ratingsError } from "../components/init_ratingsError";
 import { loginError } from "../components/init_loginError";
 import { shippingError } from "../components/init_shippingError";
 import { billingError } from "../components/init_billingError";
+import { disableStripe } from "../components/init_disableStripe";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -44,4 +45,5 @@ document.addEventListener("turbolinks:load", () => {
   closeTag();
   shippingError();
   billingError();
+  // disableStripe();
 });
