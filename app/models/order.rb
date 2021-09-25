@@ -11,6 +11,7 @@ class Order < ApplicationRecord
   validates :total, presence: true, numericality: { only_integer: true }
 
   after_save :merge_order_items
+  before_create :add_billing_address
 
   private
 
@@ -48,6 +49,11 @@ class Order < ApplicationRecord
         order_items.where(product_id: duplicate_id)[1..-1].each { |el| el.delete }
       end
     end
+  end
+
+  def add_billing_address    
+    shipping_address = self.user.shipping_address
+    self.billing_address = shipping_address
   end
 
 end
