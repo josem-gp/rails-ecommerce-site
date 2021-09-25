@@ -2,7 +2,8 @@
 
 .invalid-name,
 .invalid-shipping,
-.invalid-phone {
+.invalid-phone,
+.invalid-billing {
   position: relative !important;
   margin-bottom: 40px;
   display: block !important;
@@ -46,7 +47,8 @@
 
 .invalid-shipping-div,
 .invalid-phone-div,
-.invalid-name-div {
+.invalid-name-div,
+.invalid-billing-div {
   position: relative;
 }
 
@@ -70,6 +72,15 @@
 
 .invalid-phone-div::after {
   content: "Phone is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
+.invalid-billing-div::after {
+  content: "Billing address is mandatory, please specify one";
   color: #dc3545;
   font-size: 12px;
   position: absolute;

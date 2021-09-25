@@ -27,7 +27,9 @@
     <% end %>
     <button>Change</button>
     <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
-      <%= f.input :billing_address, required: true %>
+      <div id="billing">
+        <%= f.input :billing_address, required: true %>
+      </div>
       <%= f.submit 'Change billing information' %>
     <% end %>
   <% else %>

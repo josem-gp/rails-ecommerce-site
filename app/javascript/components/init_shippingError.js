@@ -2,9 +2,6 @@ const shippingError = () => {
   const submitShipping = document.querySelector(
     'input[value="Change shipping information"]'
   );
-  const submitBilling = document.querySelector(
-    'input[value="Change billing information"]'
-  );
   const nameDiv = document.querySelector('input[name = "user[name]"]');
   const shippingDiv = document.querySelector(
     'input[name = "user[shipping_address]"]'
@@ -44,7 +41,7 @@ const shippingError = () => {
         } else if (!nameDiv.value && shippingDiv.value && !phoneDiv.value) {
           shippingDiv.classList.add("valid-shipping");
           phoneDiv.classList.add("invalid-phone");
-          phoneWrapper.classList.remove("invalid-phone-div");
+          phoneWrapper.classList.add("invalid-phone-div");
           nameDiv.classList.add("invalid-name");
           nameWrapper.classList.add("invalid-name-div");
         } else if (!nameDiv.value && !shippingDiv.value && phoneDiv.value) {

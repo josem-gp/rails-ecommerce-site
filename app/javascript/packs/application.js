@@ -32,6 +32,7 @@ import { closeTag } from "../components/init_closeTag";
 import { ratingsError } from "../components/init_ratingsError";
 import { loginError } from "../components/init_loginError";
 import { shippingError } from "../components/init_shippingError";
+import { billingError } from "../components/init_billingError";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -42,4 +43,5 @@ document.addEventListener("turbolinks:load", () => {
   loginError();
   closeTag();
   shippingError();
+  billingError();
 });
