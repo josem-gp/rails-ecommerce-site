@@ -6,11 +6,23 @@
     <p><%= @user.name %></p>
     <p><%= @user.shipping_address %></p>
     <p><%= @user.phone_number %></p>
+    <button>Change</button>
+    <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :shipping_address %>
+      <%= f.input :phone_number %>
+      <%= f.submit 'Change shipping information' %>
+    <% end %>
     <h3>Billing Address</h3>
     <% if @user.shipping_address == @order.billing_address %>
       <p>Same as shipping address</p>
     <% else %>
       <p><%= @order.billing_address %></p>
+    <% end %>
+    <button>Change</button>
+    <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
+      <%= f.input :billing_address %>
+      <%= f.submit 'Change billing information' %>
     <% end %>
   <% else %>
     <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
