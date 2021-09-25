@@ -1,0 +1,74 @@
+const shippingError = () => {
+  const submitShipping = document.querySelector(
+    'input[value="Change shipping information"]'
+  );
+  const submitBilling = document.querySelector(
+    'input[value="Change billing information"]'
+  );
+  const nameDiv = document.querySelector('input[name = "user[name]"]');
+  const shippingDiv = document.querySelector(
+    'input[name = "user[shipping_address]"]'
+  );
+  const phoneDiv = document.querySelector('input[name = "user[phone_number]"]');
+  const nameWrapper = document.querySelector("#name");
+  const shippingWrapper = document.querySelector("#shipping_address");
+  const phoneWrapper = document.querySelector("#phone");
+
+  if (submitShipping) {
+    submitShipping.addEventListener("click", (event) => {
+      nameDiv.classList.remove("invalid-name");
+      nameDiv.classList.remove("valid-name");
+      shippingDiv.classList.remove("invalid-shipping");
+      shippingDiv.classList.remove("valid-shipping");
+      phoneDiv.classList.remove("invalid-phone");
+      phoneDiv.classList.remove("valid-phone");
+      nameWrapper.classList.remove("invalid-name-div");
+      shippingWrapper.classList.remove("invalid-shipping-div");
+      phoneWrapper.classList.remove("invalid-phone-div");
+
+      if (nameDiv.value && shippingDiv.value && phoneDiv.value) {
+      } else if (!nameDiv.value || !shippingDiv.value || !phoneDiv.value) {
+        event.preventDefault();
+        if (!nameDiv.value && !shippingDiv.value && !phoneDiv.value) {
+          shippingDiv.classList.add("invalid-shipping");
+          phoneDiv.classList.add("invalid-phone");
+          nameDiv.classList.add("invalid-name");
+          //   nameWrapper.classList.add("invalid-name-div");
+          //   shippingWrapper.classList.add("invalid-shipping-div");
+        } else if (!nameDiv.value && shippingDiv.value && phoneDiv.value) {
+          shippingDiv.classList.add("valid-shipping");
+          phoneDiv.classList.add("valid-phone");
+          nameDiv.classList.add("invalid-name");
+        } else if (!nameDiv.value && shippingDiv.value && !phoneDiv.value) {
+          shippingDiv.classList.add("valid-shipping");
+          phoneDiv.classList.add("invalid-phone");
+          //   shippingWrapper.classList.add("invalid-shipping-div");
+          nameDiv.classList.add("invalid-name");
+        } else if (!nameDiv.value && !shippingDiv.value && phoneDiv.value) {
+          shippingDiv.classList.add("invalid-shipping");
+          //   nameWrapper.classList.add("invalid-name-div");
+          phoneDiv.classList.add("valid-phone");
+          nameDiv.classList.add("invalid-name");
+        } else if (nameDiv.value && !shippingDiv.value && !phoneDiv.value) {
+          shippingDiv.classList.add("invalid-shipping");
+          phoneDiv.classList.add("invalid-phone");
+          nameDiv.classList.add("valid-name");
+          //   nameWrapper.classList.add("invalid-name-div");
+          //   shippingWrapper.classList.add("invalid-shipping-div");
+        } else if (nameDiv.value && shippingDiv.value && !phoneDiv.value) {
+          shippingDiv.classList.add("valid-shipping");
+          phoneDiv.classList.add("invalid-phone");
+          //   shippingWrapper.classList.add("invalid-shipping-div");
+          nameDiv.classList.add("valid-name");
+        } else if (nameDiv.value && !shippingDiv.value && phoneDiv.value) {
+          shippingDiv.classList.add("invalid-shipping");
+          //   nameWrapper.classList.add("invalid-name-div");
+          phoneDiv.classList.add("valid-phone");
+          nameDiv.classList.add("valid-name");
+        }
+      }
+    });
+  }
+};
+
+export { shippingError };

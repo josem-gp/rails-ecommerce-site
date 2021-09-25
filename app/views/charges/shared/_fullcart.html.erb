@@ -8,10 +8,10 @@
     <p><%= @user.phone_number %></p>
     <button>Change</button>
     <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
-      <%= f.input :name, required: true %>
-      <%= f.input :shipping_address, required: true %>
-      <%= f.input :phone_number, required: true %>
-      <%= f.submit 'Change shipping information' %>
+      <%= f.input :name %>
+      <%= f.input :shipping_address %>
+      <%= f.input :phone_number %>
+      <%= f.submit 'Add shipping information' %>
     <% end %>
     <h3>Billing Address</h3>
     <% if @user.shipping_address == @order.billing_address %>
@@ -26,10 +26,16 @@
     <% end %>
   <% else %>
     <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :shipping_address %>
-      <%= f.input :phone_number %>
-      <%= f.submit 'Add shipping information' %>
+      <div id="name">
+        <%= f.input :name, label: 'Full name', required: true %>
+      </div>
+      <div id="shipping_address">
+        <%= f.input :shipping_address,required: true %>
+      </div>
+      <div id="phone">
+        <%= f.input :phone_number, required: true %>
+      </div>
+      <%= f.submit 'Change shipping information' %>
     <% end %>
   <% end %>
 </section>

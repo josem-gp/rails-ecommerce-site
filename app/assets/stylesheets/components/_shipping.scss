@@ -1,0 +1,78 @@
+// Valid / invalid styling in form (shipping)
+
+.invalid-name,
+.invalid-shipping,
+.invalid-phone {
+  position: relative !important;
+  margin-bottom: 40px;
+  display: block !important;
+  width: 100% !important;
+  background-image: url("error.svg") !important;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #dc3545 !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.valid-shipping,
+.valid-phone,
+.valid-name {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  background-image: url("valid.svg");
+  background-repeat: no-repeat;
+  padding-right: calc(1.5em + 0.75rem) !important;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #28a745 !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.invalid-shipping-div,
+.invalid-phone-div,
+.invalid-name-div {
+  position: relative;
+}
+
+.invalid-name-div::after {
+  content: "Full name is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
+.invalid-shipping-div::after {
+  content: "Shipping address is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
+.invalid-phone-div::after {
+  content: "Phone is mandatory, please specify one";
+  color: #dc3545;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
