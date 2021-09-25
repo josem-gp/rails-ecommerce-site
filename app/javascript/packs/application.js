@@ -45,5 +45,5 @@ document.addEventListener("turbolinks:load", () => {
   closeTag();
   shippingError();
   billingError();
-  // disableStripe();
+  disableStripe();
 });

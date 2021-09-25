@@ -19,7 +19,6 @@ const shippingError = () => {
     submit.forEach((btn) => {
       if (btn) {
         btn.addEventListener("click", (event) => {
-          console.log("and here!");
           nameDiv.classList.remove("invalid-name");
           nameDiv.classList.remove("valid-name");
           shippingDiv.classList.remove("invalid-shipping");
