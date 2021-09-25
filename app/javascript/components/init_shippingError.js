@@ -33,36 +33,40 @@ const shippingError = () => {
           shippingDiv.classList.add("invalid-shipping");
           phoneDiv.classList.add("invalid-phone");
           nameDiv.classList.add("invalid-name");
-          //   nameWrapper.classList.add("invalid-name-div");
-          //   shippingWrapper.classList.add("invalid-shipping-div");
+          nameWrapper.classList.add("invalid-name-div");
+          shippingWrapper.classList.add("invalid-shipping-div");
+          phoneWrapper.classList.add("invalid-phone-div");
         } else if (!nameDiv.value && shippingDiv.value && phoneDiv.value) {
           shippingDiv.classList.add("valid-shipping");
           phoneDiv.classList.add("valid-phone");
           nameDiv.classList.add("invalid-name");
+          nameWrapper.classList.add("invalid-name-div");
         } else if (!nameDiv.value && shippingDiv.value && !phoneDiv.value) {
           shippingDiv.classList.add("valid-shipping");
           phoneDiv.classList.add("invalid-phone");
-          //   shippingWrapper.classList.add("invalid-shipping-div");
+          phoneWrapper.classList.remove("invalid-phone-div");
           nameDiv.classList.add("invalid-name");
+          nameWrapper.classList.add("invalid-name-div");
         } else if (!nameDiv.value && !shippingDiv.value && phoneDiv.value) {
           shippingDiv.classList.add("invalid-shipping");
-          //   nameWrapper.classList.add("invalid-name-div");
+          shippingWrapper.classList.add("invalid-shipping-div");
           phoneDiv.classList.add("valid-phone");
           nameDiv.classList.add("invalid-name");
+          nameWrapper.classList.add("invalid-name-div");
         } else if (nameDiv.value && !shippingDiv.value && !phoneDiv.value) {
           shippingDiv.classList.add("invalid-shipping");
+          shippingWrapper.classList.add("invalid-shipping-div");
           phoneDiv.classList.add("invalid-phone");
+          phoneWrapper.classList.add("invalid-phone-div");
           nameDiv.classList.add("valid-name");
-          //   nameWrapper.classList.add("invalid-name-div");
-          //   shippingWrapper.classList.add("invalid-shipping-div");
         } else if (nameDiv.value && shippingDiv.value && !phoneDiv.value) {
           shippingDiv.classList.add("valid-shipping");
           phoneDiv.classList.add("invalid-phone");
-          //   shippingWrapper.classList.add("invalid-shipping-div");
+          phoneWrapper.classList.add("invalid-phone-div");
           nameDiv.classList.add("valid-name");
         } else if (nameDiv.value && !shippingDiv.value && phoneDiv.value) {
           shippingDiv.classList.add("invalid-shipping");
-          //   nameWrapper.classList.add("invalid-name-div");
+          shippingWrapper.classList.add("invalid-shipping-div");
           phoneDiv.classList.add("valid-phone");
           nameDiv.classList.add("valid-name");
         }
