@@ -8,9 +8,9 @@
     <p><%= @user.phone_number %></p>
     <button>Change</button>
     <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :shipping_address %>
-      <%= f.input :phone_number %>
+      <%= f.input :name, required: true %>
+      <%= f.input :shipping_address, required: true %>
+      <%= f.input :phone_number, required: true %>
       <%= f.submit 'Change shipping information' %>
     <% end %>
     <h3>Billing Address</h3>
@@ -21,7 +21,7 @@
     <% end %>
     <button>Change</button>
     <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
-      <%= f.input :billing_address %>
+      <%= f.input :billing_address, required: true %>
       <%= f.submit 'Change billing information' %>
     <% end %>
   <% else %>
