@@ -6,8 +6,6 @@ const disableStripe = () => {
 
   if (submitCreateShipping) {
     checkOutBtn.disabled = true;
-  } else {
-    checkOutBtn.disabled = false;
   }
 };
 
