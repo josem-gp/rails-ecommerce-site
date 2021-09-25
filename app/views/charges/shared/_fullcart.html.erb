@@ -5,6 +5,9 @@
   <% if @user.name %>
     <p><%= @user.name %></p>
     <p><%= @user.shipping_address %></p>
+    <p><%= @user.phone_number %></p>
+    <h3>Billing Address</h3>
+    <p>Same as shipping address</p>
   <% else %>
     <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
       <%= f.input :name %>

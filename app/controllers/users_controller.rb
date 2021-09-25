@@ -10,12 +10,25 @@ class UsersController < ApplicationController
     end
 
     def update
-        raise
         @user = current_user
-        @icon = Icon.find(params[:icon_id])
-        @user.icon = @icon
         authorize @user
-        @user.save
-        redirect_to user_path(@user) 
+        if params[:icon_id]
+            @icon = Icon.find(params[:icon_id])
+            @user.icon = @icon
+            @user.save
+            redirect_to user_path(@user) 
+        else 
+            @user.update(shipping_params)
+            @order = @user.orders.where(status: 1)[0]
+            @order.update(billing_address: @user.shipping_address)
+            redirect_to new_charge_path
+        end
+        
+    end
+
+    private
+    
+    def shipping_params
+        params.require(:user).permit(:name, :shipping_address, :phone_number)
     end
 end
