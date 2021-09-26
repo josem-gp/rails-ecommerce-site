@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav center-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../">HOME</a>
         </li>
@@ -15,27 +15,23 @@
         <li class="nav-item">
           <a class="nav-link" href="../about">ABOUT</a>
         </li>
-      </ul>
-    </div>
-    <div>
-      <ul class="right-nav">
-        <li>
-          <%= form_tag products_path, class: "form-inline", method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control close-search",
-            placeholder: "Search product"
-          %>
-            <button type="submit" name="commit" id="search" class="search-btn" data-disable-with="Search"><i class="fas fa-search"></i></button>
-          <% end %>
-        </li>
-        <li>
+        <li class="nav-item">
           <a class="nav-link" href="../cart/new"><i class="fas fa-shopping-cart"></i></a>
           <% if current_user && current_user.orders.where(status: 1)[0] && current_user.orders.where(status: 1)[0].order_items.count > 0 %>
             <%= current_user.orders.where(status: 1)[0].order_items.count %>
           <% end %>
         </li>
       </ul>
+    </div>
+    <div>
+      <%= form_tag products_path, class: "form-inline", method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search product"
+          %>
+        <%= submit_tag "Search", id: "search", class: "text-body" %>
+      <% end %>
     </div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
