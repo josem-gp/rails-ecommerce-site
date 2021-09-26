@@ -84,11 +84,17 @@
   left: 0;
   height: 100vh;
   padding: 3% 3%;
+  z-index: 999;
 }
 
 .fixed-body {
   height: 100vh;
   overflow: hidden;
+}
+
+.lay-down {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .btn-menu {
