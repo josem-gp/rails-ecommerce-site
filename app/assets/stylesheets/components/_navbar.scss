@@ -72,3 +72,11 @@
   position: relative;
   font-size: 21px;
 }
+
+// Media Queries
+
+@media only screen and (max-width: 991px) {
+  .items-cart {
+    right: 73px;
+  }
+}
