@@ -10,6 +10,7 @@ const dropdownNav = () => {
     navBtn.classList.toggle("btn-change");
 
     dropDiv.classList.toggle("dropdown-nav");
+    dropDiv.classList.toggle("collapse");
     body.classList.toggle("fixed-body");
     restBody.forEach((el) => {
       el.classList.toggle("lay-down");
