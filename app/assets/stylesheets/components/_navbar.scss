@@ -73,6 +73,24 @@
   font-size: 21px;
 }
 
+// Dropdown
+
+.dropdown-nav {
+  display: block;
+  position: absolute;
+  top: 98px;
+  background: #f8f9fa;
+  width: 50%;
+  left: 0;
+  height: 100vh;
+  padding: 3% 3%;
+}
+
+.fixed-body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 // Media Queries
 
 @media only screen and (max-width: 991px) {
