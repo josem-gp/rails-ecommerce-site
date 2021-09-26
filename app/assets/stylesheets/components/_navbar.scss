@@ -79,4 +79,8 @@
   .items-cart {
     right: 73px;
   }
+  .navbar-brand {
+    flex-basis: 100%;
+    text-align: center; //this will not make it go center once it is a img logo instead of words
+  }
 }
