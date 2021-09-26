@@ -5,8 +5,8 @@ const dropdownNav = () => {
 
   navBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    btn.classList.toggle("btn-menu");
-    btn.classList.toggle("btn-change");
+    navBtn.classList.toggle("btn-menu");
+    navBtn.classList.toggle("btn-change");
 
     dropDiv.classList.toggle("dropdown-nav");
     body.classList.toggle("fixed-body");

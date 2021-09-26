@@ -76,7 +76,7 @@
 // Dropdown
 
 .dropdown-nav {
-  display: block;
+  display: block !important;
   position: absolute;
   top: 98px;
   background: #f8f9fa;
@@ -89,6 +89,30 @@
 .fixed-body {
   height: 100vh;
   overflow: hidden;
+}
+
+.btn-menu {
+  width: 38px;
+  height: 25px;
+  background-image: url(icon-menu.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  border: none !important;
+  transform: translateY(-3px);
+}
+
+.btn-change {
+  width: 38px;
+  height: 25px;
+  background-image: url(icon-close.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  border: none !important;
+  transform: translateY(-3px);
 }
 
 // Media Queries
