@@ -3,6 +3,9 @@
 <% end %>
 <ul>
   <li><%= product.name %></li>
+  <% if product.availability == 2%>
+    <li>Unavailable</li>
+  <%end %>
   <li><%= product.description %></li>
   <li>¥<%= product.price %></li>
   <div>

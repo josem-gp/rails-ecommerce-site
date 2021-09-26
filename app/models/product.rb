@@ -29,6 +29,7 @@ class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
+  # Availability: 1 available / 2 unavailable
   validates :availability, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 2 }
 
 end
