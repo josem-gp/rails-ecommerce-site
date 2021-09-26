@@ -23,16 +23,16 @@
           <%= form_tag products_path, class: "form-inline", method: :get do %>
             <%= text_field_tag :query,
             params[:query],
-            class: "form-control close-search",
+            class: "close-search",
             placeholder: "Search product"
           %>
-            <button type="submit" name="commit" id="search" class="search-btn" data-disable-with="Search"><i class="fas fa-search"></i></button>
+            <button type="submit" name="commit" id="search" class="search-btn"><i class="fas fa-search"></i></button>
           <% end %>
         </li>
         <li>
-          <a class="nav-link" href="../cart/new"><i class="fas fa-shopping-cart"></i></a>
+          <a class="nav-link cart-nav" href="../cart/new"><i class="fas fa-shopping-bag"></i></a>
           <% if current_user && current_user.orders.where(status: 1)[0] && current_user.orders.where(status: 1)[0].order_items.count > 0 %>
-            <%= current_user.orders.where(status: 1)[0].order_items.count %>
+            <p class="items-cart"><%= current_user.orders.where(status: 1)[0].order_items.count %></p>
           <% end %>
         </li>
       </ul>

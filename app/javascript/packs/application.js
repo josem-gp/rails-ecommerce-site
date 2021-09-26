@@ -34,6 +34,7 @@ import { loginError } from "../components/init_loginError";
 import { shippingError } from "../components/init_shippingError";
 import { billingError } from "../components/init_billingError";
 import { disableStripe } from "../components/init_disableStripe";
+import { toggleSearch } from "../components/init_toggleSearch";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -46,4 +47,5 @@ document.addEventListener("turbolinks:load", () => {
   shippingError();
   billingError();
   disableStripe();
+  toggleSearch();
 });
