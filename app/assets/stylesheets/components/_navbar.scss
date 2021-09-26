@@ -73,7 +73,7 @@
   font-size: 21px;
 }
 
-// Dropdown
+// Dropdown menu
 
 .dropdown-nav {
   display: block !important;
@@ -140,6 +140,37 @@
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
+}
+
+// Dropdown avatar
+
+.dropdown-avatar {
+  display: none !important;
+}
+
+.dropdown:hover > .dropdown-avatar {
+  display: block !important;
+  position: absolute;
+  left: -105px;
+}
+
+.avatar-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .dropdown-item {
+    padding: 3px 8px !important;
+  }
+  .nav-link {
+    padding: 0 !important;
+  }
+  .nav-item {
+    padding: 3px 8px;
+  }
+}
+
+.dropdown-item:hover {
+  background: none !important;
 }
 
 // Media Queries
