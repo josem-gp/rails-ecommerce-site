@@ -113,12 +113,10 @@
     margin-left: 28px !important;
     padding-top: 6px;
     border-bottom: 1px solid;
-  }
-
-  .nav-link::after {
-    content: "";
-    color: #737373;
-    background-image: url("assets/images/flecha-correcta.svg");
+    background-image: url(flecha-correcta.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 18px);
+    background-size: 14px;
   }
 
   ul {
