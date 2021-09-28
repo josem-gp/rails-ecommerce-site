@@ -101,13 +101,29 @@
   width: 50vw;
   left: 0;
   height: 100vh;
-  padding: 3% 3%;
+  padding: 3% 0%;
   z-index: 999;
+  text-align: center;
   transition: all 0.4s ease-in-out;
 
   .nav-link {
     color: #737373 !important;
     text-transform: capitalize;
+    text-align: left;
+    margin-left: 28px !important;
+    padding-top: 6px;
+    border-bottom: 1px solid;
+  }
+
+  .nav-link::after {
+    content: "";
+    color: #737373;
+    background-image: url("assets/images/flecha-correcta.svg");
+  }
+
+  ul {
+    border-top: 1px solid black;
+    margin-top: 10px;
   }
 }
 
@@ -207,9 +223,9 @@
     position: absolute !important;
     top: 0 !important;
     width: 0 !important;
+    padding: 3% 0%;
     left: 0 !important;
     height: 100vh !important;
-    padding: 3% 3% !important;
     visibility: hidden;
     opacity: 0;
     // transition: all 0.5s ease-in-out;
