@@ -3,6 +3,8 @@ function handleTableChange(e) {
   const dropDiv = document.querySelector(".navbar-collapse");
   const body = document.querySelector("body");
   const restBody = document.querySelectorAll("body > *:not(.navbar)");
+  const navBar = document.querySelector(".navbar");
+
   if (e.matches) {
     navBtn.classList.add("btn-menu");
     navBtn.classList.remove("btn-change");
@@ -15,6 +17,7 @@ function handleTableChange(e) {
     restBody.forEach((el) => {
       el.classList.remove("lay-down");
     });
+    navBar.classList.remove("move-right");
   }
 }
 
