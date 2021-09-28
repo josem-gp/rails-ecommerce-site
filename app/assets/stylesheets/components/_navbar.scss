@@ -94,8 +94,8 @@
   display: block !important;
   visibility: visible;
   opacity: 1;
-  position: absolute;
-  top: 103px;
+  position: fixed;
+  top: 0;
   background: #f8f9fa;
   width: 50vw;
   left: 0;
@@ -113,6 +113,11 @@
 .lay-down {
   opacity: 0.5;
   pointer-events: none;
+  margin-left: 50vw;
+}
+
+.move-left {
+  margin-left: 50vw;
 }
 
 .btn-menu {

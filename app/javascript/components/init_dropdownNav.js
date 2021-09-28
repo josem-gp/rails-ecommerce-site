@@ -3,6 +3,7 @@ const dropdownNav = () => {
   const dropDiv = document.querySelector(".navbar-collapse");
   const body = document.querySelector("body");
   const restBody = document.querySelectorAll("body > *:not(.navbar)");
+  const navBar = document.querySelector(".navbar");
 
   navBtn.addEventListener("click", (event) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ const dropdownNav = () => {
     restBody.forEach((el) => {
       el.classList.toggle("lay-down");
     });
+    navBar.classList.toggle("move-left");
   });
 };
 
