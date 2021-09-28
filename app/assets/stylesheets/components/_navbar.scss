@@ -132,7 +132,6 @@
 
 .fixed-body {
   height: 100vh;
-  // width: 100vw;
   overflow: hidden;
 }
 
@@ -145,6 +144,7 @@
 
 .move-right {
   margin-left: 50vw;
+  pointer-events: none;
   transition: all 0.5s ease-in-out;
 }
 
@@ -159,6 +159,7 @@
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
+  pointer-events: all !important;
 }
 
 .btn-change {
@@ -172,6 +173,7 @@
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
+  pointer-events: all !important;
 }
 
 // Dropdown avatar
