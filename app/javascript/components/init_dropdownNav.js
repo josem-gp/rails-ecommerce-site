@@ -16,7 +16,7 @@ const dropdownNav = () => {
     restBody.forEach((el) => {
       el.classList.toggle("lay-down");
     });
-    navBar.classList.toggle("move-left");
+    navBar.classList.toggle("move-right");
   });
 };
 
