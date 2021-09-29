@@ -2,7 +2,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,20 +14,24 @@
 }
 
 .nav-link {
-  color: white !important;
   text-transform: uppercase;
 }
 
 // Style to center and right part of nav
 
 .navbar {
-  position: absolute !important;
-  z-index: 999;
+  // background-color: white !important;
+  // opacity: 0.5;
+  // padding: 10px 23px !important;
+  // position: sticky !important;
+  position: sticky !important;
+  z-index: 1;
   top: 0;
   right: 0;
   left: 0;
-  background-color: transparent !important;
-  padding: 23px 23px !important;
+  background-color: white !important;
+  opacity: 0.5;
+  padding: 10px 23px !important;
 }
 
 .center-nav {
@@ -52,7 +56,6 @@
 .search-btn {
   border: none;
   background: none;
-  color: white;
 }
 
 .close-search {
@@ -91,7 +94,6 @@
 .cart-nav {
   position: relative;
   font-size: 21px;
-  color: white;
 }
 
 // Dropdown menu
@@ -222,7 +224,7 @@
   .navbar-brand {
     flex-basis: 100%;
     text-align: center; //this will not make it go center once it is a img logo instead of words
-    color: white !important; //this will not make it go center once it is a img logo instead of words
+    // color: white !important; //this will not make it go center once it is a img logo instead of words
   }
   .collapse {
     display: block !important;
