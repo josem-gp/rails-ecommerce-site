@@ -22,7 +22,7 @@
 .navbar {
   position: fixed !important;
   z-index: 999;
-  background-color: rgba(225, 225, 225, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
   padding: 10px 23px !important;
   width: -webkit-fill-available;
 }
@@ -31,8 +31,13 @@
   flex-grow: 1;
   justify-content: center;
 
-  li {
+  li a {
     margin-right: 24px;
+    color: black !important;
+  }
+
+  li a:hover::after {
+    content: "hey";
   }
 }
 
