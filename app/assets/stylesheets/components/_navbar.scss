@@ -20,18 +20,11 @@
 // Style to center and right part of nav
 
 .navbar {
-  // background-color: white !important;
-  // opacity: 0.5;
-  // padding: 10px 23px !important;
-  // position: sticky !important;
-  position: sticky !important;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: white !important;
-  opacity: 0.5;
+  position: fixed !important;
+  z-index: 999;
+  background-color: rgba(225, 225, 225, 0.5) !important;
   padding: 10px 23px !important;
+  width: -webkit-fill-available;
 }
 
 .center-nav {
