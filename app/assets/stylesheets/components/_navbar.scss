@@ -27,6 +27,7 @@
   right: 0;
   left: 0;
   background-color: transparent !important;
+  padding: 23px 23px !important;
 }
 
 .center-nav {
@@ -76,8 +77,8 @@
 
 .items-cart {
   position: absolute;
-  bottom: -4px;
-  right: 88px;
+  bottom: 11px;
+  right: 94px;
   background: green;
   border-radius: 50%;
   width: 18px;
@@ -216,7 +217,7 @@
 
 @media only screen and (max-width: 991px) {
   .items-cart {
-    right: 73px;
+    right: 79px;
   }
   .navbar-brand {
     flex-basis: 100%;
@@ -234,5 +235,24 @@
     visibility: hidden;
     opacity: 0;
     // transition: all 0.5s ease-in-out;
+  }
+
+  .open-search {
+    width: 138px !important;
+    height: 30px !important;
+    padding: 0.375rem 0.75rem !important;
+    border: 1px solid #ced4da !important;
+    transition: all 0.5s ease-in-out !important;
+    font-size: 13px;
+  }
+
+  .close-search {
+    width: 0 !important;
+    height: 30px !important;
+    padding: 0 !important;
+    border: none !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.5s ease-in-out !important;
   }
 }
