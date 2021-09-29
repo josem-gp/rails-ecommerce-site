@@ -32,6 +32,10 @@
 .center-nav {
   flex-grow: 1;
   justify-content: center;
+
+  li {
+    margin-right: 24px;
+  }
 }
 
 .right-nav {
