@@ -78,7 +78,7 @@
 
 .items-cart {
   position: absolute;
-  bottom: 11px;
+  bottom: 0px;
   right: 94px;
   background: green;
   border-radius: 50%;
@@ -160,8 +160,6 @@
   background-image: url(icon-menu.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-filter: invert(1);
-  filter: invert(1);
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
@@ -174,8 +172,6 @@
   background-image: url(icon-close.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-filter: invert(1);
-  filter: invert(1);
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
