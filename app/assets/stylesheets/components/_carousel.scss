@@ -25,8 +25,54 @@
 // Style of button
 
 .cta-btns {
+  display: flex;
+}
+
+.cta-btns a {
+  padding: 12px;
+  border: 1px solid white;
+  color: white;
 }
 
 .cta-btns a:hover {
   text-decoration: none;
+  color: white;
+}
+
+.learn-cta-btn {
+  position: relative;
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+}
+
+// .learn-cta-btn::before {
+//   transition-duration: 1.5s;
+//   box-shadow: inset 0 0 0 1px green;
+// }
+
+// .learn-cta-btn:hover::before {
+//   box-shadow: inset 0 0 0 125.44px green;
+// }
+
+.learn-cta-btn {
+  &::after {
+    box-shadow: inset 0 0 0 1px orange;
+  }
+  &::before {
+    border-radius: 0;
+    margin-left: -100%;
+    box-shadow: inset 0 0 0 125.44px orange;
+  }
+  &:hover::before {
+    margin-left: 0;
+  }
 }
