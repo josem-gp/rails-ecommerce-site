@@ -26,58 +26,37 @@
 
 .cta-btns {
   display: flex;
+  align-items: center;
 }
 
 .cta-btns a {
   padding: 12px;
-  border: 1px solid white;
-  color: white;
-}
+  font-weight: 700;
+  margin-right: 20px;
 
-.cta-btns a:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.learn-cta-btn {
-  position: relative;
-  overflow: hidden;
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition: all 0.5s ease;
+  &:hover {
+    text-decoration: none;
   }
-  a {
-    position: relative;
+}
+
+.cta-btns {
+  .learn-cta-btn {
+    border: 1px solid white;
     color: white;
-    transition: all 0.25s ease;
   }
-}
 
-// .learn-cta-btn::before {
-//   transition-duration: 1.5s;
-//   box-shadow: inset 0 0 0 1px green;
-// }
-
-// .learn-cta-btn:hover::before {
-//   box-shadow: inset 0 0 0 125.44px green;
-// }
-
-.learn-cta-btn {
-  &::after {
-    box-shadow: inset 0 0 0 1px orange;
+  .buy-cta-btn {
+    border: 1px solid green;
+    color: green;
   }
-  &::before {
-    border-radius: 0;
-    margin-left: -100%;
-    box-shadow: inset 0 0 0 125.44px orange;
+
+  .learn-cta-btn:hover {
+    background-color: white;
+    color: green;
   }
-  &:hover::before {
-    margin-left: 0;
+
+  .buy-cta-btn:hover {
+    background-color: green;
+    color: white;
   }
 }
