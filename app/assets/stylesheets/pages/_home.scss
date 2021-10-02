@@ -66,4 +66,13 @@
   }
 }
 
-//
+// Display products
+
+.display-products {
+  background-image: url(display-products-banner.jpg);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

@@ -8,15 +8,17 @@
     <%= render "pages/shared/intro" %>
   </section>
   <!-- Products wrapper -->
-  <section>
-    <div class="container">
+  <section class="display-products">
+    <div class="container products-grid">
       <% @products.each do |product| %>
-        <!-- Favoritor -->
-        <%= render "pages/shared/favoritor", product: product  %>
-        <!-- Cart icon -->
-        <%= render "pages/shared/cart_display", product: product %>
-        <!-- Product info -->
-        <%= render "pages/shared/product_display", product: product %>
+        <div class="product-card">
+          <!-- Favoritor -->
+          <%= render "pages/shared/favoritor", product: product  %>
+          <!-- Cart icon -->
+          <%= render "pages/shared/cart_display", product: product %>
+          <!-- Product info -->
+          <%= render "pages/shared/product_display", product: product %>
+        </div>
       <% end %>
     </div>
   </section>
