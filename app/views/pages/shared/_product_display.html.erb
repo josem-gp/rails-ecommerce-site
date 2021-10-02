@@ -3,9 +3,8 @@
     <div class="product-card">
       <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill %>
       <%#= cl_image_tag product.photos[2].key, height: 300, width: 400, crop: :fill %>
-      <div>
+      <div class="product-info">
         <h3><%= product.name %></h3>
-        <p>¥<%= product.price %></p>
         <div>
           <% if product.rating %>
             <% product.rating.floor.times do %>
@@ -23,6 +22,8 @@
             <% end %>
           <%end %>
         </div>
+        <p><%= product.description %></p>
+        <p>¥<%= product.price %></p>
       </div>
     </div class="product-card">
   <% end %>
