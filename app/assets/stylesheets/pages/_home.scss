@@ -23,10 +23,37 @@
 .intro-message {
   h3 {
     color: green;
+    font-style: italic;
+    font-size: 24px;
   }
 
   h2 {
     text-align: center;
+    position: relative;
+    padding-bottom: 12px;
+    &::before {
+      height: 1px;
+      width: 150px;
+      background-color: green;
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      bottom: -5px;
+      background-color: green;
+      -webkit-transform: rotate(45deg);
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
   }
 
   p {
