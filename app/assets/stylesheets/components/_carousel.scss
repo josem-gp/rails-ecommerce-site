@@ -70,3 +70,15 @@
 .carousel:hover .hidden-span {
   display: flex !important;
 }
+
+// Typed.js
+
+.typed-cursor {
+  position: absolute;
+  transform: translateY(-5px);
+}
+
+#typed {
+  position: absolute;
+  top: -160%;
+}
