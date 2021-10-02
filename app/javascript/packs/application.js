@@ -38,6 +38,7 @@ import { toggleSearch } from "../components/init_toggleSearch";
 import { dropdownNav } from "../components/init_dropdownNav";
 import { originalNav } from "../components/init_originalNav";
 import { textCarousel } from "../components/init_textCarousel";
+import { typedStrings } from "../components/init_typedStrings";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -53,5 +54,6 @@ document.addEventListener("turbolinks:load", () => {
   toggleSearch();
   dropdownNav();
   originalNav();
-  textCarousel();
+  // textCarousel();
+  typedStrings();
 });
