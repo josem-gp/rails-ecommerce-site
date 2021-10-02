@@ -53,5 +53,5 @@ document.addEventListener("turbolinks:load", () => {
   toggleSearch();
   dropdownNav();
   originalNav();
-  typedStrings();
+  // typedStrings();
 });

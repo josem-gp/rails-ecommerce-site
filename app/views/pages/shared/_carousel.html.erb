@@ -3,19 +3,61 @@
     <div class="carousel-item active">
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "First slide"%>
       <div class="carousel-caption d-none d-md-block">
-        <span id="caption-title-typed" style="display:none;">TAKE ME OUT <br>
-          FOR A CUP OF <br>
-          COFFEE</span>
-        <h1 id="caption-title-slider"> </h1>
-        <p id="caption-subtitle-typed" style="display:none;">With all the best coffee for your better choice</p>
-        <p id="caption-subtitle-slider"> </p>
+        <h1>
+          <div id="typed-strings">
+            <span>
+              <span>T</span>
+              <span>A</span>
+              <span>K</span>
+              <span>E</span>
+              <span></span>
+              <span>M</span>
+              <span>E</span>
+              <span></span>
+              <span>O</span>
+              <span>U</span>
+              <span>T</span>
+              <span></span>
+              <span>F</span>
+              <span>O</span>
+              <span>R</span>
+              <span></span>
+              <br>
+              <span>A</span>
+              <span></span>
+              <span>C</span>
+              <span>U</span>
+              <span>P</span>
+              <span></span>
+              <span>O</span>
+              <span>F</span>
+              <span></span>
+              <br>
+              <span>C</span>
+              <span>O</span>
+              <span>F</span>
+              <span>F</span>
+              <span>E</span>
+              <span>E</span>
+            </span>
+          </div>
+        </h1>
+        <h1><span id="typed"></span></h1>
+        <script>
+          var typed = new Typed('#typed',{
+                      stringsElement: '#typed-strings',
+                      backSpeed: 40,
+                      typeSpeed: 0
+                    });
+        </script>
+        <p id="caption-subtitle-typed">With all the best coffee for your better choice</p>
         <div class="cta-btns" >
           <a class="learn-cta-btn" href="/about">LEARN MORE</a>
           <a class="buy-cta-btn" href="/products">BUY IT NOW</a>
         </div>
       </div>
     </div>
-    <div class="carousel-item">
+    <!--<div class="carousel-item">
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "Second slide"%>
       <div class="carousel-caption d-none d-md-block">
         <h1>TAKE ME OUT <br>
@@ -40,7 +82,7 @@
           <a class="buy-cta-btn" href="/products">BUY IT NOW</a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <a class="carousel-control-prev hidden-span" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
