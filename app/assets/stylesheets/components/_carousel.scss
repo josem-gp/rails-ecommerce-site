@@ -14,12 +14,14 @@
   font-weight: 600;
   color: white;
   letter-spacing: 5px;
+  display: none;
 }
 
 .carousel-caption p {
   color: white;
-  font-size: clamp(0.7rem, 2vw, 1.3rem);
+  font-size: clamp(0.7rem, 2vw, 1rem);
   font-style: italic;
+  display: none;
 }
 
 // Style of button
@@ -27,6 +29,7 @@
 .cta-btns {
   display: flex;
   align-items: center;
+  display: none;
 }
 
 .cta-btns a {
