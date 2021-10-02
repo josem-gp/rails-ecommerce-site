@@ -1,1 +1,6 @@
 // Specific CSS for your home-page
+
+.grid-intro {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
