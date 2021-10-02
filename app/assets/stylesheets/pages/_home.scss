@@ -70,9 +70,27 @@
 
 .display-products {
   background-image: url(display-products-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 6%;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.product-card {
+  overflow: hidden;
+  height: 260px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: 260px;
+    object-fit: cover;
+  }
 }
