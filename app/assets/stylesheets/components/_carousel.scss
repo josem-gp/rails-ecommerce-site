@@ -60,3 +60,13 @@
     color: white;
   }
 }
+
+// Style of prev/next
+
+.hidden-span {
+  display: none !important;
+}
+
+.carousel:hover .hidden-span {
+  display: flex !important;
+}
