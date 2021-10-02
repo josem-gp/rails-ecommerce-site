@@ -1,5 +1,7 @@
 // Specific CSS for your home-page
 
+// Intro section
+
 .grid-intro {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -9,6 +11,7 @@
 
   .intro-message {
     text-align: right;
+    padding-right: 42px;
   }
 
   .intro-pics-first img:not(:last-child) {
@@ -62,3 +65,5 @@
     font-style: italic;
   }
 }
+
+//
