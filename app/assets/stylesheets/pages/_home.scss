@@ -73,6 +73,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 6%;
+  h2 {
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  h3.subtitle-display-product {
+    padding-top: 24px;
+    text-align: center;
+  }
 }
 
 .products-grid {
