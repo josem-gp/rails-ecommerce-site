@@ -4,23 +4,35 @@
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "First slide"%>
       <div class="carousel-caption d-none d-md-block">
         <h1>
-          <div id="typed-strings">
+          <div id="caption-title-typed">
             <span>
               TAKE ME OUT FOR <br>
               A CUP OF  <br>
-              COFFEE
-            </span>
+              COFFEE</span>
           </div>
         </h1>
-        <h1><span id="typed"></span></h1>
+        <h1><span id="title-typed"></span></h1>
         <script>
-          var typed = new Typed('#typed',{
-                      stringsElement: '#typed-strings',
+          var typed = new Typed('#title-typed',{
+                      stringsElement: '#caption-title-typed',
                       backSpeed: 40,
                       typeSpeed: 50
                     });
         </script>
-        <p id="caption-subtitle-typed">With all the best coffee for your better choice</p>
+        <p>
+          <div id="caption-subtitle-typed">
+            <span>With all the best coffee for your better choice</span>
+          </div>
+        </p>
+        <p><span id="subtitle-typed"></span></p>
+        <script>
+          var typed = new Typed('#subtitle-typed',{
+                      stringsElement: '#caption-subtitle-typed',
+                      backSpeed: 40,
+                      typeSpeed: 30,
+                      startDelay: 6000
+                    });
+        </script>
         <div class="cta-btns" >
           <a class="learn-cta-btn" href="/about">LEARN MORE</a>
           <a class="buy-cta-btn" href="/products">BUY IT NOW</a>

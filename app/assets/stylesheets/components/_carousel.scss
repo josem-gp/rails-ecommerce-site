@@ -74,11 +74,10 @@
 // Typed.js
 
 .typed-cursor {
-  position: absolute;
-  transform: translateY(-5px);
+  opacity: 0 !important;
 }
 
 #typed {
   position: absolute;
-  top: -160%;
+  top: -55%;
 }
