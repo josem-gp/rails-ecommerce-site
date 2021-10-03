@@ -29,7 +29,7 @@
 
 .center-nav {
   flex-grow: 1;
-  justify-content: center;
+  justify-content: flex-end;
 
   li a {
     margin-right: 24px;
@@ -41,6 +41,7 @@
     content: "";
     border-bottom: solid 3px #019fb6;
     transform: scaleX(0);
+    transform-origin: 100% 0%;
     transition: transform 250ms ease-in-out;
   }
 }
