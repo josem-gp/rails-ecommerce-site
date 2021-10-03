@@ -4,9 +4,11 @@
     <%= render "pages/shared/carousel" %>
   </section>
   <!-- Introduction section -->
-  <section>
-    <%= render "pages/shared/intro" %>
-  </section>
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <section>
+      <%= render "pages/shared/intro" %>
+    </section>
+  </div>
   <!-- Products wrapper -->
   <section class="display-products intro-message">
     <h3 class="subtitle-display-product">Discover</h3>
@@ -14,8 +16,10 @@
     <div class="container products-grid">
       <% @products.each do |product| %>
         <!-- Product info -->
-        <div>
-          <%= render "pages/shared/product_display", product: product %>
+        <div data-aos="fade-right"  data-aos-duration="1000">
+          <div>
+            <%= render "pages/shared/product_display", product: product %>
+          </div>
         </div>
       <% end %>
     </div>
