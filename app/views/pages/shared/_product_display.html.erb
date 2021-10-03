@@ -1,7 +1,7 @@
 <div>
   <%= link_to product_path(product) do %>
     <div class="product-card">
-      <div>
+      <div class="info-hover">
         <a href="/products/<%= product.id %>"><i class="fas fa-eye"></i></a>
         <!-- Favoritor -->
         <%= render "pages/shared/favoritor", product: product  %>

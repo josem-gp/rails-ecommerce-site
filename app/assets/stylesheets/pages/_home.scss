@@ -130,6 +130,26 @@
   transition: all 0.8s ease-in-out;
 }
 
+.info-hover {
+  position: absolute;
+  z-index: 999;
+  top: 6%;
+  left: 42%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+  i {
+    color: black;
+    background-color: white;
+    padding: 4px 4px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    text-align: center;
+    line-height: 2;
+  }
+}
+
 .product-card:hover {
   .product-second-pic {
     position: relative;
@@ -144,5 +164,12 @@
     visibility: hidden;
     opacity: 0;
     transition: all 1s ease-in-out;
+  }
+
+  .info-hover {
+    left: 39%;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.7s ease-in-out;
   }
 }
