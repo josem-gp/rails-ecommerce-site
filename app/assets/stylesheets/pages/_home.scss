@@ -97,6 +97,7 @@
     height: 100%;
     width: 260px;
     object-fit: cover;
+    transition: all 0.8s ease-in-out;
   }
 
   h3 {
@@ -126,20 +127,22 @@
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.5s ease-in;
+  transition: all 0.8s ease-in-out;
 }
 
 .product-card:hover {
   .product-second-pic {
     position: relative;
     visibility: visible;
+    -webkit-transform: rotateY(-180deg);
     opacity: 1;
+    transition: all 0.8s ease-in-out;
   }
 
   .product-first-pic {
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: all 1s ease-in-out;
   }
 }

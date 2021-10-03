@@ -1,6 +1,13 @@
 <div>
   <%= link_to product_path(product) do %>
     <div class="product-card">
+      <div>
+        <a href="/products/<%= product.id %>"><i class="fas fa-eye"></i></a>
+        <!-- Favoritor -->
+        <%= render "pages/shared/favoritor", product: product  %>
+        <!-- Cart icon -->
+        <%= render "pages/shared/cart_display", product: product %>
+      </div>
       <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'product-first-pic' %>
       <%= cl_image_tag product.photos[2].key, height: 300, width: 400, crop: :fill, class: 'product-second-pic' %>
       <div class="product-info">
