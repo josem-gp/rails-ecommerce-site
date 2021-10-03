@@ -121,3 +121,23 @@
 .product-info {
   padding: 14px;
 }
+
+.product-second-pic {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.product-card:hover {
+  .product-second-pic {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .product-first-pic {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
