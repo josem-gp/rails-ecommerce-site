@@ -1,12 +1,9 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :about ]
 
-  def index
-    @contact = Contact.new(params[:home])
-  end
-
   def create
-    @contact = Contact.new(params[:home])
+    raise
+    @contact = Contact.new(params[:contact])
     @contact.request = request
     respond_to do |format|
       if @contact.deliver
@@ -22,6 +19,7 @@ class PagesController < ApplicationController
   end
 
   def home
+    @contact = Contact.new()
     @user = current_user
     @products = Product.all
   end
