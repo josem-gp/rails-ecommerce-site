@@ -73,7 +73,7 @@ Rails.application.configure do
     :port => 587,
     :authentication => :plain,
     :domain => "gmail.com",
-    :user_name => ENV['GMAIL_SMTP_USER'],  #need to find a way to call from .env
-    :password => ENV['GMAIL_SMTP_PASSWORD'], #need to find a way to call from .env
+    :user_name => ENV['GMAIL_SMTP_USER'],  
+    :password => ENV['GMAIL_SMTP_PASSWORD'], 
   }
 end

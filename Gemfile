@@ -10,6 +10,8 @@ gem 'acts_as_favoritor'
 gem 'cloudinary', '~> 1.16.0'
 # Faker gem to seed database for tests
 gem 'faker'
+# Use mail form for contact forms
+gem 'mail_form'
 # Add search functionality
 gem 'pg_search', '~> 2.3.0'
 # Add pundit for authorization
