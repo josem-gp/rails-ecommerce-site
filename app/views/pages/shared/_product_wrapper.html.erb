@@ -1,0 +1,14 @@
+<h3 class="subtitle-display-product">Discover</h3>
+<h2>POPULAR ITEMS</h2>
+<div class="container products-grid">
+  <% delay = 0 %>
+  <% @products.each do |product| %>
+    <!-- Product info -->
+    <div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="<%= delay > 200 ? 0 : delay == 0 ? 0 : 200 %>" >
+      <% delay += 200 %>
+      <div>
+        <%= render "pages/shared/product_display", product: product %>
+      </div>
+    </div>
+  <% end %>
+</div>

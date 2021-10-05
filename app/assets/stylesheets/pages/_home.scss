@@ -137,6 +137,7 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease-in-out;
+  -webkit-transform: rotateY(-180deg);
 }
 
 .info-hover {
@@ -163,7 +164,7 @@
   .product-second-pic {
     position: relative;
     visibility: visible;
-    -webkit-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-360deg);
     opacity: 1;
     transition: all 0.8s ease-in-out;
   }
