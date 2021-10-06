@@ -1,9 +1,9 @@
 const closeTag = () => {
-  const alert = document.querySelector(".alert");
+  const alert = document.querySelector(".close");
 
   if (alert) {
     setTimeout(function () {
-      alert.firstElementChild.click();
+      alert.click();
     }, 2000);
   }
 };
