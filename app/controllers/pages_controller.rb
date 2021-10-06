@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :about ]
 
   def create
-    raise
     @contact = Contact.new(params[:contact])
     @contact.request = request
     respond_to do |format|
