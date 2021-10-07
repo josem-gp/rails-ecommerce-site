@@ -1,12 +1,19 @@
 .contact-section {
-  height: 100vh;
   position: relative;
   background-color: #f8f8f8;
   margin-top: 6%;
 }
 
 #contact {
-  padding-top: 6%;
+  padding: 6% 0;
+
+  input,
+  textarea {
+    border: none;
+  }
+  label {
+    display: block !important;
+  }
 }
 
 // #contact:after {
@@ -35,15 +42,25 @@
   font-size: 42px;
 }
 
-#contact label {
-  display: block !important;
-}
-
 .flex-row {
   display: flex;
   margin-bottom: 24px;
+  input {
+    width: 250px;
+    height: 36px;
+  }
 }
 
 .form-input-spacing:first-of-type {
   margin-right: 32px;
+}
+
+.area-input {
+  margin-bottom: 24px;
+}
+
+.submit-form {
+  input {
+    background-color: green;
+  }
 }
