@@ -1,0 +1,36 @@
+.contact-section {
+  height: 100vh;
+  position: relative;
+  background-color: #f8f8f8;
+  margin-top: 6%;
+}
+
+#contact {
+  padding-top: 6%;
+}
+
+// #contact:after {
+//   content: "";
+//   background-image: asset-url("matcha-tea.png");
+//   position: absolute;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   width: 400px;
+//   height: 262px;
+//   top: 0;
+//   right: 0;
+// }
+
+.contact-header span {
+  display: block;
+  color: green;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.contact-header {
+  text-align: left;
+  position: relative;
+  padding-bottom: 12px;
+  font-size: 42px;
+}
