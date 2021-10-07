@@ -30,6 +30,8 @@
 .footer-basic .social {
   text-align: center;
   padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-basic .social > a {
@@ -37,13 +39,15 @@
   width: 40px;
   height: 40px;
   line-height: 40px;
-  display: inline-block;
   text-align: center;
   border-radius: 50%;
   border: 1px solid #ccc;
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-basic .social > a:hover {
