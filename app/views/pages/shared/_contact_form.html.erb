@@ -1,12 +1,17 @@
 <h3 class="contact-header"><span>Ready to try it</span> GET IN TOUCH</h3>
 <%= form_for @contact, url: pages_path, remote: true do |f| %>
-  <div class="col-md-6">
-    <%= f.label :name %></br>
-  <%= f.text_field  :name, required: true, class: "contact-form-text-area" %></br>
-<%= f.label :email %></br>
-<%= f.text_field :email, required: true, class: "contact-form-text-area" %></br>
-<%= f.label :message %></br>
-<%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
-                        placeholder: "Send us a message"%></br>
-<%= f.submit 'Send Message', class: 'btn btn-primary' %>
+  <div class= "flex-row">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field  :name, required: true, class: "contact-form-text-area" %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email, required: true, class: "contact-form-text-area" %>
+    </div>
+  </div>
+  <%= f.label :message %>
+  <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
+                            placeholder: "Send us a message"%>
+  <%= f.submit 'Send Message', class: 'btn btn-primary' %>
 <% end %>
