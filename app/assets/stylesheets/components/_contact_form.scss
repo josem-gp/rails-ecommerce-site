@@ -11,6 +11,12 @@
   textarea {
     border: none;
   }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+  }
+
   label {
     display: block !important;
   }
