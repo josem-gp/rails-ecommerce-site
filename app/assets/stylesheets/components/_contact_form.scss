@@ -9,7 +9,18 @@
 
   input,
   textarea {
-    border: none;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0.25rem !important;
+  }
+
+  textarea {
+    padding: 9px;
+  }
+
+  textarea::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
   }
 
   input:focus-visible,
@@ -21,18 +32,6 @@
     display: block !important;
   }
 }
-
-// #contact:after {
-//   content: "";
-//   background-image: asset-url("matcha-tea.png");
-//   position: absolute;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   width: 400px;
-//   height: 262px;
-//   top: 0;
-//   right: 0;
-// }
 
 .contact-header span {
   display: block;
