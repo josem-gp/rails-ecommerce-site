@@ -1,9 +1,20 @@
+footer {
+  background-color: #333333;
+  .text-grey {
+    color: #a2a2a2 !important;
+  }
+}
+
+footer h6 {
+  color: white;
+}
+
 #button-addon1 {
-  color: #ffc371;
+  color: white;
 }
 
 footer i {
-  color: #ffc371;
+  color: white;
 }
 
 .form-control::placeholder {
