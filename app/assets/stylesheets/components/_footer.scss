@@ -7,6 +7,32 @@ footer {
 
 footer h6 {
   color: white;
+  position: relative;
+}
+
+footer h6:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(8px);
+  width: 36px;
+  border-top: 1px solid white;
+}
+
+.top-footer-div {
+  padding-bottom: 0 !important;
+  position: relative;
+}
+
+.top-footer-div::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  bottom: 0;
+  width: 100px;
+  border-top: 2px solid white;
 }
 
 #button-addon1 {
@@ -15,6 +41,10 @@ footer h6 {
 
 footer i {
   color: white;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 
 .form-control::placeholder {
