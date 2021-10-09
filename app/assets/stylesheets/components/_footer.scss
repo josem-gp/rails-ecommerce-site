@@ -1,7 +1,7 @@
 footer {
   background-color: #333333;
   .text-grey {
-    color: #a2a2a2 !important;
+    color: #a2a2a2;
   }
 }
 
@@ -45,6 +45,7 @@ footer i {
 
 footer a:hover {
   text-decoration: none;
+  color: white;
 }
 
 .form-control::placeholder {
