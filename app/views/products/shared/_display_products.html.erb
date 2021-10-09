@@ -1,9 +1,9 @@
 <% products.each do |product| %>
   <%= link_to product_path(product) do %>
+    <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'product-first-pic' %>
+    <%= cl_image_tag product.photos[2].key, height: 300, width: 400, crop: :fill, class: 'product-second-pic' %>
     <ul>
       <li><%= product.name %></li>
-      <li><%= product.description %></li>
-      <li>¥<%= product.price %></li>
       <div>
         <% if product.rating %>
           <% product.rating.floor.times do %>
@@ -21,6 +21,7 @@
           <% end %>
         <%end %>
       </div>
+      <li>¥<%= product.price %></li>
     </ul>
   <% end %>
 <% end %>
