@@ -84,6 +84,12 @@ li a:hover::after {
   transition: all 0.5s ease-in-out !important;
 }
 
+.form-inline input::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
 // Cart
 
 .items-cart {
