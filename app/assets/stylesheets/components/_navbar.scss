@@ -59,11 +59,26 @@ li a:hover::after {
   align-items: center;
 }
 
+.right-nav li {
+  position: relative;
+}
+
+.right-nav li:not(:last-of-type):after {
+  content: "";
+  position: absolute;
+  border-right: solid 2px #6e6d6b;
+  top: 50%;
+  right: 0;
+  height: 20px;
+  margin-top: -10px;
+}
+
 // Search
 
 .search-btn {
   border: none;
   background: none;
+  padding: 0 10px;
 }
 
 .close-search {
@@ -108,6 +123,10 @@ li a:hover::after {
 .cart-nav {
   position: relative;
   font-size: 21px;
+  padding: 0 10px !important;
+  i {
+    color: black;
+  }
 }
 
 // Dropdown menu
