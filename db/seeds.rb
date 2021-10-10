@@ -69,10 +69,37 @@ file5 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
 file6= URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
 file7 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
 file8 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file9 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file10 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file11 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file12 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file13 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file14 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file15 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file16 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file17 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file18 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file19 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file20 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file21 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file22 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file23 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file24 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file25 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file26 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file27 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file28 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file29 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file30 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file31 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file32 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
+file33 = URI.open('https://cdn.nogarlicnoonions.com/images/thumbs/image.php?width=2000&height=2000&image=/images/articles/2021-07/best-coffee-beans-luxe-digital2021-07-11-10-19-37.jpg')
+file34 = URI.open('https://www.gardeniapharmacy.com/wp-content/uploads/2021/02/coffee.jpg')
+file35 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
 
-files = [file, file1, file2, file3, file4, file5, file6, file7, file8]
+files = [file, file1, file2, file3, file4, file5, file6, file7, file8, file9, file10, file11, file12, file13, file14, file15, file16, file17, file18, file19, file20, file21, file22, file23, file24, file25, file26, file27, file28, file29, file30, file31, file32, file33, file34, file35]
 
-3.times do
+12.times do
     product = Product.new(
         name: Faker::Tea.variety, 
         description: Faker::Lorem.sentence(word_count: 20), 
