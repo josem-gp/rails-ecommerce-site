@@ -19,10 +19,14 @@
 
 // Style to center and right part of nav
 
+.navbar-light .navbar-brand {
+  color: white !important;
+}
+
 .navbar {
   position: fixed !important;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
   padding: 10px 23px !important;
   width: -webkit-fill-available;
 }
@@ -33,7 +37,7 @@
 
   li a {
     margin-right: 24px;
-    color: black !important;
+    color: white !important;
   }
 
   li a::after {
@@ -61,12 +65,15 @@ li a:hover::after {
 
 .right-nav li {
   position: relative;
+  i {
+    color: white;
+  }
 }
 
 .right-nav li:not(:last-of-type):after {
   content: "";
   position: absolute;
-  border-right: solid 2px #6e6d6b;
+  border-right: solid 2px white;
   top: 50%;
   right: 0;
   height: 20px;
@@ -79,6 +86,7 @@ li a:hover::after {
   border: none;
   background: none;
   padding: 0 10px;
+  color: white;
 }
 
 .close-search {
@@ -125,7 +133,7 @@ li a:hover::after {
   font-size: 21px;
   padding: 0 10px !important;
   i {
-    color: black;
+    color: white;
   }
 }
 
@@ -158,10 +166,13 @@ li a:hover::after {
     background-position: calc(100% - 18px);
     background-size: 14px;
     pointer-events: all !important;
+    i {
+      color: white;
+    }
   }
 
   ul {
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     margin-top: 10px;
   }
 }
@@ -195,6 +206,7 @@ li a:hover::after {
   background-image: url(icon-menu.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  filter: invert(1);
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
@@ -210,6 +222,7 @@ li a:hover::after {
   border: none !important;
   transform: translateY(-3px);
   color: transparent !important;
+  filter: invert(1);
   pointer-events: all !important;
 }
 
@@ -288,6 +301,9 @@ li a:hover::after {
   }
 
   .center-nav {
+    li a {
+      color: black;
+    }
     li a::after {
       display: none;
     }
