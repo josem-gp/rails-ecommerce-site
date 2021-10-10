@@ -114,6 +114,7 @@
 
   li {
     position: relative;
+    font-weight: 200;
   }
 
   li:before {
@@ -122,5 +123,39 @@
     left: -21px;
     top: -5px;
     font-size: 22px;
+    cursor: pointer;
   }
+}
+
+.wrapper-left {
+  h2 {
+    color: black;
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  h2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(6px);
+    width: 36px;
+    border-top: 2px solid green;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 22px;
+  }
+}
+
+.filter-div {
+  width: max-content;
+  padding: 22px 42px;
+  border: 1px solid #eaeaea;
+  margin-top: 0;
 }
