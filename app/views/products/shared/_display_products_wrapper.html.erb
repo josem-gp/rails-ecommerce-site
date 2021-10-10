@@ -1,9 +1,22 @@
 <div class="wrapper-grid">
-  <div class="wrapper-left"></div>
+  <div class="wrapper-left">
+    <div>
+      <h2>Catalog</h2>
+      <h3>Price</h3>
+      <ul>
+        <li>Less than ¥1000</li>
+        <li>¥1000 - ¥2000</li>
+        <li>¥2000 - ¥3000</li>
+        <li>¥3000 - ¥4000</li>
+        <li>¥4000 - ¥5000</li>
+        <li>More than ¥5000</li>
+      </ul>
+    </div>
+  </div>
   <div class="right-side">
     <div class="wrapper-right">
       <% products.each do |product| %>
-        <div class="mini-product-card">
+        <div class="mini-product-card" data-key=<%= product.price %>>
           <%= link_to product_path(product) do %>
             <div class="info-hover">
               <a href="/products/<%= product.id %>"><i class="fas fa-eye"></i></a>

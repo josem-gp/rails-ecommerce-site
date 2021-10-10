@@ -105,3 +105,22 @@
     transition: all 0.7s ease-in-out;
   }
 }
+
+// Filter
+
+.wrapper-left ul {
+  list-style-type: none;
+  padding-left: 18px;
+
+  li {
+    position: relative;
+  }
+
+  li:before {
+    position: absolute;
+    content: "\2610";
+    left: -21px;
+    top: -5px;
+    font-size: 22px;
+  }
+}
