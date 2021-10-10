@@ -58,3 +58,13 @@
 *:first-child + html .digg_pagination {
   overflow: hidden;
 }
+
+.pagination {
+  justify-content: center;
+
+  a:hover {
+    text-decoration: none;
+    color: #2e6ab1;
+    border: 1px solid #9aafe5;
+  }
+}
