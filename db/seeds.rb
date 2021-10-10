@@ -104,6 +104,7 @@ files = [file, file1, file2, file3, file4, file5, file6, file7, file8, file9, fi
         name: Faker::Tea.variety, 
         description: Faker::Lorem.sentence(word_count: 20), 
         price: rand(2000...10000), 
+        rating: rand(0..5),
         availability: rand(1..2)
     )
     product.user = admin

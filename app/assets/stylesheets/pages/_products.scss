@@ -110,20 +110,19 @@
 
 .wrapper-left ul {
   list-style-type: none;
-  padding-left: 18px;
+  padding-left: 0;
 
   li {
     position: relative;
     font-weight: 200;
   }
 
-  li:before {
-    position: absolute;
-    content: "\2610";
-    left: -21px;
-    top: -5px;
+  .box {
     font-size: 22px;
     cursor: pointer;
+    line-height: 1.1;
+    margin: 0;
+    margin-right: 4px;
   }
 }
 
@@ -158,4 +157,13 @@
   padding: 22px 42px;
   border: 1px solid #eaeaea;
   margin-top: 0;
+}
+
+.stars-filter,
+.price-filter {
+  display: flex;
+}
+
+.disabled {
+  display: none;
 }

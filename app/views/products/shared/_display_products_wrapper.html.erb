@@ -4,55 +4,96 @@
       <h2>Catalog</h2>
       <h3>Stars</h3>
       <ul>
-        <li>
-          <i class="fas fa-star active"></i>
-          <% 4.times do %>
+        <li class="stars-filter" data-stars=0.0>
+          <p class="box">☐</p>
+          <div>
+            <% 5.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        </li>
+        <li class="stars-filter" data-stars=1.0>
+          <p class="box">☐</p>
+          <div>
+            <i class="fas fa-star active"></i>
+            <% 4.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        </li>
+        <li class="stars-filter" data-stars=2.0>
+          <p class="box">☐</p>
+          <div>
+            <% 2.times do %>
+              <i class="fas fa-star active"></i>
+            <% end %>
+            <% 3.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        </li>
+        <li class="stars-filter" data-stars=3.0>
+          <p class="box">☐</p>
+          <div>
+            <% 3.times do %>
+              <i class="fas fa-star active"></i>
+            <% end %>
+            <% 2.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        </li>
+        <li class="stars-filter" data-stars=4.0>
+          <p class="box">☐</p>
+          <div>
+            <% 4.times do %>
+              <i class="fas fa-star active"></i>
+            <% end %>
             <i class="fas fa-star"></i>
-          <% end %>
+          </div>
         </li>
-        <li>
-          <% 2.times do %>
-            <i class="fas fa-star active"></i>
-          <% end %>
-          <% 3.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-        </li>
-        <li>
-          <% 3.times do %>
-            <i class="fas fa-star active"></i>
-          <% end %>
-          <% 2.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-        </li>
-        <li>
-          <% 4.times do %>
-            <i class="fas fa-star active"></i>
-          <% end %>
-          <i class="fas fa-star"></i>
-        </li>
-        <li>
-          <% 5.times do %>
-            <i class="fas fa-star active"></i>
-          <% end %>
+        <li class="stars-filter" data-stars=5.0>
+          <p class="box">☐</p>
+          <div>
+            <% 5.times do %>
+              <i class="fas fa-star active"></i>
+            <% end %>
+          </div>
         </li>
       </ul>
       <h3>Price</h3>
       <ul>
-        <li>Less than ¥1000</li>
-        <li>¥1000 - ¥2000</li>
-        <li>¥2000 - ¥3000</li>
-        <li>¥3000 - ¥4000</li>
-        <li>¥4000 - ¥5000</li>
-        <li>More than ¥5000</li>
+        <li class="price-filter" data-price=0>
+          <p class="box">☐</p>
+          Less than ¥1000
+        </li>
+        <li class="price-filter" data-price=1000>
+          <p class="box">☐</p>
+          ¥1000 - ¥2000
+        </li>
+        <li class="price-filter" data-price=2001>
+          <p class="box">☐</p>
+          ¥2000 - ¥3000
+        </li>
+        <li class="price-filter" data-price=3001>
+          <p class="box">☐</p>
+          ¥3000 - ¥4000
+        </li>
+        <li class="price-filter" data-price=4001>
+          <p class="box">☐</p>
+          ¥4000 - ¥5000
+        </li>
+        <li class="price-filter" data-price=5001>
+          <p class="box">☐</p>
+          More than ¥5000
+        </li>
       </ul>
     </div>
   </div>
   <div class="right-side">
     <div class="wrapper-right">
       <% products.each do |product| %>
-        <div class="mini-product-card" data-key=<%= product.price %>>
+        <div class="mini-product-card" data-price=<%= product.price %> data-stars=<%= product.rating %>>
           <%= link_to product_path(product) do %>
             <div class="info-hover">
               <a href="/products/<%= product.id %>"><i class="fas fa-eye"></i></a>
