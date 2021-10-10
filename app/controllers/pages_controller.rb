@@ -36,7 +36,7 @@ class PagesController < ApplicationController
   def home
     @contact = Contact.new()
     @user = current_user
-    @products = Product.all
+    @products = Product.all.sample(4)
   end
 
   def about
