@@ -18,19 +18,6 @@ class PagesController < ApplicationController
       render :home
 
     end
-      # if @contact.deliver
-      #   # re-initialize Home object for cleared form
-      #   @user = current_user
-      #   @products = Product.all
-      #   @contact = Contact.new()
-      #   flash[:alert] = "Thank you for your message. We will get back to you soon!"
-      #   render :home
-      # else
-      #   @user = current_user
-      #   @products = Product.all
-      #   flash[:alert] = "Message did not send."
-      #   render :home
-      # end
   end
 
   def home

@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-
+gem 'will_paginate', '~> 3.3'
 # Favoritor gem to simplify the favourite logic
 gem 'acts_as_favoritor'
 #Host images online
