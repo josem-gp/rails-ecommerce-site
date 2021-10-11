@@ -335,35 +335,59 @@ const filterProducts = () => {
   const cards = document.querySelectorAll(".mini-product-card");
   const starsFilter = document.querySelectorAll(".stars-filter .box");
   const priceFilter = document.querySelectorAll(".price-filter .box");
+  const starsFilterTick = document.querySelectorAll(".stars-filter .tick");
+  const priceFilterTick = document.querySelectorAll(".price-filter .tick");
 
-  const buttonsFilter = [starsFilter, priceFilter];
+  const buttonsFilter = [
+    starsFilter,
+    priceFilter,
+    priceFilterTick,
+    starsFilterTick,
+  ];
   paginate();
   buttonsFilter.forEach((button) => {
     button.forEach((el) => {
       el.addEventListener("click", (event) => {
         event.preventDefault();
+
         const target = event.currentTarget;
+        console.log(target);
         const dataStars = event.currentTarget.parentElement.dataset.stars;
         const dataMinPrice = event.currentTarget.parentElement.dataset.minprice;
         const dataMaxPrice = event.currentTarget.parentElement.dataset.maxprice;
 
-        cards.forEach((element) => {
-          element.classList.remove("active");
-          if (
-            element.dataset.stars === `${dataStars}` ||
-            (parseInt(element.dataset.price, 10) >=
-              parseInt(`${dataMinPrice}`, 10) &&
-              parseInt(element.dataset.price, 10) <=
-                parseInt(`${dataMaxPrice}`, 10))
-          ) {
-            element.classList.add("active");
-            element.style.display =
-              element.style.display === "none" ? "flex" : "";
-          } else {
-            element.style.display = "none";
-          }
-        });
-        paginate();
+        if (!target.classList.contains("hidden")) {
+          console.log(target);
+          target.classList.add("hidden");
+          target.previousElementSibling
+            ? target.previousElementSibling.classList.contains("hidden")
+              ? target.previousElementSibling.classList.remove("hidden")
+              : ""
+            : "";
+          target.nextElementSibling
+            ? target.nextElementSibling.classList.contains("hidden")
+              ? target.nextElementSibling.classList.remove("hidden")
+              : ""
+            : "";
+
+          cards.forEach((element) => {
+            element.classList.remove("active");
+            if (
+              element.dataset.stars === `${dataStars}` ||
+              (parseInt(element.dataset.price, 10) >=
+                parseInt(`${dataMinPrice}`, 10) &&
+                parseInt(element.dataset.price, 10) <=
+                  parseInt(`${dataMaxPrice}`, 10))
+            ) {
+              element.classList.add("active");
+              element.style.display =
+                element.style.display === "none" ? "flex" : "";
+            } else {
+              element.style.display = "none";
+            }
+          });
+          paginate();
+        }
       });
     });
   });

@@ -129,6 +129,17 @@
     margin: 0;
     margin-right: 4px;
   }
+  .tick {
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1.1;
+    margin: 0;
+    margin-right: 4px;
+  }
+
+  .hidden {
+    display: none;
+  }
 }
 
 .wrapper-left {
