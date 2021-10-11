@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
         if params[:query].present?
             @products_highlight = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
         else
-            @products = policy_scope(Product.paginate(page: params[:page], per_page: 9))
+            @products = policy_scope(Product)
         end
     end
 
