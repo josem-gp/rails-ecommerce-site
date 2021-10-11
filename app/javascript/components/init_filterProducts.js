@@ -351,13 +351,11 @@ const filterProducts = () => {
         event.preventDefault();
 
         const target = event.currentTarget;
-        console.log(target);
         const dataStars = event.currentTarget.parentElement.dataset.stars;
         const dataMinPrice = event.currentTarget.parentElement.dataset.minprice;
         const dataMaxPrice = event.currentTarget.parentElement.dataset.maxprice;
 
         if (!target.classList.contains("hidden")) {
-          console.log(target);
           target.classList.add("hidden");
           target.previousElementSibling
             ? target.previousElementSibling.classList.contains("hidden")
