@@ -317,10 +317,10 @@ const simplePagination = () => {
 simplePagination();
 
 const paginate = () => {
-  var items = $(".item");
+  var items = $(".mini-product-card");
   console.log(items);
   var numItems = items.length;
-  var perPage = 6;
+  var perPage = 9;
 
   items.slice(perPage).hide();
 
