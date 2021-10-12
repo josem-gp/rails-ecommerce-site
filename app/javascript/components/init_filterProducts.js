@@ -337,6 +337,7 @@ const filterProducts = () => {
   const priceFilter = document.querySelectorAll(".price-filter .box");
   const starsFilterTick = document.querySelectorAll(".stars-filter .tick");
   const priceFilterTick = document.querySelectorAll(".price-filter .tick");
+  const allCheckBoxes = document.querySelectorAll(".check-box");
 
   const buttonsFilter = [
     starsFilter,
@@ -354,6 +355,24 @@ const filterProducts = () => {
         const dataStars = event.currentTarget.parentElement.dataset.stars;
         const dataMinPrice = event.currentTarget.parentElement.dataset.minprice;
         const dataMaxPrice = event.currentTarget.parentElement.dataset.maxprice;
+
+        //there is a problem when trying to untick a box when ticking another one
+
+        allCheckBoxes.forEach((el) => {
+          if (el.classList.contains("tick")) {
+            console.log("tick here");
+            el.classList.contains("hidden" && "tick")
+              ? ""
+              : el.classList.add("hidden");
+          } else {
+            console.log("box here");
+            el.classList.contains("hidden" && "box")
+              ? el.classList.remove("hidden")
+              : "";
+          }
+        });
+
+        console.log("---------------------");
 
         if (!target.classList.contains("hidden")) {
           target.classList.add("hidden");
