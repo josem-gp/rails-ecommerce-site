@@ -356,22 +356,21 @@ const filterProducts = () => {
         const dataMinPrice = event.currentTarget.parentElement.dataset.minprice;
         const dataMaxPrice = event.currentTarget.parentElement.dataset.maxprice;
 
-        //there is a problem when trying to untick a box when ticking another one
-
         allCheckBoxes.forEach((el) => {
           if (el.classList.contains("tick")) {
             el.classList.contains("tick" && "hidden")
               ? ""
               : el.classList.add("hidden");
           } else {
-            console.log("box here");
             el.classList.contains("box" && "hidden")
               ? el.classList.remove("hidden")
               : "";
           }
         });
 
-        if (!target.classList.contains("hidden")) {
+        console.log(target);
+
+        if (!target.classList.contains("tick" && "hidden")) {
           target.classList.add("hidden");
           target.previousElementSibling
             ? target.previousElementSibling.classList.contains("hidden")
@@ -399,6 +398,14 @@ const filterProducts = () => {
             } else {
               element.style.display = "none";
             }
+          });
+          paginate();
+        } else if (target.classList.contains("tick" && "hidden")) {
+          cards.forEach((element) => {
+            element.classList.remove("active");
+            element.classList.add("active");
+            element.style.display =
+              element.style.display === "none" ? "flex" : "";
           });
           paginate();
         }
