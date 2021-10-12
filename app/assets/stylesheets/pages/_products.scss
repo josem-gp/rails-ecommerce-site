@@ -169,10 +169,10 @@
 }
 
 .filter-div {
-  width: max-content;
-  padding: 22px 42px;
+  width: -webkit-fill-available;
+  padding: 22px 0px 22px 42px;
   border: 1px solid #eaeaea;
-  margin: 0 auto;
+  margin-bottom: 28px;
 }
 
 .stars-filter,
@@ -260,4 +260,32 @@
   background-image: none;
   border: none;
   box-shadow: none;
+}
+
+// featured products
+
+.featured-card {
+  display: flex;
+  align-items: center;
+  margin: 24px 0px;
+  .featured-info {
+    flex-grow: 1;
+    margin-left: 14px;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+      margin-top: 6px;
+    }
+  }
+}
+
+.featured-product-pic {
+  width: 120px;
+  height: 120px;
 }
