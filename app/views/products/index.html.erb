@@ -11,7 +11,7 @@
         <%= render "products/shared/search_query", products_highlight: @products_highlight %>
         <!-- Index without search query -->
       <% else %>
-        <%= render "products/shared/display_products_wrapper", products: @products %>
+        <%= render "products/shared/display_products_wrapper", products: @products, featured_products: @featured_products %>
       <% end %>
     </div>
   </section>

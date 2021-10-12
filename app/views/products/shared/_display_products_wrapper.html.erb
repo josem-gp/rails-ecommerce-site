@@ -1,7 +1,7 @@
 <div class="wrapper-grid">
   <div class="wrapper-left">
     <div class="filter-div">
-      <h2>Catalog</h2>
+      <h2>CATALOG</h2>
       <h3>Price</h3>
       <ul>
         <li class="price-filter" data-minprice=0 data-maxprice=999>
@@ -100,6 +100,33 @@
           </div>
         </li>
       </ul>
+    </div>
+  </div>
+  <div class="featured-products">
+    <h2>BEST SELLER</h2>
+    <div class="flex-featured">
+      <% featured_products.each do |product| %>
+        <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'product-first-pic' %>
+        <h3><%= product.name %></h3>
+        <div>
+          <% if product.rating %>
+            <% product.rating.floor.times do %>
+              <i class="fas fa-star active"></i>
+            <%end %>
+            <% if product.rating.to_s.include?('.5') %>
+              <i class="fas fa-star-half-alt active"></i>
+            <% end %>
+            <% (5 - product.rating.ceil).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          <% else %>
+            <% 5.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          <%end %>
+        </div>
+        <p>¥<%= product.price %></p>
+      <% end %>
     </div>
   </div>
   <div class="right-side">
