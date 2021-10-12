@@ -293,7 +293,8 @@
 
 // clickeable
 
-.featured-card > a {
+.featured-card > a,
+.mini-product-card > a {
   position: absolute;
   top: 0;
   bottom: 0;
