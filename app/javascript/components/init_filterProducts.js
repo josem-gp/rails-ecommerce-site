@@ -360,19 +360,16 @@ const filterProducts = () => {
 
         allCheckBoxes.forEach((el) => {
           if (el.classList.contains("tick")) {
-            console.log("tick here");
-            el.classList.contains("hidden" && "tick")
+            el.classList.contains("tick" && "hidden")
               ? ""
               : el.classList.add("hidden");
           } else {
             console.log("box here");
-            el.classList.contains("hidden" && "box")
+            el.classList.contains("box" && "hidden")
               ? el.classList.remove("hidden")
               : "";
           }
         });
-
-        console.log("---------------------");
 
         if (!target.classList.contains("hidden")) {
           target.classList.add("hidden");
