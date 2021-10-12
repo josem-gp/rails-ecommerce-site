@@ -106,6 +106,8 @@
       <div class="flex-featured">
         <% featured_products.each do |product| %>
           <div class="featured-card">
+            <%= link_to product_path(product) do %>
+            <% end %>
             <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
             <div class="featured-info">
               <h3><%= product.name %></h3>

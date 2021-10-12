@@ -265,6 +265,7 @@
 // featured products
 
 .featured-card {
+  position: relative;
   display: flex;
   align-items: center;
   margin: 24px 0px;
@@ -288,4 +289,15 @@
 .featured-product-pic {
   width: 120px;
   height: 110px;
+}
+
+// clickeable
+
+.featured-card > a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
 }
