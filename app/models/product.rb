@@ -32,4 +32,28 @@ class Product < ApplicationRecord
   # Availability: 1 available / 2 unavailable
   validates :availability, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 2 }
 
+  private
+
+  #by title, rating, price, date
+
+  def order_list(sort_by)
+    if sort_by == 'name A-Z'
+      self.order(name: :asc)
+    elsif sort_by == 'name Z-A'
+      self.order(name: :desc)
+    elsif sort_by == 'rating 1-5'
+      self.order(:rating)
+    elsif sort_by == 'rating 5-1'
+      self.order(rating: :desc)
+      elsif sort_by == 'price low-high'
+      self.order(:price)
+    elsif sort_by == 'price high-low'
+      self.order(price: :desc)
+      elsif sort_by == 'date new-old'
+      self.order(:updated_at)
+    elsif sort_by == 'date old-new'
+      self.order(updated_at: :desc)
+  end
+ 
+
 end
