@@ -32,8 +32,9 @@ class Product < ApplicationRecord
   # Availability: 1 available / 2 unavailable
   validates :availability, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 2 }
 
+  private 
 
-  def order_list(sort_by)
+  def self.order_list(sort_by)
     if sort_by == 'name A-Z'
       self.order(name: :asc)
     elsif sort_by == 'name Z-A'
