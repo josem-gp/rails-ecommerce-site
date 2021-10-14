@@ -1,0 +1,13 @@
+.made-dropdown-menu {
+  background-color: #aaaaaa;
+  position: absolute;
+  z-index: 99;
+}
+
+.sort_drop {
+  position: relative;
+}
+
+.sort_drop::after {
+  content: "hi";
+}

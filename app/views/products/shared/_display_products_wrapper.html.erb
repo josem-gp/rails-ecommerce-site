@@ -8,10 +8,10 @@
   <div class="right-side">
     <div class="order-products">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="sort_drop">
           Order products by 
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="made-dropdown-menu">
           <%= link_to "Best Selling", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>
           <%= link_to "Alphabetically, A to Z", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>
           <%= link_to "Alphabetically, Z to A", products_path(sort_by: 'name Z-A'), class: 'dropdown-item' %>
