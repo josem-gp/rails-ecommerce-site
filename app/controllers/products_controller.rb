@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
         if params[:query].present?
             @products_highlight = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
         else
-            @products = policy_scope(Product)
+            @products = policy_scope(Product.order_list(params[:id]))
             @featured_products =Product.first(3)
         end
     end

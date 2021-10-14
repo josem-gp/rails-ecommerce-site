@@ -51,7 +51,7 @@ class Product < ApplicationRecord
       self.order(price: :desc)
     elsif sort_by == 'date old-new'
       self.order(:updated_at)
-    elsif sort_by == 'date new-old'
+    elsif sort_by == 'date new-old' || sort_by.blank?
       self.order(updated_at: :desc)
   end
  
