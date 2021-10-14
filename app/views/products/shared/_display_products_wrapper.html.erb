@@ -8,9 +8,7 @@
   <div class="right-side">
     <div class="order-products">
       <div class="dropdown">
-        <button class="sort_drop">
-          Order products by 
-        </button>
+        <button class="sort_drop">Order products by <i class="fas fa-caret-down"></i></button>
         <div class="made-dropdown-menu">
           <%= link_to "Best Selling", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>
           <%= link_to "Alphabetically, A to Z", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>

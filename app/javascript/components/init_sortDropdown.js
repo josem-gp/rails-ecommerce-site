@@ -4,6 +4,7 @@ const sortDropdown = () => {
 
   dropdownBtn.addEventListener("click", (event) => {
     event.preventDefault();
+    dropdownBtn.firstElementChild.classList.toggle("upwards");
     dropdownMenu.classList.toggle("show");
   });
 };
