@@ -32,9 +32,6 @@ class Product < ApplicationRecord
   # Availability: 1 available / 2 unavailable
   validates :availability, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 2 }
 
-  private
-
-  #by title, rating, price, date
 
   def order_list(sort_by)
     if sort_by == 'name A-Z'
@@ -53,6 +50,7 @@ class Product < ApplicationRecord
       self.order(:updated_at)
     elsif sort_by == 'date new-old' || sort_by.blank?
       self.order(updated_at: :desc)
+    end
   end
  
 
