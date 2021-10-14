@@ -7,14 +7,20 @@
   </div>
   <div class="right-side">
     <div class="order-products">
-      <div class="dropdown show">
-        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Order products by 
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to "Best Selling", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>
+          <%= link_to "Alphabetically, A to Z", products_path(sort_by: 'name A-Z'), class: 'dropdown-item' %>
+          <%= link_to "Alphabetically, Z to A", products_path(sort_by: 'name Z-A'), class: 'dropdown-item' %>
+          <%= link_to "Rating, low to high", products_path(sort_by: 'rating 1-5'), class: 'dropdown-item' %>
+          <%= link_to "Rating, high to low", products_path(sort_by: 'rating 5-1'), class: 'dropdown-item' %>
+          <%= link_to "Price, low to high", products_path(sort_by: 'price low-high'), class: 'dropdown-item' %>
+          <%= link_to "Price, high to low", products_path(sort_by: 'price high-low'), class: 'dropdown-item' %>
+          <%= link_to "Date, new to old", products_path(sort_by: 'date new-old'), class: 'dropdown-item' %>
+          <%= link_to "Date, old to new", products_path(sort_by: 'date old-new'), class: 'dropdown-item' %>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ class Product < ApplicationRecord
   private 
 
   def self.order_list(sort_by)
-    if sort_by == 'name A-Z'
+    if sort_by == 'name A-Z' || sort_by.blank?
       self.order(name: :asc)
     elsif sort_by == 'name Z-A'
       self.order(name: :desc)
@@ -49,7 +49,7 @@ class Product < ApplicationRecord
       self.order(price: :desc)
     elsif sort_by == 'date old-new'
       self.order(:updated_at)
-    elsif sort_by == 'date new-old' || sort_by.blank?
+    elsif sort_by == 'date new-old' 
       self.order(updated_at: :desc)
     end
   end
