@@ -117,15 +117,15 @@ li a:hover::after {
 
 .items-cart {
   position: absolute;
-  bottom: 0px;
-  right: 94px;
+  top: 18px;
+  right: 4px;
   background: green;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   text-align: center;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .cart-nav {
