@@ -55,4 +55,8 @@ class Product < ApplicationRecord
   end
  
 
+  def most_featured
+    featured_items= OrderItem.joins("INNER JOIN orders ON orders.id = order_items.order_id WHERE status = 2").group(:product_id).sum(:quantity)
+    end
+  end
 end
