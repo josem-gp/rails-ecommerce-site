@@ -10,6 +10,7 @@ class Order < ApplicationRecord
   
   validates :total, presence: true, numericality: { only_integer: true }
 
+  after_save :most_featured
   after_save :merge_order_items
   before_create :add_billing_address
 
@@ -56,4 +57,10 @@ class Order < ApplicationRecord
     self.billing_address = shipping_address
   end
 
+  def most_featured
+    featured_items= self.joins("INNER JOIN orders ON orders.id = order_items.order_id WHERE status = 2").group(:product_id).sum(:quantity)
+    featured_items.each do |prod_id, quantity|
+      Product.find(prod_id).update(sales: quantity)
+    end
+  end
 end
