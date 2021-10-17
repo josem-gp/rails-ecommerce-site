@@ -32,6 +32,8 @@ class Product < ApplicationRecord
   # Availability: 1 available / 2 unavailable
   validates :availability, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 2 }
 
+  before_validation :initial_sales, on: :create
+
   private 
 
   def self.order_list(sort_by)
@@ -54,11 +56,7 @@ class Product < ApplicationRecord
     end
   end
  
-
-  def most_featured
-    featured_items= OrderItem.joins("INNER JOIN orders ON orders.id = order_items.order_id WHERE status = 2").group(:product_id).sum(:quantity)
-    featured_items.each do |prod_id, quantity|
-      self.find(prod_id).update(sales: quantity)
-    end
+  def initial_sales
+    self.sales = 0
   end
 end
