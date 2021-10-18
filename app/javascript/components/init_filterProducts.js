@@ -368,8 +368,6 @@ const filterProducts = () => {
           }
         });
 
-        console.log(target);
-
         if (!target.classList.contains("tick" && "hidden")) {
           target.classList.add("hidden");
           target.previousElementSibling
