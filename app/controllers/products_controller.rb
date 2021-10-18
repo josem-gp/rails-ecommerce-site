@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
             @products_highlight = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
         else
             @products = policy_scope(Product.order_list(params[:sort_by]))
-            @featured_products =Product.first(3)
+            @featured_products =Product.order(sales: :desc).first(3)
         end
     end
 

@@ -37,7 +37,9 @@ class Product < ApplicationRecord
   private 
 
   def self.order_list(sort_by)
-    if sort_by == 'name A-Z' || sort_by.blank?
+    if sort_by == 'featured' || sort_by.blank?
+      self.order(sales: :desc)
+    elsif sort_by == 'name A-Z' 
       self.order(name: :asc)
     elsif sort_by == 'name Z-A'
       self.order(name: :desc)

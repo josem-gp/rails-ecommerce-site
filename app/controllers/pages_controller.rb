@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   def home
     @contact = Contact.new()
     @user = current_user
-    @products = Product.all.sample(4)
+    @products = Product.order(sales: :desc).first(4)
   end
 
   def about
