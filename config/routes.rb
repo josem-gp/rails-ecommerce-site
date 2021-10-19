@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'about', to: 'pages#about'
+  resources :newsletters, only: [:create]
   resources :pages, only: [:index, :new, :create]
   resources :products, only: [:index, :show, :create] do
     resources :reviews, only: [:create, :update, :destroy ]
