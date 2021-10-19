@@ -30,9 +30,9 @@
       <div class="p-1 rounded border">
         <div class="input-group">
           <%= form_with url: "/newsletters", method: :puts do |form| %>
-            <%= form.text_field :email %>
+            <%= form.text_field :email, :class => 'input-newsletter' %>
             <div class="input-group-append">
-              <button><i class="fa fa-paper-plane"><%= form.submit "", :class => 'btn btn-link' %></i></button>
+              <button class="btn btn-link"><i class="fa fa-paper-plane"><%= form.submit "" %></i></button>
             </div>
           <% end %>
         </div>

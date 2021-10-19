@@ -24,6 +24,7 @@ footer h6:after {
 .top-footer-div {
   padding-bottom: 0 !important;
   position: relative;
+  padding: 0 68px;
 }
 
 .top-footer-div::after {
@@ -57,4 +58,34 @@ footer a:hover {
 
 .form-control.shadow-0:focus {
   box-shadow: none;
+}
+
+// new form
+
+.input-group {
+  form {
+    display: flex;
+    flex-grow: 1;
+  }
+  .input-newsletter {
+    flex-grow: 1;
+    outline: none;
+  }
+
+  i {
+    input {
+      background: none;
+      border: none;
+      display: none;
+    }
+  }
+}
+
+.input-group-append {
+  .btn-link {
+    outline: none;
+  }
+  .btn-link:focus {
+    box-shadow: none;
+  }
 }
