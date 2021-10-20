@@ -33,3 +33,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.image-flex {
+  display: flex;
+}
+
+.changeable-pic {
+  height: 100px;
+  width: 100px;
+  margin-right: 4px;
+}

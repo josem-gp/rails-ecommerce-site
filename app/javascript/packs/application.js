@@ -40,6 +40,7 @@ import { dropdownNav } from "../components/init_dropdownNav";
 import { originalNav } from "../components/init_originalNav";
 import { filterProducts } from "../components/init_filterProducts";
 import { sortDropdown } from "../components/init_sortDropdown";
+import { showImgDisplay } from "../components/init_showImgDisplay";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -57,4 +58,5 @@ document.addEventListener("turbolinks:load", () => {
   originalNav();
   filterProducts();
   sortDropdown();
+  showImgDisplay();
 });
