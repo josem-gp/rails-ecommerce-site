@@ -4,16 +4,22 @@
     <h1><%= @product.name %></h1>
   </section>
   <!-- Detailed product info wrapper -->
-  <section>
-    <!-- Images & Info -->
-    <%= render "products/shared/display_product", product: @product %>
-    <!-- Favoritor -->
-    <%= render "products/shared/favorite_product", product: @product %>
-    <!-- Cart button -->
-    <%= render "products/shared/cart_product", product: @product, order_item: @order_item %>
+  <section class="container grid-wrapper">
+    <div>
+      <!-- Images -->
+      <%= render "products/shared/display_product_images", product: @product %>
+    </div>
+    <div>
+      <!-- Info -->
+      <%= render "products/shared/display_product_info", product: @product %>
+      <!-- Favoritor -->
+      <%= render "products/shared/favorite_product", product: @product %>
+      <!-- Cart button -->
+      <%= render "products/shared/cart_product", product: @product, order_item: @order_item %>
+    </div>
   </section>
   <!-- Review wrapper -->
-  <section>
+  <section class="container">
     <h1><%= "Reviews for #{@product.name}" %></h1>
     <!-- Toggleable Create form  -->
     <%= render "products/shared/create_review",  product: @product, review: @review, user: @user %>
