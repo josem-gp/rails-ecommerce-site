@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   before_validation :add_default_icon, on: :create
   after_create :send_registration_email
+  after_create :join_newsletter
 
   private
 
@@ -27,5 +28,9 @@ class User < ApplicationRecord
   def add_default_icon
     default_icon = Icon.find_by(name: 'default_icon')
     self.icon = default_icon
+  end
+
+  def join_newsletter
+    Newsletter.create(email: self.email)
   end
 end
