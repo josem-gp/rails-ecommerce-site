@@ -5,6 +5,7 @@ const showImgDisplay = () => {
 
   if (displayDiv) {
     displayDiv.insertAdjacentHTML("beforeend", productImg);
+    displayDiv.firstElementChild.classList.add("augment-pic");
 
     productImgs.forEach((img) => {
       img.addEventListener("click", (event) => {
@@ -12,6 +13,7 @@ const showImgDisplay = () => {
 
         displayDiv.firstElementChild.remove();
         displayDiv.insertAdjacentHTML("beforeend", duplicate);
+        displayDiv.firstElementChild.classList.add("augment-pic");
       });
     });
   }
