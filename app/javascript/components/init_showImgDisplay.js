@@ -3,16 +3,18 @@ const showImgDisplay = () => {
   const productImg = document.querySelector(".changeable-pic").outerHTML;
   const displayDiv = document.querySelector(".main-pic");
 
-  displayDiv.insertAdjacentHTML("beforeend", productImg);
+  if (displayDiv) {
+    displayDiv.insertAdjacentHTML("beforeend", productImg);
 
-  productImgs.forEach((img) => {
-    img.addEventListener("click", (event) => {
-      let duplicate = event.target.outerHTML;
+    productImgs.forEach((img) => {
+      img.addEventListener("click", (event) => {
+        let duplicate = event.target.outerHTML;
 
-      displayDiv.firstElementChild.remove();
-      displayDiv.insertAdjacentHTML("beforeend", duplicate);
+        displayDiv.firstElementChild.remove();
+        displayDiv.insertAdjacentHTML("beforeend", duplicate);
+      });
     });
-  });
+  }
 };
 
 export { showImgDisplay };
