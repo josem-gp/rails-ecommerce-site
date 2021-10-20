@@ -1,16 +1,16 @@
 const showImgDisplay = () => {
   const productImgs = document.querySelectorAll(".changeable-pic");
+  const productImg = document.querySelector(".changeable-pic").outerHTML;
   const displayDiv = document.querySelector(".main-pic");
+
+  displayDiv.insertAdjacentHTML("beforeend", productImg);
 
   productImgs.forEach((img) => {
     img.addEventListener("click", (event) => {
       let duplicate = event.target.outerHTML;
-      if (!displayDiv.firstElementChild) {
-        displayDiv.insertAdjacentHTML("beforeend", duplicate);
-      } else {
-        displayDiv.firstElementChild.remove();
-        displayDiv.insertAdjacentHTML("beforeend", duplicate);
-      }
+
+      displayDiv.firstElementChild.remove();
+      displayDiv.insertAdjacentHTML("beforeend", duplicate);
     });
   });
 };
