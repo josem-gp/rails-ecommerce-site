@@ -9,6 +9,9 @@
 require "faker"
 require "open-uri"
 
+puts "Deleting all Newsletter"
+
+Newsletter.delete_all
 
 puts "Deleting all Fake OrderItems"
 

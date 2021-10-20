@@ -2,9 +2,9 @@ class NewslettersController < ApplicationController
     skip_before_action :authenticate_user!, only: [ :create ]
 
     def create
+        @newsletter = Newsletter.new(newsletter_params)
+        authorize @newsletter
         if newsletter_params[:email].match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
-            @newsletter = Newsletter.new(newsletter_params)
-            authorize @newsletter
             if @newsletter.save
                 redirect_to request.referer, notice: "Thank you for subscribing to our newsletter!"
             else 
