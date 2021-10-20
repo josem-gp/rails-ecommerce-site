@@ -1,0 +1,30 @@
+// Page banner
+
+.product-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: 6%;
+
+  h1 {
+    color: white;
+    font-size: 56px;
+    font-weight: 200;
+  }
+
+  h1:before {
+    content: "";
+    position: absolute;
+    background-color: rgba(236, 236, 236, 0.3);
+    right: 0;
+    left: 0;
+    top: 50%;
+    margin-top: -75px;
+    height: 150px;
+  }
+}

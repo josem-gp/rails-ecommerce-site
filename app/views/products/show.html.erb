@@ -1,7 +1,7 @@
 <main>
   <!-- Product images showcase -->
-  <section>
-    <h1>This is the Show page of a Product!</h1>
+  <section class="product-banner" style="background-image: url(<%= cl_image_path @product.photos[0].key, crop: :fill %>);">
+    <h1><%= @product.name %></h1>
   </section>
   <!-- Detailed product info wrapper -->
   <section>
