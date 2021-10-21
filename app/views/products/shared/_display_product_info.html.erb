@@ -1,5 +1,7 @@
 <ul class="product-info-list">
-  <li><%= product.name %></li>
+  <li>
+    <h1><%= product.name %></h1>
+  </li>
   <div>
     <% if product.rating %>
       <% product.rating.floor.times do %>
@@ -18,9 +20,15 @@
       <% end %>
     <%end %>
   </div>
-  <li>¥<%= product.price %></li>
+  <li>
+    <p id="product-info-price">¥<%= product.price %></p>
+  </li>
   <% if product.availability == 2%>
-    <li>Unavailable</li>
+    <li>
+      <p id="product-info-availability">Unavailable</p>
+    </li>
   <%end %>
-  <li><%= product.description %></li>
+  <li>
+    <p><%= product.description %></p>
+  </li>
 </ul>
