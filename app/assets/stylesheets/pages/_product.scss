@@ -29,10 +29,14 @@
   }
 }
 
+// Grid
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+// Display product images
 
 .image-flex {
   display: flex;
@@ -47,4 +51,10 @@
 .augment-pic {
   width: 400px !important;
   height: 300px !important;
+}
+
+// Display product info
+
+.product-info-list {
+  list-style: none;
 }
