@@ -31,15 +31,16 @@
 
 // Grid
 
-.grid-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.flex-wrapper {
+  display: flex;
+  padding: 0px 6%;
 }
 
 // Display product images
 
 .image-flex {
   display: flex;
+  margin-top: 1rem;
 }
 
 .changeable-pic {
