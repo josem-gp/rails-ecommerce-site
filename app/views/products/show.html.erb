@@ -12,10 +12,12 @@
     <div>
       <!-- Info -->
       <%= render "products/shared/display_product_info", product: @product %>
-      <!-- Favoritor -->
-      <%= render "products/shared/favorite_product", product: @product %>
-      <!-- Cart button -->
-      <%= render "products/shared/cart_product", product: @product, order_item: @order_item %>
+      <div class="padding-div-left">
+        <!-- Cart button -->
+        <%= render "products/shared/cart_product", product: @product, order_item: @order_item %>
+        <!-- Favoritor -->
+        <%= render "products/shared/favorite_product", product: @product %>
+      </div>
     </div>
   </section>
   <!-- Review wrapper -->

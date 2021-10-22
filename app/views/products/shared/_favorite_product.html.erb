@@ -1,7 +1,8 @@
-<div>
+<div class="separate-line mt-3">
   <% if current_user %>
-    <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
+    <%= link_to toggle_favorite_product_path(product), class: "d-flex" , remote: true, method: :post do %>
       <%= render 'pages/like_button', product: product %>
+      <p id="like-text">Add to wishlist</p>
     <% end %>
   <% end %>
 </div>
