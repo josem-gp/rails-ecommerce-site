@@ -147,3 +147,28 @@
   background-color: #525252;
   border-color: #3b3b3b;
 }
+
+// Render review
+
+.display-reviews {
+  padding-left: 10px;
+  ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 6px;
+    .review-title {
+      font-weight: bold;
+    }
+    .review-date {
+      font-style: italic;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .review-content {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}
