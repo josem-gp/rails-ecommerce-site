@@ -11,5 +11,5 @@
   <div id="content">
     <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
   </div>
-  <%= f.submit %>
+  <%= f.submit "Submit review", class: "submit-review-btn" %>
 <% end %>
