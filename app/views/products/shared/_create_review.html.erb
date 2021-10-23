@@ -1,6 +1,9 @@
-<div>
+<div class="tab-header">
+  <h3>Customer reviews</h3>
+</div>
+<div class="d-flex justify-content-between separate-line align-items-baseline">
   <!-- Overall rating/reviews -->
-  <div class="d-flex mt-3">
+  <div class="d-flex">
     <div>
       <% if product.rating %>
         <% product.rating.floor.times do %>
@@ -30,23 +33,29 @@
   <!-- Write a review btn and logic -->
   <div>
     <% if user %>
-      <button>Write a review</button>
-      <div>
-        <%= simple_form_for([product, review], remote: true) do |f| %>
-          <div class="review_rating">
-            <label class="is_required" for="review_rating">Rating</label>
-            <%= f.collection_radio_buttons :rating, [[1],[2],[3],[4],[5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
-              <i class="fas fa-star radio_button"><%= b.radio_button %></i>
-            <% end %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn modal-btn" data-toggle="modal" data-target="#exampleModalCenter">
+        Write a review
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render "products/shared/create_review_modal", review: review, product: product %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
           </div>
-          <div id="title">
-            <%= f.input :title, error: 'Title is mandatory, please specify one' %>
-          </div>
-          <div id="content">
-            <%= f.input :content, as: :text, hint: '250 characters max.', input_html: { maxlength: 250 }, error: 'Content is mandatory, please specify one' %>
-          </div>
-          <%= f.submit %>
-        <% end %>
+        </div>
       </div>
     <% else %>
       <%= link_to new_user_session_path do %>
