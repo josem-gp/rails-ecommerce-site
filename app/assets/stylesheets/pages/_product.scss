@@ -105,10 +105,13 @@
 .tab-content {
   min-height: 300px;
   background-color: #f8f8f8;
+  margin-bottom: 6%;
 }
-
-.nav-link.active {
-  background-color: #f8f8f8 !important;
+.tabs-header {
+  margin-top: 3%;
+  .nav-link.active {
+    background-color: #f8f8f8 !important;
+  }
 }
 
 // Modal
@@ -204,4 +207,14 @@
   a {
     color: black;
   }
+}
+
+// Related products
+
+.related-products-section {
+  margin-bottom: 6%;
+}
+
+.related-products-subtitle {
+  text-align: center;
 }
