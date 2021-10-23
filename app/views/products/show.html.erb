@@ -4,7 +4,7 @@
     <h1><%= @product.name %></h1>
   </section>
   <!-- Detailed product info wrapper -->
-  <section class="container flex-wrapper">
+  <section class="container flex-wrapper add-padding-product">
     <div>
       <!-- Images -->
       <%= render "products/shared/display_product_images", product: @product %>
@@ -22,12 +22,26 @@
     </div>
   </section>
   <!-- Review wrapper -->
-  <section class="container">
-    <h1><%= "Reviews for #{@product.name}" %></h1>
+  <section class="container add-padding-product">
     <!-- Toggleable Create form  -->
     <%= render "products/shared/create_review",  product: @product, review: @review, user: @user %>
     <!-- Rendering of each review & update/delete -->
     <%= render "products/shared/render_review", reviews: @reviews, product: @product, user: @user, admin: @admin %>
+    <!-- Navs and Tabs -->
+    <!-- Navs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="far fa-address-card"></i></a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><i class="far fa-comments"></i></a>
+      </li>
+    </ul>
+    <!-- Tabs -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"><%= @product.description %></div>
+      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">hey</div>
+    </div>
   </section>
 </main>
 <!-- footer -->
