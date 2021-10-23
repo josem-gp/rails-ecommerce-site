@@ -99,10 +99,16 @@
 
 .active-black-color {
   color: black !important;
+  padding: 0 20px;
 }
 
 .tab-content {
   min-height: 300px;
+  background-color: #f8f8f8;
+}
+
+.nav-link.active {
+  background-color: #f8f8f8 !important;
 }
 
 // Modal
@@ -124,7 +130,7 @@
     font-size: 17px;
     font-weight: 600;
   }
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .close {
@@ -163,6 +169,7 @@
     position: relative;
     .review-title {
       font-weight: bold;
+      width: 60%;
     }
     .review-date {
       font-style: italic;
@@ -174,6 +181,8 @@
       font-size: 14px;
       margin-top: 12px;
       padding-bottom: 12px;
+      word-break: break-all;
+      width: 60%;
     }
     .review-delete {
       position: absolute;
@@ -189,7 +198,10 @@
       }
     }
   }
-  ul a {
+}
+
+.tabs-header {
+  a {
     color: black;
   }
 }
