@@ -102,7 +102,7 @@
 }
 
 .tab-content {
-  height: 300px;
+  min-height: 300px;
 }
 
 // Modal
@@ -113,6 +113,10 @@
 
 .modal-btn:hover {
   color: #666;
+}
+
+.modal-btn:focus {
+  box-shadow: none;
 }
 
 .tab-header {
@@ -156,13 +160,14 @@
     list-style: none;
     padding: 0;
     padding-top: 6px;
+    position: relative;
     .review-title {
       font-weight: bold;
     }
     .review-date {
       font-style: italic;
       font-size: 14px;
-      color: #aaa;
+      color: #666;
     }
     .review-content {
       color: #aaa;
@@ -170,5 +175,21 @@
       margin-top: 12px;
       padding-bottom: 12px;
     }
+    .review-delete {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      a {
+        color: #aaa;
+        font-size: 14px;
+        font-style: italic;
+      }
+      a:hover {
+        color: #666;
+      }
+    }
+  }
+  ul a {
+    color: black;
   }
 }

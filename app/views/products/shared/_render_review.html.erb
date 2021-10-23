@@ -2,14 +2,14 @@
   <% if reviews %>
     <% reviews.each do |review| %>
       <ul class="separate-line">
-        <li><% if product.rating %>
-            <% product.rating.floor.times do %>
+        <li><% if review.rating %>
+            <% review.rating.floor.times do %>
               <i class="fas fa-star active"></i>
             <%end %>
-            <% if product.rating.to_s.include?('.5') %>
+            <% if review.rating.to_s.include?('.5') %>
               <i class="fas fa-star-half-alt active"></i>
             <% end %>
-            <% (5 - product.rating.ceil).times do %>
+            <% (5 - review.rating.ceil).times do %>
               <i class="fas fa-star"></i>
             <% end %>
           <% else %>
@@ -20,21 +20,25 @@
         <li class="review-title"><%= review.title %></li>
         <li class="review-date"><%= review.user.username %> on <%= review.updated_at.strftime('%b %e, %Y') %></li>
         <li class="review-content"><%= review.content %></li>
+        <!-- Delete button -->
+        <% if review.user == user || current_user == admin %>
+          <li class="review-delete"><%= link_to "Delete", product_review_path(product, review), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        <% end %>
       </ul>
       <!-- Toggleable Edit Form -->
-      <% if review.user == user || current_user == admin %>
-        <%# <button>Edit the review</button> %>
-        <%# <div> %>
-        <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
-          <%# f.input :rating %>
-          <%# f.input :title %>
-          <%# f.input :content, as: :text %>
-          <%# f.submit %>
-          <%# end %>
-          <%# </div> %>
-          <!-- Delete button -->
-          <%= link_to "Delete review", product_review_path(product, review), method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
+      <%# if review.user == user || current_user == admin %>
+      <%# <button>Edit the review</button> %>
+      <%# <div> %>
+      <%# simple_form_for([@product, review], remote: true, method: :patch) do |f| %>
+        <%# f.input :rating %>
+        <%# f.input :title %>
+        <%# f.input :content, as: :text %>
+        <%# f.submit %>
+        <%# end %>
+        <%# </div> %>
+        <!-- Delete button -->
+        <%#= link_to "Delete review", product_review_path(product, review), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%#end %>
       <% end %>
-    <%end %>
+    <% end %>
   </div>
