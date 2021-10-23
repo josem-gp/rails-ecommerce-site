@@ -23,10 +23,6 @@
   </section>
   <!-- Review wrapper -->
   <section class="container add-padding-product">
-    <!-- Toggleable Create form  -->
-    <%= render "products/shared/create_review",  product: @product, review: @review, user: @user %>
-    <!-- Rendering of each review & update/delete -->
-    <%= render "products/shared/render_review", reviews: @reviews, product: @product, user: @user, admin: @admin %>
     <!-- Navs and Tabs -->
     <!-- Navs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -39,8 +35,8 @@
     </ul>
     <!-- Tabs -->
     <div class="tab-content">
-      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"><%= @product.description %></div>
-      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">hey</div>
+      <div class="tab-pane active active-black-color" id="home" role="tabpanel" aria-labelledby="home-tab"><%= @product.description %></div>
+      <div class="tab-pane active-black-color" id="profile" role="tabpanel" aria-labelledby="profile-tab"><%= render "products/shared/render_tab_reviews", reviews: @reviews, review: @review, product: @product, user: @user, admin: @admin %></div>
     </div>
   </section>
 </main>

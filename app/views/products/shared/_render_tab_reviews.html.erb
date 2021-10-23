@@ -1,0 +1,4 @@
+<!-- Toggleable Create form  -->
+<%= render "products/shared/create_review",  product: @product, review: @review, user: @user %>
+<!-- Rendering of each review & update/delete -->
+<%= render "products/shared/render_review", reviews: @reviews, product: @product, user: @user, admin: @admin %>
