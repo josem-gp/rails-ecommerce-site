@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
+        @related_products = Product.order(rating: :desc).first(4)
         @reviews = @product.reviews
         @order_item = OrderItem.new
         @review = Review.new

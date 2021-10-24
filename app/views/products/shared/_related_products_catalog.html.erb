@@ -1,0 +1,36 @@
+<% related_products.each do |product| %>
+  <div class="mini-product-card active" data-price=<%= product.price %> data-stars=<%= product.rating %>>
+    <%= link_to product_path(product) do %>
+    <% end %>
+    <div class="info-hover">
+      <a href="/products/<%= product.id %>"><i class="fas fa-eye"></i></a>
+      <!-- Favoritor -->
+      <%= render "pages/shared/favoritor", product: product  %>
+      <!-- Cart icon -->
+      <%= render "pages/shared/cart_display", product: product %>
+    </div>
+    <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'product-first-pic' %>
+    <%= cl_image_tag product.photos[2].key, height: 300, width: 400, crop: :fill, class: 'product-second-pic' %>
+    <div class="product-info">
+      <h3><%= product.name %></h3>
+      <div>
+        <% if product.rating %>
+          <% product.rating.floor.times do %>
+            <i class="fas fa-star active"></i>
+          <%end %>
+          <% if product.rating.to_s.include?('.5') %>
+            <i class="fas fa-star-half-alt active"></i>
+          <% end %>
+          <% (5 - product.rating.ceil).times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        <% else %>
+          <% 5.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        <%end %>
+      </div>
+      <p>¥<%= product.price %></p>
+    </div>
+  </div>
+<% end %>
