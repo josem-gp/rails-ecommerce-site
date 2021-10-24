@@ -12,4 +12,19 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  h3 {
+    background: #fcf8e3;
+    color: #8a6d3b;
+    padding: 1.5% 0%;
+    font-size: 20px;
+  }
+  a {
+    color: black;
+    text-decoration: underline !important;
+  }
+  a:hover {
+    color: #8a6d3b;
+  }
 }
+
+// Full cart
