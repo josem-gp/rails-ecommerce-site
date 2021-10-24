@@ -7,6 +7,7 @@ const cartSteps = () => {
   const goStepTwoBtn = document.querySelector(".go-step-two");
   const goStepThreeBtn = document.querySelector(".go-step-three");
   const formDivs = document.querySelectorAll(".form-step");
+  const highlightTitle = document.querySelectorAll(".step");
   const stepBtnArray = [goStepOneBtn, goStepTwoBtn, goStepThreeBtn];
 
   if (changeShipping) {
@@ -22,7 +23,6 @@ const cartSteps = () => {
   if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn) {
     stepBtnArray.forEach((btn) => {
       btn.addEventListener("click", (ev) => {
-        console.log(ev.target);
         formDivs.forEach((form) => {
           if (ev.target.dataset.key === form.dataset.step) {
             form.classList.contains("form-hidden")
@@ -32,6 +32,17 @@ const cartSteps = () => {
             form.classList.contains("form-hidden")
               ? ""
               : form.classList.add("form-hidden");
+          }
+        });
+        highlightTitle.forEach((title) => {
+          if (ev.target.dataset.key === title.dataset.highlight) {
+            title.classList.contains("active-step")
+              ? ""
+              : title.classList.add("active-step");
+          } else {
+            title.classList.contains("active-step")
+              ? title.classList.remove("active-step")
+              : "";
           }
         });
       });
