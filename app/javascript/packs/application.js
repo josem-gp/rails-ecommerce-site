@@ -34,7 +34,6 @@ import { ratingsError } from "../components/init_ratingsError";
 import { loginError } from "../components/init_loginError";
 import { shippingError } from "../components/init_shippingError";
 import { billingError } from "../components/init_billingError";
-import { disableStripe } from "../components/init_disableStripe";
 import { toggleSearch } from "../components/init_toggleSearch";
 import { dropdownNav } from "../components/init_dropdownNav";
 import { originalNav } from "../components/init_originalNav";
@@ -53,9 +52,6 @@ document.addEventListener("turbolinks:load", () => {
   closeTag();
   shippingError();
   billingError();
-  setTimeout(function () {
-    disableStripe();
-  }, 500);
   toggleSearch();
   dropdownNav();
   originalNav();
