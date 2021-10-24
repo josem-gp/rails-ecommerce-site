@@ -26,6 +26,30 @@ const cartSteps = () => {
       editBillingDiv.classList.toggle("form-height-adjusted");
     });
   }
+  if (!document.querySelector(".not-filled-shipping")) {
+    formDivs.forEach((form) => {
+      if (form.dataset.step === "three") {
+        form.classList.contains("form-hidden")
+          ? form.classList.remove("form-hidden")
+          : "";
+      } else {
+        form.classList.contains("form-hidden")
+          ? ""
+          : form.classList.add("form-hidden");
+      }
+      highlightTitle.forEach((title) => {
+        if (title.dataset.highlight === "three") {
+          title.classList.contains("active-step")
+            ? ""
+            : title.classList.add("active-step");
+        } else {
+          title.classList.contains("active-step")
+            ? title.classList.remove("active-step")
+            : "";
+        }
+      });
+    });
+  }
   if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn) {
     stepBtnArray.forEach((btn) => {
       btn.addEventListener("click", (ev) => {

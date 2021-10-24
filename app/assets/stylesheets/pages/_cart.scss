@@ -184,3 +184,11 @@
   color: white;
   cursor: pointer;
 }
+
+.stripe-button-el {
+  padding: 0 !important;
+  span {
+    width: 0 !important;
+    padding: 0 !important;
+  }
+}

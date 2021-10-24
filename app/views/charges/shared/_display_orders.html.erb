@@ -27,7 +27,7 @@
         <!-- Delete item -->
         <%= link_to "Remove",
             order_item_path(item, order: order),
-            method: :delete,
+            method: :delete, remote: true,
             data: { confirm: "Are you sure?" } %>
       </li>
     </ul>

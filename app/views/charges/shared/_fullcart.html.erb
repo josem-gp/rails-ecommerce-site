@@ -43,7 +43,7 @@
         </div>
       <% else %>
         <!-- First step when no shipping info -->
-        <div class="cart-form form-hidden">
+        <div class="cart-form not-filled-shipping">
           <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
             <div id="name">
               <%= f.input :name, label: 'Full name', required: true %>
