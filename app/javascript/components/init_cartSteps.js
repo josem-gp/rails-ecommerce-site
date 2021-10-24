@@ -15,6 +15,7 @@ const cartSteps = () => {
     goStepThreeBtn,
     goStepOneBtnA,
   ];
+  const notFilledForm = document.querySelector(".not-filled-shipping");
 
   if (changeShipping) {
     changeShipping.addEventListener("click", (event) => {
@@ -26,7 +27,7 @@ const cartSteps = () => {
       editBillingDiv.classList.toggle("form-height-adjusted");
     });
   }
-  if (!document.querySelector(".not-filled-shipping")) {
+  if (!notFilledForm) {
     formDivs.forEach((form) => {
       if (form.dataset.step === "three") {
         form.classList.contains("form-hidden")
@@ -50,10 +51,9 @@ const cartSteps = () => {
       });
     });
   }
-  if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn) {
+  if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn || goStepOneBtnA) {
     stepBtnArray.forEach((btn) => {
       btn.addEventListener("click", (ev) => {
-        console.log(ev.target);
         formDivs.forEach((form) => {
           if (ev.target.dataset.key === form.dataset.step) {
             form.classList.contains("form-hidden")
@@ -76,6 +76,7 @@ const cartSteps = () => {
               : "";
           }
         });
+        console.log(ev.target);
       });
     });
   }
