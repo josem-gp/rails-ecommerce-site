@@ -1,7 +1,7 @@
 <!-- Info needed for the shipping -->
 <article class="cart-procedure">
   <section class="steps container add-padding-product steps">
-    <div class="step">
+    <div class="step active-step">
       <h3>Step 1</h3>
       <p>Shipping Information</p>
     </div>
@@ -15,7 +15,7 @@
     </div>
   </section>
   <section class="container add-padding-product empty-shopping">
-    <h1>Shipping Information</h1>
+    <h2>Shipping Information</h2>
     <% if @user.name %>
       <p><%= @user.name %></p>
       <p><%= @user.shipping_address %></p>

@@ -7,6 +7,12 @@
   h1 {
     color: #b0896c;
   }
+  h2 {
+    width: 50%;
+    margin: 0 auto;
+    color: #b0896c;
+    margin-top: 3%;
+  }
 }
 
 .empty-shopping-text {
@@ -49,7 +55,7 @@
 .cart-form {
   width: 50%;
   margin: 0 auto;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 .cart-procedure {
@@ -65,7 +71,14 @@
   .step:not(:last-child) {
     margin-right: 28px;
   }
+  .step {
+    color: #cac9ca;
+  }
+
   .step p {
-    font-size: 11px;
+    font-size: 12px;
+  }
+  .active-step {
+    color: black;
   }
 }
