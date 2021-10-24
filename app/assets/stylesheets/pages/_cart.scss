@@ -32,3 +32,23 @@
 }
 
 // Full cart
+
+.next-btn {
+  color: #fff;
+  background-color: #666;
+  border-color: #595959;
+  font-size: 14px;
+  margin-top: 18px;
+  float: right;
+}
+
+.next-btn:hover {
+  background-color: #525252;
+  border-color: #3b3b3b;
+}
+
+.cart-form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3%;
+}
