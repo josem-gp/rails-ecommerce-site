@@ -68,6 +68,12 @@
   }
 }
 
+.cart-form-lg {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
 .cart-procedure {
   min-height: 100vh;
   display: flex;
@@ -128,4 +134,31 @@
 
 .form-hidden {
   display: none;
+}
+
+// Stripe step
+
+.checkout-title,
+.checkout-info {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.quantity-change {
+  border: 1px solid #eaeaea;
+  button {
+    cursor: pointer;
+    border: 0 none;
+    background: #f3f3f3;
+    text-align: center;
+    overflow: hidden;
+    width: 30px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 400;
+  }
 }

@@ -1,23 +1,35 @@
-<main>
-  <section>
-    <% cart_items.each do |item| %>
-      <ul>
-        <li><%= item.product.name %></li>
-        <li>¥<%= item.product.price %></li>
-        <!-- Change quantity -->
-        <%= link_to order_item_path(item, 'plus'), remote: true, method: :patch do %>
-          <button>+</button>
-        <%end %>
-        <li><%= item.quantity %></li>
+<section>
+  <ul class="checkout-title">
+    <li>Product</li>
+    <li>Description</li>
+    <li>Price</li>
+    <li>Quantity</li>
+    <li>Total</li>
+    <li>Remove</li>
+  </ul>
+  <% cart_items.each do |item| %>
+    <ul class="checkout-info">
+      <li><%=cl_image_tag item.product.photos[0].key, height: 40, width: 40, crop: :fill %></li>
+      <li><%= item.product.name %></li>
+      <li><%= pretty_amount(item.product.price) %></li>
+      <!-- Change quantity -->
+      <li class="quantity-change">
         <%= link_to order_item_path(item, 'minus'), remote: true, method: :patch do %>
           <button>-</button>
         <%end %>
-      </ul>
-      <!-- Delete item -->
-      <%= link_to "Delete from cart",
+        <%= item.quantity %>
+        <%= link_to order_item_path(item, 'plus'), remote: true, method: :patch do %>
+          <button>+</button>
+        <%end %>
+      </li>
+      <li><%= pretty_amount(item.quantity * item.product.price)%></li>
+      <li>
+        <!-- Delete item -->
+        <%= link_to "Remove",
             order_item_path(item, order: order),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-    <% end %>
-  </section>
-</main>
+      </li>
+    </ul>
+  <% end %>
+</section>
