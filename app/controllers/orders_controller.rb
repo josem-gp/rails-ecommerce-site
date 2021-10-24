@@ -29,12 +29,13 @@ class OrdersController < ApplicationController
             @order = Order.find(params[:id])
             authorize @order
             @order.update(billing_params)
+            billing_params[:checked] ? @order.update(checked: billing_params[:checked].to_i) : ""
             redirect_to new_charge_path
         end
     end
 
     private
     def billing_params
-        params.require(:order).permit(:billing_address)
+        params.require(:order).permit(:billing_address, :checked)
     end
 end

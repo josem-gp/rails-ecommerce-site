@@ -24,7 +24,16 @@
           <p><span> Name:</span> <%= @user.name %></p>
           <p><span> Address:</span> <%= @user.shipping_address %></p>
           <p><span> Phone number:</span> <%= @user.phone_number %></p>
-          <button class="next-btn go-step-two" data-key="two">Next</button>
+          <!-- Hidden form -->
+          <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+            <%if  @user.checked == 0 %>
+              <%= f.input_field :checked, as: :boolean, class: "hidden_form not-checked two"  %>
+            <% else %>
+              <%= f.input_field :checked, as: :boolean, class: "hidden_form checked two" %>
+            <% end %>
+            <%= f.button :submit %>
+          <% end  %>
+          <button class="next-btn go-step-two pass-data" data-key="two">Next</button>
           <button class="next-btn change-shipping-btn">Change</button>
           <div class="change-shipping-info">
             <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
@@ -68,7 +77,16 @@
         <% else %>
           <p><span>Billing address:</span> <%= @order.billing_address %></p>
         <% end %>
-        <button class="next-btn go-step-three" data-key="three">Next</button>
+        <!-- Hidden form -->
+        <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
+          <%if  @order.checked == 0 %>
+            <%= f.input_field :checked, as: :boolean, class: "hidden_form not-checked three" %>
+          <% else %>
+            <%= f.input_field :checked, as: :boolean, class: "hidden_form checked three" %>
+          <% end %>
+          <%= f.button :submit %>
+        <% end  %>
+        <button class="next-btn go-step-three pass-data" data-key="three">Next</button>
         <button class="next-btn change-billing-btn">Change</button>
         <button class="next-btn go-step-one" data-key="one">Previous</button>
         <div class="change-billing-info">
