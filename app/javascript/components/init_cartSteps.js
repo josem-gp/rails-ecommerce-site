@@ -18,6 +18,12 @@ const cartSteps = () => {
   const notFilledForm = document.querySelector(".not-filled-shipping");
   const hiddenForms = document.querySelectorAll(".hidden_form");
 
+  if (hiddenForms) {
+    hiddenForms.forEach((hidden) => {
+      hidden.parentElement.style.display = "none";
+    });
+  }
+
   if (changeShipping) {
     changeShipping.addEventListener("click", (event) => {
       editShippingDiv.classList.toggle("form-height-adjusted");
@@ -82,10 +88,13 @@ const cartSteps = () => {
           hiddenForms.forEach((form) => {
             form.classList.contains(ev.target.dataset.key) &&
             form.classList.contains("not-checked")
-              ? (form.click(), form.nextElementSibling.click())
+              ? form.click()
+              : "";
+            form.classList.contains(ev.target.dataset.key) &&
+            form.classList.contains("not-checked")
+              ? form.nextElementSibling.click()
               : "";
           });
-          console.log("clicked!");
         }
       });
     });
