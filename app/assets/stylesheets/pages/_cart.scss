@@ -43,20 +43,26 @@
     color: #b0896c;
     margin-top: 3%;
   }
+  .lg-text {
+    width: 70%;
+    margin: 0 auto;
+    color: #b0896c;
+    margin-top: 3%;
+  }
 }
 
 .next-btn {
   color: #fff;
   background-color: #666;
-  border-color: #595959;
   font-size: 14px;
   margin-top: 18px;
   float: right;
+  border: 0;
+  padding: 2px 8px;
 }
 
 .next-btn:hover {
   background-color: #525252;
-  border-color: #3b3b3b;
 }
 
 .cart-form {
@@ -161,4 +167,20 @@
     font-size: 16px;
     font-weight: 400;
   }
+}
+
+.amount {
+  margin-top: 3%;
+  margin-right: 6%;
+  display: flex;
+  justify-content: end;
+  span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+.a-link:hover {
+  color: white;
+  cursor: pointer;
 }

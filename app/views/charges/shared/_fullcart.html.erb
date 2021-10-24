@@ -60,7 +60,7 @@
       <% end %>
     </div>
     <!-- Second step -->
-    <div class="form-step" data-step="two">
+    <div class="form-step form-hidden" data-step="two">
       <h2>Billing Information</h2>
       <div class="cart-form">
         <% if @user.shipping_address == @order.billing_address %>
@@ -82,8 +82,8 @@
       </div>
     </div>
     <!-- Third step -->
-    <div class="form-step" data-step="three">
-      <h2>Checkout</h2>
+    <div class="form-step form-hidden" data-step="three">
+      <h2 class="lg-text">Checkout</h2>
       <!-- Payment logic -->
       <div class="cart-form-lg">
         <%= render "charges/shared/payment_stripe", cart_items: @cart_items, order: @order, amount: @amount, description: @description %>

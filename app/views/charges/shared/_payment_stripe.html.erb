@@ -10,14 +10,19 @@
     <%= render "charges/shared/display_orders", cart_items: cart_items, order: order %>
     <!-- Total pricing -->
     <label class="amount">
-      <span>Amount: <%= pretty_amount(@amount) %></span>
+      <p>Subtotal: <span><%= pretty_amount(@amount) %></span></p>
     </label>
   </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button stripe-btn-edit"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @description %>"
           data-amount="<%= @amount %>"
           data-email="<%= current_user.email %>"
           data-currency="jpy"
           data-locale="auto"></script>
+  <script>
+    document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+  </script>
+  <button type="submit" class="next-btn">Checkout</button>
+  <a class="next-btn go-step-one a-link" data-key="two">Previous</a>
 <% end %>

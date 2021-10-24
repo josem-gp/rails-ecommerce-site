@@ -4,11 +4,17 @@ const cartSteps = () => {
   const changeBilling = document.querySelector(".change-billing-btn");
   const editBillingDiv = document.querySelector(".change-billing-info");
   const goStepOneBtn = document.querySelector(".go-step-one");
+  const goStepOneBtnA = document.querySelector(".a-link");
   const goStepTwoBtn = document.querySelector(".go-step-two");
   const goStepThreeBtn = document.querySelector(".go-step-three");
   const formDivs = document.querySelectorAll(".form-step");
   const highlightTitle = document.querySelectorAll(".step");
-  const stepBtnArray = [goStepOneBtn, goStepTwoBtn, goStepThreeBtn];
+  const stepBtnArray = [
+    goStepOneBtn,
+    goStepTwoBtn,
+    goStepThreeBtn,
+    goStepOneBtnA,
+  ];
 
   if (changeShipping) {
     changeShipping.addEventListener("click", (event) => {
@@ -23,6 +29,7 @@ const cartSteps = () => {
   if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn) {
     stepBtnArray.forEach((btn) => {
       btn.addEventListener("click", (ev) => {
+        console.log(ev.target);
         formDivs.forEach((form) => {
           if (ev.target.dataset.key === form.dataset.step) {
             form.classList.contains("form-hidden")
