@@ -41,6 +41,7 @@ import { originalNav } from "../components/init_originalNav";
 import { filterProducts } from "../components/init_filterProducts";
 import { sortDropdown } from "../components/init_sortDropdown";
 import { showImgDisplay } from "../components/init_showImgDisplay";
+import { cartSteps } from "../components/init_cartSteps";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -61,4 +62,5 @@ document.addEventListener("turbolinks:load", () => {
   filterProducts();
   sortDropdown();
   showImgDisplay();
+  cartSteps();
 });

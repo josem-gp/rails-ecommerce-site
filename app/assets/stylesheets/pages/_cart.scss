@@ -1,17 +1,12 @@
 // Empty cart
 
 .empty-shopping {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   h1 {
     color: #b0896c;
-  }
-  h2 {
-    width: 50%;
-    margin: 0 auto;
-    color: #b0896c;
-    margin-top: 3%;
   }
 }
 
@@ -38,6 +33,18 @@
 
 // Full cart
 
+.full-shopping {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    width: 50%;
+    margin: 0 auto;
+    color: #b0896c;
+    margin-top: 3%;
+  }
+}
+
 .next-btn {
   color: #fff;
   background-color: #666;
@@ -56,6 +63,9 @@
   width: 50%;
   margin: 0 auto;
   margin-top: 2%;
+  span {
+    font-weight: bold;
+  }
 }
 
 .cart-procedure {
@@ -81,4 +91,37 @@
   .active-step {
     color: black;
   }
+}
+
+.change-shipping-info {
+  margin-top: 14%;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  overflow: hidden;
+}
+
+.change-billing-info {
+  margin-top: 14%;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  overflow: hidden;
+}
+
+.form-height-adjusted {
+  max-height: 500px !important;
+  transition: max-height 0.5s ease-in;
+}
+
+.go-step-two {
+  margin-left: 12px;
+  width: 66px;
+}
+
+.go-step-three {
+  margin-left: 12px;
+  width: 66px;
+}
+
+.go-step-one {
+  margin-right: 12px;
 }

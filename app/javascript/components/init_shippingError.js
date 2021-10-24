@@ -1,10 +1,6 @@
 const shippingError = () => {
-  const submitChangeShipping = document.querySelector(
-    'input[value="Change shipping information"]'
-  );
-  const submitCreateShipping = document.querySelector(
-    'input[value="Add shipping information"]'
-  );
+  const submitChangeShipping = document.querySelector('input[value="Submit"]');
+  const submitCreateShipping = document.querySelector('input[value="Next"]');
   const submit = [submitChangeShipping, submitCreateShipping];
   const nameDiv = document.querySelector('input[name = "user[name]"]');
   const shippingDiv = document.querySelector(
