@@ -1,38 +1,26 @@
 <!-- Info needed for the shipping -->
-<section class="container add-padding-product empty-shopping">
-  <h1>Shipping Address</h1>
-  <% if @user.name %>
-    <p><%= @user.name %></p>
-    <p><%= @user.shipping_address %></p>
-    <p><%= @user.phone_number %></p>
-    <button>Change</button>
-    <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
-      <div id="name">
-        <%= f.input :name, label: 'Full name', required: true %>
-      </div>
-      <div id="shipping_address">
-        <%= f.input :shipping_address,required: true %>
-      </div>
-      <div id="phone">
-        <%= f.input :phone_number, required: true %>
-      </div>
-      <%= f.submit 'Change shipping information' %>
-    <% end %>
-    <h3>Billing Address</h3>
-    <% if @user.shipping_address == @order.billing_address %>
-      <p>Same as shipping address</p>
-    <% else %>
-      <p><%= @order.billing_address %></p>
-    <% end %>
-    <button>Change</button>
-    <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
-      <div id="billing">
-        <%= f.input :billing_address, required: true %>
-      </div>
-      <%= f.submit 'Change billing information' %>
-    <% end %>
-  <% else %>
-    <div class="cart-form">
+<article class="cart-procedure">
+  <section class="steps container add-padding-product steps">
+    <div class="step">
+      <h3>Step 1</h3>
+      <p>Shipping Information</p>
+    </div>
+    <div class="step">
+      <h3>Step 2</h3>
+      <p>Billing Information</p>
+    </div>
+    <div class="step">
+      <h3>Step 3</h3>
+      <p>Checkout</p>
+    </div>
+  </section>
+  <section class="container add-padding-product empty-shopping">
+    <h1>Shipping Information</h1>
+    <% if @user.name %>
+      <p><%= @user.name %></p>
+      <p><%= @user.shipping_address %></p>
+      <p><%= @user.phone_number %></p>
+      <button>Change</button>
       <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
         <div id="name">
           <%= f.input :name, label: 'Full name', required: true %>
@@ -43,10 +31,38 @@
         <div id="phone">
           <%= f.input :phone_number, required: true %>
         </div>
-        <%= f.submit 'Next', class: "next-btn add-shipping-info" %>
+        <%= f.submit 'Change shipping information' %>
       <% end %>
-    </div>
-  <% end %>
-</section>
+      <h3>Billing Address</h3>
+      <% if @user.shipping_address == @order.billing_address %>
+        <p>Same as shipping address</p>
+      <% else %>
+        <p><%= @order.billing_address %></p>
+      <% end %>
+      <button>Change</button>
+      <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
+        <div id="billing">
+          <%= f.input :billing_address, required: true %>
+        </div>
+        <%= f.submit 'Change billing information' %>
+      <% end %>
+    <% else %>
+      <div class="cart-form">
+        <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+          <div id="name">
+            <%= f.input :name, label: 'Full name', required: true %>
+          </div>
+          <div id="shipping_address">
+            <%= f.input :shipping_address,required: true %>
+          </div>
+          <div id="phone">
+            <%= f.input :phone_number, required: true %>
+          </div>
+          <%= f.submit 'Next', class: "next-btn add-shipping-info" %>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</article class="procedure">
 <!-- Payment logic -->
 <%#= render "charges/shared/payment_stripe", cart_items: @cart_items, order: @order, amount: @amount, description: @description %>

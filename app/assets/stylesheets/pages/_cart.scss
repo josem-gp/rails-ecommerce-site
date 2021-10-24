@@ -1,7 +1,6 @@
 // Empty cart
 
 .empty-shopping {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,4 +50,22 @@
   width: 50%;
   margin: 0 auto;
   margin-top: 3%;
+}
+
+.cart-procedure {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  .step:not(:last-child) {
+    margin-right: 28px;
+  }
+  .step p {
+    font-size: 11px;
+  }
 }
