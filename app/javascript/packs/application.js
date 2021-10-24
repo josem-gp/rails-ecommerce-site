@@ -52,7 +52,9 @@ document.addEventListener("turbolinks:load", () => {
   closeTag();
   shippingError();
   billingError();
-  disableStripe();
+  setTimeout(function () {
+    disableStripe();
+  }, 500);
   toggleSearch();
   dropdownNav();
   originalNav();
