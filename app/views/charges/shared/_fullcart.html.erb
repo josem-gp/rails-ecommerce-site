@@ -26,7 +26,7 @@
           <p><span> Phone number:</span> <%= @user.phone_number %></p>
           <!-- Hidden form -->
           <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
-            <%if  @user.checked == 0 %>
+            <%if  @user.checked == 0 || !@user.checked %>
               <%= f.input_field :checked, as: :boolean, class: "hidden_form not-checked two"  %>
             <% else %>
               <%= f.input_field :checked, as: :boolean, class: "hidden_form checked two" %>
@@ -79,7 +79,7 @@
         <% end %>
         <!-- Hidden form -->
         <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
-          <%if  @order.checked == 0 %>
+          <%if  @order.checked == 0 || !@order.checked  %>
             <%= f.input_field :checked, as: :boolean, class: "hidden_form not-checked three" %>
           <% else %>
             <%= f.input_field :checked, as: :boolean, class: "hidden_form checked three" %>
