@@ -18,11 +18,11 @@ const cartSteps = () => {
   const notFilledForm = document.querySelector(".not-filled-shipping");
   const hiddenForms = document.querySelectorAll(".hidden_form");
 
-  if (hiddenForms) {
-    hiddenForms.forEach((hidden) => {
-      hidden.parentElement.style.display = "none";
-    });
-  }
+  // if (hiddenForms) {
+  //   hiddenForms.forEach((hidden) => {
+  //     hidden.parentElement.style.display = "none";
+  //   });
+  // }
 
   if (changeShipping) {
     changeShipping.addEventListener("click", (event) => {
@@ -34,28 +34,82 @@ const cartSteps = () => {
       editBillingDiv.classList.toggle("form-height-adjusted");
     });
   }
-  if (notFilledForm) {
-    formDivs.forEach((form) => {
-      if (form.dataset.step === "three") {
-        form.classList.contains("form-hidden")
-          ? form.classList.remove("form-hidden")
-          : "";
-      } else {
-        form.classList.contains("form-hidden")
-          ? ""
-          : form.classList.add("form-hidden");
-      }
-      highlightTitle.forEach((title) => {
-        if (title.dataset.highlight === "three") {
-          title.classList.contains("active-step")
-            ? ""
-            : title.classList.add("active-step");
+  if (!notFilledForm) {
+    hiddenForms.forEach((hidden) => {
+      if (hidden.classList.contains("two")) {
+        if (hidden.classList.contains("checked")) {
+          formDivs.forEach((form) => {
+            if (form.dataset.step === "two") {
+              form.classList.contains("form-hidden")
+                ? form.classList.remove("form-hidden")
+                : "";
+            } else {
+              form.classList.contains("form-hidden")
+                ? ""
+                : form.classList.add("form-hidden");
+            }
+          });
+          highlightTitle.forEach((title) => {
+            if (title.dataset.highlight === "two") {
+              title.classList.contains("active-step")
+                ? ""
+                : title.classList.add("active-step");
+            } else {
+              title.classList.contains("active-step")
+                ? title.classList.remove("active-step")
+                : "";
+            }
+          });
         } else {
-          title.classList.contains("active-step")
-            ? title.classList.remove("active-step")
-            : "";
+          formDivs.forEach((form) => {
+            if (form.dataset.step === "one") {
+              form.classList.contains("form-hidden")
+                ? form.classList.remove("form-hidden")
+                : "";
+            } else {
+              form.classList.contains("form-hidden")
+                ? ""
+                : form.classList.add("form-hidden");
+            }
+          });
+          highlightTitle.forEach((title) => {
+            if (title.dataset.highlight === "one") {
+              title.classList.contains("active-step")
+                ? ""
+                : title.classList.add("active-step");
+            } else {
+              title.classList.contains("active-step")
+                ? title.classList.remove("active-step")
+                : "";
+            }
+          });
         }
-      });
+      } else if (hidden.classList.contains("three")) {
+        if (hidden.classList.contains("checked")) {
+          formDivs.forEach((form) => {
+            if (form.dataset.step === "three") {
+              form.classList.contains("form-hidden")
+                ? form.classList.remove("form-hidden")
+                : "";
+            } else {
+              form.classList.contains("form-hidden")
+                ? ""
+                : form.classList.add("form-hidden");
+            }
+          });
+          highlightTitle.forEach((title) => {
+            if (title.dataset.highlight === "three") {
+              title.classList.contains("active-step")
+                ? ""
+                : title.classList.add("active-step");
+            } else {
+              title.classList.contains("active-step")
+                ? title.classList.remove("active-step")
+                : "";
+            }
+          });
+        }
+      }
     });
   }
   if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn || goStepOneBtnA) {
