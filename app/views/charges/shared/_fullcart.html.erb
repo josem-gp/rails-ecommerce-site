@@ -31,7 +31,7 @@
             <% else %>
               <%= f.input_field :checked, as: :boolean, class: "hidden_form checked two" %>
             <% end %>
-            <%= f.button :submit %>
+            <%= f.button :submit, class: "hidden_form" %>
           <% end  %>
           <button class="next-btn go-step-two pass-data" data-key="two">Next</button>
           <button class="next-btn change-shipping-btn">Change</button>
@@ -84,7 +84,7 @@
           <% else %>
             <%= f.input_field :checked, as: :boolean, class: "hidden_form checked three" %>
           <% end %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: "hidden_form" %>
         <% end  %>
         <button class="next-btn go-step-three pass-data" data-key="three">Next</button>
         <button class="next-btn change-billing-btn">Change</button>

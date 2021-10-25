@@ -18,12 +18,6 @@ const cartSteps = () => {
   const notFilledForm = document.querySelector(".not-filled-shipping");
   const hiddenForms = document.querySelectorAll(".hidden_form");
 
-  // if (hiddenForms) {
-  //   hiddenForms.forEach((hidden) => {
-  //     hidden.parentElement.style.display = "none";
-  //   });
-  // }
-
   if (changeShipping) {
     changeShipping.addEventListener("click", (event) => {
       editShippingDiv.classList.toggle("form-height-adjusted");
