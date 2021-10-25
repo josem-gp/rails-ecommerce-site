@@ -21,7 +21,8 @@
       <% if @user.name %>
         <!-- First step when shipping info -->
         <div class="cart-form ">
-          <p><span> Name:</span> <%= @user.name %></p>
+          <h3>Name:</h3>
+          <p id="fullname"><%= @user.name %></p>
           <p><span> Address:</span> <%= @user.shipping_address %></p>
           <p><span> Phone number:</span> <%= @user.phone_number %></p>
           <!-- Hidden form -->
