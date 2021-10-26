@@ -7,25 +7,23 @@
         <%= cl_image_tag favorite.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
         <div class="featured-info">
           <p><%= favorite.name %></p>
-          <p>
-            <div>
-              <% if favorite.rating %>
-                <% favorite.rating.floor.times do %>
-                  <i class="fas fa-star active"></i>
-                <%end %>
-                <% if favorite.rating.to_s.include?('.5') %>
-                  <i class="fas fa-star-half-alt active"></i>
-                <% end %>
-                <% (5 - favorite.rating.ceil).times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-              <% else %>
-                <% 5.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
+          <div>
+            <% if favorite.rating %>
+              <% favorite.rating.floor.times do %>
+                <i class="fas fa-star active"></i>
               <%end %>
-            </div>
-          </p>
+              <% if favorite.rating.to_s.include?('.5') %>
+                <i class="fas fa-star-half-alt active"></i>
+              <% end %>
+              <% (5 - favorite.rating.ceil).times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% else %>
+              <% 5.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <%end %>
+          </div>
           <p>¥<%= favorite.price %></p>
         </div>
       </div>

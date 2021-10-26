@@ -97,7 +97,18 @@
 
 .table-recommendations-posts {
   .tab-content {
-    min-height: 63vh;
+    min-height: 64.5vh;
     margin-bottom: 0;
+  }
+  p {
+    color: black;
+  }
+
+  .featured-card {
+    padding: 0 2%;
+  }
+
+  .flex-featured {
+    padding-top: 8px;
   }
 }
