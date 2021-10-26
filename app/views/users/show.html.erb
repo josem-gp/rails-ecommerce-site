@@ -25,14 +25,14 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="like-tab" data-bs-toggle="tab" data-bs-target="#like" type="button" role="tab" aria-controls="home" aria-selected="true">Recommendations</a>
+          <a class="nav-link active" id="like-tab" data-bs-toggle="tab" data-bs-target="#like" type="button" role="tab" aria-controls="home" aria-selected="true">Favorites</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+          <a class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="profile" aria-selected="false">Orders</a>
         </li>
         <% if @user.admin %>
           <li class="nav-item" role="presentation">
-            <a class="nav-link" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+            <a class="nav-link" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="profile" aria-selected="false">Create</a>
           </li>
         <% end %>
       </ul>

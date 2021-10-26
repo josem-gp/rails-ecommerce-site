@@ -1,6 +1,7 @@
 .container-header {
-  padding: 40px 60px;
+  padding: 40px 60px 0;
   .header-font {
+    margin-top: 4%;
     h3 {
       width: 100%;
       text-align: left;
@@ -34,7 +35,6 @@
 }
 
 .container-messages {
-  margin-top: 48px;
   overflow: scroll;
   height: 71vh;
   .nav-tabs {
@@ -80,7 +80,4 @@
 .info {
   color: gray;
   margin-right: 10%;
-}
-span {
-  color: black;
 }
