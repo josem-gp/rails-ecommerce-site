@@ -4,7 +4,7 @@
       <div class="featured-card">
         <%= link_to product_path(favorite) do %>
         <% end %>
-        <p><%= cl_image_tag favorite.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %></p>
+        <%= cl_image_tag favorite.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
         <div class="featured-info">
           <p><%= favorite.name %></p>
           <p>
@@ -26,7 +26,7 @@
               <%end %>
             </div>
           </p>
-          <p><%= favorite.price %></p>
+          <p>¥<%= favorite.price %></p>
         </div>
       </div>
     <% end %>
