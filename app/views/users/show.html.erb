@@ -1,17 +1,54 @@
-<h1><%= @user.username %>show page!!</h1>
-<!-- Render icons modal -->
-<%= render 'users/shared/modal' %>
 <main>
-  <!-- Liked products -->
-  <section>
-    <%= render 'users/shared/liked_list', favorites: @favorites %>
-  </section>
-  <!-- Orders made -->
-  <section>
-    <%= render 'users/shared/orders_list', orders: @orders %>
-  </section>
-  <!-- Add new products -->
-  <section>
-    <%= render 'users/shared/create_product', user: @user, product: @product %>
-  </section>
+  <div class="container-header">
+    <div class="header-font">
+      <h3><span>My Profile</span></h3>
+    </div>
+    <div class="container-profile">
+      <div class="profile-pic">
+        <!-- Render icons modal -->
+        <%= render 'users/shared/modal' %>
+        <h3><%= @user.name %></h3>
+      </div>
+      <div class="user-name-container">
+        <div class="main-info">
+          <p class="title">User profile</p>
+          <div class="flex-main-info">
+            <p class="info">Username: &emsp;<span><%= @user.name %></span></p>
+            <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-header">
+    <div class="container-messages">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="like-tab" data-bs-toggle="tab" data-bs-target="#like" type="button" role="tab" aria-controls="home" aria-selected="true">Recommendations</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+        </li>
+        <% if @user.admin %>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+          </li>
+        <% end %>
+      </ul>
+      <!-- Tab panes -->
+      <div class="table-recommendations-posts">
+        <div class="tab-content">
+          <!-- Liked products -->
+          <div class="tab-pane active" id="like" role="tabpanel" aria-labelledby="like-tab"><%= render 'users/shared/liked_list', favorites: @favorites %></div>
+          <!-- Orders made -->
+          <div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab"><%= render 'users/shared/orders_list', orders: @orders %></div>
+          <!-- Add new products -->
+          <% if @user.admin %>
+            <div class="tab-pane" id="create" role="tabpanel" aria-labelledby="create-tab"><%= render 'users/shared/create_product', user: @user, product: @product %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
