@@ -82,6 +82,7 @@
 
 .title {
   color: black;
+  font-weight: 600;
 }
 .info {
   color: #c6c6c6;
@@ -111,5 +112,38 @@
 
   .flex-featured {
     padding-top: 8px;
+  }
+}
+
+#liked-title {
+  font-weight: bold;
+}
+
+// Like cards
+
+.like-cards {
+  .info-hover {
+    left: 9.6%;
+    top: 12%;
+  }
+  .info-hover i {
+    color: black;
+    padding: 5px 0px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+    text-align: center;
+    line-height: 1;
+    font-size: 12px;
+  }
+}
+
+.like-cards:hover {
+  .info-hover {
+    left: 9%;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.7s ease-in-out;
   }
 }

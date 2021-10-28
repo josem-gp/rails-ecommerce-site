@@ -1,12 +1,19 @@
 <% unless !favorites || favorites == [] %>
   <div class="flex-featured">
     <% favorites.each do |favorite| %>
-      <div class="featured-card">
+      <div class="featured-card like-cards">
         <%= link_to product_path(favorite) do %>
         <% end %>
+        <div class="info-hover">
+          <a href="/products/<%= favorite.id %>"><i class="fas fa-eye"></i></a>
+          <!-- Favoritor -->
+          <%= render "pages/shared/favoritor", product: favorite  %>
+          <!-- Cart icon -->
+          <%= render "pages/shared/cart_display", product: favorite %>
+        </div>
         <%= cl_image_tag favorite.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
         <div class="featured-info">
-          <p><%= favorite.name %></p>
+          <p id="liked-title"><%= favorite.name %></p>
           <div>
             <% if favorite.rating %>
               <% favorite.rating.floor.times do %>
