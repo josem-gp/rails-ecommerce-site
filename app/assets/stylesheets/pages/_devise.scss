@@ -2,13 +2,7 @@
 
 .main-form {
   display: flex;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    asset_url("login.jpg");
-  background-size: cover;
-  background-position: center;
+  align-items: center;
   height: 100vh;
   .form-container {
     width: 40%;
@@ -39,6 +33,26 @@
   }
 }
 
+.img-login {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    asset_url("login.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.img-signup {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    asset_url("signup.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .form-inputs {
   .form-control {
     border-radius: $border-radius * 3;
@@ -59,6 +73,7 @@
 }
 
 .form-actions {
+  margin-top: 3%;
   input {
     color: white;
     width: 100%;
