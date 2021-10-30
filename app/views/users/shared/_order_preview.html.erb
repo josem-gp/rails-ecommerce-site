@@ -8,7 +8,7 @@
       <li>Total</li>
     </ul>
     <% OrderItem.where(order_id: order.id).each do |order_product| %>
-      <ul class="checkout-info">
+      <ul class="checkout-info order-preview-info">
         <li><%=cl_image_tag order_product.product.photos[0].key, height: 40, width: 40, crop: :fill %></li>
         <li><%= order_product.product.name %></li>
         <li><%= pretty_amount(order_product.product.price) %></li>
