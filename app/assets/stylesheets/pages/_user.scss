@@ -147,3 +147,29 @@
     transition: all 0.7s ease-in-out;
   }
 }
+
+// Orders-list
+
+.orders-wrapper {
+  padding-top: 8px;
+}
+
+.order-preview {
+  color: black;
+  padding: 12px 24px;
+  margin: 0 !important;
+  .checkout-title,
+  .checkout-info {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .orders-grid-wrapper {
+    width: 70%;
+  }
+}
+
+.ordered-title {
+  font-size: 16px;
+  span {
+    font-weight: bold;
+  }
+}

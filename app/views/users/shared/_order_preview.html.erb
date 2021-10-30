@@ -1,0 +1,26 @@
+<div class="order-preview">
+  <section class="orders-grid-wrapper">
+    <ul class="checkout-title">
+      <li>Product</li>
+      <li>Name</li>
+      <li>Price</li>
+      <li>Quantity</li>
+      <li>Total</li>
+    </ul>
+    <% OrderItem.where(order_id: order.id).each do |order_product| %>
+      <ul class="checkout-info">
+        <li><%=cl_image_tag order_product.product.photos[0].key, height: 40, width: 40, crop: :fill %></li>
+        <li><%= order_product.product.name %></li>
+        <li><%= pretty_amount(order_product.product.price) %></li>
+        <!-- Change quantity -->
+        <li>
+          <%= order_product.quantity %>
+        </li>
+        <li><%= pretty_amount(order_product.quantity * order_product.product.price)%></li>
+      </ul>
+    <% end %>
+    <label class="amount">
+      <p>Total: <span><%= pretty_amount(order.total) %></span></p>
+    </label>
+  </section>
+</div>

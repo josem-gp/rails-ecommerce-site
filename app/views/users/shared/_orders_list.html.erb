@@ -1,27 +1,41 @@
 <% unless !orders || orders == [] %>
-  <% orders.each do |order| %>
-    <p>Ordered on: <%= order.date.strftime('%b %d, %Y') %></p>
-    <section>
-      <ul class="checkout-title">
-        <li>Product</li>
-        <li>Description</li>
-        <li>Price</li>
-        <li>Quantity</li>
-        <li>Total</li>
-      </ul>
-      <% OrderItem.where(order_id: order.id).each do |order_product| %>
+  <article class="orders-wrapper">
+    <ul class="checkout-title">
+      <li>Order</li>
+      <li>Ship to</li>
+      <li>Date</li>
+      <li>Total</li>
+      <li>Actions</li>
+    </ul>
+    <% orders.each do |order| %>
+      <div class="order-preview">
         <ul class="checkout-info">
-          <li><%=cl_image_tag order_product.product.photos[0].key, height: 40, width: 40, crop: :fill %></li>
-          <li><%= order_product.product.name %></li>
-          <li><%= pretty_amount(order_product.product.price) %></li>
-          <!-- Change quantity -->
-          <li class="quantity-change">
-            <%= order_product.quantity %>
-          </li>
-          <li><%= pretty_amount(order_product.quantity * order_product.product.price)%></li>
+          <li><%= order.user.name %></li>
+          <li><%= order.user.shipping_address %></li>
+          <li> <%= order.date.strftime('%b %d, %Y') %></li>
+          <li><%= pretty_amount(order.total) %></li>
+          <!-- Button trigger modal -->
+          <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%= "#orderPreviewModal#{order.id}" %>>
+              View
+            </button></li>
+          <!-- Modal -->
+          <div class="modal fade" id=<%= "orderPreviewModal#{order.id}" %> tabindex="-1" role="dialog" aria-labelledby=<%= "orderPreviewModalLabel#{order.id}" %> aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id=<%= "orderPreviewModalLabel#{order.id}" %>>Order Preview</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= render 'users/shared/order_preview', order: order %>
+                </div>
+              </div>
+            </div>
+          </div>
         </ul>
-      <% end %>
-    </section>
-    <p>Total: ¥<%= order.total %></p>
-  <% end %>
+      </div>
+    <% end %>
+  </article>
 <% end %>
