@@ -1,7 +1,27 @@
 <% unless !orders || orders == [] %>
   <% orders.each do |order| %>
-    <ul>
-      <li>Total: ¥<%= order.total %>    Date:<%= order.date.strftime('%a, %d %b %Y %H:%M:%S') %></li>
-    </ul>
+    <p>Ordered on: <%= order.date.strftime('%b %d, %Y') %></p>
+    <section>
+      <ul class="checkout-title">
+        <li>Product</li>
+        <li>Description</li>
+        <li>Price</li>
+        <li>Quantity</li>
+        <li>Total</li>
+      </ul>
+      <% OrderItem.where(order_id: order.id).each do |order_product| %>
+        <ul class="checkout-info">
+          <li><%=cl_image_tag order_product.product.photos[0].key, height: 40, width: 40, crop: :fill %></li>
+          <li><%= order_product.product.name %></li>
+          <li><%= pretty_amount(order_product.product.price) %></li>
+          <!-- Change quantity -->
+          <li class="quantity-change">
+            <%= order_product.quantity %>
+          </li>
+          <li><%= pretty_amount(order_product.quantity * order_product.product.price)%></li>
+        </ul>
+      <% end %>
+    </section>
+    <p>Total: ¥<%= order.total %></p>
   <% end %>
 <% end %>
