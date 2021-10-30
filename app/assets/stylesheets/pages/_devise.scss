@@ -1,0 +1,75 @@
+// Sign up & Sign in form
+
+.main-form {
+  display: flex;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    asset_url("login.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  .form-container {
+    width: 40%;
+    margin: auto 0;
+    padding-left: $padding * 8;
+    padding-right: $padding * 8;
+    .centered-container {
+      h1 {
+        font-weight: bold;
+        color: $purple;
+        margin: ($margin * 2) ($margin * 4);
+      }
+      form {
+        margin: ($margin * 6) ($margin * 4);
+      }
+      p {
+        margin: ($margin * 2) ($margin * 4);
+        a {
+          text-decoration: none;
+          color: $purple;
+          font-weight: bold;
+        }
+        a:hover {
+          color: $purple-hover;
+        }
+      }
+    }
+  }
+}
+
+.form-inputs {
+  .form-control {
+    border-radius: $border-radius * 3;
+  }
+  .form-flex {
+    display: flex;
+    justify-content: space-between;
+    .form-group {
+      flex-grow: 1;
+    }
+    .user_name {
+      margin-right: $margin;
+    }
+    .user_alias {
+      margin-left: $margin;
+    }
+  }
+}
+
+.form-actions {
+  input {
+    color: white;
+    width: 100%;
+    background: $purple;
+    border-radius: $border-radius * 2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: $padding;
+    text-align: center;
+  }
+  input:hover {
+    color: white;
+    background: $purple-hover;
+  }
+}
