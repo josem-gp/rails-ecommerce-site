@@ -53,6 +53,19 @@
   background-position: center;
 }
 
+.img-password {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    asset_url("password.jpg");
+  background-size: cover;
+  background-position: center;
+  .form-container {
+    width: 31%;
+  }
+}
+
 .form-inputs {
   .form-control {
     border-radius: $border-radius * 3;
