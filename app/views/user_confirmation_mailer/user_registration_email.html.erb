@@ -1,12 +1,17 @@
+<style>
+  .email-container {
+    background-color: #4c5171;
+  }
+</style>
 <div class="email-container">
   <img src="" alt="icon">
-  <h1>Welcome, <%= @user %>!</h1>
-  <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we're thrilled to have you!</p>
+  <h1>Welcome!</h1>
+  <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
   <p>Check out our dedicated tea products in our website.</p>
   <br>
   <h3>Featured products</h3>
   <div class="flex-featured">
-    <% @featured_products.each do |product| %>
+    <%= Product.order(sales: :desc).first(3).each do |product| %>
       <div class="featured-card">
         <%= link_to product_path(product) do %>
         <% end %>
