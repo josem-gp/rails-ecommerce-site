@@ -9,6 +9,9 @@ FactoryBot.define do
     trait :not_in_IMAGES do
       url { "https://image.shutterstock.com/image-photo/glass-cup-hot-aromatic-tea-600w-1146290894.jpg" }
     end
+
+    factory :correct_icon, traits: [:in_IMAGES]
+    factory :incorrect_icon, traits: [:not_in_IMAGES]
   end
 end
 
