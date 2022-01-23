@@ -22,7 +22,8 @@ FactoryBot.define do
 end
 
 # User needs to have unique email
-# User needs to have unique username (case sensitive - false) and length minimun 3
+# User needs to have unique username (case sensitive - false)
+# User needs to have username with minimun length of 3
 # User gets icon before validation
 # User is added to newsletter after creation
 # User gets a confirmation email after creation
