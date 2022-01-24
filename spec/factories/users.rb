@@ -4,7 +4,7 @@ FactoryBot.define do
     name { "Jose Test" }
     shipping_address { "jose_shipping_test" }
     phone_number { "08012341234" }
-    association :icon
+    association :icon, factory: :correct_icon
 
     trait :with_username do
       username { "jose_test" }
@@ -28,13 +28,3 @@ FactoryBot.define do
     factory :non_admin_user, traits: [:with_username, :with_email, :not_admin]
   end
 end
-
-
-# User needs to have username
-# User needs to have unique username (case sensitive - false)
-# User needs to have username with minimun length of 3
-# User needs to have email
-# User needs to have unique email
-# User gets icon before validation
-# User is added to newsletter after creation
-# User gets a confirmation email after creation
