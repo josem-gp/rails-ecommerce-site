@@ -1,5 +1,8 @@
 FactoryBot.define do
   factory :review do
+    association :user, factory: :non_admin_user
+    association :product, factory: :correct_product
+
     trait :with_title do
       title { "Review_title_test" }
     end
@@ -19,9 +22,6 @@ FactoryBot.define do
     trait :with_incorrect_rating do
       username { 6 }
     end
-
-    association :user, factory: :non_admin_user
-    association :product, factory: :correct_product
 
     factory :non_title_review, traits: [:with_correct_content, :with_correct_rating]
     factory :non_content_review, traits: [:with_title, :with_correct_rating]

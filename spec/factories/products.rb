@@ -3,7 +3,7 @@ FactoryBot.define do
     name { "Product_test" }
     description { "Lorem ipsum dolor sit amet" }
     price { 1000 }
-    association :user
+    association :user, factory: :non_admin_user
 
     trait :correct_availability do
       rating { 1 }
