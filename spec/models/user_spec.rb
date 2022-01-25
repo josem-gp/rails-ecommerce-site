@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'user model initialization' do
     context "when not valid" do
-      let(:correct_user) { FactoryBot.create(:non_admin_user) }
+      let!(:correct_user) { FactoryBot.create(:non_admin_user, email: "jose_test@test.io") }
 
       it 'lacks username' do
         expect(FactoryBot.build(:non_username_user)).to_not be_valid
@@ -13,14 +13,23 @@ RSpec.describe User, type: :model do
         expect(FactoryBot.build(:non_email_user)).to_not be_valid
       end
 
-      # it 'username duplicated' do
-      #   correct_user_1 = FactoryBot.create(:non_admin_user, username: "jose_test")
-      #   p "Is it valid? #{expect(correct_user_1).to be_valid}"
-      # end
-    end
+      it 'username duplicated' do
+        incorrect_user_1 = FactoryBot.build(:non_admin_user, username: "Jose_Test")
+        incorrect_user_1.valid?
+        expect(incorrect_user_1.errors[:username]).to include("has already been taken")
+      end
 
-    context "when valid" do
+      it 'username shorter than 3 characters' do
+        incorrect_user_1 = FactoryBot.build(:non_admin_user, username: "Jo")
+        incorrect_user_1.valid?
+        expect(incorrect_user_1.errors[:username]).to include("is too short (minimum is 3 characters)")
+      end
 
+      it 'email duplicated' do
+        incorrect_user_1 = FactoryBot.build(:non_admin_user, email: "Jose_test@test.io")
+        incorrect_user_1.valid?
+        expect(incorrect_user_1.errors[:email]).to include("has already been taken")
+      end
     end
   end
   describe 'user model methods' do
@@ -28,9 +37,6 @@ RSpec.describe User, type: :model do
   end
 end
 
-# User needs to have unique username (case sensitive - false)
-# User needs to have username with minimun length of 3
-# User needs to have unique email
 # User gets icon before validation
 # User is added to newsletter after creation
 # User gets a confirmation email after creation

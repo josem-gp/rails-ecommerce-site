@@ -12,7 +12,7 @@ class User < ApplicationRecord
   acts_as_favoritor
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3 }
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
   
 
   before_validation :add_default_icon, on: :create
