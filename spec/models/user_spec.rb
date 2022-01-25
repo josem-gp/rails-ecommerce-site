@@ -39,12 +39,17 @@ RSpec.describe User, type: :model do
   end
 
   describe '#join_newsletter' do
+    let(:correct_user) { FactoryBot.create(:non_admin_user) }
     it 'adds user to newsletter' do
+      expect(correct_user.email).to eq(Newsletter.first.email)
+    end
+  end
+
+  describe '#send_registration_email' do
+    it 'sends email to user upon creation' do
       
     end
   end
 end
 
-# User gets icon before validation
-# User is added to newsletter after creation
 # User gets a confirmation email after creation
