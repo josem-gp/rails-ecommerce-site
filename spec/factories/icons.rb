@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :icon do
-    sequence(:name) { |n| "icon_test#{n}" }
+    name { "default_icon" } #name is default_icon because that´s the icon that will be tagged to every created user at first
 
     trait :in_IMAGES do
       url { Icon::IMAGES[0] }
