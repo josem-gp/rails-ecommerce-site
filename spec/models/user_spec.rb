@@ -32,8 +32,16 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  describe 'user model methods' do
+  describe '#add_default_icon' do
+    it 'attaches default icon to user' do
+      expect(FactoryBot.build(:non_admin_user).icon.name).to eq("default_icon")
+    end
+  end
 
+  describe '#join_newsletter' do
+    it 'adds user to newsletter' do
+      
+    end
   end
 end
 
