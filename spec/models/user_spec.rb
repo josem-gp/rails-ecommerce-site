@@ -46,8 +46,10 @@ RSpec.describe User, type: :model do
   end
 
   describe '#send_registration_email' do
+    let!(:correct_user) { FactoryBot.create(:non_admin_user) }
+    let!(:correct_user1) { FactoryBot.create(:admin_user, username: "jose_test1") }
     it 'sends email to user upon creation' do
-      
+      p "Email: #{ActionMailer::Base.deliveries.last}"
     end
   end
 end

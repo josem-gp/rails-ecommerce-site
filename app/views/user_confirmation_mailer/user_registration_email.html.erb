@@ -13,7 +13,7 @@
   <div class="flex-featured">
     <%= Product.order(sales: :desc).first(3).each do |product| %>
       <div class="featured-card">
-        <%= link_to product_path(product) do %>
+        <%= link_to product_url(product) do %>
         <% end %>
         <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
         <div class="featured-info">
