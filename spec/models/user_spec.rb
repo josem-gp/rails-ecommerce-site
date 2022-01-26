@@ -31,6 +31,12 @@ RSpec.describe User, type: :model do
         expect(incorrect_user_1.errors[:email]).to include("has already been taken")
       end
     end
+
+    context "when valid" do
+      it 'is succesfully create' do
+        expect(FactoryBot.create(:non_admin_user)).to be_valid
+      end
+    end
   end
   describe '#add_default_icon' do
     it 'attaches default icon to user' do
@@ -49,7 +55,7 @@ RSpec.describe User, type: :model do
     let!(:correct_user) { FactoryBot.create(:non_admin_user) }
     let!(:correct_user1) { FactoryBot.create(:admin_user, username: "jose_test1") }
     it 'sends email to user upon creation' do
-      p "Email: #{ActionMailer::Base.deliveries.last}"
+      p "Email: #{ActionMailer::Base.deliveries.count}"
     end
   end
 end
