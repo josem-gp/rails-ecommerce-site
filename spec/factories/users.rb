@@ -7,7 +7,7 @@ FactoryBot.define do
     association :icon, factory: :correct_icon
 
     trait :with_username do
-      username { "jose_test" }
+      sequence(:username) { |n| "jose_test#{n}" }
     end
 
     trait :with_email do

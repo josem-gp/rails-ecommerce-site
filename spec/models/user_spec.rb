@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'user model initialization' do
     context "when not valid" do
-      let!(:correct_user) { FactoryBot.create(:non_admin_user, email: "jose_test@test.io") }
+      let!(:correct_user) { FactoryBot.create(:non_admin_user, email: "jose_test@test.io", username: "jose_test") }
 
       it 'lacks username' do
         expect(FactoryBot.build(:non_username_user)).to_not be_valid
@@ -53,11 +53,12 @@ RSpec.describe User, type: :model do
 
   describe '#send_registration_email' do
     let!(:correct_user) { FactoryBot.create(:non_admin_user) }
-    let!(:correct_user1) { FactoryBot.create(:admin_user, username: "jose_test1") }
-    it 'sends email to user upon creation' do
-      p "Email: #{ActionMailer::Base.deliveries.count}"
+    it 'generates mail upon user creation' do
+      expect { FactoryBot.create(:non_admin_user) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+
+    it 'sends mail to user email' do
+      expect(ActionMailer::Base.deliveries.last.to[0]).to eq("#{correct_user.email}")
     end
   end
 end
-
-# User gets a confirmation email after creation
