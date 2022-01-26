@@ -1,45 +1,50 @@
-<style>
-  .email-container {
-    background-color: #4c5171;
-  }
-</style>
-<div class="email-container">
-  <img src="" alt="icon">
-  <h1>Welcome!</h1>
-  <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
-  <p>Check out our dedicated tea products in our website.</p>
-  <br>
-  <h3>Featured products</h3>
-  <div class="flex-featured">
-    <%= Product.order(sales: :desc).first(3).each do |product| %>
-      <div class="featured-card">
-        <%= link_to product_url(product) do %>
-        <% end %>
-        <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
-        <div class="featured-info">
-          <h3><%= product.name %></h3>
-          <div>
-            <% if product.rating %>
-              <% product.rating.floor.times do %>
-                <i class="fas fa-star active"></i>
-              <%end %>
-              <% if product.rating.to_s.include?('.5') %>
-                <i class="fas fa-star-half-alt active"></i>
-              <% end %>
-              <% (5 - product.rating.ceil).times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-            <% else %>
-              <% 5.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-            <%end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+  <body>
+    <div class="email-container">
+      <img src="" alt="icon">
+      <h1>Welcome!</h1>
+      <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
+      <p>Check out our dedicated tea products in our website.</p>
+      <br>
+      <h3>Featured products</h3>
+      <div class="flex-featured">
+        <% Product.order(sales: :desc).first(3).each do |product| %>
+          <div class="featured-card">
+            <%= link_to product_url(product) do %>
+            <% end %>
+            <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
+            <div class="featured-info">
+              <h3><%= product.name %></h3>
+              <div>
+                <% if product.rating %>
+                  <% product.rating.floor.times do %>
+                    <i class="fas fa-star active"></i>
+                  <%end %>
+                  <% if product.rating.to_s.include?('.5') %>
+                    <i class="fas fa-star-half-alt active"></i>
+                  <% end %>
+                  <% (5 - product.rating.ceil).times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% else %>
+                  <% 5.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <%end %>
+              </div>
+              <p>¥<%= product.price %></p>
+            </div>
           </div>
-          <p>¥<%= product.price %></p>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <h3>We are here to help</h3>
-  <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
-</div>
+      <h3>We are here to help</h3>
+      <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
+    </div>
+  </body>
+</html>
