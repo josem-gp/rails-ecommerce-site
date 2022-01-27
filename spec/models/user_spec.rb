@@ -13,19 +13,19 @@ RSpec.describe User, type: :model do
         expect(FactoryBot.build(:non_email_user)).to_not be_valid
       end
 
-      it 'username duplicated' do
+      it 'has username duplicated' do
         incorrect_user_1 = FactoryBot.build(:non_admin_user, username: "Jose_Test")
         incorrect_user_1.valid?
         expect(incorrect_user_1.errors[:username]).to include("has already been taken")
       end
 
-      it 'username shorter than 3 characters' do
+      it 'has username shorter than 3 characters' do
         incorrect_user_1 = FactoryBot.build(:non_admin_user, username: "Jo")
         incorrect_user_1.valid?
         expect(incorrect_user_1.errors[:username]).to include("is too short (minimum is 3 characters)")
       end
 
-      it 'email duplicated' do
+      it 'has email duplicated' do
         incorrect_user_1 = FactoryBot.build(:non_admin_user, email: "Jose_test@test.io")
         incorrect_user_1.valid?
         expect(incorrect_user_1.errors[:email]).to include("has already been taken")
@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
     end
 
     context "when valid" do
-      it 'is succesfully create' do
+      it 'is succesfully created' do
         expect(FactoryBot.create(:non_admin_user)).to be_valid
       end
     end
