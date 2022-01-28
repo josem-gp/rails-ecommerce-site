@@ -7,6 +7,8 @@ ruby '2.6.6'
 gem 'acts_as_favoritor'
 #Host images online
 gem 'cloudinary', '~> 1.16.0'
+#To clean database for tests
+gem 'database_cleaner'
 # Faker gem to seed database for tests
 gem 'faker'
 # Use mail form for contact forms

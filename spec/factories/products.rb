@@ -1,24 +1,30 @@
 FactoryBot.define do
   factory :product do
-    name { "Product_test" }
+    sequence(:name) { |n| "product_test#{n}" }
     description { "Lorem ipsum dolor sit amet" }
-    price { 1000 }
+    price { rand(2000...10000) }
     association :user, factory: :non_admin_user
+    rating { rand(1..5) }
 
     trait :correct_availability do
-      rating { 1 }
+      availability { 1 }
     end
 
     trait :incorrect_availability do
-      rating { 3 }
+      availability { 3 }
+    end
+
+    #Adds a test image for product after being created
+
+    after(:create) do |product|
+      product.photos.attach(
+        io: File.open(Rails.root.join('test', 'fixtures', 'files', 'test.jpg')),
+        filename: 'test.jpg',
+        content_type: 'image/jpg'
+      )
     end
 
     factory :correct_product, traits: [:correct_availability]
     factory :incorrect_product, traits: [:incorrect_availability]
   end
 end
-
-
-# Product name needs to be unique (case sensitive)
-# Product availability needs to be a number between 1 and 2
-# When product is created, initial sales should be 0

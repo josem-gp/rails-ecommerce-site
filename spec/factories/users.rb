@@ -4,7 +4,7 @@ FactoryBot.define do
     name { "Jose Test" }
     shipping_address { "jose_shipping_test" }
     phone_number { "08012341234" }
-    association :icon, factory: :correct_icon
+    association :icon, factory: :correct_url_icon
 
     trait :with_username do
       sequence(:username) { |n| "jose_test#{n}" }

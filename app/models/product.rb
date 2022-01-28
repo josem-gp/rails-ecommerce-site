@@ -27,7 +27,7 @@ class Product < ApplicationRecord
   
   acts_as_favoritable
 
-  validates :name, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
   # Availability: 1 available / 2 unavailable
