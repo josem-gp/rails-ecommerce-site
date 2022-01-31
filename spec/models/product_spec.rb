@@ -56,16 +56,15 @@ RSpec.describe Product, type: :model do
     let!(:second_product) { FactoryBot.create(:correct_product, name: "Second Product" , rating: 2) }
     let!(:third_product) { FactoryBot.create(:correct_product, name: "Third Product" , rating: 3) }
 
-    it "orders products according to param" do
-      mock_member = double
-      puts "Mock #{mock_member}"
-      first_product_1 = first_product.instance_variable_set(:@another_member, mock_member)
-      puts "The list #{first_product_1}"
-      # ordered_list = Product.order_list('rating 1-5')
-      # puts "Ordered list #{ordered_list}"
-      # expect(ordered_list.all).to eq[third_product, second_product, first_product]
+    let(:ordered_by_name) { Product.order_list('name A-Z') }
+    let(:ordered_by_rating) { Product.order_list('rating 5-1') }
+
+    it "orders products according name" do
+      expect(ordered_by_name.pluck(:name)).to eq(["First Product", "Second Product", "Third Product"])
+    end
+
+    it "orders products according rating" do
+      expect(ordered_by_rating.pluck(:name)).to eq(["Third Product", "Second Product", "First Product"])
     end
   end
 end
-
-# When Product.order_list is used, the list of products is ordered depending the param that is passed

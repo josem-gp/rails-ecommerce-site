@@ -38,24 +38,27 @@ class Product < ApplicationRecord
   private 
 
   def self.order_list(sort_by)
-    if sort_by == 'featured' || sort_by.blank?
+    case sort_by
+    when 'featured'
       self.order(sales: :desc)
-    elsif sort_by == 'name A-Z' 
-      self.order(name: :asc)
-    elsif sort_by == 'name Z-A'
+    when 'name A-Z'
+      self.order(:name)
+    when 'name Z-A'
       self.order(name: :desc)
-    elsif sort_by == 'rating 1-5'
+    when 'rating 1-5'
       self.order(:rating)
-    elsif sort_by == 'rating 5-1'
+    when 'rating 5-1'
       self.order(rating: :desc)
-      elsif sort_by == 'price low-high'
+    when 'price low-high'
       self.order(:price)
-    elsif sort_by == 'price high-low'
+    when 'price high-low'
       self.order(price: :desc)
-    elsif sort_by == 'date old-new'
+    when 'date old-new'
       self.order(:updated_at)
-    elsif sort_by == 'date new-old' 
+    when 'date new-old'
       self.order(updated_at: :desc)
+    else 
+      self.order(sales: :desc)
     end
   end
  
