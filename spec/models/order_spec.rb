@@ -40,14 +40,12 @@ RSpec.describe Order, type: :model do
     end
   end
   describe "#add_billing_address" do
-    it "updates billing address of user" do
-      
+    let(:random_order) { FactoryBot.create(:correct_order) }
+    it "updates shipping address of user" do
+      expect(random_order.billing_address).to eq(random_order.user.shipping_address)
     end
   end
   describe ".update_total" do
-    it "updates billing address of user" do
-      
-    end
   end
 end
 
