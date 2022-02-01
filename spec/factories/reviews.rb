@@ -31,9 +31,3 @@ FactoryBot.define do
     factory :correct_review, traits: [:with_title, :with_correct_content, :with_correct_rating]
   end
 end
-
-# Review needs to have title
-# Review needs to have content
-# Review needs to have content between 3 and 250 char
-# Review needs to have rating
-# Review needs to have rating between 1 and 5

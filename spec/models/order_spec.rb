@@ -29,27 +29,14 @@ RSpec.describe Order, type: :model do
       end
     end
   end
-  describe "#most_featured" do
-    it "updates most featured products on order create" do
-      
-    end
-  end
-  describe "#merge_order_items" do
-    it "merges order items with same product" do
-      
-    end
-  end
   describe "#add_billing_address" do
     let(:random_order) { FactoryBot.create(:correct_order) }
     it "updates shipping address of user" do
       expect(random_order.billing_address).to eq(random_order.user.shipping_address)
     end
   end
-  describe ".update_total" do
-  end
 end
 
 # After save Order --> most_featured
 # After save Order --> merge_order_items
-# Before create Order --> add_billing_address
 # .update_total(order)
