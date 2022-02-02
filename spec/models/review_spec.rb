@@ -30,8 +30,11 @@ RSpec.describe Review, type: :model do
     end
   end
   describe "#add_rating_to_product" do
-    it "updates overall review rating of a product"
+    let(:mock_review_1)  { FactoryBot.create(:correct_review, rating: 3) }
+    let(:mock_review_2)  { FactoryBot.create(:correct_review, rating: 5, product_id: mock_review_1.product.id) }
 
+    it "updates overall review rating of a product" do
+      expect(mock_review_2.product.rating).to eq(4.0)
     end
   end
 end
