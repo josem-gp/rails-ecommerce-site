@@ -1,7 +1,20 @@
 require 'rails_helper'
 
 RSpec.feature "Homepage interactions", type: :feature do
-  scenario "send incomplete contact form", js:true do
+  scenario "sends contact form with incorrect email", js:true do
+    visit root_path
+
+    within(".new_contact") do
+      fill_in "contact_name", with: "Test User"
+      fill_in "contact_email", with: "test"
+      fill_in "contact_message", with: "Trying out Capybara"
+      click_button "Send Message"
+    end
+
+    expect(page).to have_text('Message did not send.')
+  end
+
+  scenario "sends incomplete contact form", js:true do
     visit root_path
 
     within(".new_contact") do
@@ -13,20 +26,7 @@ RSpec.feature "Homepage interactions", type: :feature do
     expect(page).to_not have_text('Thank you for your message.')
   end
 
-  scenario "send contact form with incorrect email", js:true do
-    visit root_path
-
-    within(".new_contact") do
-      fill_in "contact_name", with: "Test User"
-      fill_in "contact_email", with: "asdfadsd"
-      fill_in "contact_message", with: "Trying out Capybara"
-      click_button "Send Message"
-    end
-
-    expect(page).to have_text('Message did not send.')
-  end
-
-  scenario "send contact form correctly" do 
+  scenario "sends contact form correctly" do 
     visit root_path
 
     within(".new_contact") do
@@ -39,9 +39,25 @@ RSpec.feature "Homepage interactions", type: :feature do
     expect(page).to have_text('Thank you for your message.')
   end
 
-  scenario "visitor/user joins newsletter with correct email" do 
+  scenario "joins newsletter with incorrect email" do 
+    visit root_path
+
+    within(".input-group") do
+      fill_in "email", with: "Test Email"
+      find('.fa-paper-plane input').click
+    end
+
+    expect(page).to have_text('There was an error in your form')
   end
 
-  scenario "visitor/user joins newsletter with incorrect email" do 
+  scenario "joins newsletter with correct email" do 
+    visit root_path
+
+    within(".input-group") do
+      fill_in "email", with: "mail@test.io"
+      find('.fa-paper-plane input').click
+    end
+
+    expect(page).to have_text('Thank you for subscribing to our newsletter!')
   end
 end
