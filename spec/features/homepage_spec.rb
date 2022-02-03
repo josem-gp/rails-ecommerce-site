@@ -61,3 +61,28 @@ RSpec.feature "Homepage interactions", type: :feature do
     expect(page).to have_text('Thank you for subscribing to our newsletter!')
   end
 end
+
+### Sign up / Log in 
+# User logs in (succesfully)
+# User logs in (unsuccesfully)
+# Visitor signs up (succesfully)
+# Visitor signs up (unsuccesfully)
+### Catalog page
+# User clicks cart on product --> number adds on cart topnav
+# Visitor clicks clicks cart on product --> redirected to sign up
+# User or visitor filters by rating or money
+# User or visitor organizes products by rating 5 - 1 (check that the first card has bigger number than last card)
+# User or visitor organizes products by rating 1 - 5 (check that the first card has smaller number than last card)
+### Product page
+# Visitor clicks on write a review --> redirected to sign up
+# User clicks on write a review --> writes unsuccesfully
+# User clicks on write a review --> writes succesfully
+### User profile page
+# User changes icon
+# User clicks on product heart --> goes to profile and can see it there
+# User clicks on product heart again --> goes to profile and it is gone
+# User buys something --> order is on profile
+### Checkout
+# User fills the first 2 steps on checkout form
+# User completes checkout succesfully
+# User completes checkout unsuccesfully (wrong card ? )
