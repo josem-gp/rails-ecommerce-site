@@ -1,31 +1,42 @@
 require 'rails_helper'
 
 RSpec.feature "Homepage interactions", type: :feature do
-  let(:current_user) { FactoryBot.create(:non_admin_user) }
-  scenario "visitor clicks on cart on featured products" do 
+  scenario "send incomplete contact form", js:true do
     visit root_path
-    # find("a[href='/users/sign_in']").click
-    sleep 5
-    save_and_open_page
-    find(:xpath, "/html/body/main/section[2]/div/div[3]/div/div/div/div[1]/div[2]/a").click
 
+    within(".new_contact") do
+      fill_in "contact_name", with: "Test User"
+      fill_in "contact_message", with: "Trying out Capybara"
+      click_button "Send Message"
+    end
 
-    expect(page).to have_current_path "/users/sign_in"
+    expect(page).to_not have_text('Thank you for your message.')
   end
 
-  scenario "user clicks on cart on featured products" do 
-    # login_as(current_user)
-    # visit root_path
-    # find(:xpath, "/html/body/main/section[2]/div/div[3]/div/div/div/div[1]/div[2]/a").click
-    # cart_icon = page.find('.info-hover').value
+  scenario "send contact form with incorrect email", js:true do
+    visit root_path
 
-    # expect(cart_icon).to eq('1')
+    within(".new_contact") do
+      fill_in "contact_name", with: "Test User"
+      fill_in "contact_email", with: "asdfadsd"
+      fill_in "contact_message", with: "Trying out Capybara"
+      click_button "Send Message"
+    end
+
+    expect(page).to have_text('Message did not send.')
   end
 
-  scenario "visitor/user sends incomplete contact form" do 
-  end
+  scenario "send contact form correctly" do 
+    visit root_path
 
-  scenario "visitor/user sends complete contact form" do 
+    within(".new_contact") do
+      fill_in "contact_name", with: "Test User"
+      fill_in "contact_email", with: "mail@test.io"
+      fill_in "contact_message", with: "Trying out Capybara"
+      click_button "Send Message"
+    end
+
+    expect(page).to have_text('Thank you for your message.')
   end
 
   scenario "visitor/user joins newsletter with correct email" do 
