@@ -17,11 +17,13 @@ FactoryBot.define do
     #Adds a test image for product after being created
 
     after(:create) do |product|
-      product.photos.attach(
-        io: File.open(Rails.root.join('test', 'fixtures', 'files', 'test.jpg')),
-        filename: 'test.jpg',
-        content_type: 'image/jpg'
-      )
+      3.times do
+        product.photos.attach(
+          io: File.open(Rails.root.join('test', 'fixtures', 'files', 'test.jpg')),
+          filename: 'test.jpg',
+          content_type: 'image/jpg'
+        )
+      end
     end
 
     factory :correct_product, traits: [:correct_availability]

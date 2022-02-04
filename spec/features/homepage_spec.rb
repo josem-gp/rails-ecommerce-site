@@ -62,12 +62,7 @@ RSpec.feature "Homepage interactions", type: :feature do
   end
 end
 
-### Sign up / Log in 
-# User logs in (succesfully)
-# User logs in (unsuccesfully)
-# Visitor signs up (succesfully)
-# Visitor signs up (unsuccesfully)
-### Catalog page
+### Catalog page 
 # User clicks cart on product --> number adds on cart topnav
 # Visitor clicks clicks cart on product --> redirected to sign up
 # User or visitor filters by rating or money
@@ -81,8 +76,9 @@ end
 # User changes icon
 # User clicks on product heart --> goes to profile and can see it there
 # User clicks on product heart again --> goes to profile and it is gone
-# User buys something --> order is on profile
-### Checkout
+# User buys something --> order is on profile (we can fake this with FactoryBot)
+
+### Checkout [Don't do because there are many changes still to be done]
 # User fills the first 2 steps on checkout form
 # User completes checkout succesfully
 # User completes checkout unsuccesfully (wrong card ? )

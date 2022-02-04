@@ -7,8 +7,6 @@ ruby '2.6.6'
 gem 'acts_as_favoritor'
 #Host images online
 gem 'cloudinary', '~> 1.16.0'
-#To clean database for tests
-gem 'database_cleaner'
 # Faker gem to seed database for tests
 gem 'faker'
 # Use mail form for contact forms
@@ -77,6 +75,8 @@ group :test do
   gem 'capybara', '~> 3.35.0'
   gem 'launchy', '~> 2.4.3'
   gem 'selenium-webdriver'
+  #To clean database for tests
+  gem 'database_cleaner'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
