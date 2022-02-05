@@ -62,16 +62,6 @@ RSpec.feature "Homepage interactions", type: :feature do
   end
 end
 
-### Catalog page 
-# User clicks cart on product --> number adds on cart topnav
-# Visitor clicks clicks cart on product --> redirected to sign up
-# User or visitor filters by rating or money
-# User or visitor organizes products by rating 5 - 1 (check that the first card has bigger number than last card)
-# User or visitor organizes products by rating 1 - 5 (check that the first card has smaller number than last card)
-### Product page
-# Visitor clicks on write a review --> redirected to sign up
-# User clicks on write a review --> writes unsuccesfully
-# User clicks on write a review --> writes succesfully
 ### User profile page
 # User changes icon
 # User clicks on product heart --> goes to profile and can see it there
