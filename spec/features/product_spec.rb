@@ -1,4 +1,20 @@
-### Product page
-# Visitor clicks on write a review --> redirected to sign up
-# User clicks on write a review --> writes unsuccesfully
-# User clicks on write a review --> writes succesfully
+require 'rails_helper'
+
+RSpec.feature "Catalog interactions", type: :feature do
+
+    let(:user) { FactoryBot.create(:non_admin_user) }
+
+    let(:product) { FactoryBot.create(:correct_product) }
+
+    scenario "visitor clicks on write a review" do
+
+    end
+
+    scenario "user writes review successfully" do
+
+    end
+
+    scenario "user writes review unsuccessfully" do
+
+    end
+end
