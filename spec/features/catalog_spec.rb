@@ -3,9 +3,16 @@ require 'rails_helper'
 RSpec.feature "Catalog interactions", type: :feature do
 
     let(:user) { FactoryBot.create(:non_admin_user) }
-    let!(:product) { FactoryBot.create(:correct_product) }
+
+    # To give each product in the list a different rating
+    let!(:product) do 
+        FactoryBot.create_list(:correct_product, 2).each_with_index do |product, i|
+            product.update(rating: i + 1) #need to do update so that the data persists
+        end
+    end
 
     scenario "user clicks cart icon on product", js:true do
+
         login_as(user)
 
         visit products_path
@@ -39,24 +46,20 @@ RSpec.feature "Catalog interactions", type: :feature do
             find(".box").click
         end
 
-        if product.rating == 1.0
-            expect(page).to have_selector("div[data-stars='#{product.rating}']", visible: true)
-        else
-            expect(page).to have_selector("div[data-stars='#{product.rating}']", visible: false)
-        end
+        expect(page).to have_selector("div[data-stars='#{product.first.rating}']", visible: true)
+        expect(page).to have_selector("div[data-stars='#{product[1].rating}']", visible: false)
     end
 
     scenario "organizes products by rating 5 - 1" do
 
+        visit products_path
+
+        find(".sort_drop").click
+
+        within ".made-dropdown-menu" do
+            find(".dropdown-item[href='/products?sort_by=rating+5-1']").click
+        end
+
+        expect(page).to have_selector(".wrapper-right .mini-product-card:nth-child(1)[data-stars='#{product[1].rating}']")
     end
-
-    # scenario "organizes products by rating 1 - 5" do
-
-    # end
 end
-
-### Catalog page 
-# Visitor clicks clicks cart on product --> redirected to sign up
-# User or visitor filters by rating or money
-# User or visitor organizes products by rating 5 - 1 (check that the first card has bigger number than last card)
-# User or visitor organizes products by rating 1 - 5 (check that the first card has smaller number than last card)
