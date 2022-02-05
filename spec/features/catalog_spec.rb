@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Catalog interactions", type: :feature do
 
     let(:user) { FactoryBot.create(:non_admin_user) }
-    let!(:product) { FactoryBot.create_list(:correct_product, 3) }
+    let!(:product) { FactoryBot.create(:correct_product) }
 
     scenario "user clicks cart icon on product", js:true do
         login_as(user)
@@ -15,22 +15,40 @@ RSpec.feature "Catalog interactions", type: :feature do
         expect(page).to have_selector('.info-hover', visible: true)
         find(:xpath, "/html/body/main/section[2]/div/div/div[2]/div[2]/div[1]/div[1]/div[2]/a", :visible => false).click
         
-        # wait_for_ajax
-
         expect(page).to have_css(".items-cart", text: "1")
     end
 
-    # scenario "visitor clicks cart icon on product" do
+    scenario "visitor clicks cart icon on product", js:true do
 
-    # end
+        visit products_path
 
-    # scenario "filters products by money" do
+        page.driver.browser.manage.window.maximize #if I dont do this, it will give an error of Selenium::WebDriver::Error::MoveTargetOutOfBoundsError:
+        find(".mini-product-card", match: :first).hover
+        expect(page).to have_selector('.info-hover', visible: true)
+        find(:xpath, "/html/body/main/section[2]/div/div/div[2]/div[2]/div[1]/div[1]/div[2]/a", :visible => false).click
+        
+        expect(page).to have_current_path "/users/sign_in"
 
-    # end
+    end
 
-    # scenario "organizes products by rating 5 - 1" do
+    scenario "filters products by rating" do
 
-    # end
+        visit products_path
+
+        within "li[data-stars='1.0']" do
+            find(".box").click
+        end
+
+        if product.rating == 1.0
+            expect(page).to have_selector("div[data-stars='#{product.rating}']", visible: true)
+        else
+            expect(page).to have_selector("div[data-stars='#{product.rating}']", visible: false)
+        end
+    end
+
+    scenario "organizes products by rating 5 - 1" do
+
+    end
 
     # scenario "organizes products by rating 1 - 5" do
 
