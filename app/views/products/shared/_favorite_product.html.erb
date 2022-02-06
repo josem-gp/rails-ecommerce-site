@@ -1,4 +1,4 @@
-<div class="separate-line mt-3">
+<div class="separate-line mt-3" id="favoritor">
   <% if current_user %>
     <%= link_to toggle_favorite_product_path(product), class: "d-flex" , remote: true, method: :post do %>
       <%= render 'pages/like_button', product: product %>

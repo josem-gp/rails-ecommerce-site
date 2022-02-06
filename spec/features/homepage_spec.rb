@@ -62,12 +62,6 @@ RSpec.feature "Homepage interactions", type: :feature do
   end
 end
 
-### User profile page
-# User changes icon
-# User clicks on product heart --> goes to profile and can see it there
-# User clicks on product heart again --> goes to profile and it is gone
-# User buys something --> order is on profile (we can fake this with FactoryBot)
-
 ### Checkout [Don't do because there are many changes still to be done]
 # User fills the first 2 steps on checkout form
 # User completes checkout succesfully
