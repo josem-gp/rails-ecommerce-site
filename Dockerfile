@@ -13,7 +13,9 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 # Install gem dependencies
 RUN gem install bundler:2.2.32
 RUN bundle install
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+ADD https://dl.yarnpkg.com/debian/pubkey.gpg /tmp/yarn-pubkey.gpg
+RUN apt-key add /tmp/yarn-pubkey.gpg && rm /tmp/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -qq && apt-get install -y yarn  && apt-get install -y npm
 RUN yarn install
