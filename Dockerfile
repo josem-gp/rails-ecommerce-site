@@ -24,7 +24,7 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Install gem dependencies
-RUN sh 'echo gem: --no-document > ~/.gemrc'
+RUN echo "gem: --no-document > ~/.gemrc"
 RUN gem install bundler:2.2.32
 RUN bundle install --jobs 4
 RUN curl https://deb.nodesource.com/setup_12.x | bash
