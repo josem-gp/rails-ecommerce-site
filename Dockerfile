@@ -25,9 +25,8 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Install gem dependencies
 RUN echo "gem: --no-document > ~/.gemrc"
-RUN echo 'export MAKE="make -j$(nproc)"' >> $home/.bash_profile
 RUN gem install bundler:2.2.32
-RUN MAKE="make --jobs 8" bundle install
+RUN bundle install 
 RUN curl https://deb.nodesource.com/setup_12.x | bash
 ADD https://dl.yarnpkg.com/debian/pubkey.gpg /tmp/yarn-pubkey.gpg
 RUN apt-key add /tmp/yarn-pubkey.gpg && rm /tmp/yarn-pubkey.gpg
