@@ -1,5 +1,5 @@
 # Start from the official ruby image, then update and install JS & DB
-FROM ruby:2.6.6
+FROM --platform=linux/amd64 ruby:2.6.6
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
 # Install Chromedriver
