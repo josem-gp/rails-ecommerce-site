@@ -31,10 +31,10 @@
   }
 }
 
-.buy-cta-btn {
+.buy-cta-btn-background {
   text-align: center;
   background-color: #bce0a6;
-  border: 1px solid #aac997;
+  border: 1px solid #bce0a6;
   color: #f8f8f8;
   border-radius: 2px;
   transition: all ease-in-out 0.35s;
@@ -80,5 +80,38 @@
   &:hover::before {
     right: -15%;
     transition: right ease-in-out 0.35s;
+  }
+}
+
+.buy-cta-btn-no-background {
+  text-align: center;
+  background-color: #bce0a6;
+  border: 1px solid #bce0a6;
+  color: #f8f8f8;
+  border-radius: 2px;
+  transition: all ease-in-out 0.35s;
+  z-index: 1;
+  position: relative;
+
+  &::after {
+    content: "→";
+    position: absolute;
+    color: #aac997;
+    left: 88%;
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &:hover {
+    border: none;
+    background-color: transparent;
+    color: #aac997;
+    transition: all ease-in-out 0.35s;
+  }
+
+  &:hover::after {
+    left: 95%;
+    opacity: 1;
+    transition: all ease-in-out 0.35s;
   }
 }
