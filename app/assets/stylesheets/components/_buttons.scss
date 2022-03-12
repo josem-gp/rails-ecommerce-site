@@ -26,24 +26,59 @@
   }
 
   &:hover {
-    a {
-      text-decoration: none !important;
-    }
     color: #aac997;
     transition: color ease-in-out 0.35s;
   }
 }
 
 .buy-cta-btn {
+  text-align: center;
   background-color: #bce0a6;
+  border: 1px solid #aac997;
   color: #f8f8f8;
   border-radius: 2px;
   transition: all ease-in-out 0.35s;
+  z-index: 1;
+  position: relative;
+
+  &::after {
+    content: "→";
+    position: absolute;
+    color: #aac997;
+    left: 88%;
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    transition: right ease-in-out 0.35s;
+  }
 
   &:hover {
-    border: 1px solid #bce0a6;
+    border: none;
     background-color: transparent;
-    color: #bce0a6;
+    color: #aac997;
     transition: all ease-in-out 0.35s;
+  }
+
+  &:hover::after {
+    left: 95%;
+    opacity: 1;
+    transition: all ease-in-out 0.35s;
+  }
+
+  &:hover::before {
+    right: -15%;
+    transition: right ease-in-out 0.35s;
   }
 }
