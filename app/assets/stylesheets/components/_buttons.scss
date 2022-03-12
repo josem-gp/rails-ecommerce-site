@@ -26,15 +26,15 @@
   }
 
   &:hover {
-    color: #aac997;
+    color: $font-tea;
     transition: color ease-in-out 0.35s;
   }
 }
 
 .buy-cta-btn-background {
   text-align: center;
-  background-color: #bce0a6;
-  border: 1px solid #bce0a6;
+  background-color: $background-tea;
+  border: 1px solid $background-tea;
   color: #f8f8f8;
   border-radius: 2px;
   transition: all ease-in-out 0.35s;
@@ -44,7 +44,7 @@
   &::after {
     content: "→";
     position: absolute;
-    color: #aac997;
+    color: $font-tea;
     left: 88%;
     opacity: 0;
     transition: all 0.35s ease-in-out;
@@ -67,7 +67,7 @@
   &:hover {
     border: none;
     background-color: transparent;
-    color: #aac997;
+    color: $font-tea;
     transition: all ease-in-out 0.35s;
   }
 
@@ -85,8 +85,8 @@
 
 .buy-cta-btn-no-background {
   text-align: center;
-  background-color: #bce0a6;
-  border: 1px solid #bce0a6;
+  background-color: $background-tea;
+  border: 1px solid $background-tea;
   color: #f8f8f8;
   border-radius: 2px;
   transition: all ease-in-out 0.35s;
@@ -96,7 +96,7 @@
   &::after {
     content: "→";
     position: absolute;
-    color: #aac997;
+    color: $font-tea;
     left: 88%;
     opacity: 0;
     transition: all 0.35s ease-in-out;
@@ -105,7 +105,7 @@
   &:hover {
     border: none;
     background-color: transparent;
-    color: #aac997;
+    color: $font-tea;
     transition: all ease-in-out 0.35s;
   }
 
