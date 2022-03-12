@@ -1,6 +1,7 @@
-// Specific CSS for your home-page
+// Specific CSS for your homepage
 
 // Intro section
+
 .main-intro {
   background-color: #f8f8f8;
 
@@ -87,9 +88,22 @@
 // Display products
 
 .display-products {
-  background-image: asset_url("display-products-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: asset_url("display-products-homepage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.4;
+    z-index: -1;
+  }
 
   h2 {
     color: white;
