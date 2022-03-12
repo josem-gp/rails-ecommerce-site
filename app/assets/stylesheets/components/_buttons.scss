@@ -1,11 +1,49 @@
-.shop-now-btn {
-  color: white;
-  background-color: green;
-  padding: 8px 10px;
+.learn-cta-btn {
+  border: 1px solid #f8f8f8;
+  color: #f8f8f8;
   border-radius: 2px;
+  position: relative;
+  z-index: 1;
+  overflow: none;
+  transition: color ease-in-out 0.35s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #f8f8f8;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top ease-in-out 0.35s;
+  }
+
+  &:hover::before {
+    top: 0;
+    transition: top ease-in-out 0.35s;
+  }
+
+  &:hover {
+    a {
+      text-decoration: none !important;
+    }
+    color: #aac997;
+    transition: color ease-in-out 0.35s;
+  }
 }
 
-.shop-now-btn:hover {
-  text-decoration: none;
-  color: white;
+.buy-cta-btn {
+  background-color: #bce0a6;
+  color: #f8f8f8;
+  border-radius: 2px;
+  transition: all ease-in-out 0.35s;
+
+  &:hover {
+    border: 1px solid #bce0a6;
+    background-color: transparent;
+    color: #bce0a6;
+    transition: all ease-in-out 0.35s;
+  }
 }
