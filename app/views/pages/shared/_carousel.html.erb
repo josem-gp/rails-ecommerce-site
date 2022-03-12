@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="9000">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "First slide"%>
@@ -42,9 +42,9 @@
     <div class="carousel-item">
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "Second slide"%>
       <div class="carousel-caption d-none d-md-block">
-        <h1>TAKE ME OUT <br>
-          FOR A CUP OF <br>
-          COFFEE</h1>
+        <h1>LETS TEST THIS <br>
+          AAA AAA AA <br>
+          AAAA</h1>
         <p>With all the best coffee for your better choice</p>
         <div class="cta-btns">
           <a class="learn-cta-btn" href="/about">LEARN MORE</a>
@@ -55,9 +55,9 @@
     <div class="carousel-item">
       <%= image_tag "banner-homepage.jpg", class:"d-block w-100", alt: "Third slide"%>
       <div class="carousel-caption d-none d-md-block">
-        <h1>TAKE ME OUT <br>
-          FOR A CUP OF <br>
-          COFFEE</h1>
+        <h1>THIRD SLIDER <br>
+          BBB BBB BB <br>
+          BBBB</h1>
         <p>With all the best coffee for your better choice</p>
         <div class="cta-btns">
           <a class="learn-cta-btn" href="/about">LEARN MORE</a>
@@ -66,12 +66,12 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev hidden-span" href="#carouselExampleControls" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next hidden-span" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
