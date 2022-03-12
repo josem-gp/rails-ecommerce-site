@@ -1,11 +1,9 @@
 // Specific CSS for your home-page
 
 // Intro section
-
 .grid-intro {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1.5fr 1fr;
   margin-top: 6%;
   align-items: center;
 
@@ -13,60 +11,66 @@
     text-align: right;
     padding-right: 42px;
 
+    h3 {
+      color: $font-tea;
+      font-style: italic;
+      font-size: 24px;
+    }
+
+    h2 {
+      text-align: center;
+      position: relative;
+      padding-bottom: 12px;
+      &::before {
+        height: 1px;
+        width: 150px;
+        background-color: $font-tea;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        bottom: -5px;
+        background-color: $font-tea;
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 15px;
+      font-style: italic;
+    }
+
     .buy-cta-btn-no-background {
       padding: 8px 10px;
     }
   }
 
-  .intro-pics-first img:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .intro-pics-second img:not(:last-child) {
-    margin-bottom: 20px;
-  }
-}
-
-.intro-message {
-  h3 {
-    color: $font-tea;
-    font-style: italic;
-    font-size: 24px;
-  }
-
-  h2 {
-    text-align: center;
-    position: relative;
-    padding-bottom: 12px;
-    &::before {
-      height: 1px;
-      width: 150px;
-      background-color: $font-tea;
-      position: absolute;
-      content: "";
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+  .intro-pics {
+    display: flex;
+    grid-gap: 20px;
+    &-first img:not(:last-child) {
+      margin-bottom: 20px;
     }
-    &::after {
-      content: "";
-      width: 10px;
-      height: 10px;
-      bottom: -5px;
-      background-color: $font-tea;
-      -webkit-transform: rotate(45deg);
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
 
-  p {
-    font-weight: 200;
-    font-size: 15px;
-    font-style: italic;
+    &-second {
+      align-self: center;
+
+      img:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
@@ -194,5 +198,19 @@
     visibility: visible;
     opacity: 1;
     transition: all 0.7s ease-in-out;
+  }
+}
+
+// Media Queries
+
+@media screen {
+  @media (max-width: 992px) {
+    .grid-intro {
+      grid-template-columns: 1fr;
+
+      .intro-pics {
+        margin-top: 40px;
+      }
+    }
   }
 }
