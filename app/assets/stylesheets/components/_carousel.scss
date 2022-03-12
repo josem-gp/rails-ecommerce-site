@@ -1,69 +1,63 @@
 // Style of caption
-
 .carousel-caption {
   color: black !important;
   bottom: 36% !important;
   left: 12% !important;
   text-align: left !important;
-}
 
-// Style of text
+  // Style of text
+  h1 {
+    font-size: clamp(1.5rem, 4.5vw, 5rem);
+    font-weight: 600;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
 
-.carousel-caption h1 {
-  font-size: clamp(1.5rem, 4.5vw, 5rem);
-  font-weight: 600;
-  color: white;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.carousel-caption p {
-  color: white;
-  font-size: clamp(0.7rem, 2vw, 1rem);
-  font-style: italic;
-}
-
-// Style of button
-
-.cta-btns {
-  display: flex;
-  align-items: center;
-}
-
-.cta-btns a {
-  padding: 12px;
-  font-weight: 700;
-  margin-right: 20px;
-
-  &:hover {
-    text-decoration: none;
+  p {
+    color: white;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    font-style: italic;
   }
 }
 
+// Style of button
 .cta-btns {
+  display: flex;
+  align-items: center;
+
+  a {
+    padding: 12px;
+    font-weight: 700;
+    margin-right: 20px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .learn-cta-btn {
     border: 1px solid white;
     color: white;
+
+    &:hover {
+      background-color: white;
+      color: green;
+    }
   }
 
   .buy-cta-btn {
     border: 1px solid green;
     color: green;
-  }
 
-  .learn-cta-btn:hover {
-    background-color: white;
-    color: green;
-  }
-
-  .buy-cta-btn:hover {
-    background-color: green;
-    color: white;
+    &:hover {
+      background-color: green;
+      color: white;
+    }
   }
 }
 
 // Style of prev/next
-
 .hidden-span {
   display: none !important;
 }
@@ -73,7 +67,6 @@
 }
 
 // Typed.js
-
 .typed-cursor {
   opacity: 0 !important;
 }
@@ -81,4 +74,15 @@
 #title-typed {
   position: absolute;
   top: -63%;
+}
+
+//Carousel overwritting the fading
+.carousel.carousel-fade .carousel-item {
+  display: block;
+  opacity: 0;
+  transition: opacity ease-in-out 0.6s !important;
+}
+
+.carousel.carousel-fade .carousel-item.active {
+  opacity: 1 !important;
 }
