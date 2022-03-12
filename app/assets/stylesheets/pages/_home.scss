@@ -29,7 +29,7 @@
 
 .intro-message {
   h3 {
-    color: green;
+    color: $font-tea;
     font-style: italic;
     font-size: 24px;
   }
@@ -41,7 +41,7 @@
     &::before {
       height: 1px;
       width: 150px;
-      background-color: green;
+      background-color: $font-tea;
       position: absolute;
       content: "";
       bottom: 0;
@@ -54,7 +54,7 @@
       width: 10px;
       height: 10px;
       bottom: -5px;
-      background-color: green;
+      background-color: $font-tea;
       -webkit-transform: rotate(45deg);
       position: absolute;
       left: 0;
