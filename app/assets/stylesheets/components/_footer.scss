@@ -89,3 +89,13 @@ footer a:hover {
     box-shadow: none;
   }
 }
+
+// Media Queries
+
+@media screen {
+  @media (max-width: 420px) {
+    .top-footer-div {
+      padding: 0 6%;
+    }
+  }
+}
