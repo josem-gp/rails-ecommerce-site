@@ -19,6 +19,7 @@
         font-weight: 200;
         font-size: 15px;
         font-style: italic;
+        color: $gray-text;
       }
 
       .buy-cta-btn-no-background {
@@ -228,6 +229,14 @@
 // Media Queries
 
 @media screen {
+  @media (max-width: 1399px) {
+    .info-hover {
+      left: 43%;
+    }
+    .product-card:hover .info-hover {
+      left: 39%;
+    }
+  }
   @media (max-width: 1199px) {
     .products-grid {
       justify-items: center;
@@ -258,7 +267,7 @@
 
   @media (max-width: 992px) {
     .grid-intro {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
 
       .intro-pics {
         margin-top: 40px;

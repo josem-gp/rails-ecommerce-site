@@ -1,6 +1,6 @@
-<h3 class="contact-header"><span>Ready to try it?</span> GET IN TOUCH</h3>
+<h3 class="contact-section-header"><span>Ready to try it?</span> GET IN TOUCH</h3>
 <%= form_for @contact, url: pages_path, remote: true do |f| %>
-  <div class= "flex-row">
+  <div class= "contact-section-flex-row">
     <div class="form-input-spacing">
       <%= f.label :name %>
       <%= f.text_field  :name, required: true, class: "contact-form-text-area" %>
@@ -10,12 +10,30 @@
       <%= f.text_field :email, required: true, class: "contact-form-text-area" %>
     </div>
   </div>
-  <div class="area-input">
+  <div class="contact-section-area-input">
     <%= f.label :message %>
     <%= f.text_area :message, rows: 8, cols: 59, required: true, class: "contact-form-text-area",
                             placeholder: "Send us a message"%>
   </div>
-  <div class="submit-form">
-    <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+  <div class="contact-section-submit-form send-btn">
+    <%= f.submit 'Contact Us', id: "submit-input", style: "border: none !important; background: none; color: white"%>
+    <i class="fa fa-paper-plane replace"></i>
+    <i class="fas fa-check hidden"></i>
   </div>
 <% end %>
+<script>
+  const contactFormName = document.querySelector("#contact_name").value
+  const contactFormEmail = document.querySelector("#contact_email").value
+  const contactFormArea = document.querySelector("#contact_message").value
+  const contactFormBtn = document.querySelector(".send-btn")
+  const contactSendIcon = document.querySelector(".replace")
+  const contactHiddenIcon = document.querySelector(".hidden")
+
+  contactFormBtn.addEventListener("click", (event) => {
+    contactSendIcon.classList.add("flying");
+    contactHiddenIcon.classList.remove("hidden");
+    contactHiddenIcon.classList.add("showing");
+    document.querySelector("#submit-input").value = "Sent";
+    document.querySelector("#submit-input").classList.add("fading");
+  })
+</script>
