@@ -38,21 +38,21 @@
   li a {
     margin-right: 24px;
     color: white !important;
-  }
 
-  li a::after {
-    display: block;
-    content: "";
-    border-bottom: solid 3px #019fb6;
-    transform: scaleX(0);
-    transform-origin: 100% 0%;
-    transition: transform 250ms ease-in-out;
-  }
-}
+    &:after {
+      display: block;
+      content: "";
+      border-bottom: solid 3px #aac997;
+      transform: scaleX(0);
+      transform-origin: 100% 0%;
+      transition: transform 250ms ease-in-out;
+    }
 
-li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: 0% 50%;
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: 0% 50%;
+    }
+  }
 }
 
 .right-nav {
@@ -61,26 +61,27 @@ li a:hover::after {
   padding: 0;
   display: flex;
   align-items: center;
-}
 
-.right-nav li {
-  position: relative;
-  i {
-    color: white;
+  li {
+    position: relative;
+
+    i {
+      color: white;
+    }
+
+    &:not(:last-of-type):after {
+      content: "";
+      position: absolute;
+      border-right: solid 2px white;
+      top: 50%;
+      right: 0;
+      height: 20px;
+      margin-top: -10px;
+    }
   }
 }
 
-.right-nav li:not(:last-of-type):after {
-  content: "";
-  position: absolute;
-  border-right: solid 2px white;
-  top: 50%;
-  right: 0;
-  height: 20px;
-  margin-top: -10px;
-}
-
-// Search
+// Search (open & closing search)
 
 .search-btn {
   border: none;
@@ -119,7 +120,7 @@ li a:hover::after {
   position: absolute;
   top: 18px;
   right: 4px;
-  background: green;
+  background: #bce0a6;
   border-radius: 50%;
   width: 14px;
   height: 14px;
@@ -191,7 +192,7 @@ li a:hover::after {
   transition: all 0.4s ease-in-out;
 }
 
-// Fixing everything & fading out elements & moving to left the navbar
+// Fix body & fading out elements & moving to left the navbar
 
 .move-right {
   margin-left: 50vw;
@@ -300,12 +301,11 @@ li a:hover::after {
     }
 
     .center-nav {
-      li a {
-        color: black;
-      }
-      li a::after {
-        display: none;
-      }
+      display: none;
+    }
+
+    .form-inline input::placeholder {
+      font-size: 13px;
     }
   }
 }
