@@ -35,7 +35,7 @@ import { loginError } from "../components/init_loginError";
 import { shippingError } from "../components/init_shippingError";
 import { billingError } from "../components/init_billingError";
 import { toggleSearch } from "../components/init_toggleSearch";
-import { dropdownNav } from "../components/init_dropdownNav";
+import { openMenuNav } from "../components/init_openMenuNav";
 import { originalNav } from "../components/init_originalNav";
 import { filterProducts } from "../components/init_filterProducts";
 import { sortDropdown } from "../components/init_sortDropdown";
@@ -55,7 +55,7 @@ document.addEventListener("turbolinks:load", () => {
   shippingError();
   billingError();
   toggleSearch();
-  dropdownNav();
+  openMenuNav();
   originalNav();
   filterProducts();
   sortDropdown();

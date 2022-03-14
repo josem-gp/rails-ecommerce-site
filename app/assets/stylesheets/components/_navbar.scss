@@ -2,7 +2,6 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  // background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -29,6 +28,7 @@
   background-color: rgba(0, 0, 0, 0.4) !important;
   padding: 10px 23px !important;
   width: -webkit-fill-available;
+  transition: all 0.4s ease-in-out;
 }
 
 .center-nav {
@@ -137,28 +137,29 @@ li a:hover::after {
   }
 }
 
-// Dropdown menu
-
-.dropdown-nav {
-  display: block !important;
-  visibility: visible;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  background: #ffffff;
-  width: 50vw;
-  left: 0;
+.navbar-collapse {
   height: 100vh;
-  padding: 3% 0%;
+  width: 0;
+  position: fixed;
   z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding: 6% 0%;
   text-align: center;
   transition: all 0.4s ease-in-out;
+
+  &:before {
+    content: "MENU";
+    color: #666666;
+  }
 
   .nav-link {
     color: #737373 !important;
     text-transform: capitalize;
     text-align: left;
-    margin-left: 28px !important;
+    margin: 6px 6% !important;
     padding-top: 6px;
     border-bottom: 1px solid;
     background-image: url(flecha-correcta.svg);
@@ -177,9 +178,25 @@ li a:hover::after {
   }
 }
 
-.dropdown-nav::before {
-  content: "MENU";
-  color: #666666;
+// Collapsing navbar
+
+.closing-menu {
+  width: 0;
+}
+
+//Opening navbar
+
+.opening-menu {
+  width: 50vw !important;
+  transition: all 0.4s ease-in-out;
+}
+
+// Fixing everything & fading out elements & moving to left the navbar
+
+.move-right {
+  margin-left: 50vw;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
 }
 
 .fixed-body {
@@ -194,11 +211,7 @@ li a:hover::after {
   transition: all 0.5s ease-in-out;
 }
 
-.move-right {
-  margin-left: 50vw;
-  pointer-events: none;
-  transition: all 0.5s ease-in-out;
-}
+// Hamburguer btns
 
 .btn-menu {
   width: 38px;
@@ -264,19 +277,7 @@ li a:hover::after {
     .navbar-brand {
       flex-basis: 100%;
       text-align: center; //this will not make it go center once it is a img logo instead of words
-      // color: white !important; //this will not make it go center once it is a img logo instead of words
-    }
-    .collapse {
-      display: block !important;
-      position: absolute !important;
-      top: 0 !important;
-      width: 0 !important;
-      padding: 3% 0%;
-      left: 0 !important;
-      height: 100vh !important;
-      visibility: hidden;
-      opacity: 0;
-      // transition: all 0.5s ease-in-out;
+      // color: white !important;
     }
 
     .open-search {

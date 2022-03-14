@@ -1,7 +1,6 @@
-const dropdownNav = () => {
+const openMenuNav = () => {
   const navBtn = document.querySelector(".navbar-toggler");
   const dropDiv = document.querySelector(".navbar-collapse");
-  const body = document.querySelector("body");
   const restBody = document.querySelectorAll("body > *:not(.navbar)");
   const navBar = document.querySelector(".navbar");
 
@@ -10,14 +9,14 @@ const dropdownNav = () => {
     navBtn.classList.toggle("btn-menu");
     navBtn.classList.toggle("btn-change");
 
-    dropDiv.classList.toggle("dropdown-nav");
-    dropDiv.classList.toggle("collapse");
-    body.classList.toggle("fixed-body");
+    dropDiv.classList.toggle("closing-menu");
+    dropDiv.classList.toggle("opening-menu");
+    navBar.classList.toggle("move-right");
+    document.querySelector("body").classList.toggle("fixed-body");
     restBody.forEach((el) => {
       el.classList.toggle("lay-down");
     });
-    navBar.classList.toggle("move-right");
   });
 };
 
-export { dropdownNav };
+export { openMenuNav };
