@@ -16,6 +16,7 @@
     color: white;
     font-size: 56px;
     font-weight: 200;
+    text-align: center;
   }
 
   h1:before {
@@ -313,4 +314,28 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+// Media Query
+
+@media screen {
+  @media (max-width: 1399px) {
+    .wrapper-grid {
+      grid-template-columns: 1.5fr 3fr;
+    }
+
+    .wrapper-right {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-product-card {
+      .info-hover {
+        right: 27px;
+      }
+
+      &:hover .info-hover {
+        right: 50px;
+      }
+    }
+  }
 }

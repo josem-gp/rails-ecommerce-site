@@ -313,7 +313,7 @@
 const paginate = () => {
   var items = $(".mini-product-card.active");
   var numItems = items.length;
-  var perPage = 9;
+  var perPage = window.innerWidth > 1399 ? 9 : 6;
 
   items.slice(perPage).hide();
 
