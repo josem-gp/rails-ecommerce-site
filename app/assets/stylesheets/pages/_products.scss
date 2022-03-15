@@ -89,7 +89,7 @@
   .product-second-pic {
     position: relative;
     visibility: visible;
-    -webkit-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
     opacity: 1;
     transition: all 0.8s ease-in-out;
   }
@@ -168,7 +168,7 @@
 }
 
 .filter-div {
-  width: -webkit-fill-available;
+  width: 100%;
   padding: 22px 0px 22px 42px;
   border: 1px solid #eaeaea;
   margin-bottom: 28px;

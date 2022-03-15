@@ -18,16 +18,12 @@
 
 // Style to center and right part of nav
 
-.navbar-light .navbar-brand {
-  color: white !important;
-}
-
 .navbar {
   position: fixed !important;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.4) !important;
-  padding: 10px 23px !important;
-  width: -webkit-fill-available;
+  padding: 0 23px !important;
+  width: 100%;
   transition: all 0.4s ease-in-out;
 }
 
@@ -201,6 +197,7 @@
 }
 
 .fixed-body {
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -277,8 +274,9 @@
     }
     .navbar-brand {
       flex-basis: 100%;
+      margin-right: 0 !important;
       text-align: center; //this will not make it go center once it is a img logo instead of words
-      // color: white !important;
+      transition: all 0.4s ease-in-out;
     }
 
     .open-search {
