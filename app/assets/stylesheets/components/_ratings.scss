@@ -8,17 +8,17 @@
 .fa-star {
   color: white;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: $star-border;
 }
 
 .full-star {
-  color: #fbdf00;
-  -webkit-text-stroke-color: #fbdf00;
+  color: $star-inner;
+  -webkit-text-stroke-color: $star-border;
 }
 
 .active {
-  color: #fbdf00;
-  -webkit-text-stroke-color: #fbdf00;
+  color: $star-inner;
+  -webkit-text-stroke-color: $star-border;
 }
 
 // Label Rating

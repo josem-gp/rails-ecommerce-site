@@ -17,6 +17,7 @@
     font-size: 56px;
     font-weight: 200;
     text-align: center;
+    padding: 0 12px;
   }
 
   h1:before {
@@ -171,7 +172,7 @@
 .filter-div {
   width: 100%;
   overflow: hidden;
-  padding: 0px 0px 0px 42px;
+  padding: 0px 0px 0px 6%;
   border: 1px solid #eaeaea;
   margin-bottom: 28px;
 }
@@ -190,6 +191,13 @@
   margin-top: 60px;
   .page-link {
     border: none;
+
+    &:hover {
+      color: $font-tea;
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
   }
 }
 
@@ -216,12 +224,7 @@
 .simple-pagination .current {
   border-width: 0px;
   border-radius: 6px;
-  background-image: linear-gradient(
-    270deg,
-    rgb(64, 190, 239) 0%,
-    rgb(25, 178, 249) 51%,
-    rgb(22, 150, 246) 100%
-  );
+  background-color: #daeac5;
   padding: 5px 10px;
   background-position: center center;
   background-repeat: repeat;
@@ -237,12 +240,7 @@
 .simple-pagination .next {
   border-width: 0px;
   border-radius: 6px;
-  background-image: linear-gradient(
-    270deg,
-    rgb(64, 190, 239) 0%,
-    rgb(25, 178, 249) 51%,
-    rgb(22, 150, 246) 100%
-  );
+  background-color: #daeac5;
   padding: 5px 10px;
   background-position: center center;
   background-repeat: repeat;
@@ -395,13 +393,35 @@
 
         .hidden-filter-div {
           max-height: 0;
-          transition: max-height 1.5s ease-out;
+          transition: max-height 0.5s ease-out;
         }
 
         .open-filter-div {
-          max-height: 500px;
-          transition: max-height 1.5s ease-out;
+          max-height: 800px;
+          transition: max-height 0.5s ease-out;
         }
+      }
+    }
+
+    .mini-product-card {
+      .info-hover {
+        visibility: visible;
+        opacity: 1;
+        bottom: 0px;
+        right: 0;
+        left: 0;
+        top: 51%;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        align-items: flex-start;
+        transition: none;
+      }
+
+      &:hover .info-hover {
+        right: 0;
+        left: 0;
+        transition: none;
       }
     }
   }
@@ -414,6 +434,19 @@
     .wrapper-left {
       .filter-div:first-of-type {
         display: block !important;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .flex-featured {
+      .featured-card {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-info {
+          margin-left: 0;
+          margin-top: 12px;
+        }
       }
     }
   }

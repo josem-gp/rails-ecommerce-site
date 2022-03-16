@@ -265,12 +265,23 @@
     }
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     .grid-intro {
       grid-template-columns: 1fr !important;
 
       .intro-pics {
         margin-top: 40px;
+      }
+    }
+
+    .products-grid {
+      .product-card {
+        .info-hover {
+          top: 32%;
+          visibility: visible;
+          opacity: 1;
+          transition: none;
+        }
       }
     }
   }
