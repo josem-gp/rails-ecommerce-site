@@ -30,19 +30,3 @@
     <div id="pagination-container" class="simple-pagination"></div>
   </div>
 </div>
-<script>
-  const filterDivs = document.querySelectorAll(".accordion")
-
-  filterDivs.forEach((el) => {
-    el.addEventListener("click", (event) => {
-      el.classList.toggle("accordion-active")
-      el.nextElementSibling.classList.toggle("hidden-filter-div");
-      el.nextElementSibling.classList.toggle("open-filter-div");
-      // if (panel.style.maxHeight) {
-      //   panel.style.maxHeight = null;
-      // } else {
-      //   panel.style.maxHeight = "800px";
-      // }
-    })
-  })
-</script>
