@@ -269,9 +269,14 @@
 
 @media screen {
   @media (max-width: 991px) {
+    .navbar {
+      padding: 0 23px 6px 23px !important;
+    }
+
     .items-cart {
       right: 79px;
     }
+
     .navbar-brand {
       flex-basis: 100%;
       margin-right: 0 !important;

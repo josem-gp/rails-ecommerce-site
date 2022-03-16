@@ -277,7 +277,10 @@
     .products-grid {
       .product-card {
         .info-hover {
+          left: 0;
           top: 32%;
+          width: 100%;
+          justify-content: center;
           visibility: visible;
           opacity: 1;
           transition: none;
