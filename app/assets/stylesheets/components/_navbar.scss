@@ -240,9 +240,10 @@
 // Dropdown avatar
 
 .dropdown-avatar-show {
-  position: absolute;
+  position: absolute !important;
   display: block !important;
-  left: -105px;
+  left: -123px;
+  top: 30px;
 }
 
 .avatar-ul {

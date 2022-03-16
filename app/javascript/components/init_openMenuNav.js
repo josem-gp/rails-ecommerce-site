@@ -4,6 +4,7 @@ const openMenuNav = () => {
   const restBody = document.querySelectorAll("body > *:not(.navbar)");
   const navBar = document.querySelector(".navbar");
   const navBarBrand = document.querySelector(".navbar-brand");
+  const navLinks = document.querySelectorAll(".nav-link");
 
   navBtn.addEventListener("click", (event) => {
     event.preventDefault();
@@ -20,6 +21,14 @@ const openMenuNav = () => {
     document.querySelector("html").classList.toggle("fixed-body");
     restBody.forEach((el) => {
       el.classList.toggle("lay-down");
+    });
+  });
+
+  navLinks.forEach((el) => {
+    el.addEventListener("click", (event) => {
+      document.querySelector("body").classList.toggle("fixed-body");
+      document.querySelector("html").classList.toggle("fixed-body");
+      console.log("click");
     });
   });
 };
