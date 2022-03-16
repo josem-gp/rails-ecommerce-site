@@ -69,21 +69,48 @@
 
 .product-info-list {
   list-style: none;
-}
 
-#product-info-price {
-  font-size: 18px;
-  font-weight: 600;
-  color: green;
-  margin-bottom: 0;
-  margin-top: 0.5rem;
-}
+  h1 {
+    color: $gray-title;
+  }
 
-#product-info-availability {
-  border-left: 2px solid gray;
-  padding: 0px 6px;
-  margin-left: 12px;
-  margin-top: 0.5rem;
+  #product-info-price {
+    font-size: 28px;
+    color: $dark-green;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product-description {
+    font-size: 15px;
+  }
+
+  #product-info-availability {
+    border-left: 2px solid gray;
+    padding: 0px 6px;
+    margin-left: 12px;
+    margin-top: 0.5rem;
+  }
+
+  .fa-twitter {
+    color: #68add3;
+  }
+  .fa-instagram {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .fa-pinterest {
+    color: #c8232c;
+  }
 }
 
 .separate-line {
@@ -94,13 +121,13 @@
 
 .padding-div-left {
   padding-left: 2rem;
-}
 
-#like-text {
-  padding-left: 4px;
-  color: black;
-  text-decoration: none;
-  margin-bottom: 0;
+  #like-text {
+    padding-left: 4px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 0;
+  }
 }
 
 // Tabs & Nav
