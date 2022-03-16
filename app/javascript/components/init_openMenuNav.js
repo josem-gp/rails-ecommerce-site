@@ -26,9 +26,12 @@ const openMenuNav = () => {
 
   navLinks.forEach((el) => {
     el.addEventListener("click", (event) => {
-      document.querySelector("body").classList.toggle("fixed-body");
-      document.querySelector("html").classList.toggle("fixed-body");
-      console.log("click");
+      document.querySelector("body").classList.contains("fixed-body")
+        ? document.querySelector("body").classList.remove("fixed-body")
+        : "";
+      document.querySelector("html").classList.contains("fixed-body")
+        ? document.querySelector("html").classList.remove("fixed-body")
+        : "";
     });
   });
 };
