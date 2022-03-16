@@ -239,13 +239,9 @@
 
 // Dropdown avatar
 
-.dropdown-avatar {
-  display: none !important;
-}
-
-.dropdown:hover > .dropdown-avatar {
-  display: block !important;
+.dropdown-avatar-show {
   position: absolute;
+  display: block !important;
   left: -105px;
 }
 
