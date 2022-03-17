@@ -1,0 +1,12 @@
+.review_rating {
+  label {
+    margin-right: 8px;
+  }
+  .fa-star {
+    cursor: pointer;
+
+    input {
+      cursor: pointer;
+    }
+  }
+}

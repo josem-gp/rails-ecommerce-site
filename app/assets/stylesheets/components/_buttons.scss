@@ -223,3 +223,188 @@
     }
   }
 }
+
+.submit-btn {
+  float: right;
+  position: relative;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 8.5rem;
+  margin: 0;
+  padding: 17px 0px;
+  background-color: #bababa;
+  border: none;
+  border-radius: 0.3125rem;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: lighten($background-tea, 10%);
+  }
+
+  .submit {
+    color: white;
+    border: none;
+    background: none;
+    box-shadow: none;
+    position: absolute;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  span {
+    position: absolute;
+    line-height: 0;
+
+    i {
+      transform-origin: center center;
+    }
+
+    &:nth-of-type(1) {
+      transform: translateY(0%);
+      font-size: 24px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:nth-of-type(2) {
+      display: none;
+    }
+
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .refresh-icon {
+    &::before {
+      content: ""; //this is the glyph (it is read with the fa in the class)
+    }
+  }
+
+  @keyframes loading {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(10);
+    }
+    50% {
+      transform: scale(0.2);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    90% {
+      transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+// These 2 methods are for the button animation before (submit)
+
+.active-submit {
+  background-color: $background-tea;
+
+  &:before {
+    width: 100%;
+    transition: width 3s linear;
+  }
+
+  .submit {
+    top: -100%;
+    transform: translateY(-50%);
+  }
+
+  span {
+    &:nth-of-type(1) {
+      opacity: 1;
+      visibility: visible;
+      top: 50%;
+      transform: translateY(-50%);
+
+      i {
+        animation: loading 500ms linear infinite;
+      }
+    }
+
+    &:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
+
+.finished-submit {
+  background-color: lighten($background-tea, 10%) !important;
+
+  .submit {
+    display: none;
+  }
+
+  .loading {
+    display: none;
+  }
+
+  .error {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .check {
+    display: block !important;
+    font-size: 24px;
+    animation: scale 0.5s linear;
+
+    i {
+      transform-origin: center center;
+    }
+  }
+}
+
+.error-submit {
+  background-color: #e57373;
+
+  .submit {
+    display: none;
+  }
+
+  .loading {
+    display: none;
+  }
+
+  .error {
+    display: block !important;
+    font-size: 24px;
+    animation: scale 0.5s linear;
+
+    i {
+      transform-origin: center center;
+    }
+  }
+}
