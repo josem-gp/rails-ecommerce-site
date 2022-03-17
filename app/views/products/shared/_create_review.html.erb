@@ -22,7 +22,7 @@
         <% end %>
       <%end %>
     </div>
-    <div class="mx-3">
+    <div class="mx-3 fst-italic">
       <% if product.reviews.count == 0 %>
         <p>Be the first one to review it!</p>
       <% else %>
@@ -34,8 +34,11 @@
   <div>
     <% if user %>
       <!-- Button trigger modal -->
-      <button type="button" class="btn modal-btn" data-toggle="modal" data-target="#exampleModalCenter">
-        Write a review
+      <button type="button" class="modal-btn simple-btn" data-toggle="modal" data-target="#exampleModalCenter" style="color: white">
+        <span>Write a review</span>
+        <div class="icon">
+          <i class="fa pencil-icon"></i>
+        </div>
       </button>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -55,7 +58,12 @@
       </div>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <button>Write a review</button>
+        <button class="simple-btn">
+          <span>Write a review</span>
+          <div class="icon">
+            <i class="fa pencil-icon"></i>
+          </div>
+        </button>
       <% end %>
     <% end %>
   </div>

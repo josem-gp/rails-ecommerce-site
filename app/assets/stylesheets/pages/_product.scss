@@ -173,13 +173,15 @@
 
 .tab-content {
   min-height: 300px;
-  background-color: #f8f8f8;
+  background-color: $light-gray;
   margin-bottom: 6%;
+  padding-top: 1%;
 }
 .tabs-header {
   margin-top: 3%;
   .nav-link.active {
-    background-color: #f8f8f8 !important;
+    background-color: $light-gray !important;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -240,7 +242,6 @@
     padding-top: 6px;
     position: relative;
     .review-title {
-      font-weight: bold;
       width: 60%;
     }
     .review-date {
@@ -282,6 +283,10 @@
 
 .related-products-section {
   margin-bottom: 6%;
+
+  .mini-product-card:hover .info-hover {
+    right: 14px;
+  }
 }
 
 .related-products-subtitle {
