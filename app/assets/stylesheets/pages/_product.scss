@@ -284,8 +284,26 @@
 .related-products-section {
   margin-bottom: 6%;
 
+  .mini-product-card .info-hover {
+    position: absolute;
+    z-index: 999;
+    top: 6%;
+    right: 0;
+    left: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+  }
+
   .mini-product-card:hover .info-hover {
+    position: absolute;
+    z-index: 999;
+    top: 6%;
     right: 14px;
+    left: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.7s ease-in-out;
   }
 }
 
