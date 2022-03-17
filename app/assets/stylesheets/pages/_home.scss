@@ -182,26 +182,6 @@
   transform: rotateY(-180deg);
 }
 
-.info-hover {
-  position: absolute;
-  z-index: 999;
-  top: 6%;
-  left: 36%;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-  i {
-    color: black;
-    background-color: white;
-    padding: 4px 4px;
-    width: 40px;
-    height: 40px;
-    margin-bottom: 4px;
-    text-align: center;
-    line-height: 2;
-  }
-}
-
 .product-card:hover {
   .product-second-pic {
     position: relative;
@@ -230,9 +210,12 @@
 
 @media screen {
   @media (max-width: 1399px) {
-    .info-hover {
-      left: 43%;
+    .product-card {
+      .info-hover {
+        left: 43%;
+      }
     }
+
     .product-card:hover .info-hover {
       left: 39%;
     }
@@ -254,8 +237,6 @@
         .info-hover {
           top: 38%;
           left: 30%;
-          display: flex;
-          gap: 4px;
         }
 
         &:hover .info-hover {
