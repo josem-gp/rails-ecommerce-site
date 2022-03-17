@@ -235,8 +235,9 @@
         }
 
         .info-hover {
+          flex-direction: row;
+          left: 22%;
           top: 38%;
-          left: 30%;
         }
 
         &:hover .info-hover {
@@ -258,7 +259,7 @@
     .products-grid {
       .product-card {
         .info-hover {
-          left: 0;
+          left: -6px;
           top: 32%;
           width: 100%;
           justify-content: center;
