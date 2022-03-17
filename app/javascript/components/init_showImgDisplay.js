@@ -17,6 +17,9 @@ const showImgDisplay = () => {
     const productImgs = document.querySelectorAll(".changeable-pic");
     const productImg = document.querySelector(".changeable-pic").outerHTML;
 
+    displayDiv.childElementCount === 0
+      ? ""
+      : displayDiv.firstElementChild.remove();
     displayDiv.insertAdjacentHTML("beforeend", productImg);
     displayDiv.firstElementChild.classList.add("augment-pic");
 
