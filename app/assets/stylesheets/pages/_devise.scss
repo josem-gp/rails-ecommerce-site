@@ -2,18 +2,19 @@
 
 .main-form {
   display: flex;
-  align-items: center;
   height: 100vh;
   .form-container {
-    width: 40%;
+    width: 50vw;
     margin: auto 0;
-    padding-left: $padding * 8;
-    padding-right: $padding * 8;
     .centered-container {
+      max-width: 570px;
+      margin: 0 auto;
       h1 {
-        font-weight: bold;
-        color: $purple;
+        color: black;
         margin: ($margin * 2) ($margin * 4);
+        span {
+          color: $font-tea;
+        }
       }
       form {
         margin: ($margin * 6) ($margin * 4);
@@ -22,11 +23,10 @@
         margin: ($margin * 2) ($margin * 4);
         a {
           text-decoration: none;
-          color: $purple;
-          font-weight: bold;
+          color: #a1bc91;
         }
         a:hover {
-          color: $purple-hover;
+          color: $dark-green;
         }
       }
     }
@@ -34,13 +34,10 @@
 }
 
 .img-login {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    asset_url("login.jpg");
-  background-size: cover;
-  background-position: center;
+  width: 50vw;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
 }
 
 .img-signup {
@@ -90,7 +87,7 @@
   input {
     color: white;
     width: 100%;
-    background: $purple;
+    background: $background-tea;
     border-radius: $border-radius * 2;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: $padding;
@@ -98,10 +95,67 @@
   }
   input:hover {
     color: white;
-    background: $purple-hover;
+    background: $background-tea-hover;
   }
 }
 
-.back a {
-  color: #6543a0;
+.back {
+  a {
+    color: $back-gray;
+  }
+  a:hover {
+    color: $back-gray-hover;
+  }
+}
+
+// Media Query
+
+@media screen {
+  @media (max-width: 991px) {
+    .main-form {
+      flex-direction: column;
+      .form-container {
+        width: 100vw;
+      }
+      .img-login {
+        width: 100vw;
+        height: 50vh;
+      }
+    }
+  }
+  @media (max-width: 499px) {
+    .main-form {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.8)
+        ),
+        asset_url("login.jpg");
+      background-size: cover;
+      background-position: center;
+      .img-login {
+        display: none;
+      }
+      .highlight {
+        color: white !important;
+        margin-left: 8px;
+        position: relative;
+        z-index: 1;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -5px;
+          right: -17px;
+          background-image: url(/assets/green-brushstroke-e164fca413547d7290258a2f4cadae0bd70862f911edd4b36026005904c8f56f.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          padding: 8px 0;
+          filter: invert(96%) sepia(7%) saturate(1503%) hue-rotate(40deg)
+            brightness(96%) contrast(83%);
+          z-index: -1;
+        }
+      }
+    }
+  }
 }
