@@ -1,6 +1,7 @@
 // Sign up & Sign in form
 
-.main-form {
+.main-form-login,
+.main-form-signup {
   display: flex;
   height: 100vh;
   .form-container {
@@ -41,13 +42,10 @@
 }
 
 .img-signup {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    asset_url("signup.jpg");
-  background-size: cover;
-  background-position: center;
+  width: 50vw;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
 }
 
 .img-password {
@@ -100,6 +98,7 @@
 }
 
 .back {
+  width: fit-content;
   a {
     color: #7f7f7f;
   }
@@ -112,7 +111,8 @@
 
 @media screen {
   @media (max-width: 991px) {
-    .main-form {
+    .main-form-login,
+    .main-form-signup {
       flex-direction: column;
       .form-container {
         width: 100vw;
@@ -121,18 +121,33 @@
         width: 100vw;
         height: 50vh;
       }
+      .img-signup {
+        width: 100vw;
+        height: 40vh;
+      }
     }
   }
   @media (max-width: 499px) {
-    .main-form {
+    .main-form-login {
       background-image: linear-gradient(
           rgba(255, 255, 255, 0.4),
           rgba(255, 255, 255, 0.8)
         ),
         asset_url("login.jpg");
+    }
+    .main-form-signup {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.8)
+        ),
+        asset_url("signup.jpg");
+    }
+    .main-form-login,
+    .main-form-signup {
       background-size: cover;
       background-position: center;
-      .img-login {
+      .img-login,
+      .img-signup {
         display: none;
       }
       .highlight {
