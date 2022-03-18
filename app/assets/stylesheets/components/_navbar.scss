@@ -20,7 +20,7 @@
 
 .navbar {
   position: fixed !important;
-  z-index: 999;
+  z-index: 9999;
   background-color: rgba(0, 0, 0, 0.4) !important;
   padding: 0 23px !important;
   width: 100%;
@@ -268,10 +268,7 @@
   @media (max-width: 991px) {
     .navbar {
       padding: 0 23px 6px 23px !important;
-    }
-
-    .items-cart {
-      right: 79px;
+      background-color: rgba(0, 0, 0, 0.8) !important;
     }
 
     .navbar-brand {
@@ -282,7 +279,7 @@
     }
 
     .open-search {
-      width: 138px !important;
+      width: 135px !important;
       height: 30px !important;
       padding: 0.375rem 0.75rem !important;
       border: 1px solid #ced4da !important;
