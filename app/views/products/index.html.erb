@@ -11,7 +11,7 @@
         <%= render "products/shared/display_products_wrapper", products_highlight: @products_highlight, featured_products: @featured_products %>
         <!-- Index without search query -->
       <% else %>
-        <%= render "products/shared/display_products_wrapper", products: @products, featured_products: @featured_products %>
+        <%= render "products/shared/display_products_wrapper", products: @products, featured_products: @featured_products, products_highlight: nil %>
       <% end %>
     </div>
   </section>

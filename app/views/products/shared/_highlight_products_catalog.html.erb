@@ -12,6 +12,15 @@
     <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'product-first-pic' %>
     <%= cl_image_tag product.photos[2].key, height: 300, width: 400, crop: :fill, class: 'product-second-pic' %>
     <div class="product-info">
+      <!-- [NOT USED FOR NOW - MAYBE IT IS TOO MUCH TO HIGHLIGHT] 
+      If the title is in the highlight, it will show the title hightlighted in the card, if not, the normal title 
+      <% if !product.pg_search_highlight.split[0...product.name.split.size].join(" ").gsub(/<\/?b>/, "").include?(product.name)  %>
+        <h3><%= product.name %></h3>
+      <% else %>
+        <h3><%= "#{product.pg_search_highlight.split[0...product.name.split.size].join(" ")}".html_safe%></h3>
+      <% end %>
+      <p><%= "#{product.pg_search_highlight.split[product.name.split.size..-1].join(" ")}".html_safe %></p>
+      -->
       <h3><%= product.name %></h3>
       <div>
         <% if product.rating %>

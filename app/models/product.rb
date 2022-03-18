@@ -11,7 +11,7 @@ class Product < ApplicationRecord
         StopSel: '</b>',
         MaxWords: 123,
         MinWords: 456,
-        ShortWord: 4,
+        ShortWord: 0,
         HighlightAll: true,
         MaxFragments: 3,
         FragmentDelimiter: '&hellip;'
