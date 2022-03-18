@@ -42,6 +42,22 @@
   }
 }
 
+.main-form-signup {
+  .underline {
+    color: black !important;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 1px;
+      left: 0;
+      border-bottom: solid 4px #aac997;
+    }
+  }
+}
+
 .img-login,
 .img-signup,
 .img-password {
