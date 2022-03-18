@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
         @user = current_user
         if params[:query].present?
             @products_highlight = policy_scope(Product).search_by_name_and_description(params[:query]).with_pg_search_highlight
+            @featured_products =Product.order(sales: :desc).first(3)
         else
             @products = policy_scope(Product.order_list(params[:sort_by]))
             @featured_products =Product.order(sales: :desc).first(3)

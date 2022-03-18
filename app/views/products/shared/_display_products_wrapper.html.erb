@@ -24,7 +24,11 @@
     </div>
     <div class="wrapper-right">
       <!-- Products catalog -->
-      <%= render "products/shared/products_catalog", products: products %>
+      <% if products_highlight %>
+        <%= render "products/shared/highlight_products_catalog", products_highlight: products_highlight %>
+      <% else %>
+        <%= render "products/shared/products_catalog", products: products %>
+      <% end %>
     </div>
     <!-- Pagination -->
     <div id="pagination-container" class="simple-pagination"></div>

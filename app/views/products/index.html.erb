@@ -8,7 +8,7 @@
     <div class="container">
       <!-- Index with search query -->
       <% if @products_highlight %>
-        <%= render "products/shared/search_query", products_highlight: @products_highlight %>
+        <%= render "products/shared/display_products_wrapper", products_highlight: @products_highlight, featured_products: @featured_products %>
         <!-- Index without search query -->
       <% else %>
         <%= render "products/shared/display_products_wrapper", products: @products, featured_products: @featured_products %>
