@@ -323,6 +323,11 @@
         margin-top: 40px;
       }
     }
+
+    .display-reviews ul .review-content {
+      padding-bottom: 28px;
+      width: auto;
+    }
   }
   @media (max-width: 767px) {
     .add-lateral-padding-product {
@@ -343,6 +348,14 @@
         width: 28% !important;
         height: auto !important;
       }
+    }
+  }
+  @media (max-width: 400px) {
+    .reviews-number {
+      font-size: 14px;
+      margin: 0 !important;
+      margin-left: 12px !important;
+      transform: translateY(1px);
     }
   }
 }
