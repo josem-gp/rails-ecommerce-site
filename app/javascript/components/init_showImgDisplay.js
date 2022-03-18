@@ -3,6 +3,10 @@ function FadeOut(target, duplicate, speed) {
   target.firstElementChild.style.transition = "opacity " + seconds + "s ease";
   target.firstElementChild.style.position = "absolute";
 
+  if (window.innerWidth < 500) {
+    target.firstElementChild.style.left = "5%";
+  }
+
   target.firstElementChild.style.opacity = 0;
   target.insertAdjacentHTML("beforeend", duplicate);
   target.getElementsByTagName("img")[1].classList.add("augment-pic");
