@@ -1,4 +1,4 @@
-<div class="main-form img-password">
+<div class="main-form-password">
   <div class="form-container">
     <div class="centered-container">
       <h1>Forgot your password?</h1>
@@ -14,7 +14,6 @@
           <%= f.button :submit, "Send me reset password instructions" %>
         </div>
       <% end %>
-      <p><%= render "devise/shared/links" %></p>
       <div class="back">
         <%= link_to root_path do %>
           <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
@@ -22,4 +21,5 @@
       </div>
     </div>
   </div>
+  <%= image_tag "password.jpg", alt: "Forgot Password Form", class: "img-password" %>
 </div>

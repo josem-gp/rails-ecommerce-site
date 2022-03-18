@@ -1,7 +1,9 @@
 // Sign up & Sign in form
 
 .main-form-login,
-.main-form-signup {
+.main-form-signup,
+.main-form-password,
+.main-form-password {
   display: flex;
   height: 100vh;
   .form-container {
@@ -34,31 +36,19 @@
   }
 }
 
-.img-login {
-  width: 50vw;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.7;
-}
-
-.img-signup {
-  width: 50vw;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.7;
-}
-
-.img-password {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    asset_url("password.jpg");
-  background-size: cover;
-  background-position: center;
-  .form-container {
-    width: 31%;
+.main-form-password {
+  .centered-container {
+    max-width: 450px !important;
   }
+}
+
+.img-login,
+.img-signup,
+.img-password {
+  width: 50vw;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
 }
 
 .form-inputs {
@@ -112,7 +102,8 @@
 @media screen {
   @media (max-width: 991px) {
     .main-form-login,
-    .main-form-signup {
+    .main-form-signup,
+    .main-form-password {
       flex-direction: column;
       .form-container {
         width: 100vw;
@@ -124,6 +115,10 @@
       .img-signup {
         width: 100vw;
         height: 40vh;
+      }
+      .img-password {
+        width: 100vw;
+        height: 50vh;
       }
     }
   }
@@ -142,12 +137,21 @@
         ),
         asset_url("signup.jpg");
     }
+    .main-form-password {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.8)
+        ),
+        asset_url("password.jpg");
+    }
     .main-form-login,
-    .main-form-signup {
+    .main-form-signup,
+    .main-form-password {
       background-size: cover;
       background-position: center;
       .img-login,
-      .img-signup {
+      .img-signup,
+      .img-password {
         display: none;
       }
       .highlight {
