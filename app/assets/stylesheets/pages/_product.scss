@@ -19,6 +19,7 @@
     right: 0;
     top: 50%;
     margin-top: -75px;
+    padding: 0 12px;
   }
 
   h1:before {
@@ -281,4 +282,21 @@
 
 .related-products-subtitle {
   text-align: center;
+}
+
+// Media Queries
+
+@media screen {
+  @media (max-width: 991px) {
+    .related-products-section {
+      &-wrapper {
+        justify-content: center !important;
+        .mini-product-card {
+          &:hover .info-hover {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
 }
