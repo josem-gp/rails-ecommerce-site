@@ -13,7 +13,7 @@
     }
 
     h3 span {
-      color: $purple;
+      color: $font-tea;
       font-weight: bold;
       background: #fff;
       padding-right: 32px;
@@ -108,6 +108,11 @@
   .featured-card {
     padding: 12px 24px;
     margin: 0 !important;
+    align-items: flex-start;
+
+    .featured-info p {
+      margin-top: 0;
+    }
   }
 
   .flex-featured {
@@ -123,28 +128,23 @@
 
 .like-cards {
   .info-hover {
-    left: 9.6%;
-    top: 12%;
-  }
-  .info-hover i {
-    color: black;
-    padding: 5px 0px;
-    background-color: white;
-    width: 20px;
-    height: 20px;
-    margin-bottom: 4px;
-    text-align: center;
-    line-height: 1;
-    font-size: 12px;
-  }
-}
-
-.like-cards:hover {
-  .info-hover {
-    left: 9%;
-    visibility: visible;
     opacity: 1;
-    transition: all 0.7s ease-in-out;
+    visibility: visible;
+    flex-direction: row;
+    top: auto;
+    bottom: 10.5%;
+    left: 11%;
+
+    div {
+      width: 30px;
+      height: 30px;
+    }
+
+    i {
+      width: 30px;
+      height: 30px;
+      line-height: 1.5;
+    }
   }
 }
 
