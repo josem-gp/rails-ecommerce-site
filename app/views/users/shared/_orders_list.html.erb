@@ -1,19 +1,22 @@
 <% unless !orders || orders == [] %>
   <article class="orders-wrapper">
     <ul class="checkout-title">
-      <li>Order</li>
-      <li>Ship to</li>
-      <li>Date</li>
-      <li>Total</li>
-      <li>Actions</li>
+      <li>ORDER PLACED</li>
+      <li>TOTAL</li>
+      <li>SHIP TO</li>
+      <li>VIEW ORDER DETAILS</li>
     </ul>
     <% orders.each do |order| %>
       <div class="order-preview">
         <ul class="checkout-info">
-          <li><%= order.user.name %></li>
-          <li><%= order.user.shipping_address %></li>
-          <li> <%= order.date.strftime('%b %d, %Y') %></li>
+          <li><%= order.date.strftime('%b %d, %Y') %></li>
           <li><%= pretty_amount(order.total) %></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" type="button" onclick="openDropdown(event)"><%= order.user.name %></a>
+            <ul class="dropdown-order-menu hide-dropdown">
+              <li class="dropdown-item"><%= order.user.shipping_address %></li>
+            </ul>
+          </li>
           <!-- Button trigger modal -->
           <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<%= "#orderPreviewModal#{order.id}" %>>
               View
@@ -39,3 +42,12 @@
   <% end %>
 </article>
 <% end %>
+<script>
+  const openDropdown = (event) => {
+    console.log(event.target)
+    const dropdownMenu = event.target.nextElementSibling
+    console.log(dropdownMenu)
+    dropdownMenu.classList.toggle("hide-dropdown")
+     console.log(dropdownMenu)
+  }
+</script>

@@ -169,6 +169,25 @@
   .btn-primary:focus {
     box-shadow: none !important;
   }
+  .dropdown-order-menu {
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #0e0000;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+  }
+  .hide-dropdown {
+    display: none;
+  }
 }
 
 // Orders-preview modal
