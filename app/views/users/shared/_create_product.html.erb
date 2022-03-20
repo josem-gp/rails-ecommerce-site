@@ -3,6 +3,6 @@
   <%= f.input :description, as: :text %>
   <%= f.input :price, as: :integer %>
   <%= f.input :availability, collection: 1..2 %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+  <%= f.button :submit, class: "view-btn" %>
 <% end %>
