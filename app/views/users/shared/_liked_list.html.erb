@@ -4,13 +4,6 @@
       <div class="featured-card like-cards">
         <%= link_to product_path(favorite) do %>
         <% end %>
-        <div class="info-hover">
-          <a href="/products/<%= favorite.id %>"><i class="fas fa-eye"></i></a>
-          <!-- Favoritor -->
-          <%= render "pages/shared/favoritor", product: favorite  %>
-          <!-- Cart icon -->
-          <%= render "pages/shared/cart_display", product: favorite %>
-        </div>
         <%= cl_image_tag favorite.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
         <div class="featured-info">
           <p id="liked-title"><%= favorite.name %></p>
@@ -32,6 +25,13 @@
             <%end %>
           </div>
           <p>¥<%= favorite.price %></p>
+          <div class="info-hover">
+            <a href="/products/<%= favorite.id %>"><i class="fas fa-eye"></i></a>
+            <!-- Favoritor -->
+            <%= render "pages/shared/favoritor", product: favorite  %>
+            <!-- Cart icon -->
+            <%= render "pages/shared/cart_display", product: favorite %>
+          </div>
         </div>
       </div>
     <% end %>

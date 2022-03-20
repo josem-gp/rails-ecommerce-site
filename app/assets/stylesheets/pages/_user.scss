@@ -115,9 +115,8 @@
     opacity: 1;
     visibility: visible;
     flex-direction: row;
-    top: auto;
-    bottom: 10.5%;
-    left: 11%;
+    position: initial;
+    transform: translateY(10px);
 
     div {
       width: 30px;
