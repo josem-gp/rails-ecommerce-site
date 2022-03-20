@@ -18,12 +18,12 @@
             </ul>
           </li>
           <!-- Button trigger modal -->
-          <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<%= "#orderPreviewModal#{order.id}" %>>
+          <li><button type="button" class="view-btn" data-bs-toggle="modal" data-bs-target=<%= "#orderPreviewModal#{order.id}" %>>
               View
             </button></li>
           <!-- Modal -->
           <div class="modal fade" id=<%= "orderPreviewModal#{order.id}" %> tabindex="-1" role="dialog" aria-labelledby=<%= "orderPreviewModalLabel#{order.id}" %>>
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id=<%= "orderPreviewModalLabel#{order.id}" %>>Order Preview</h5>

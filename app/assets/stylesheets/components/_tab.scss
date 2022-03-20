@@ -1,0 +1,21 @@
+.active-black-color {
+  color: black !important;
+  padding: 0 20px;
+}
+
+.tab-content {
+  min-height: 300px;
+  background-color: $light-gray;
+  margin-bottom: 6%;
+  padding-top: 1%;
+}
+.tabs-header {
+  margin-top: 3%;
+  .nav-link.active {
+    background-color: $light-gray !important;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.5);
+  }
+  a {
+    color: black;
+  }
+}

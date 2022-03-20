@@ -23,15 +23,15 @@
   <div class="container-header">
     <div class="container-messages">
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul class="nav nav-tabs tabs-header" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link active" id="like-tab" data-bs-toggle="tab" data-bs-target="#like" type="button" role="tab" aria-controls="home" aria-selected="true">Favorites</a>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item tabs-header" role="presentation">
           <a class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="profile" aria-selected="false">Orders</a>
         </li>
         <% if @user.admin %>
-          <li class="nav-item" role="presentation">
+          <li class="nav-item tabs-header" role="presentation">
             <a class="nav-link" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="profile" aria-selected="false">Create</a>
           </li>
         <% end %>
@@ -40,12 +40,12 @@
       <div class="table-recommendations-posts">
         <div class="tab-content">
           <!-- Liked products -->
-          <div class="tab-pane active" id="like" role="tabpanel" aria-labelledby="like-tab"><%= render 'users/shared/liked_list', favorites: @favorites %></div>
+          <div class="tab-pane active-black-color active" id="like" role="tabpanel" aria-labelledby="like-tab"><%= render 'users/shared/liked_list', favorites: @favorites %></div>
           <!-- Orders made -->
-          <div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab"><%= render 'users/shared/orders_list', orders: @orders %></div>
+          <div class="tab-pane active-black-color" id="orders" role="tabpanel" aria-labelledby="orders-tab"><%= render 'users/shared/orders_list', orders: @orders %></div>
           <!-- Add new products -->
           <% if @user.admin %>
-            <div class="tab-pane" id="create" role="tabpanel" aria-labelledby="create-tab"><%= render 'users/shared/create_product', user: @user, product: @product %></div>
+            <div class="tab-pane active-black-color" id="create" role="tabpanel" aria-labelledby="create-tab"><%= render 'users/shared/create_product', user: @user, product: @product %></div>
           <% end %>
         </div>
       </div>
