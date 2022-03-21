@@ -1,9 +1,9 @@
 // Main Layout
 
 .container-header {
-  padding: 40px 60px 0;
+  padding: 50px 60px 0;
   .header-font {
-    margin-top: 4%;
+    margin-top: 50px;
     h3 {
       width: 100%;
       text-align: left;
@@ -188,7 +188,7 @@
   width: 70%;
   .checkout-title,
   .checkout-info {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .checkout-title {
     text-transform: uppercase;
@@ -233,4 +233,16 @@
 
 #product_photos {
   margin: 20px 0;
+}
+
+// Media Queries
+
+@media screen {
+  @media (max-width: 991px) {
+    .container-header {
+      .header-font {
+        margin-top: 90px;
+      }
+    }
+  }
 }
