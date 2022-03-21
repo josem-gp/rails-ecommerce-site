@@ -25,7 +25,7 @@
             <div class="flex-edit-form">
               <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
                 <div>
-                  <%= f.input :name, label: 'Full name', required: true %>
+                  <%= f.input :name, label: 'Username', required: true %>
                 </div>
                 <div>
                   <%= f.input :email, required: true %>
@@ -79,6 +79,11 @@
 <script>
   const openEditForm = () => {
     const editForm = document.querySelector(".flex-edit-form")
-    editForm.style.width === "" ? editForm.style.width = "300px" : editForm.style.width = "";
+
+    if( window.innerWidth > 991) {
+      editForm.style.width === "" ? editForm.style.width = "300px" : editForm.style.width = "";
+    } else {
+      editForm.style.height === "" ? editForm.style.height = "300px" : editForm.style.height = "";
+    }
   }
 </script>

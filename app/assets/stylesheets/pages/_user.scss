@@ -36,24 +36,51 @@
   .profile-pic {
     padding: 36px;
     border-right: 2px solid #f8f9f9;
+    margin: auto;
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
     i {
       color: black;
+    }
+  }
+  // Profile box --> form
+
+  .flex-info {
+    display: flex;
+
+    &-data {
+      width: 300px;
+      p {
+        width: max-content;
+      }
+    }
+
+    .flex-edit-form {
+      width: 0;
+      overflow: hidden;
+      transition: width 0.4s ease-in-out;
+    }
+
+    form {
+      label {
+        display: none;
+      }
+
+      .view-btn {
+        padding: 6px 16px;
+        min-height: 0;
+        float: right;
+        margin-top: 8px;
+      }
     }
   }
 }
 
 //Profile box
-
-.profile-pic {
-  margin: auto;
-  h3 {
-    margin: 0;
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-  }
-}
-
 .user-name-container {
   width: 100%;
   display: flex;
@@ -90,38 +117,6 @@
   margin-right: 10%;
   span {
     color: gray;
-  }
-}
-
-// Profile box --> form
-
-.flex-info {
-  display: flex;
-
-  &-data {
-    width: 300px;
-    p {
-      width: max-content;
-    }
-  }
-
-  .flex-edit-form {
-    width: 0;
-    overflow: hidden;
-    transition: width 0.4s ease-in-out;
-  }
-
-  form {
-    label {
-      display: none;
-    }
-
-    .view-btn {
-      padding: 6px 16px;
-      min-height: 0;
-      float: right;
-      margin-top: 8px;
-    }
   }
 }
 
@@ -243,6 +238,28 @@
       .header-font {
         margin-top: 90px;
       }
+    }
+
+    .container-profile {
+      .flex-info {
+        flex-direction: column;
+
+        .flex-edit-form {
+          width: 300px;
+          height: 0;
+          transition: height 0.4s ease-in-out;
+        }
+
+        form {
+          label {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .orders-wrapper {
+      width: 100%;
     }
   }
 }
