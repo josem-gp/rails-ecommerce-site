@@ -17,7 +17,10 @@ class UsersController < ApplicationController
             @user.icon = @icon
             @user.save
             redirect_to user_path(@user) 
-        else 
+        elsif params[:user][:email]
+            @user.update(user_params)
+            redirect_to request.referer
+        else
             @user.update(shipping_params)
             shipping_params[:checked] ? @user.update(checked: shipping_params[:checked].to_i) : ""
             @order = @user.orders.where(status: 1)[0]
@@ -31,5 +34,9 @@ class UsersController < ApplicationController
     
     def shipping_params
         params.require(:user).permit(:name, :shipping_address, :phone_number, :checked)
+    end
+
+    def user_params
+        params.require(:user).permit(:name, :email, :shipping_address, :phone_number)
     end
 end
