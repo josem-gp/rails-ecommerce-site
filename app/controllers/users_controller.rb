@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             shipping_params[:checked] ? @user.update(checked: shipping_params[:checked].to_i) : ""
             @order = @user.orders.where(status: 1)[0]
             @order.update(billing_address: @user.shipping_address)
-            redirect_to new_charge_path
+            redirect_to request.referer
         end
         
     end

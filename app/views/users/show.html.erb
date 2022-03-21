@@ -11,10 +11,34 @@
       </div>
       <div class="user-name-container">
         <div class="main-info">
-          <p class="title">USER PROFILE</p>
-          <div class="flex-main-info">
-            <p class="info">Username: &emsp;<span><%= @user.name %></span></p>
-            <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
+          <div class="main-info-flex">
+            <p class="title">USER PROFILE</p>
+            <p class="main-info-flex-edit" onclick="openEditForm()"><i class="fas fa-edit"></i>EDIT</p>
+          </div>
+          <div class="flex-info">
+            <div class="flex-info-data">
+              <p class="info">Username: &emsp;<span><%= @user.name %></span></p>
+              <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
+              <p class="info">Shipping address: &emsp;<span><%= @user.shipping_address %></span></p>
+              <p class="info">Phone number: &emsp;<span><%= @user.phone_number %></span></p>
+            </div>
+            <div class="flex-edit-form">
+              <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+                <div>
+                  <%= f.input :name, label: 'Full name', required: true %>
+                </div>
+                <div>
+                  <%= f.input :email, required: true %>
+                </div>
+                <div>
+                  <%= f.input :shipping_address,required: true %>
+                </div>
+                <div>
+                  <%= f.input :phone_number, required: true %>
+                </div>
+                <%= f.submit 'Edit', class: "view-btn" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -52,3 +76,9 @@
     </div>
   </div>
 </main>
+<script>
+  const openEditForm = () => {
+    const editForm = document.querySelector(".flex-edit-form")
+    editForm.style.width === "" ? editForm.style.width = "300px" : editForm.style.width = "";
+  }
+</script>
