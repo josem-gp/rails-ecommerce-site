@@ -294,5 +294,15 @@
         }
       }
     }
+
+    .container-profile {
+      .main-info-flex {
+        justify-content: center;
+      }
+      .flex-info {
+        width: max-content;
+        margin: 0 auto;
+      }
+    }
   }
 }
