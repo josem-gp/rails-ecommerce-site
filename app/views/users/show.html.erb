@@ -16,12 +16,14 @@
             <p class="main-info-flex-edit" onclick="openEditForm()"><i class="fas fa-edit"></i>EDIT</p>
           </div>
           <div class="flex-info">
+            <!-- Info data used in <992 px -->
             <div class="flex-info-data">
               <p class="info">Username: &emsp;<span><%= @user.name %></span></p>
               <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
               <p class="info">Shipping address: &emsp;<span><%= @user.shipping_address %></span></p>
               <p class="info">Phone number: &emsp;<span><%= @user.phone_number %></span></p>
             </div>
+            <!-- Form used in <992 px -->
             <div class="flex-edit-form">
               <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
                 <div>
@@ -39,6 +41,33 @@
                 <%= f.submit 'Edit', class: "view-btn" %>
               <% end %>
             </div>
+          </div>
+          <!-- Hybrid data-form used in >=992 px -->
+          <div class="hybrid-edit-form">
+            <%= simple_form_for(@user, remote: true, method: :patch) do |f| %>
+              <div class="hybrid-edit-form-flex">
+                <p class="info">Username: &emsp;<span><%= @user.name %></span></p>
+                <%= f.input :name, label: 'Username', required: true %>
+              </div>
+              <div class="hybrid-edit-form-flex">
+                <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
+                <%= f.input :email, required: true %>
+              </div>
+              <div class="hybrid-edit-form-flex">
+                <p class="info">Shipping address: &emsp;<span><%= @user.shipping_address %></span></p>
+                <%= f.input :shipping_address,required: true %>
+              </div>
+              <div class="hybrid-edit-form-flex">
+                <p class="info">Phone number: &emsp;<span><%= @user.phone_number %></span></p>
+                <%= f.input :phone_number, required: true %>
+              </div>
+              <div class="hybrid-edit-form-flex">
+                <p class="info"><span></span></p>
+                <div>
+                  <%= f.submit 'Edit', class: "view-btn", style: "margin-left: 223px;" %>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -79,9 +108,12 @@
 <script>
   const openEditForm = () => {
     const editForm = document.querySelector(".flex-edit-form")
+    const hybridForm = document.querySelectorAll(".hybrid-edit-form-flex div")
 
     if( window.innerWidth > 991) {
-      editForm.style.width === "" ? editForm.style.width = "300px" : editForm.style.width = "";
+      hybridForm.forEach(el => {
+        el.style.width === "" ? el.style.width = "300px" : el.style.width = "";
+      })
     } else {
       editForm.style.height === "" ? editForm.style.height = "300px" : editForm.style.height = "";
     }
