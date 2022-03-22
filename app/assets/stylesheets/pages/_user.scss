@@ -124,7 +124,7 @@
   span {
     color: gray;
     display: block;
-    width: 300px;
+    width: 270px;
     word-wrap: break-word;
   }
 }
@@ -204,6 +204,8 @@
       color: black;
     }
     .dropdown-order-menu {
+      width: 250px;
+      overflow: scroll;
       position: absolute;
       top: 100%;
       z-index: 1000;
@@ -262,7 +264,7 @@
         flex-direction: column;
 
         .flex-edit-form {
-          width: 300px;
+          width: 270px;
           height: 0;
           overflow: hidden;
           transition: height 0.4s ease-in-out;
@@ -291,6 +293,12 @@
         flex-direction: column;
         .profile-pic {
           border-right: none;
+        }
+      }
+
+      .container-messages {
+        .nav-link {
+          font-size: 14px;
         }
       }
     }

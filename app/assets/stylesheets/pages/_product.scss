@@ -209,11 +209,13 @@
     position: relative;
     .review-title {
       width: 60%;
+      word-break: break-all;
     }
     .review-date {
       font-style: italic;
       font-size: 14px;
       color: #666;
+      word-break: break-all;
     }
     .review-content {
       color: #aaa;
@@ -299,6 +301,10 @@
 
     .display-reviews ul .review-content {
       padding-bottom: 28px;
+      width: auto;
+    }
+
+    .display-reviews ul .review-title {
       width: auto;
     }
   }
