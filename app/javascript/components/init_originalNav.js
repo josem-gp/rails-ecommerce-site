@@ -10,9 +10,6 @@ function handleTableChange(e) {
     navBtn.classList.remove("btn-change");
 
     dropDiv.classList.remove("dropdown-nav");
-    if (!dropDiv.classList.contains("collapse")) {
-      dropDiv.classList.add("collapse");
-    }
     body.classList.remove("fixed-body");
     restBody.forEach((el) => {
       el.classList.remove("lay-down");
