@@ -45,6 +45,7 @@ import { prefillingStripe } from "../components/init_prefillingStripe";
 import { sendingContactForm } from "../components/init_sendingContactForm";
 import { readjustCatalog } from "../components/init_readjustCatalog";
 import { postReview } from "../components/init_postReview";
+import { openEditForm } from "../components/init_openEditForm";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -67,4 +68,5 @@ document.addEventListener("turbolinks:load", () => {
   sendingContactForm();
   readjustCatalog();
   postReview();
+  openEditForm();
 });
