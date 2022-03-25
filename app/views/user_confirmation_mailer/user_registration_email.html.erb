@@ -2,52 +2,104 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <style>
-      .flex-featured {
+      .flex-featured-mailer {
         display: flex;
+      }
+
+      /* featured products */
+
+      .featured-card-mailer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 24px 0px;
+      }
+
+      .featured-info-mailer {
+        flex-grow: 1;
+        margin-left: 14px;
+      }
+
+      .featured-info-mailer h3 {
+        margin-top: 0;
+        margin-bottom: 6px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .featured-info-mailer p {
+        font-size: 15px;
+        margin-bottom: 0;
+        margin-top: 6px;
+      }
+
+      .featured-product-pic-mailer {
+        width: 120px;
+        height: 110px;
+      }
+
+      /* clickeable */
+
+      .featured-card-mailer > a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
       }
     </style>
   </head>
   <body>
     <div class="email-container">
-      <a class="navbar-brand" href="" target="_blank"><%= image_tag "logo.png", width: 60, alt: "logo"%></a>
-      <h1>Welcome!</h1>
-      <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
-      <p>Check out our dedicated tea products in our website.</p>
-      <br>
-      <h3>Featured products</h3>
-      <div class="flex-featured">
-        <% Product.order(sales: :desc).first(3).each do |product| %>
-          <div class="featured-card">
-            <%= link_to product_url(product) do %>
-            <% end %>
-            <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic' %>
-            <div class="featured-info">
-              <h3><%= product.name %></h3>
-              <div>
-                <% if product.rating %>
-                  <% product.rating.floor.times do %>
-                    <i class="fas fa-star active"></i>
+      <section class="navbar-mailer">
+        <a href="" target="_blank"><%= image_tag "logo.png", width: 60, alt: "logo"%></a>
+      </section>
+      <section class="welcome-mailer">
+        <h1>Welcome!</h1>
+        <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
+        <p>Check out our dedicated tea products in our website.</p>
+      </section>
+      <section class="featured-products-mailer">
+        <h3>Featured products</h3>
+        <div class="flex-featured-mailer">
+          <% @featured_products.each do |product| %>
+            <div class="featured-card-mailer">
+              <%= link_to product_url(product) do %>
+              <% end %>
+              <%= cl_image_tag product.photos[0].key, height: 300, width: 400, crop: :fill, class: 'featured-product-pic-mailer' %>
+              <div class="featured-info-mailer">
+                <h3><%= product.name %></h3>
+                <div>
+                  <% if product.rating %>
+                    <% product.rating.floor.times do %>
+                      <i class="fas fa-star active"></i>
+                    <%end %>
+                    <% if product.rating.to_s.include?('.5') %>
+                      <i class="fas fa-star-half-alt active"></i>
+                    <% end %>
+                    <% (5 - product.rating.ceil).times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  <% else %>
+                    <% 5.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
                   <%end %>
-                  <% if product.rating.to_s.include?('.5') %>
-                    <i class="fas fa-star-half-alt active"></i>
-                  <% end %>
-                  <% (5 - product.rating.ceil).times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                <% else %>
-                  <% 5.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                <%end %>
+                </div>
+                <p>¥<%= product.price %></p>
               </div>
-              <p>¥<%= product.price %></p>
             </div>
-          </div>
-        <% end %>
-      </div>
-      <h3>We are here to help</h3>
-      <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
+          <% end %>
+        </div>
+      </section>
+      <section class="contact-mailer">
+        <h3>We are here to help</h3>
+        <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
+      </section>
     </div>
   </body>
 </html>
