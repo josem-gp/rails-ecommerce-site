@@ -2,12 +2,15 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <style>
+      .flex-featured {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
     <div class="email-container">
-      <img src="" alt="icon">
+      <a class="navbar-brand" href="" target="_blank"><%= image_tag "logo.png", width: 60, alt: "logo"%></a>
       <h1>Welcome!</h1>
       <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
       <p>Check out our dedicated tea products in our website.</p>

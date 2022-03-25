@@ -1,7 +1,7 @@
 <div class="main-form-login">
   <div class="form-container">
     <div class="centered-container">
-      <h1>Log in to <span class="highlight">JapanTea</span></h1>
+      <h1>Log in to <span class="highlight"><%= ENV['SHOP_NAME'] %></span></h1>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,

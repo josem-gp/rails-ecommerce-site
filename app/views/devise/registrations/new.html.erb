@@ -1,7 +1,7 @@
 <div class="main-form-signup">
   <div class="form-container">
     <div class="centered-container">
-      <h1>Welcome to <span class="highlight" style="margin: 0 10px 0 2px;">JapanTea</span>!</h1>
+      <h1>Welcome to <span class="highlight" style="margin: 0 10px 0 2px;"><%= ENV['SHOP_NAME'] %></span>!</h1>
       <h1>Create your <span class="underline">account</span></h1>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
