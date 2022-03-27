@@ -7,11 +7,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style>
-      .flex-featured-mailer {
-        display: flex;
+      /* Main container */
+      .container-mailer {
+
+      }
+
+      /* Buy CTA button */
+      a {
+        text-decoration: none;
+      }
+
+      .buy-cta-btn-no-background {
+        text-align: center;
+        background-color: #bce0a6;
+        border: 1px solid #bce0a6;
+        color: #f8f8f8;
+        border-radius: 2px;
+        transition: all ease-in-out 0.35s;
+        z-index: 1;
+        position: relative;
+      }
+
+      .buy-cta-btn-no-background::after {
+        content: "→";
+        position: absolute;
+        color: #aac997;
+        left: 88%;
+        opacity: 0;
+        transition: all 0.35s ease-in-out;
+      }
+
+      .buy-cta-btn-no-background:hover {
+        border: none;
+        background-color: transparent;
+        color: #aac997;
+        transition: all ease-in-out 0.35s;
+      }
+
+      .buy-cta-btn-no-background:hover::after {
+        left: 95%;
+        opacity: 1;
+        transition: all ease-in-out 0.35s;
       }
 
       /* featured products */
+
+      .flex-featured-mailer {
+        display: flex;
+      }
 
       .featured-card-mailer {
         position: relative;
@@ -43,7 +86,7 @@
         height: 110px;
       }
 
-      /* clickeable */
+      /* Clickeable */
 
       .featured-card-mailer > a {
         position: absolute;
@@ -76,17 +119,25 @@
     </style>
   </head>
   <body>
-    <div class="email-container">
+    <div class="container-mailer">
       <section class="navbar-mailer">
         <a href="" target="_blank"><%= image_tag "logo.png", width: 60, alt: "logo"%></a>
       </section>
       <section class="welcome-mailer">
         <h1>Welcome!</h1>
         <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
-        <p>Check out our dedicated tea products in our website.</p>
+        <p>Check out our dedicated tea products in our website. 
+          You'll be the first to hear about all of our latest arrivals, exclusive collaborations and limited-run collections from the best established brands.</p>
+        <a href="/products" target="_blank" class="buy-cta-btn-no-background">SHOP NOW</a>
+        <p>Now that you're in, you'll be the first to hear about:</p>
+        <ul>
+          <li>SPECIAL OFFERS</li>
+          <li>NEW ARRIVALS</li>
+          <li>EXCLUSIVE SALES</li>
+        </ul>
       </section>
       <section class="featured-products-mailer">
-        <h3>Featured products</h3>
+        <h3>Check out our featured products!</h3>
         <div class="flex-featured-mailer">
           <% @featured_products.each do |product| %>
             <div class="featured-card-mailer">
@@ -118,9 +169,22 @@
           <% end %>
         </div>
       </section>
+      <section class="social-mailer">
+        <h3>Get in touch</h3>
+        <ul class="list-inline mt-3 separate-line">
+          <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
+        </ul>
+      </section>
       <section class="contact-mailer">
         <h3>We are here to help</h3>
         <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
+      </section>
+      <section class="footer-mailer">
+        <div class="container text-center">
+          <p class="text-grey mb-0 py-2">© <%= Time.new.year %> <%= ENV['SHOP_NAME'] %> All rights reserved.</pe>
+        </div>
       </section>
     </div>
   </body>
