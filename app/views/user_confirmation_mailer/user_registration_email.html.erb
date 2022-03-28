@@ -9,10 +9,82 @@
     <style>
       /* Main container */
       .container-mailer {
+        width: 800px;
+        margin: 0 auto;
+      }
 
+      /* Navbar mailer */
+      .navbar-mailer {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Welcome mailer */
+      .welcome-mailer-wrapper {
+        display: flex;
+        column-gap: 20px;
+        margin-top: 30px;
+      }
+
+      .mailer-img {
+        width: 370px;
+      }
+
+      .welcome-mailer-text h1 {
+        font-size: 62px;
+        font-style: italic;
+        color: #201f1f;
+      }
+
+      .welcome-mailer-text h3 {
+        color: #565555;
+        font-weight: bold;
+        font-size: 28px;
+      }
+
+      .welcome-mailer-text p {
+        font-size: 22px;
+        margin: 40px 0;
+      }
+
+      .welcome-mailer-text span {
+        color: #aac997;
+        font-style: italic;
+      }
+
+      .welcome-mailer-offer {
+        border-top: 1px dotted gray;
+        border-bottom: 1px dotted gray;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .welcome-mailer-offer p {
+        font-size: 22px;
+      }
+
+      .welcome-mailer-offer ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 5%;
+      }
+
+      .welcome-mailer-offer li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .offer-icons {
+        width: 30%;
       }
 
       /* Buy CTA button */
+
       a {
         text-decoration: none;
       }
@@ -26,6 +98,8 @@
         transition: all ease-in-out 0.35s;
         z-index: 1;
         position: relative;
+        padding: 8px 10px;
+        font-size: 20px;
       }
 
       .buy-cta-btn-no-background::after {
@@ -121,20 +195,38 @@
   <body>
     <div class="container-mailer">
       <section class="navbar-mailer">
-        <a href="" target="_blank"><%= image_tag "logo.png", width: 60, alt: "logo"%></a>
+        <a href="" target="_blank"><%= image_tag "logo.png", width: 80, alt: "logo"%></a>
       </section>
       <section class="welcome-mailer">
-        <h1>Welcome!</h1>
-        <p>Thank you for joining <%= ENV['SHOP_NAME'] %> - we are thrilled to have you!</p>
-        <p>Check out our dedicated tea products in our website. 
-          You'll be the first to hear about all of our latest arrivals, exclusive collaborations and limited-run collections from the best established brands.</p>
-        <a href="/products" target="_blank" class="buy-cta-btn-no-background">SHOP NOW</a>
-        <p>Now that you're in, you'll be the first to hear about:</p>
-        <ul>
-          <li>SPECIAL OFFERS</li>
-          <li>NEW ARRIVALS</li>
-          <li>EXCLUSIVE SALES</li>
-        </ul>
+        <div class="welcome-mailer-wrapper">
+          <div>
+            <%= image_tag "mailer-image.jpg", class: "mailer-img", alt: "mailer-img"%>
+          </div>
+          <div class="welcome-mailer-text">
+            <h1>Welcome!</h1>
+            <h3>Thank you for joining <span><%= ENV['SHOP_NAME'] %></span> - we are thrilled to have you!</h3>
+            <p>Check out our dedicated tea products in our website.<br>
+              You'll be the first to hear about all of our latest arrivals, exclusive collaborations and limited-run collections from the best established brands.</p>
+            <a href="/products" target="_blank" class="buy-cta-btn-no-background">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="welcome-mailer-offer">
+          <p>Now that you're in, you'll be the first to hear about:</p>
+          <ul>
+            <li>
+              <%= image_tag "special-offer-icon.png", class: "offer-icons", alt: "special offer icon"%>
+              <p>SPECIAL OFFERS</p>
+            </li>
+            <li>
+              <%= image_tag "new-product-icon.png", class: "offer-icons", alt: "new arrival icon"%>
+              <p>NEW ARRIVALS</p>
+            </li>
+            <li>
+              <%= image_tag "exclusive-sale-icon.png", class: "offer-icons", alt: "exclusive sale icon"%>
+              <p>EXCLUSIVE SALES</p>
+            </li>
+          </ul>
+        </div>
       </section>
       <section class="featured-products-mailer">
         <h3>Check out our featured products!</h3>
@@ -170,7 +262,6 @@
         </div>
       </section>
       <section class="social-mailer">
-        <h3>Get in touch</h3>
         <ul class="list-inline mt-3 separate-line">
           <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
           <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
