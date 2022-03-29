@@ -237,6 +237,30 @@
         color: white;
         font-size: 24px;
       }
+
+      /* Contact mailer */
+
+      .contact-mailer {
+        text-align: center;
+      }
+
+      .contact-mailer h3 {
+        font-size: 19px;
+      }
+
+      .contact-mailer span {
+        font-style: italic;
+      }
+
+      /* Footer */
+
+      .footer-mailer .text-grey {
+        color: #a2a2a2;
+        margin: 0;
+        text-align: center;
+        font-size: 13px;
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -314,13 +338,11 @@
         <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
       </section>
       <section class="contact-mailer">
-        <h3>We are here to help</h3>
-        <p>To talk with us, email us at <%= ENV['GMAIL_SMTP_USER'] %></p>
+        <h3>Get in touch</h3>
+        <p>To talk with us, email us at <span><%= ENV['GMAIL_SMTP_USER'] %></span></p>
       </section>
       <section class="footer-mailer">
-        <div class="container text-center">
-          <p class="text-grey mb-0 py-2">© <%= Time.new.year %> <%= ENV['SHOP_NAME'] %> All rights reserved.</pe>
-        </div>
+        <p class="text-grey">© <%= Time.new.year %> <%= ENV['SHOP_NAME'] %> All rights reserved.</p>
       </section>
     </div>
   </body>
