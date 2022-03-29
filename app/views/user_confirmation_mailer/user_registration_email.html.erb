@@ -27,11 +27,11 @@
       }
 
       .mailer-img {
-        width: 370px;
+        width: 310px;
       }
 
       .welcome-mailer-text h1 {
-        font-size: 62px;
+        font-size: 52px;
         font-style: italic;
         color: #201f1f;
       }
@@ -39,12 +39,13 @@
       .welcome-mailer-text h3 {
         color: #1d1c1c;
         font-weight: bold;
-        font-size: 28px;
+        font-size: 24px;
       }
 
       .welcome-mailer-text p {
-        font-size: 22px;
+        font-size: 19px;
         margin: 40px 0;
+        line-height: 1.4;
       }
 
       .welcome-mailer-text span {
@@ -60,7 +61,7 @@
       }
 
       .welcome-mailer-offer p {
-        font-size: 22px;
+        font-size: 19px;
       }
 
       .welcome-mailer-offer ul {
@@ -79,8 +80,12 @@
         justify-content: space-between;
       }
 
+      .welcome-mailer-offer li p {
+        font-size: 15px;
+      }
+
       .offer-icons {
-        width: 30%;
+        width: 20%;
       }
 
       /* Buy CTA button */
@@ -124,33 +129,58 @@
         transition: all ease-in-out 0.35s;
       }
 
-      /* featured products */
+      /* Featured products */
 
       .flex-featured-mailer {
         display: flex;
+        justify-content: space-evenly;
+      }
+
+      .featured-products-mailer h3 {
+        font-size: 19px;
+        font-weight: 100;
+        text-align: center;
+      }
+
+      .featured-products-mailer span {
+        position: relative;
+      }
+
+      .featured-products-mailer span:after {
+        content: "";
+        position: absolute;
+        border-bottom: 3px solid #aac997;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
 
       .featured-card-mailer {
         position: relative;
         display: flex;
+        flex-direction: column;
         align-items: center;
         margin: 24px 0px;
       }
 
       .featured-info-mailer {
         flex-grow: 1;
-        margin-left: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12px;
       }
 
       .featured-info-mailer h3 {
         margin-top: 0;
         margin-bottom: 6px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
       }
 
       .featured-info-mailer p {
-        font-size: 15px;
+        font-size: 14px;
         margin-bottom: 0;
         margin-top: 6px;
       }
@@ -158,6 +188,7 @@
       .featured-product-pic-mailer {
         width: 120px;
         height: 110px;
+        border-radius: 2px;
       }
 
       /* Clickeable */
@@ -229,7 +260,7 @@
         </div>
       </section>
       <section class="featured-products-mailer">
-        <h3>Check out our featured products!</h3>
+        <h3>Check out our <span>featured products</span>!</h3>
         <div class="flex-featured-mailer">
           <% @featured_products.each do |product| %>
             <div class="featured-card-mailer">
