@@ -1,0 +1,143 @@
+<mjml>
+  <mj-head>
+    <mj-style>
+      .logo-color {
+        color: #aac997;
+      	font-style: italic;
+      }
+      .curve-letter {
+      	font-style: italic;
+      }
+    </mj-style>
+    <mj-attributes>
+      <mj-all padding="0px"></mj-all>
+      <mj-class name="preheader" color="#000000" font-size="11px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding="0 20px"></mj-class>
+      <mj-class name="cta" color="#FFFFFF" font-size="13px" border-radius="3px" href="https://mjml.io" font-family="Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif" padding="20px 25px"></mj-class>
+      <mj-class name="footer-text" align="center" color="#000000" font-size="15px" padding="0 25px"></mj-class>
+      <mj-navbar-link padding="0 35px" font-weight="bold" font-size="12px"></mj-navbar-link>
+    </mj-attributes>
+    <mj-style inline="inline">a { text-decoration: none; color: inherit; }</mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-section background-color="#ffffff">
+      <mj-column padding="20px 0">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587549/Ecommerce/logo_n7ufzt.png" alt="Company logo" align="center" width="100px"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column padding-bottom="30px" background-color="#ffffff">
+       <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587565/Ecommerce/mailer-image_qzkbat.jpg" alt="Main pic" width="310px"></mj-image>
+      </mj-column>
+      <mj-column padding-bottom="30px" width="50%" background-color="#ffffff">
+        <mj-text color="#201f1f" font-style="italic" padding-left="20px" font-size="52px" font-weight="500" padding-bottom="30px">Welcome!</mj-text>
+        <mj-text color="#1d1c1c" line-height="32px" font-size="22px" padding-left="20px" font-weight="500">Thank you for joining <span class="logo-color">JapanTea</span> - we are thrilled to have you!</mj-text>
+        <mj-text color="#000000" line-height="28px" font-size="14px" padding-left="20px"><p>Check out our dedicated tea products in our website. <br /> 
+You'll be the first to hear about all of our latest arrivals, exclusive collaborations and limited-run collections from the best established brands.</p></mj-text>
+        <mj-button align="left" background-color="#bce0a6" padding-top="20px" padding-left="20px">SHOP NOW</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+       <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
+				<mj-text color="#000000" font-size="14px" align="center"><p>Now that you're in, you'll be the first to hear about:</p></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+       <mj-column width="33%" vertical-align="top">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587575/Ecommerce/special-offer-icon_g8r6mn.png" alt="Special offers icon" width="30px" padding="10px 25px"></mj-image>
+        <mj-text mj-class="footer-text">
+          <p>
+            SPECIAL OFFERS
+          </p>
+        </mj-text>
+      </mj-column>
+      <mj-column width="33%">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587581/Ecommerce/new-product-icon_kpgufx.png" alt="New arrivals icon" width="30px" padding="16px 25px"></mj-image>
+        <mj-text mj-class="footer-text">
+          <p>
+            NEW ARRIVALS
+          </p>
+        </mj-text>
+      </mj-column>
+      <mj-column width="33%" vertical-align="top">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587587/Ecommerce/exclusive-sale-icon_qmxxij.png" alt="Exclusive sales" width="30px" padding="10px 25px"></mj-image>
+        <mj-text mj-class="footer-text">
+          <p>
+            EXCLUSIVE SALES
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding-bottom="20px">
+      <mj-column>
+       <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column padding-bottom="20px">
+				<mj-text color="#000000" font-size="14px" align="center"><p>Check out our featured products!</p></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+       <mj-column width="33%" vertical-align="top">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1647560501/im5wr06y8qstblgoh3iwyyut1lu4.jpg" alt="Featured product 1" width="180px" height="150px"></mj-image>
+        <mj-text padding-bottom="5px" padding-top="10px" font-size="14px" font-weight="500" align="center">
+            Munnar-2
+        </mj-text>
+         <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648631442/Ecommerce/four-stars_frhlpd.png" alt="four stars" width="120px"></mj-image>
+         <mj-text padding-bottom="15px" padding-top="5px" font-size="14px" align="center">
+            ¥6,349
+        </mj-text>
+        <mj-text mj-class="footer-text">
+      </mj-column>
+      <mj-column width="33%">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1647560498/1njrjgvylvjshoueohck7jdsl81f.jpg" alt="Featured product 2" width="180px" height="150px"></mj-image>
+        <mj-text padding-bottom="5px" padding-top="10px" font-size="14px" font-weight="500" align="center">
+            Huangjin Gui-8
+        </mj-text>
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648631442/Ecommerce/five-stars_a2czxa.png" alt="five stars" width="120px"></mj-image>
+        <mj-text padding-bottom="15px" padding-top="5px" font-size="14px" align="center">
+            ¥9,141
+        </mj-text>
+      </mj-column>
+      <mj-column width="33%" vertical-align="top">
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1647560491/e2sopqvahrwtate72sy43zri0i4o.jpg" alt="Featured product 3" width="180px" height="150px"></mj-image>
+        <mj-text padding-bottom="5px" padding-top="10px" font-size="14px" font-weight="500" align="center">
+            Gentian-5
+        </mj-text>
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648631442/Ecommerce/four-stars_frhlpd.png" alt="four stars" width="120px"></mj-image>
+        <mj-text padding-bottom="15px" padding-top="5px" font-size="14px" align="center">
+            ¥2,782
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+         <mj-social>
+          <mj-social-element name="twitter"></mj-social-element>
+          <mj-social-element name="instagram" padding="0 15px"></mj-social-element>
+          <mj-social-element name="pinterest"></mj-social-element>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+        <mj-text font-size="14px" align="center" padding-top="20px">
+          <h4>
+            Get in touch
+          </h4>
+        </mj-text>
+        <mj-text font-size="14px" align="center">
+            To talk with us, email us at <span class="curve-letter">jgarciaportillo@gmail.com</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+        <mj-text font-size="12px" align="center" font-style="italic" padding-top="20px" color="#a2a2a2" padding-bottom="20px">
+            © 2022 JapanTea All rights reserved.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
