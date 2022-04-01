@@ -13,7 +13,7 @@
       <mj-all padding="0px"></mj-all>
       <mj-class name="preheader" color="#000000" font-size="11px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding="0 20px"></mj-class>
       <mj-class name="cta" color="#FFFFFF" font-size="13px" border-radius="3px" href="https://mjml.io" font-family="Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif" padding="20px 25px"></mj-class>
-      <mj-class name="footer-text" align="center" color="#000000" font-size="15px" padding="0 25px"></mj-class>
+      <mj-class name="footer-text" align="center" color="#000000" font-size="11px" padding="0 25px" font-weight=500></mj-class>
       <mj-navbar-link padding="0 35px" font-weight="bold" font-size="12px"></mj-navbar-link>
     </mj-attributes>
     <mj-style inline="inline">a { text-decoration: none; color: inherit; }</mj-style>
@@ -43,6 +43,7 @@ You'll be the first to hear about all of our latest arrivals, exclusive collabor
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff">
+      <mj-group>
        <mj-column width="33%" vertical-align="top">
         <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648587575/Ecommerce/special-offer-icon_g8r6mn.png" alt="Special offers icon" width="30px" padding="10px 25px"></mj-image>
         <mj-text mj-class="footer-text">
@@ -67,6 +68,7 @@ You'll be the first to hear about all of our latest arrivals, exclusive collabor
           </p>
         </mj-text>
       </mj-column>
+     </mj-group>
     </mj-section>
     <mj-section background-color="#ffffff" padding-bottom="20px">
       <mj-column>
@@ -111,14 +113,26 @@ You'll be the first to hear about all of our latest arrivals, exclusive collabor
         </mj-text>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#ffffff">
-      <mj-column>
-         <mj-social>
-          <mj-social-element name="twitter"></mj-social-element>
-          <mj-social-element name="instagram" padding="0 15px"></mj-social-element>
-          <mj-social-element name="pinterest"></mj-social-element>
-        </mj-social>
+    <mj-section background-color="#bce0a6">
+      <mj-group>
+       <mj-column>
+       </mj-column>
+       <mj-column>
+       </mj-column>
+       <mj-column>
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648636826/Ecommerce/twitter-brands_cfc5wu.png" alt="Twitter icon" width="24px" padding-top="5px" padding-bottom="5px"></mj-image>
+       </mj-column>
+       <mj-column>
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648636826/Ecommerce/instagram-brands_plyscf.png" alt="Instagram icon" width="24px" padding-top="5px" padding-bottom="5px"></mj-image>
+       </mj-column>
+       <mj-column>
+        <mj-image src="https://res.cloudinary.com/ddokq60ys/image/upload/v1648636826/Ecommerce/pinterest-brands_f9jffe.png" alt="Pinteres icon" width="24px" padding-top="5px" padding-bottom="5px"></mj-image>
       </mj-column>
+      <mj-column>
+      </mj-column>
+      <mj-column>
+      </mj-column>
+     </mj-group>
     </mj-section>
     <mj-section background-color="#ffffff">
       <mj-column>
