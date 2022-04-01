@@ -1,8 +1,8 @@
 <mjml>
   <mj-head>
     <mj-style>
-      .logo-color { color: #aac997; font-style: italic; } .curve-letter {
-      font-style: italic; }
+      .logo-color { color: #aac997; font-style: italic; } .darkened-span {
+      font-weight: 700; }
     </mj-style>
     <mj-attributes>
       <mj-all padding="0px"></mj-all>
@@ -72,6 +72,71 @@
           border-style="dashed"
           border-color="lightgrey"
         />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+        <mj-text font-size="20px" align="left" padding-top="20px">
+          <h2>Shipping details:</h2>
+        </mj-text>
+        <mj-text font-size="18px" align="left" padding-bottom="20px">
+          Order Number: oooo
+        </mj-text>
+        <mj-text font-size="18px" align="left" padding-bottom="10px">
+          Delivered to: <span class="darkened-span">xxxx</span>
+        </mj-text>
+        <mj-text font-size="18px" align="left" padding-bottom="10px">
+          Email: <span class="darkened-span">yyyy</span>
+        </mj-text>
+        <mj-text font-size="18px" align="left" padding-bottom="10px">
+          Phone: <span class="darkened-span">zzzz</span>
+        </mj-text>
+        <mj-text font-size="18px" align="left">
+          Address: <span class="darkened-span">aaaa</span>
+        </mj-text>
+        <mj-text font-size="18px" align="left" padding="20px 0">
+          Date Dispatched: dddd
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-table padding="20px 0">
+          <tr
+            style="
+              border-bottom: 1px solid #ecedee;
+              font-weight: 600;
+              font-size: 18px;
+              color: #7fa465;
+            "
+          >
+            <th width="33%">Description</th>
+            <th width="33%">Quantity</th>
+            <th width="33%">Price</th>
+          </tr>
+          <tr style="text-align: center; font-size: 16px; line-height: 2.5">
+            <td>Product1</td>
+            <td>1</td>
+            <td>¥ 1,890</td>
+          </tr>
+          <tr style="text-align: center; font-size: 16px; line-height: 2.5">
+            <td>Product2</td>
+            <td>20</td>
+            <td>¥ 3,890</td>
+          </tr>
+          <tr
+            style="
+              text-align: center;
+              font-size: 19px;
+              line-height: 2.5;
+              font-weight: bold;
+            "
+          >
+            <td>TOTAL</td>
+            <td></td>
+            <td>¥ 15,890</td>
+          </tr>
+        </mj-table>
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-bottom="20px">
