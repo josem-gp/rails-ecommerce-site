@@ -1,1 +1,17 @@
-<h1>About page! https://templatekit.tokomoo.com/tourkit/about-team/</h1>
+<div class="container">
+  <section class="about-intro">
+    <div class="about-intro-text">
+      <h3>About <%= ENV['SHOP_NAME'] %></h3>
+      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+    </div>
+    <%= image_tag "about-main.jpg", alt: "About main image", class: "about-intro-img" %>
+  </section>
+  <section class="about-values">
+  </section>
+  <section class="about-services">
+  </section>
+</div>
+<!-- Homepage footer -->
+<footer>
+  <%= render 'shared/footer' %>
+</footer>
