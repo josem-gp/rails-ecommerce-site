@@ -1,5 +1,5 @@
 <!-- Triggering the modal -->
-<div data-bs-toggle="modal" data-bs-target="#formModal" class="modal-icon">
+<div data-bs-toggle="modal" data-bs-target="#formModal" class="modal-icon d-flex justify-content-center">
   <%= image_tag "#{@user.icon.url}", alt: "Signup Form", class: "avatar-lg" %>
 </div>
 <!-- Modal -->
@@ -16,7 +16,7 @@
         <%= render 'users/shared/form' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-black" data-dismiss="modal">Close</button>
+        <button type="button" class="btn-black" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
