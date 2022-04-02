@@ -81,19 +81,20 @@
           <h2>Shipping details:</h2>
         </mj-text>
         <mj-text font-size="18px" align="left" padding-bottom="20px">
-          Order Number: oooo
+          Order Number: <%= @order.id %>
         </mj-text>
         <mj-text font-size="18px" align="left" padding-bottom="10px">
-          Delivered to: <span class="darkened-span">xxxx</span>
+          Delivered to: <span class="darkened-span"><%= @user.name %></span>
         </mj-text>
         <mj-text font-size="18px" align="left" padding-bottom="10px">
-          Email: <span class="darkened-span">yyyy</span>
+          Email: <span class="darkened-span"><%= @user.email %></span>
         </mj-text>
         <mj-text font-size="18px" align="left" padding-bottom="10px">
-          Phone: <span class="darkened-span">zzzz</span>
+          Phone: <span class="darkened-span"><%= @user.phone_number %></span>
         </mj-text>
         <mj-text font-size="18px" align="left">
-          Address: <span class="darkened-span">aaaa</span>
+          Address:
+          <span class="darkened-span"><%= @user.shipping_address %></span>
         </mj-text>
         <mj-text font-size="18px" align="left" padding="20px 0">
           Date Dispatched: <%= @order.date.strftime('%b %d, %Y') %>
