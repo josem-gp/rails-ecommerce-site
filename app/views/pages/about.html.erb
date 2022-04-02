@@ -1,36 +1,39 @@
-<div class="about-container container">
-  <section class="about-intro">
-    <div class="about-intro-text">
-      <h3>About <%= ENV['SHOP_NAME'] %></h3>
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
-      <ul class="list-inline mt-4">
-        <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter" style="color:#666666"></i></a></li>
-        <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram" style="color:#666666"></i></a></li>
-        <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest" style="color:#666666"></i></a></li>
-      </ul>
-    </div>
-    <%= image_tag "about-main.jpg", alt: "About main image", class: "about-intro-img" %>
-  </section>
-  <section class="about-values">
+<section class="about-intro about-container container">
+  <div class="about-intro-text">
+    <h3>About <%= ENV['SHOP_NAME'] %></h3>
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+    <ul class="list-inline mt-4">
+      <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter" style="color:#666666"></i></a></li>
+      <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram" style="color:#666666"></i></a></li>
+      <li class="list-inline-item" style="font-size: 20px;"><a href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest" style="color:#666666"></i></a></li>
+    </ul>
+  </div>
+  <%= image_tag "about-main.jpg", alt: "About main image", class: "about-intro-img" %>
+</section>
+<section class="about-values-section">
+  <div class="about-values about-container container">
     <%= image_tag "about-values.jpg", alt: "About values image", class: "about-values-img" %>
     <div class="about-values-text">
       <h1>Our values</h1>
       <p>Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Aenean lacinia.</p>
-      <div class="list-inline mt-4">
-        <p>Vestibulum id ligula</p>
-        <p>Egestas Fermentum</p>
-        <p>Ultricies Bibendum</p>
-        <p>Fermentum Tellus</p>
-        <p>MattisFringillaUltricies</p>
-        <p>Vestibulum id ligula</p>
-        <p>Vestibulum id ligula</p>
-        <p>Vestibulum id ligula</p>
+      <div>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Vestibulum id ligula</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Egestas Fermentum</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Ultricies Bibendum</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Fermentum Tellus</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>MattisFringillaUltricies</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Adipiscing Vulputate</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>Fringilla Quam Elit</p>
+        <p><i aria-hidden="true" class="fas fa-check-circle" style="color:#23A455; margin-right:4px"></i>CommodoVestibulum</p>
       </div>
     </div>
-  </section>
-  <section class="about-services">
-  </section>
-</div>
+  </div>
+</section>
+<section class="about-services about-container container">
+  <div class="divider"></div>
+  <h1>About our Services</h1>
+  <p>Lorem ipsum dolor sit amet, consec tetur adipiscing the egtlit sekido eiusmod of the tempor incid dunt ulert labore et dolore all magna aliqua mi bibendum neque egestas.</p>
+</section>
 <!-- Homepage footer -->
 <footer>
   <%= render 'shared/footer' %>
