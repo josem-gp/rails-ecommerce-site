@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   h1 {
-    color: #b0896c;
+    color: $font-tea;
   }
 }
 
@@ -17,8 +17,8 @@
   text-align: center;
 
   h3 {
-    background: #fcf8e3;
-    color: #8a6d3b;
+    background: #ddf6cd;
+    color: $dark-green;
     padding: 1.5% 0%;
     font-size: 20px;
   }
@@ -27,7 +27,7 @@
     text-decoration: underline !important;
   }
   a:hover {
-    color: #8a6d3b;
+    color: $dark-green;
   }
 }
 
