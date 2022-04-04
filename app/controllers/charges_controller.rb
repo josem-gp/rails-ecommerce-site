@@ -27,19 +27,24 @@ class ChargesController < ApplicationController
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: ENV['DOMAIN'] + '/success.html',
-      cancel_url: ENV['DOMAIN'] + '/cancel.html',
+      success_url: ENV['DOMAIN'] + '/success',
+      cancel_url: ENV['DOMAIN'] + '/cancel',
     })
 
     redirect_to session.url
-    #Create another route called success which is connected to the success_url
+  end
+
+  def success_charge
     orders_controller = OrdersController.new
     @user = current_user
     @order = Order.where(user: current_user, status: 1)[0]
     authorize @order
     orders_controller.update(@user, @order)  
-   else
-     
-   end
+    
+    redirect_to root_path, notice: "Thank you, your order has been made!"
+  end
+
+  def cancel_charge
+    redirect_to root_path, notice: "Forgot to add something to your cart? Shop around then come back to pay!"
   end
 end
