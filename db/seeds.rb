@@ -163,105 +163,23 @@ products = [
     }
 ]
 
-products_test = [
-    product_1 = {
-        files: [ "file", "file1", "file2"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_2 = {
-        files: ["file3", "file4", "file5"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_3 = {
-        files: ["file6", "file7", "file8"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_4 = {
-        files: ["file9", "file10", "file11"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_5 = {
-        files: ["file12", "file13", "file14"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_6 = {
-        files: ["file15", "file16", "file17"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_7 = {
-        files: ["file18", "file19", "file20"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_8 = {
-        files: ["file21", "file22", "file23"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_9 = {
-        files: ["file24", "file25", "file26"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_10 = {
-        files: ["file27", "file28", "file29"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_11 = {
-        files: ["file30", "file31", "file32"],
-        stripe_price_id: "",
-        price: 1000
-    },
-    product_12 = {
-        files: ["file33", "file34", "file35"],
-        stripe_price_id: "",
-        price: 1000
-    }
-]
-
 products_test.each do |product_hash|
-    puts "PRODUCT: #{product_hash}"
-    product_hash.each do |key, val| 
-        puts "#{key[0]} = #{val[0]}"
-        puts "#{key[1]} = #{val[1]}"
-        puts "#{key[2]} = #{val[2]}"
+    product = Product.new(
+        name: "#{Faker::Tea.variety}-#{time}", 
+        description: Faker::Lorem.sentence(word_count: 20), 
+        price: product_hash[:price], 
+        rating: rand(0..5),
+        availability: rand(1..2),
+        stripe_price_id: product_hash[:stripe_price_id]
+    )
+    product.user = admin
+
+    product_hash[:files].each do |file|
+        product.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+        files.delete(file)
     end
-end
-
-products_test.each do |product_hash|
-    product_hash.each do |key, val| 
-        case key
-        when "files"
-            files_hash = val
-        when "stripe_price_id"
-            stripe_price_id = val
-        when "price"
-            price = val
-        end 
-
-        product = Product.new(
-            name: "#{Faker::Tea.variety}-#{time}", 
-            description: Faker::Lorem.sentence(word_count: 20), 
-            price: rand(2000...10000), 
-            rating: rand(0..5),
-            availability: rand(1..2)
-        )
-        product.user = admin
-
-        files.sample(3).each do |file|
-            product.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-            files.delete(file)
-        end
-        product.save!
-        puts "Product done!"
-    end
+    product.save!
+    puts "Product done!"
 end
 
 
