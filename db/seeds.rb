@@ -103,67 +103,67 @@ file35 = URI.open('https://blog.warriorcoffee.com/hubfs/_MG_3386.jpg')
 products = [
     product_1 = {
         files: [ file, file1, file2],
-        stripe_price_id: "",
+        stripe_price_id: "price_1KlKNKGsOm5WfgBc2WF4WCS5",
         price: 1000
     },
     product_2 = {
         files: [file3, file4, file5],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKNsGsOm5WfgBcgY8ktTt6",
+        price: 1500
     },
     product_3 = {
         files: [file6, file7, file8],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKOJGsOm5WfgBclFPSyCkR",
+        price: 2000
     },
     product_4 = {
         files: [file9, file10, file11],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKOrGsOm5WfgBc2JIgEka3",
+        price: 2500
     },
     product_5 = {
         files: [file12, file13, file14],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKP9GsOm5WfgBcn87AwzEz",
+        price: 3000
     },
     product_6 = {
         files: [file15, file16, file17],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKPYGsOm5WfgBc1KC8tZFz",
+        price: 3500
     },
     product_7 = {
         files: [file18, file19, file20],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKPtGsOm5WfgBcIiQTarmJ",
+        price: 4000
     },
     product_8 = {
         files: [file21, file22, file23],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKQDGsOm5WfgBccVVT7wl4",
+        price: 4500
     },
     product_9 = {
         files: [file24, file25, file26],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKQXGsOm5WfgBcuhr3aC0S",
+        price: 5000
     },
     product_10 = {
         files: [file27, file28, file29],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKQvGsOm5WfgBcH8nOWIeg",
+        price: 5500
     },
     product_11 = {
         files: [file30, file31, file32],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKRAGsOm5WfgBcmXh9eJuZ",
+        price: 6000
     },
     product_12 = {
         files: [file33, file34, file35],
-        stripe_price_id: "",
-        price: 1000
+        stripe_price_id: "price_1KlKRWGsOm5WfgBcmzKfztxl",
+        price: 6500
     }
 ]
 
-products_test.each do |product_hash|
+products.each do |product_hash|
     product = Product.new(
         name: "#{Faker::Tea.variety}-#{time}", 
         description: Faker::Lorem.sentence(word_count: 20), 
