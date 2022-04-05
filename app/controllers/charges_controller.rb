@@ -20,6 +20,8 @@ class ChargesController < ApplicationController
 
   def create
     @amount = Order.where(user: current_user, status: 1)[0].total
+    @order = Order.where(user: current_user, status: 1)[0]
+    authorize @order
     session = Stripe::Checkout::Session.create({
       line_items: [{
         # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
@@ -45,6 +47,8 @@ class ChargesController < ApplicationController
   end
 
   def cancel_charge
+    @user = current_user
+    authorize @user
     redirect_to root_path, notice: "Forgot to add something to your cart? Shop around then come back to pay!"
   end
 end

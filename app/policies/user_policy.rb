@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def update?
     !user.nil?
   end
+
+  def cancel_charge?
+    true
+  end
 end

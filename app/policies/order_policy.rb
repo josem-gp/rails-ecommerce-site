@@ -20,4 +20,8 @@ class OrderPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def success_charge?
+    record.user == user
+  end
 end
