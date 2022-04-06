@@ -48,6 +48,6 @@ class ChargesController < ApplicationController
   def cancel_charge
     @user = current_user
     authorize @user
-    redirect_to root_path, notice: "Forgot to add something to your cart? Shop around then come back to pay!"
+    redirect_to products_path, notice: "Forgot to add something to your cart? Shop around then come back to pay!"
   end
 end
