@@ -31,6 +31,39 @@
   }
 }
 
+.learn-cta-btn-background {
+  border: 1px solid $font-tea;
+  color: $font-tea;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+  overflow: none;
+  transition: color ease-in-out 0.35s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $background-tea;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top ease-in-out 0.35s;
+  }
+
+  &:hover::before {
+    top: 0;
+    transition: top ease-in-out 0.35s;
+  }
+
+  &:hover {
+    color: white;
+    transition: color ease-in-out 0.35s;
+  }
+}
+
 .buy-cta-btn-background {
   text-align: center;
   background-color: $background-tea;
@@ -455,4 +488,34 @@
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+
+.back-btn {
+  color: #fff;
+  background-color: #c1c1c1 !important;
+  font-size: 16px;
+  border-radius: 2px;
+  margin-top: 18px;
+  float: right;
+  border: 0;
+  padding: 2px 8px;
+
+  &:hover {
+    background-color: #989898 !important;
+  }
+}
+
+.next-btn {
+  color: #fff;
+  background-color: #666;
+  font-size: 16px;
+  border-radius: 2px;
+  margin-top: 18px;
+  float: right;
+  border: 0;
+  padding: 2px 8px;
+
+  &:hover {
+    background-color: #525252;
+  }
 }

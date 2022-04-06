@@ -41,7 +41,6 @@ import { filterProducts } from "../components/init_filterProducts";
 import { sortDropdown } from "../components/init_sortDropdown";
 import { showImgDisplay } from "../components/init_showImgDisplay";
 import { cartSteps } from "../components/init_cartSteps";
-import { prefillingStripe } from "../components/init_prefillingStripe";
 import { sendingContactForm } from "../components/init_sendingContactForm";
 import { readjustCatalog } from "../components/init_readjustCatalog";
 import { postReview } from "../components/init_postReview";
@@ -63,7 +62,6 @@ document.addEventListener("turbolinks:load", () => {
   sortDropdown();
   showImgDisplay();
   cartSteps();
-  prefillingStripe();
   sendingContactForm();
   readjustCatalog();
   postReview();

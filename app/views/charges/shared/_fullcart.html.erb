@@ -1,6 +1,6 @@
 <!-- Info needed for the shipping -->
 <article class="cart-procedure">
-  <section class="steps container add-padding-product">
+  <section class="steps container">
     <div class="step active-step" data-highlight="one">
       <h3>Step 1</h3>
       <p>Shipping Information</p>
@@ -14,15 +14,14 @@
       <p>Checkout</p>
     </div>
   </section>
-  <section class="container add-padding-product full-shopping">
+  <section class="container full-shopping">
     <!-- First step -->
     <div class="form-step step-one" data-step="one">
       <h2>Shipping Information</h2>
       <% if @user.name %>
         <!-- First step when shipping info -->
         <div class="cart-form ">
-          <h3>Name:</h3>
-          <p id="fullname"><%= @user.name %></p>
+          <p id="fullname"><span>Name:</span> <%= @user.name %></p>
           <p><span> Address:</span> <%= @user.shipping_address %></p>
           <p><span> Phone number:</span> <%= @user.phone_number %></p>
           <!-- Hidden form -->
@@ -89,7 +88,7 @@
         <% end  %>
         <button class="next-btn go-step-three pass-data" data-key="three">Next</button>
         <button class="next-btn change-billing-btn">Change</button>
-        <button class="next-btn go-step-one" data-key="one">Previous</button>
+        <button class="next-btn back-btn go-step-one" data-key="one">Previous</button>
         <div class="change-billing-info">
           <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
             <div id="billing">

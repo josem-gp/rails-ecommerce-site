@@ -46,23 +46,14 @@
   .lg-text {
     width: 70%;
     margin: 0 auto;
-    color: #b0896c;
+    color: $dark-green;
     margin-top: 3%;
   }
-}
-
-.next-btn {
-  color: #fff;
-  background-color: #666;
-  font-size: 14px;
-  margin-top: 18px;
-  float: right;
-  border: 0;
-  padding: 2px 8px;
-}
-
-.next-btn:hover {
-  background-color: #525252;
+  .learn-cta-btn-background {
+    float: right;
+    margin-top: 18px;
+    background-color: transparent;
+  }
 }
 
 .cart-form {
@@ -84,13 +75,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 200px;
 }
 
 .steps {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+
   .step:not(:last-child) {
     margin-right: 28px;
   }
