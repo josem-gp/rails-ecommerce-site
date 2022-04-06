@@ -1,7 +1,5 @@
 class ChargesController < ApplicationController
   # before_action :authenticate_user!
-  before_action :set_description
-  
 
   def new
     @user = current_user
@@ -21,29 +19,35 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @amount = Order.where(user: current_user, status: 1)[0].total
-    customer = StripeTool.create_customer(email: params[:stripeEmail], 
-                                          stripe_token: params[:stripeToken])
+    @order = Order.where(user: current_user, status: 1)[0] #created this just to overcome the Pundit auth
+    @order_id = @order.id
+    @order_items = OrderItem.where(order_id: @order_id)
+    @hashed_order_items = @order_items.map {|el| {price: Product.find(el.product_id).stripe_price_id, quantity: el.quantity} }
 
-    charge = StripeTool.create_charge(customer_id: customer.id, 
-                                      amount: @amount,
-                                      description: @description)
+    authorize @order
+    session = Stripe::Checkout::Session.create({
+      line_items: @hashed_order_items,
+      mode: 'payment',
+      success_url: ENV['DOMAIN'] + '/success',
+      cancel_url: ENV['DOMAIN'] + '/cancel',
+    })
 
+    redirect_to session.url
+  end
+
+  def success_charge
     orders_controller = OrdersController.new
     @user = current_user
     @order = Order.where(user: current_user, status: 1)[0]
     authorize @order
-    orders_controller.update(@user, @order)
-    redirect_to root_path, notice: "Your order has been made!"
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    orders_controller.update(@user, @order)  
+    
+    redirect_to root_path, notice: "Thank you, your order has been made!"
   end
 
-  private
-
-    def set_description
-      @description = "Purchase in #{ENV['SHOP_NAME']}"
-    end
+  def cancel_charge
+    @user = current_user
+    authorize @user
+    redirect_to root_path, notice: "Forgot to add something to your cart? Shop around then come back to pay!"
+  end
 end

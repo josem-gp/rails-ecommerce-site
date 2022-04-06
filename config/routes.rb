@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:edit, :update]
   resources :order_items, only: [:create, :update, :destroy]
   resources :charges, only: [:new, :create], path: 'cart'
+  get 'success', to: 'charges#success_charge'
+  get 'cancel', to: 'charges#cancel_charge'
 end
