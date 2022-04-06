@@ -6,7 +6,7 @@
     <p>Subtotal: <span><%= pretty_amount(@amount) %></span></p>
   </label>
   <%= form_tag charges_path do %>
-    <button type="submit" class="learn-cta-btn-background">Checkout</button>
+    <button type="submit" class="cta-btn-background">Checkout</button>
   <% end %>
   <!-- it is an <a> so it doesnt trigger Stripe checkout -->
   <a class="next-btn back-btn go-step-one a-link" data-key="two">Previous</a>
