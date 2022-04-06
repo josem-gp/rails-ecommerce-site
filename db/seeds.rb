@@ -188,7 +188,6 @@ products.each do |product_hash|
 
     product_hash[:files].each do |file|
         product.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-        files.delete(file)
     end
     product.save!
     puts "Product done!"
