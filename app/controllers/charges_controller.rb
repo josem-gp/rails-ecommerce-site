@@ -19,15 +19,14 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @amount = Order.where(user: current_user, status: 1)[0].total
-    @order = Order.where(user: current_user, status: 1)[0]
+    @order = Order.where(user: current_user, status: 1)[0] #created this just to overcome the Pundit auth
+    @order_id = @order.id
+    @order_items = OrderItem.where(order_id: @order_id)
+    @hashed_order_items = @order_items.map {|el| {price: Product.find(el.product_id).stripe_price_id, quantity: el.quantity} }
+
     authorize @order
     session = Stripe::Checkout::Session.create({
-      line_items: [{
-        # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-        price: "price_1KkR7ZGsOm5WfgBcyWZX3I2v",
-        quantity: 1,
-      }],
+      line_items: @hashed_order_items,
       mode: 'payment',
       success_url: ENV['DOMAIN'] + '/success',
       cancel_url: ENV['DOMAIN'] + '/cancel',
