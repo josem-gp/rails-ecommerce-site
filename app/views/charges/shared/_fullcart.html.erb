@@ -16,7 +16,7 @@
   </section>
   <section class="container full-shopping">
     <!-- First step -->
-    <div class="form-step step-one" data-step="one">
+    <div class="form-step step-one" data-step="one" style="padding: 0 0 24px 0;">
       <h2>Shipping Information</h2>
       <% if @user.name %>
         <!-- First step when shipping info -->
@@ -69,7 +69,7 @@
       <% end %>
     </div>
     <!-- Second step -->
-    <div class="form-step step-two form-hidden" data-step="two">
+    <div class="form-step step-two form-hidden" data-step="two" style="padding: 0 0 24px 0;">
       <h2>Billing Information</h2>
       <div class="cart-form">
         <% if @user.shipping_address == @order.billing_address %>
@@ -100,7 +100,7 @@
       </div>
     </div>
     <!-- Third step -->
-    <div class="form-step form-hidden" data-step="three">
+    <div class="form-step form-hidden" data-step="three" style="padding: 0 0 24px 0;">
       <h2 class="lg-text">Checkout</h2>
       <!-- Payment logic -->
       <div class="cart-form-lg">
