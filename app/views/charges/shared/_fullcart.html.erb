@@ -88,7 +88,7 @@
         <% end  %>
         <button class="next-btn go-step-three pass-data" data-key="three">Next</button>
         <button class="next-btn change-billing-btn">Change</button>
-        <button class="next-btn back-btn go-step-one" data-key="one">Previous</button>
+        <button class="next-btn go-step-one" data-key="one">Previous</button>
         <div class="change-billing-info">
           <%= simple_form_for(@order, remote: true, method: :patch) do |f| %>
             <div id="billing">
