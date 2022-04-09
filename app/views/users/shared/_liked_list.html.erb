@@ -24,7 +24,7 @@
               <% end %>
             <%end %>
           </div>
-          <p>¥<%= favorite.price %></p>
+          <p><%= pretty_amount(favorite.price) %></p>
           <div class="info-hover">
             <a href="/products/<%= favorite.id %>"><i class="fas fa-eye"></i></a>
             <!-- Favoritor -->

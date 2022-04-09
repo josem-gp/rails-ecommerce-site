@@ -3,7 +3,7 @@
     <ul>
       <li><%= "#{product.pg_search_highlight.split[0...product.name.split.size].join(" ")}".html_safe%></li>
       <li><%= "#{product.pg_search_highlight.split[product.name.split.size..-1].join(" ")}".html_safe %></li>
-      <li>¥<%= product.price %></li>
+      <li><%= pretty_amount(product.price) %></li>
       <li><%= product.rating %></li>
     </ul>
   <% end %>

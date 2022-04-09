@@ -21,7 +21,7 @@
     <%end %>
   </div>
   <li>
-    <p id="product-info-price">¥<%= product.price %></p>
+    <p id="product-info-price"><%= pretty_amount(product.price) %></p>
   </li>
   <% if product.availability == 2%>
     <li>
