@@ -38,13 +38,13 @@
   flex-direction: column;
   justify-content: center;
   h2 {
-    width: 50%;
+    max-width: 700px;
     margin: 0 auto;
     color: $dark-green;
     margin-top: 3%;
   }
   .lg-text {
-    width: 70%;
+    max-width: 700px;
     margin: 0 auto;
     color: $dark-green;
     margin-top: 3%;
@@ -58,16 +58,16 @@
 }
 
 .cart-form {
-  width: 50%;
+  max-width: 700px;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 20px;
   span {
     font-weight: bold;
   }
 }
 
 .cart-form-lg {
-  width: 70%;
+  max-width: 766px;
   margin: 0 auto;
   margin-top: 2%;
 }
@@ -85,6 +85,11 @@
 
   .step:not(:last-child) {
     margin-right: 28px;
+    @media screen {
+      @media (max-width: 400px) {
+        margin-right: 20px;
+      }
+    }
   }
   .step {
     color: #cac9ca;
@@ -96,17 +101,27 @@
   .active-step {
     color: black;
   }
+
+  @media screen {
+    @media (max-width: 400px) {
+      padding: 0 20px;
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 .change-shipping-info {
-  margin-top: 14%;
+  margin-top: 100px;
   max-height: 0;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
 }
 
 .change-billing-info {
-  margin-top: 14%;
+  margin-top: 40px;
   max-height: 0;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
@@ -142,7 +157,7 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(120px, 150px));
   align-items: center;
   justify-items: center;
   text-align: center;
