@@ -1,9 +1,19 @@
-replaceDiv = document.querySelector('[data-id="<%= @product.id %>"]')
+parentDiv = document
+  .querySelector('[data-id="<%= @product.id %>"]')
+  .closest(".featured-card");
+replaceIcon = document.querySelector('[data-id="<%= @product.id %>"]')
   .firstElementChild.firstChild;
-if (replaceDiv.classList.contains("gray-heart")) {
-  replaceDiv.classList.remove("gray-heart");
-  replaceDiv.classList.add("red-heart");
+if (window.location.href.match("/users/")) {
+  if (replaceIcon.classList.contains("gray-heart")) {
+  } else {
+    parentDiv.remove();
+  }
 } else {
-  replaceDiv.classList.remove("red-heart");
-  replaceDiv.classList.add("gray-heart");
+  if (replaceIcon.classList.contains("gray-heart")) {
+    replaceIcon.classList.remove("gray-heart");
+    replaceIcon.classList.add("red-heart");
+  } else {
+    replaceIcon.classList.remove("red-heart");
+    replaceIcon.classList.add("gray-heart");
+  }
 }
