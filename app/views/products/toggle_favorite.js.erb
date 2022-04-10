@@ -1,0 +1,9 @@
+replaceDiv = document.querySelector('[data-id="<%= @product.id %>"]')
+  .firstElementChild.firstChild;
+if (replaceDiv.classList.contains("gray-heart")) {
+  replaceDiv.classList.remove("gray-heart");
+  replaceDiv.classList.add("red-heart");
+} else {
+  replaceDiv.classList.remove("red-heart");
+  replaceDiv.classList.add("gray-heart");
+}
