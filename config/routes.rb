@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :update]
-  resources :orders, only: [:edit, :update]
+  resources :orders, only: [:update]
   resources :order_items, only: [:create, :update, :destroy]
   resources :charges, only: [:new, :create], path: 'cart'
   get 'success', to: 'charges#success_charge'

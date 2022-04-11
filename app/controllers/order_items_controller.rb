@@ -9,7 +9,15 @@ class OrderItemsController < ApplicationController
         @order_item.order = @order
         authorize @order_item
         if @order_item.save
-            redirect_to edit_order_path(@order)
+            @total = Order.update_total(@order)
+            if @order.update(total: @total)
+                respond_to do |format|
+                    format.html { redirect_to request.referrer }
+                    format.js 
+                end
+            else 
+                redirect_to root_path, notice: "Product not ordered, please try again"
+            end
         else
             redirect_to root_path, notice: "Product not ordered, please try again"
         end
@@ -23,17 +31,20 @@ class OrderItemsController < ApplicationController
         if params[:format] == 'plus'
             @new_quantity = @item_quantity + 1
             @order_item.update({quantity: @new_quantity})
-            orders_controller = OrdersController.new
-            orders_controller.edit(@order)
+            @total = Order.update_total(@order)
+            @order.update(total: @total)
         else
             if @item_quantity > 0
                 @new_quantity = @item_quantity - 1
                 @order_item.update({quantity: @new_quantity})
-                orders_controller = OrdersController.new
-                orders_controller.edit(@order)
+                @total = Order.update_total(@order)
+                @order.update(total: @total)
             end
         end
-        redirect_to new_charge_path
+        respond_to do |format|
+            format.js 
+            format.html { redirect_to new_charge_path }
+        end
     end
 
     def destroy
@@ -41,7 +52,15 @@ class OrderItemsController < ApplicationController
         @order_item = OrderItem.find(params[:id])
         authorize @order_item
         @order_item.delete
-        redirect_to edit_order_path(@order)
+        @total = Order.update_total(@order)
+        if @order.update(total: @total)
+            respond_to do |format|
+                format.html { redirect_to request.referrer }
+                format.js 
+            end
+        else 
+            redirect_to root_path, notice: "Product not ordered, please try again"
+        end
     end
 
     private
