@@ -28,7 +28,7 @@ class OrderItemsController < ApplicationController
         @item_quantity = OrderItem.find(params[:id]).quantity
         @order = OrderItem.generate_order(current_user)
         authorize @order_item
-        if params[:format] == 'plus'
+        if params[:operator] == 'plus'
             @new_quantity = @item_quantity + 1
             @order_item.update({quantity: @new_quantity})
             @total = Order.update_total(@order)
@@ -42,8 +42,8 @@ class OrderItemsController < ApplicationController
             end
         end
         respond_to do |format|
-            format.js 
             format.html { redirect_to new_charge_path }
+            format.js 
         end
     end
 
