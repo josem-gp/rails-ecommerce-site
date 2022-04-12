@@ -4,9 +4,6 @@ countNumber = "<%= @order_items_count %>";
 countIcon = `<p class="items-cart">${countNumber}</p>`;
 console.log(countNumber);
 
-if (1) {
-  console.log("inside if");
-  cartIcon.nextElementSibling
-    ? (cartIcon.nextElementSibling.innerText = countNumber)
-    : cartIcon.parentElement.insertAdjacentHTML("beforeend", countIcon);
-}
+cartIcon.nextElementSibling
+  ? (cartIcon.nextElementSibling.innerText = countNumber)
+  : cartIcon.parentElement.insertAdjacentHTML("beforeend", countIcon);
