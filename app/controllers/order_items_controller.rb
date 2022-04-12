@@ -11,6 +11,7 @@ class OrderItemsController < ApplicationController
         if @order_item.save
             @total = Order.update_total(@order)
             if @order.update(total: @total)
+                @order_items_count = OrderItem.where(order_id: @order.id).count
                 respond_to do |format|
                     format.html { redirect_to request.referrer }
                     format.js 
@@ -67,6 +68,8 @@ class OrderItemsController < ApplicationController
 
     def order_items_params
         #for product_id to work, we passed @product.id
+        #this is both for the products cards (only product_id will be passed) 
+        #and also por the product show page (both product_id and quantity will be passed)
         params[:order_item] ? params.require(:order_item).permit(:quantity, :product_id) : nil
     end
 end
