@@ -54,6 +54,7 @@ class OrderItemsController < ApplicationController
         authorize @order_item
         @order_item.delete
         @total = Order.update_total(@order)
+        @product = Product.find(params[:"data-id"])
         if @order.update(total: @total)
             respond_to do |format|
                 format.html { redirect_to request.referrer }

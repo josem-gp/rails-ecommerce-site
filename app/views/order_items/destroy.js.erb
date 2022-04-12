@@ -1,1 +1,8 @@
-console.log("remove from cart")
+productId = "<%= @product.id %>";
+parentDiv = document
+  .querySelector('[data-id="<%= @product.id %>"]')
+  .closest(".checkout-info");
+if (document.querySelectorAll(".checkout-info").length > 0) {
+  parentDiv.remove();
+} else {
+}

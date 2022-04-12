@@ -1,8 +1,6 @@
-console.log("chargin to cart");
 cartIcon = document.querySelector(".cart-nav");
 countNumber = "<%= @order_items_count %>";
 countIcon = `<p class="items-cart">${countNumber}</p>`;
-console.log(countNumber);
 
 cartIcon.nextElementSibling
   ? (cartIcon.nextElementSibling.innerText = countNumber)
