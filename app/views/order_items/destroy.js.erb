@@ -2,7 +2,22 @@ productId = "<%= @product.id %>";
 parentDiv = document
   .querySelector('[data-id="<%= @product.id %>"]')
   .closest(".checkout-info");
-if (document.querySelectorAll(".checkout-info").length > 0) {
-  parentDiv.remove();
-} else {
+cartRender = document.querySelector(".cart-procedure");
+emptyCartRender = `
+<section class="container add-padding-product empty-shopping">
+<h1>Shopping Cart</h1>
+<!-- Empty cart -->
+<div class="empty-shopping-text">
+<h3>YOUR CART IS CURRENTLY EMPTY.</h3>
+<p>Continue shopping <a href="/products">here</a>.</p>
+</div>
+</section>
+`;
+
+parentDiv.remove();
+if (document.querySelectorAll(".checkout-info").length === 0) {
+  cartRender.remove();
+  document
+    .querySelector("main")
+    .insertAdjacentHTML("afterbegin", emptyCartRender);
 }
