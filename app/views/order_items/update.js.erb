@@ -1,1 +1,28 @@
-console.log("plus minus")
+operator = "<%= @operator %>";
+orderItemId = "<%= @order_item.id %>";
+productId = "<%= @product.id %>";
+parentDiv = document.querySelector(
+  '.quantity-change[data-id="<%= @product.id %>"]'
+);
+productCount = parseInt(parentDiv.innerText.split(" ")[1], 10);
+parentDivInnerHTML = (count, productId, orderItemId) => {
+  return `\n        <a data-remote="true" rel="nofollow" data-method="patch" href="/order_items/${orderItemId}?data-id=${productId}&amp;operator=minus">\n          <button>-</button>\n</a>        ${count}\n        <a data-remote="true" rel="nofollow" data-method="patch" href="/order_items/${orderItemId}?data-id=${productId}&amp;operator=plus">\n          <button>+</button>\n</a>      `;
+};
+
+if (operator === "minus") {
+  if (productCount !== 1) {
+    newProductCount = productCount - 1;
+    parentDiv.innerHTML = parentDivInnerHTML(
+      newProductCount,
+      productId,
+      orderItemId
+    );
+  }
+} else {
+  newProductCount = productCount + 1;
+  parentDiv.innerHTML = parentDivInnerHTML(
+    newProductCount,
+    productId,
+    orderItemId
+  );
+}

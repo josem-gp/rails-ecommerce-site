@@ -28,8 +28,10 @@ class OrderItemsController < ApplicationController
         @order_item = OrderItem.find(params[:id])
         @item_quantity = OrderItem.find(params[:id]).quantity
         @order = OrderItem.generate_order(current_user)
+        @operator = params[:operator]
+        @product = Product.find(params[:"data-id"])
         authorize @order_item
-        if params[:operator] == 'plus'
+        if @operator == 'plus'
             @new_quantity = @item_quantity + 1
             @order_item.update({quantity: @new_quantity})
             @total = Order.update_total(@order)
