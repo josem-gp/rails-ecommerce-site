@@ -67,7 +67,9 @@
   </div>
 </nav>
 <script>
-  document.querySelector(".dropdown").addEventListener("click", (event) => {
-    document.querySelector(".dropdown-menu-right").classList.toggle("dropdown-avatar-show")
-  })
+  if(document.querySelector(".dropdown")) {
+    document.querySelector(".dropdown").addEventListener("click", (event) => {
+      document.querySelector(".dropdown-menu-right").classList.toggle("dropdown-avatar-show")
+    })
+  }
 </script>

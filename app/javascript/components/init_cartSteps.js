@@ -131,7 +131,6 @@ const cartSteps = () => {
               : "";
           }
         });
-        console.log(ev.target);
         if (ev.target.classList.contains("pass-data")) {
           hiddenForms.forEach((form) => {
             form.classList.contains(ev.target.dataset.key) &&

@@ -12,7 +12,6 @@ const toggleSearch = () => {
         searchForm.classList.contains("close-search") ||
         searchForm.value === ""
       ) {
-        console.log("hi");
         event.preventDefault();
         searchForm.classList.toggle("close-search");
         searchForm.classList.toggle("open-search");
