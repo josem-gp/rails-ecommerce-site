@@ -12,9 +12,9 @@
           <li><%= order.date.strftime('%b %d, %Y') %></li>
           <li><%= pretty_amount(order.total) %></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" type="button" onclick="openDropdown(event)"><%= order.user.name %></a>
+            <a class="dropdown-toggle" type="button" onclick="openDropdown(event)"><%= order.client_name %></a>
             <ul class="dropdown-order-menu hide-dropdown">
-              <li class="dropdown-item"><%= order.user.shipping_address %></li>
+              <li class="dropdown-item"><%= order.client_shipping_address %></li>
             </ul>
           </li>
           <!-- Button trigger modal -->
