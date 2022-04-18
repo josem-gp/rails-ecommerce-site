@@ -22,7 +22,9 @@ class User < ApplicationRecord
   private
 
   def send_registration_email
-    UserConfirmationMailer.with(user: self).user_registration_email.deliver_later
+    if !self.admin
+      UserConfirmationMailer.with(user: self).user_registration_email.deliver_later
+    end
   end
 
   def add_default_icon
