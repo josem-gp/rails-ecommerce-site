@@ -4,9 +4,30 @@ productId = "<%= @product.id %>";
 parentDiv = document.querySelector(
   '.quantity-change[data-id="<%= @product.id %>"]'
 );
+productPrice = parseFloat(
+  parentDiv.previousElementSibling.innerHTML.split("¥")[1].replace(/,/g, "")
+);
+totalProductPrice = parentDiv.nextElementSibling;
 productCount = parseInt(parentDiv.innerText.split(" ")[1], 10);
+subtotalPrice = document.querySelector(".amount span");
+subtotalPriceNumber = parseFloat(
+  document
+    .querySelector(".amount span")
+    .innerHTML.split("¥")[1]
+    .replace(/,/g, "")
+);
 parentDivInnerHTML = (count, productId, orderItemId) => {
   return `\n        <a data-remote="true" rel="nofollow" data-method="patch" href="/order_items/${orderItemId}?data-id=${productId}&amp;operator=minus">\n          <button>-</button>\n</a>        ${count}\n        <a data-remote="true" rel="nofollow" data-method="patch" href="/order_items/${orderItemId}?data-id=${productId}&amp;operator=plus">\n          <button>+</button>\n</a>      `;
+};
+totalProductPriceInnerHTML = (count, price) => {
+  return `¥${Number(count * price).toLocaleString()}`;
+};
+subtotalPriceInnerHTML = (price, subtotal, operator) => {
+  if (operator === "minus") {
+    return `¥${Number(subtotal - price).toLocaleString()}`;
+  } else {
+    return `¥${Number(subtotal + price).toLocaleString()}`;
+  }
 };
 
 if (operator === "minus") {
@@ -17,6 +38,15 @@ if (operator === "minus") {
       productId,
       orderItemId
     );
+    totalProductPrice.innerHTML = totalProductPriceInnerHTML(
+      newProductCount,
+      productPrice
+    );
+    subtotalPrice.innerHTML = subtotalPriceInnerHTML(
+      productPrice,
+      subtotalPriceNumber,
+      operator
+    );
   }
 } else {
   newProductCount = productCount + 1;
@@ -24,5 +54,14 @@ if (operator === "minus") {
     newProductCount,
     productId,
     orderItemId
+  );
+  totalProductPrice.innerHTML = totalProductPriceInnerHTML(
+    newProductCount,
+    productPrice
+  );
+  subtotalPrice.innerHTML = subtotalPriceInnerHTML(
+    productPrice,
+    subtotalPriceNumber,
+    operator
   );
 }
