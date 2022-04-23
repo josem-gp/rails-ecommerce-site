@@ -44,6 +44,7 @@ import { cartSteps } from "../components/init_cartSteps";
 import { sendingContactForm } from "../components/init_sendingContactForm";
 import { readjustCatalog } from "../components/init_readjustCatalog";
 import { postReview } from "../components/init_postReview";
+import { typed } from "../components/init_typed";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -65,4 +66,5 @@ document.addEventListener("turbolinks:load", () => {
   sendingContactForm();
   readjustCatalog();
   postReview();
+  typed();
 });
