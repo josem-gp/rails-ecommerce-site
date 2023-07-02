@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.1.2'
 
 # Favoritor gem to simplify the favourite logic
 gem 'acts_as_favoritor'
@@ -35,6 +35,8 @@ gem 'turbolinks', '~> 5.2.0'
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
+
+gem 'psych', '~> 3.1'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

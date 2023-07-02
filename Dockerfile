@@ -1,46 +1,50 @@
-# Start from the official ruby image, then update and install JS & DB
-FROM --platform=linux/amd64 ruby:2.6.6
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+# Start from the official ruby image
+FROM ruby:3.1.2
 
-# Install Chromedriver
-RUN apt-get update && apt-get install -y unzip && \
-    CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
-    wget -N http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P ~/ && \
-    unzip ~/chromedriver_linux64.zip -d ~/ && \
-    rm ~/chromedriver_linux64.zip && \
-    chown root:root ~/chromedriver && \
-    chmod 755 ~/chromedriver && \
-    mv ~/chromedriver /usr/bin/chromedriver && \
-    sh -c 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
-    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
-    apt-get update && apt-get install -y google-chrome-stable
+# Install Node.js 14.x
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN apt-get update && apt-get install -y nodejs
+
+# Install PostgreSQL client
+RUN apt-get install -y postgresql-client
+
+# Install additional dependencies for nokogiri gem
+RUN apt-get install -y libxml2-dev libxslt-dev
 
 # Create a directory for the application and use it
 RUN mkdir /myapp
 WORKDIR /myapp
 
-# Gemfile and lock file need to be present, they'll be overwritten immediately
+# Copy Gemfile and lock file to the container
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Install gem dependencies
 RUN echo "gem: --no-document > ~/.gemrc"
 RUN gem install bundler:2.2.32
-RUN bundle install --jobs 8
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-ADD https://dl.yarnpkg.com/debian/pubkey.gpg /tmp/yarn-pubkey.gpg
-RUN apt-key add /tmp/yarn-pubkey.gpg && rm /tmp/yarn-pubkey.gpg
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update -qq && apt-get install -y yarn  && apt-get install -y npm
-RUN yarn install
-RUN yarn add bootstrap jquery popper.js
+RUN gem install nokogiri --platform=ruby
+RUN bundle install
+RUN bundle config set force_ruby_platform true
+
+# Install Yarn
+RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+
+RUN set -x && apt-get update -y -qq && apt-get install -yq nodejs yarn
+
+# Copy the rest of the application code
 COPY . /myapp
 
-# This script runs every time the container is created, necessary for rails
+# Copy the entrypoint script
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
+
+# Set the entrypoint script as the default command
 ENTRYPOINT ["entrypoint.sh"]
+
+# Expose port 3000 for the Rails server
 EXPOSE 3000
 
-# Start rails
+# Start the Rails server
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
