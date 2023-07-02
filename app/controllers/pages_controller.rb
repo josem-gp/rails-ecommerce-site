@@ -10,12 +10,12 @@ class PagesController < ApplicationController
       @products = Product.all
       @contact = Contact.new()
       flash[:alert] = "Thank you for your message. We will get back to you soon!"
-      redirect_to root_path(anchor: "contact-form")
+      redirect_to root_path
     rescue
       @user = current_user
       @products = Product.all
       flash[:alert] = "Message did not send."
-      redirect_to root_path(anchor: "contact-form")
+      redirect_to root_path
     end
   end
 
