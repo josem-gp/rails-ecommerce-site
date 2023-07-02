@@ -5,7 +5,7 @@ function handleTableChange(e) {
   const restBody = document.querySelectorAll("body > *:not(.navbar)");
   const navBar = document.querySelector(".navbar");
 
-  if (e.matches) {
+  if (e.matches && navBar) {
     navBtn.classList.add("btn-menu");
     navBtn.classList.remove("btn-change");
 

@@ -58,10 +58,11 @@ class OrderItemsController < ApplicationController
         @total = Order.update_total(@order)
         @product = Product.find(params[:"data-id"])
         if @order.update(total: @total)
-            respond_to do |format|
-                format.html { redirect_to request.referrer }
-                format.js 
-            end
+          @order_items_count = OrderItem.where(order_id: @order.id).count
+          respond_to do |format|
+              format.html { redirect_to new_charge_path }
+              format.js 
+          end
         else 
             redirect_to root_path, notice: "Product not ordered, please try again"
         end

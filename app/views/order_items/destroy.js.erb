@@ -1,23 +1,33 @@
 productId = "<%= @product.id %>";
+newSubtotal = "<%= @total %>";
+subtotalPrice = document.querySelector(".amount span");
 parentDiv = document
-  .querySelector('[data-id="<%= @product.id %>"]')
-  .closest(".checkout-info");
+.querySelector('[data-id="<%= @product.id %>"]')
+.closest(".checkout-info");
 cartRender = document.querySelector(".cart-procedure");
 emptyCartRender = `
 <section class="container add-padding-product empty-shopping">
-<h1>Shopping Cart</h1>
-<!-- Empty cart -->
-<div class="empty-shopping-text">
-<h3>YOUR CART IS CURRENTLY EMPTY.</h3>
-<p>Continue shopping <a href="/products">here</a>.</p>
-</div>
+  <h1>Shopping Cart</h1>
+  <!-- Empty cart -->
+  <div class="empty-shopping-text">
+    <h3>YOUR CART IS CURRENTLY EMPTY.</h3>
+    <p>Continue shopping <a href="/products">here</a>.</p>
+  </div>
 </section>
 `;
-
 parentDiv.remove();
 if (document.querySelectorAll(".checkout-info").length === 0) {
-  cartRender.remove();
-  document
-    .querySelector("main")
-    .insertAdjacentHTML("afterbegin", emptyCartRender);
+cartRender.remove();
+document
+.querySelector("main")
+.insertAdjacentHTML("afterbegin", emptyCartRender);
 }
+cartIcon = document.querySelector(".cart-nav");
+countNumber = "<%= @order_items_count %>";
+countIcon = `
+<p class="items-cart">${countNumber}</p>
+`;
+cartIcon.nextElementSibling
+? (cartIcon.nextElementSibling.innerText = countNumber)
+: cartIcon.parentElement.insertAdjacentHTML("beforeend", countIcon);
+subtotalPrice.innerHTML = `¥${Number(newSubtotal).toLocaleString()}`;
