@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
       authorize @user     
       if @order 
         @cart_items = @order.order_items.order(:id) 
-        @amount = Order.where(user: @user, status: 1)[0].total
+        @amount =  Order.update_total(@order)
         authorize @order
         return @amount
       end
