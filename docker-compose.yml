@@ -22,3 +22,4 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-default}
       POSTGRES_HOST: ${POSTGRES_HOST:-default}
       RAILS_ENV: ${RAILS_ENV:-development}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-default}
