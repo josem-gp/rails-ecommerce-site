@@ -3,6 +3,7 @@ const cartSteps = () => {
   const editShippingDiv = document.querySelector(".change-shipping-info");
   const changeBilling = document.querySelector(".change-billing-btn");
   const editBillingDiv = document.querySelector(".change-billing-info");
+  const addBillingInfo = document.querySelector(".add-shipping-info");
   const goStepOneBtn = document.querySelector(".go-step-one");
   const goStepOneBtnA = document.querySelector(".a-link");
   const goStepTwoBtn = document.querySelector(".go-step-two");
@@ -106,7 +107,7 @@ const cartSteps = () => {
       }
     });
   }
-  if (goStepOneBtn || goStepTwoBtn || goStepThreeBtn || goStepOneBtnA) {
+  if ((goStepOneBtn || goStepTwoBtn || goStepThreeBtn || goStepOneBtnA) && !addBillingInfo) {
     stepBtnArray.forEach((btn) => {
       btn.addEventListener("click", (ev) => {
         formDivs.forEach((form) => {
